@@ -120,6 +120,15 @@ class McpTest(unittest.TestCase):
         self.assertIsNotNone(call(self.g, "invoice_draft_delete", id=inv["id"])[1])
         self.assertEqual([l["description"] for l in db.invoice_lines(self.con, inv["id"])], ["Consulting"])
 
+    def test_only_an_issued_invoice_gets_a_payment_date(self):
+        cid = call(self.g, "client_save", name="Gamma Ltd", country="GB", address="London")[0]["id"]
+        iid = call(self.g, "invoice_draft_save", client_id=cid, issue_date="2026-09-01", lines=[{"description": "Work", "price": 500}])[0]["id"]
+        self.assertIn("no issued invoice", call(self.g, "invoice_paid", id=iid, paid_date="2026-09-20")[1])
+        self.con.execute("UPDATE invoices SET number = 1 WHERE id = ?", (iid,))  # issued in the web interface
+        self.assertEqual(call(self.g, "invoice_paid", id=iid, paid_date="2026-09-20")[0]["paid_date"], "2026-09-20")
+        self.assertIn("2026-09-3", call(self.g, "invoice_paid", id=iid, paid_date="2026-09-31")[1])  # a bad date changes nothing
+        self.assertEqual(self.con.execute("SELECT paid_date FROM invoices WHERE id = ?", (iid,)).fetchone()[0], "2026-09-20")
+
 
 if __name__ == "__main__":
     unittest.main()

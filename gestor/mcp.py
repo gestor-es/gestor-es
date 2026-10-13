@@ -12,15 +12,20 @@ from pathlib import Path
 from types import SimpleNamespace
 
 from . import core, db, i18n, rules, sede, tax, web
-from .i18n import _
+from . import sources as legal
+from .i18n import _, N_
 from .web import BOX_RU, SEDE
 
 VERSIONS = ("2025-11-25", "2025-06-18", "2025-03-26")  # 2026-07-28 clients probe server/discover, get -32601, fall back here
 DOCS = Path(__file__).resolve().parent.parent / "docs"
+UI_NAMES = ", ".join(" / ".join((i18n.CATALOG["en"][m], m, i18n.CATALOG["es"][m])) for m in (  # the interface's own words
+    N_("Обзор"), N_("Налоги"), N_("Счета"), N_("Расходы"), N_("Анкета"), N_("Выставить (присвоить номер)")))
 
 INSTRUCTIONS = f"""gestor computes this person's Spanish tax returns (autónomo / SL). Numbers come only from these tools: never recompute
 or round them, never invent a casilla. Cite rules with the [[source-id]] the tools return. Talk to the person in their language
-(English, Russian or Spanish), whatever language the tools return.
+(English, Russian or Spanish), whatever language the tools return. Before saying which returns this person files, or why, call
+`situation`: it also has the warnings the web app shows. To explain a rule, open its card with `sources` and quote it; say
+when its status is interpretation or disputed.
 
 Profiles: one database per profile, for example a personal autónomo and an SL. `profiles` lists them; every other tool works on
 the default profile unless you pass `profile`. A new person with no profile: `profile_create`, then fill it.
@@ -35,17 +40,21 @@ First session (no profile, or `profile_incomplete` in `declarations`):
 4. Until the profile is complete, `declarations` lists only the upcoming deadlines of a default autónomo calendar: never call
    a return late, never quote amounts, never claim which returns this person must file.
 
-Writing (profile_update, client_save, expense_save, invoice_draft_save, filing_mark, the deletes):
+Writing (profile_update, client_save, expense_save, invoice_draft_save, invoice_paid, filing_mark, the deletes):
 1. Write only what the person confirmed in this conversation. Show the exact values first, get an explicit yes, then call the
    tool. Never write a guess silently.
 2. Invoices: drafts only. Issuing gives the invoice its number and cannot be undone: the person does it in the web interface
    (Invoices → the draft → Issue). Issued invoices are changed only with a factura rectificativa, also there.
 3. After a write, read back (`profile`, `books`, `declarations`) when the next step depends on it.
+4. Name the web interface's pages and buttons as the person sees them in their language (English / Russian / Spanish):
+   {UI_NAMES}.
 
-Bank statement (CSV or Excel export the person gives you; read it yourself, gestor never stores it). It is not a tax document:
+Bank statement (CSV or Excel export the person gives you; read it yourself, gestor never stores it; if you cannot open an Excel
+file, ask for the bank's CSV export). It is not a tax document:
 it only finds what is missing in gestor. Rules in detail: step 3 of the onboarding file above. Call `books` for every year it
 covers, then:
 1. Each incoming payment ↔ an issued invoice (amount in EUR or the invoice currency, payer ≈ client, paid after the issue date).
+   Matched and not yet paid in `books`: propose `invoice_paid` with the statement date.
    No invoice: ask what it is (payment for work, refund, transfer from a relative, own money). Payment for work: propose the
    client (`client_save`) and an invoice draft (`invoice_draft_save`) with operation_date = when the work was done and
    issue_date = today; say that an invoice to a business was due by the 15th of the next month [[rd1619-11]].
@@ -75,7 +84,8 @@ Helping in the AEAT Sede (browser):
 START = """Start my session with gestor. Call `profiles`, then `declarations` for the current year. If there is no profile or it is
 incomplete, follow the First session steps from the gestor instructions. Otherwise tell me the nearest deadline, what it needs and
 what is still missing in gestor for it. Talk to me in the language I use here; if I have not written anything yet, ask me first
-whether I prefer English, Russian or Spanish."""
+whether I prefer English, Russian or Spanish. End with two short lines on what else you can do with gestor: check a bank
+statement, keep invoices and expenses, help me fill the return in the Sede."""
 STATEMENT = """Check my bank statement against gestor: {file}. Follow the Bank statement steps from the gestor instructions. Talk
 to me in the language I use here; if I have not written anything yet, ask me first whether I prefer English, Russian or Spanish."""
 PROMPTS = [{"name": "start", "title": "Start with gestor",
@@ -161,6 +171,17 @@ TOOLS = [
                  "reference": {"type": "string", "description": "CSV / justificante number"}},
          ["modelo", "year", "period", "amount"]),
     tool("filing_unmark", "Remove the filed mark of a return.", DECL, ["modelo", "year", "period"]),
+    tool("situation", "Call first for any question about this person's Spanish taxes: which returns they file or not, why, "
+         "risks. How gestor understands this person in a year, as on the Profile page: regime and region, the returns "
+         "they file with the reason from their data, the returns they do not file and why, warnings (visa, Beckham, deadlines, "
+         "Verifactu), differences with the certificado censal, and the rules behind their numbers that are interpretation or "
+         "disputed. Every reason and warning cites [[source-id]]s: open them with `sources`.", {"year": YEAR}, ["year"], read=True),
+    tool("sources", "Legal source cards by id, in the person's language: reference, title, gist, the Spanish original quote, its "
+         "translation, status (verified / interpretation / disputed) with the reason, link, practice ids, date checked.",
+         {"ids": {"type": "array", "items": {"type": "string"}, "description": "ids from [[...]] citations or `sources` lists"}},
+         ["ids"], read=True),
+    tool("invoice_paid", "Set the payment date of an issued invoice, for example after matching it with the bank statement.",
+         {"id": I, "paid_date": {"type": "string", "description": "YYYY-MM-DD; default today"}}, ["id"]),
 ]
 SCHEMAS = {t["name"]: t["inputSchema"] for t in TOOLS}
 
@@ -173,13 +194,6 @@ def es(cents: int) -> str:
 def text(v) -> str:
     """A JSON argument as the web form would post it."""
     return "" if v is None else ("1" if v else "0") if isinstance(v, bool) else " ".join(map(str, v)) if isinstance(v, list) else str(v)
-
-
-def incomplete(s: dict) -> list[str]:
-    """Questionnaire fields still empty: the bar of «How gestor understood you» (web.understood) plus the NIE/NIF the Sede needs.
-    An SL needs its start date too: the first tax period (sl_days) and the first-year 202 exemption depend on it."""
-    need = (("name", s["name"]), ("tax_id", s["tax_id"]), ("activity_start", s["activity_start"] or s["reta_start"]))
-    return [k for k, v in need if not v]
 
 
 class Gestor:
@@ -219,7 +233,7 @@ class Gestor:
         for p in sorted(self.data.glob("*.db")):
             with self._profile(p.stem) as (_con, s):
                 out.append({"profile": p.stem, "default": p.stem == self.entity, "name": s["name"], "kind": s["kind"],
-                            "regime": tax.regime_label(s, date.today().year), "lang": s["lang"], "incomplete": incomplete(s)})
+                            "regime": tax.regime_label(s, date.today().year), "lang": s["lang"], "incomplete": web.missing_fields(s)})
         return {"profiles": out}
 
     def profile_create(self, name):
@@ -228,7 +242,7 @@ class Gestor:
 
     def profile(self, profile=None):
         with self._profile(profile) as (_con, s):
-            return {"profile": profile or self.entity, "fields": s, "incomplete": incomplete(s)}
+            return {"profile": profile or self.entity, "fields": s, "incomplete": web.missing_fields(s)}
 
     def profile_update(self, fields, profile=None):
         if unknown := sorted(set(fields) - set(web.SETTINGS_FIELDS)):
@@ -236,7 +250,7 @@ class Gestor:
         with self._profile(profile) as (con, _s):
             values = web.settings_values({k: text(v) for k, v in fields.items()})
             db.save_settings(con, values)
-            return {"saved": values, "incomplete": incomplete(db.get_settings(con))}
+            return {"saved": values, "incomplete": web.missing_fields(db.get_settings(con))}
 
     def _invoice(self, con, inv):
         a = core.invoice_amounts(con, inv)
@@ -297,7 +311,7 @@ class Gestor:
 
     def declarations(self, year, profile=None):
         with self._profile(profile) as (con, s):
-            missing, today = incomplete(s), date.today().isoformat()
+            missing, today = web.missing_fields(s), date.today().isoformat()
             rows = [({"modelo": f["modelo"], "period": f["period"], "title": f["title"], "opens": f["opens"], "deadline": f["deadline"]},
                      f, st) for f, _done, st in self._forms(con, s, year)]
             if missing:  # default settings: the calendar is generic, amounts and «late» would be invented
@@ -306,7 +320,7 @@ class Gestor:
                     "declarations": [r | {"result": es(f["result"]), "status": st} for r, f, st in rows]}
 
     def _one(self, con, s, modelo, year, period):
-        if missing := incomplete(s):
+        if missing := web.missing_fields(s):
             raise ValueError(f"profile incomplete ({', '.join(missing)}): fill the questionnaire first (First session in the instructions)")
         hit = next(((f, d, st) for f, d, st in self._forms(con, s, year) if f["modelo"] == modelo and f["period"] == period), None)
         if not hit:
@@ -345,6 +359,41 @@ class Gestor:
         with self._profile(profile) as (con, _s):
             web.delete_filing(con, {"modelo": modelo, "year": year, "period": period})
             return {"unfiled": {"modelo": modelo, "year": year, "period": period}}
+
+    def situation(self, year, profile=None):
+        with self._profile(profile) as (con, s):
+            if missing := web.missing_fields(s):
+                return {"profile_incomplete": missing}
+            have, no = tax.duties(con, s, year)
+            row = lambda d: {"modelo": d["modelo"], "what": d["what"], "when": d.get("when", ""), "why": d["why"], "sources": d["ids"]}
+            return {"regime": tax.regime_label(s, year), "region": tax.region_for_year(s, year),
+                    "warnings": tax.warnings(con, s, year), "censo_differences": web.censo_mismatches(s, have),
+                    "files": [row(d) for d in have], "does_not_file": [row(d) for d in no],
+                    "doubtful_rules": [{"id": e["id"], "ref": e.get("ref", ""), "status": e["status"],
+                                        "why": i18n.src(e, "status_note")} for e in web.doubtful(con, s, year, have + no)]}
+
+    def sources(self, ids, profile=None):
+        try:
+            with self._profile(profile):
+                pass  # only to take the profile's language
+        except ValueError:
+            i18n.current.set("en")
+        out = []
+        for sid in ids:
+            e = legal.get(sid)
+            out.append({"id": sid, "error": "unknown source id"} if not e else {
+                "id": sid, "ref": e.get("ref", ""), "kind": e.get("kind", ""), "status": e.get("status", ""),
+                "title": i18n.src(e, "title"), "summary": i18n.src(e, "summary"), "quote_es": e.get("quote_es", ""),
+                "quote": i18n.src(e, "quote"), "status_note": i18n.src(e, "status_note"), "url": e.get("url", ""),
+                "practice": e.get("practice", []), "checked": e.get("checked", ""),
+                "valid_from": e.get("valid_from", ""), "valid_to": e.get("valid_to", "")})
+        return {"sources": out}
+
+    def invoice_paid(self, id, paid_date="", profile=None):
+        with self._profile(profile) as (con, _s):
+            if not web.mark_paid(con, id, paid_date):
+                raise ValueError(f"no issued invoice {id}: a draft is issued in the web interface first")
+            return {"id": id, "paid_date": con.execute("SELECT paid_date FROM invoices WHERE id = ?", (id,)).fetchone()[0]}
 
 
 def handle(g: Gestor, msg: dict):

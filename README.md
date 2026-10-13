@@ -63,7 +63,11 @@ Everything stays on your computer. gestor has no server, no account and no sync.
 
 `gestor/mcp.py` is an MCP server over stdio for every profile in the data folder (`profiles`, `profile_create`, the `profile` argument on each tool). It reads: the questionnaire (`profile`), clients, invoices and expenses (`books`), the year's returns with deadline and status (`declarations`), and one return in Sede format with notes with § and a file for "Importar" in `<data>/sede/<profile>/` (`declaration`). It writes, after your explicit "yes": the questionnaire (`profile_update`), clients (`client_save`), expenses (`expense_save`, `expense_delete`), invoice drafts (`invoice_draft_save`, `invoice_draft_delete`) and filed marks (`filing_mark`, `filing_unmark`). It never issues an invoice: the number is given in the interface. Prompt `start`: the first session or the nearest deadline. While the questionnaire has no name, NIE/NIF or start date, `declarations` gives only upcoming deadlines, without amounts, and the agent guides you through [onboarding](docs/en/onboarding.md). The subscription is yours, in your own program. gestor stores no keys.
 
+It also explains: `situation` gives what the Profile page shows (regime and region, the returns you file and do not file with the reason and the law, warnings, differences with the certificado censal, rules that are interpretation or disputed), and `sources` opens a legal source card by its id. `invoice_paid` sets the payment date of an issued invoice.
+
 Prompt `statement`: give the agent your bank statement (CSV or Excel). It matches incoming payments with invoices and debits with expenses, asks only about the unclear ones and proposes clients, invoice drafts and expenses. gestor does not keep the statement. The Invoices and Expenses pages remind you of this.
+
+The Overview page has a «What your agent can do» block with these commands. It is open for a new profile and folded once the questionnaire has a name, NIE/NIF and start date. At the end of `start`, the agent also lists what else it can do.
 
 ```bash
 claude mcp add -s user gestor -e PYTHONPATH=$PWD -- python3 -m gestor.mcp --entity main

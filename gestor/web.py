@@ -314,6 +314,17 @@ def statement_hint() -> str:
                                  '<code>/mcp__gestor__statement</code>, в Codex — «сверь выписку с gestor».') + '</p>'
 
 
+def agent_hint(req) -> str:
+    """What the person's own agent can do over MCP. Open for a new profile, folded once the questionnaire is done."""
+    items = [(_("Первая сессия и ближайший срок"), "<code>/mcp__gestor__start</code>"),
+             (_("Сверка выписки банка: поступления без счёта, расходы без factura"), "<code>/mcp__gestor__statement</code>"),
+             (_("Анкета, клиенты, расходы и черновики счетов — после вашего «да». Выставляете счёт вы."), ""),
+             (_("Подача в Sede: агент заполняет форму и сверяет её после «Validar declaración». Подписываете вы."), "")]
+    li = "".join(f"<li>{text}{' — ' + cmd if cmd else ''}</li>" for text, cmd in items)
+    return (f'<details class=agent{"" if profile_ready(req.s) else " open"}><summary>{_("Что умеет ваш агент (Claude Code или Codex)")}</summary>'
+            f'<ul>{li}</ul><p class=muted>{_("Команды — для Claude Code. В Codex просите словами и называйте gestor: «спроси у gestor, что мне подавать». Как подключить: README, раздел про MCP.")}</p></details>')
+
+
 # ---------- dashboard ----------
 
 PAYS = {"303", "130", "111", "115", "202", "100", "151", "200"}  # returns that can end in a payment; 349/390/347 only inform
@@ -353,8 +364,15 @@ def filings(req, y) -> dict:
     return {(r["modelo"], r["period"]): r for r in req.con.execute("SELECT * FROM filings WHERE year = ?", (y,))}
 
 
+def missing_fields(s: dict) -> list[str]:
+    """Questionnaire fields still empty: name, NIE/NIF and the start date (alta). An SL needs it too: its first tax period
+    and the first-year 202 exemption depend on it. Without them gestor cannot tell what to file."""
+    return [k for k, v in (("name", s["name"]), ("tax_id", s["tax_id"]), ("activity_start", s["activity_start"] or s["reta_start"]))
+            if not v]
+
+
 def profile_ready(s) -> bool:
-    return bool(s["name"] and s["tax_id"] and (s["kind"] == "sl" or s["activity_start"] or s["reta_start"]))
+    return not missing_fields(s)
 
 
 def payment_slip(req, today) -> str:
@@ -540,7 +558,7 @@ def dashboard(req):
     regime = h(_(tax.regime_label(req.s, y))) + (", " + h(region) if region else "")
     body = f"""<h1>{_("Сводка {y}").format(y=y)}</h1><p class=sub>{_("На {date}: {regime}.").format(date=date.fromisoformat(today).strftime('%d.%m.%Y'), regime=regime)}
 <a href="/settings">{_("Как gestor вас понял")}</a></p>
-{onboarding_hint(req)}{year_switch(req, '/')}
+{onboarding_hint(req)}{agent_hint(req)}{year_switch(req, '/')}
 {slip}
 {''.join(f'<div class=warn>{cited(w)}</div>' for w in tax.warnings(req.con, req.s, y))}
 {junction(str(y))}
@@ -766,9 +784,14 @@ def invoice_issue(req, iid):
     raise Redirect(f"/invoices/{iid}")
 
 
+def mark_paid(con, iid, day: str) -> bool:
+    """Payment date on an issued invoice; False when the id is not an issued invoice."""
+    return bool(con.execute("UPDATE invoices SET paid_date = ? WHERE id = ? AND number IS NOT NULL",
+                            (core.iso_date(day or date.today().isoformat()), iid)).rowcount)
+
+
 def invoice_paid(req, iid):
-    req.con.execute("UPDATE invoices SET paid_date = ? WHERE id = ? AND number IS NOT NULL",
-                    (core.iso_date(req.form.get("paid_date") or date.today().isoformat()), iid))
+    mark_paid(req.con, iid, req.form.get("paid_date"))
     raise Redirect(f"/invoices/{iid}")
 
 
@@ -1398,6 +1421,35 @@ def settings(req):
     return page(req, _("Профиль"), body)
 
 
+def censo_mismatches(s: dict, have: list) -> list[str]:
+    """Differences between the returns gestor expects and the obligations in ALTA in the certificado censal."""
+    out = []
+    if not s.get("censo_date"):
+        return out
+    mine = {d["modelo"] for d in have}
+    for m in ("303", "130", "111", "115"):
+        if m in mine and m not in s["censo"]:
+            out.append(_("gestor считает, что вы подаёте {m}, а в certificado censal от {d} этой обязанности нет: "
+                         "сделайте alta через Modelo 036 или проверьте анкету.").format(m=m, d=s["censo_date"]))
+        elif m in s["censo"] and m not in mine:
+            out.append(_("В certificado censal от {d} {m} в статусе ALTA, а gestor её не ждёт: "
+                         "подавайте её или сделайте baja через Modelo 036.").format(m=m, d=s["censo_date"]))
+    if "349" in mine and "roi" not in s["censo"]:
+        out.append(_("У вас операции с бизнесом из ЕС (349), а ROI в certificado censal не отмечен: проверьте alta в ROI через Modelo 036."))
+    return out
+
+
+def doubtful(con, s: dict, y: int, duties: list) -> list:
+    """Source entries that are not plainly in the text, among every rule behind this person's duties, numbers and warnings."""
+    used = [i for d in duties for i in d["ids"]]
+    for __, fs in tax.forms(con, s, y):
+        for f in fs:
+            used += f["sources"] + [i for n in f.get("notes", []) if n for i in sources.split_cites(n)[1]]
+            used += [i for b in f["boxes"] for i in tax.applicable(tax.BOX_SOURCES.get((f["modelo"], b[0]), []), s, y)]
+    used += [i for w in tax.warnings(con, s, y) for i in sources.split_cites(w)[1]]
+    return [e for e in (sources.get(i) for i in dict.fromkeys(used)) if e and e.get("status") != "verified"]
+
+
 def understood(req) -> str:
     """How gestor reads your answers: facts, duties with reasons, duties you don't have, and where gestor may be wrong."""
     s, y = req.s, date.today().year
@@ -1427,31 +1479,13 @@ def understood(req) -> str:
          if s.get("reta_start") else _("В RETA не зарегистрированы."), "f-reta_start"),
     ]
     have, no = tax.duties(req.con, s, y)
-    censo = []
-    if s.get("censo_date"):
-        mine = {d["modelo"] for d in have}
-        for m in ("303", "130", "111", "115"):
-            if m in mine and m not in s["censo"]:
-                censo.append(_("gestor считает, что вы подаёте {m}, а в certificado censal от {d} этой обязанности нет: "
-                               "сделайте alta через Modelo 036 или проверьте анкету.").format(m=m, d=s["censo_date"]))
-            elif m in s["censo"] and m not in mine:
-                censo.append(_("В certificado censal от {d} {m} в статусе ALTA, а gestor её не ждёт: "
-                               "подавайте её или сделайте baja через Modelo 036.").format(m=m, d=s["censo_date"]))
-        if "349" in mine and "roi" not in s["censo"]:
-            censo.append(_("У вас операции с бизнесом из ЕС (349), а ROI в certificado censal не отмечен: проверьте alta в ROI через Modelo 036."))
+    censo = censo_mismatches(s, have)
     rows = "".join(f"<tr><td>{h(d['modelo'])}</td><td><b>{h(d['what'])}</b><small>{h(d['when'])}</small>"
                    f"<small>{h(_(tax.MODELO_ABOUT.get(d['modelo'], '')))}</small></td>"
                    f"<td>{explain(h(d['why']), d['ids'])}</td></tr>" for d in have)
     nots = "".join(f"<li><b>{h(d['modelo'])}</b>: {h(d['what'])}. {explain(h(d['why']), d['ids'])}</li>" for d in no)
-    used = [i for d in have + no for i in d["ids"]]
-    for __, fs in tax.forms(req.con, s, y):  # every rule behind your own numbers this year
-        for f in fs:
-            used += f["sources"] + [i for n in f.get("notes", []) if n for i in sources.split_cites(n)[1]]
-            used += [i for b in f["boxes"] for i in tax.applicable(tax.BOX_SOURCES.get((f["modelo"], b[0]), []), s, y)]
-    used += [i for w in tax.warnings(req.con, s, y) for i in sources.split_cites(w)[1]]
-    doubts = [e for e in (sources.get(i) for i in dict.fromkeys(used)) if e and e.get("status") != "verified"]
     risky = "".join(f'<li><a href="/sources#{h(e["id"])}">§ {h(e["ref"])}</a> {badge(e)} — {h(i18n.src(e, "status_note"))}</li>'
-                    for e in doubts)
+                    for e in doubtful(req.con, s, y, have + no))
     return f"""<div class=band id=understood>{_('Как gestor вас понял')}</div>
 <ul class=understood>{''.join(f'<li>{h(t)} <a href="#{a}">{_("изменить")}</a></li>' for t, a in facts)}</ul>
 {junction(str(y))}

@@ -224,6 +224,10 @@ details.form > summary b { font-size: 19px; }
 .due { color: var(--print-2); font-size: 14px; }
 .res { margin-left: auto; font-family: var(--mono); color: var(--pen); }
 details.form > summary .about { flex-basis: 100%; margin-top: -6px; font-size: 14px; color: var(--print-2); }
+details.agent { margin: 0 0 14px; padding: 6px 12px; border-left: 3px solid var(--rule); }
+details.agent > summary { cursor: pointer; color: var(--print-2); }
+details.agent[open] { border-left-color: var(--pen); }
+details.agent ul { margin: 8px 0 4px; }
 table.boxes td { vertical-align: middle; padding: 5px 8px; }
 /* stripes only where the eye travels far or long: casillas (§ links far right, rows of different height), duties,
    lists (invoices, expenses, clients, /guide). Short tables (≤ 5 rows), the stamp matrix and the invoice document stay plain. */
