@@ -219,7 +219,7 @@ def page(req, title, body, index=None) -> str:
 </div></details></header>"""
     return ru_dates(f"""<!doctype html><html lang={req.lang}><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
 <title>{h(title)} · gestor</title>
-<link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Prata&display=swap" rel=stylesheet>
+<link rel=stylesheet href="/static/fonts.css">
 <link rel=stylesheet href="/static/style.css">
 <div class=layout>{header}<aside class=toc-col>{toc(req, body, index)}</aside><main>{body}</main></div>{source_panels(body)}
 <footer class=colophon aria-hidden=true><div class=giant>gestor</div><img src="/static/papel-sellado.jpg" alt=""></footer>
@@ -540,7 +540,7 @@ def dashboard(req):
 <div class=cols><div><div class=band id=quarters>{_("Квартальные декларации {y}").format(y=y)}</div>
 <table class=matrix><thead><tr><th>{_("Квартал")}</th>{''.join(f'<th>{m} <small>{_(MATRIX_NAMES[m])}</small></th>' for m in mods)}</tr></thead><tbody>{rows}</tbody></table></div>
 <div><div class=band id=annual>{ann_title}</div><table class=dates><tbody>{ann}</tbody></table>
-<div class=basis>{_("Сроки и что будет при опоздании:")} {cite(['aeat-calendario-2026', 'orden-domiciliacion', 'lgt-27', 'lgt-198'])}</div>
+<div class=basis>{_("Сроки и что будет при опоздании:")} {cite(['aeat-calendario-2026', 'lpac-30', 'dias-inhabiles-2026', 'orden-domiciliacion', 'lgt-27', 'lgt-198'])}</div>
 <p class=actions><a class="btn primary" href="/invoices/new">{_("Новый счёт")}</a> <a class=btn href="/expenses/new">{_("Новый расход")}</a></p></div></div>
 {money_block(req, y)}
 <footer class=foot><span>{_("gestor считает, подаёте вы сами в Sede AEAT. Все суммы — оценка по вашим книгам на сегодня.")}</span>
@@ -1015,14 +1015,19 @@ BOX_RU = {  # plain words under the Spanish label (Russian or English; none in S
     "Resultado": N_("итог"),
     # 390
     "Régimen ordinario 21 %: Base imponible": N_("IVA 21 % с ваших продаж: база"), "Régimen ordinario 21 %: Cuota devengada": N_("…сумма IVA"),
-    "Adquisiciones intracomunitarias de servicios: Base imponible": N_("услуги от бизнеса из ЕС: база"),
+    "Régimen ordinario 10 %: Base imponible": N_("IVA 10 % с ваших продаж: база"), "Régimen ordinario 10 %: Cuota devengada": N_("…сумма IVA"),
+    "Régimen ordinario 4 %: Base imponible": N_("IVA 4 % с ваших продаж: база"), "Régimen ordinario 4 %: Cuota devengada": N_("…сумма IVA"),
+    "Adquisiciones intracomunitarias de servicios 21 %: Base imponible": N_("услуги от бизнеса из ЕС: база"),
+    "Adquisiciones intracomunitarias de servicios 21 %: Cuota devengada": N_("…IVA, который вы начисляете сами"),
+    "Total bases y cuotas IVA: Cuota devengada": N_("итого IVA начислено"),
     "Modificación de bases y cuotas: Base imponible": N_("исправления по счетам: база"),
     "Modificación de bases y cuotas: Cuota devengada": N_("…исправление IVA"),
     "Total bases imponibles y cuotas deducibles en operaciones interiores de bienes y servicios corrientes: Cuota deducible": N_("…IVA к вычету"),
     "Total bases imponibles y cuotas deducibles en operaciones interiores de bienes de inversión: Cuota deducible":
         N_("IVA к вычету по основным средствам"),
-    "IVA deducible en adquisiciones intracomunitarias de bienes y servicios: Cuota deducible": N_("…IVA к вычету"),
-    "Suma de resultados": N_("разница: начислено минус к вычету"),
+    "Total bases imponibles y cuotas deducibles en adquisiciones intracomunitarias de servicios: Cuota deducible": N_("…IVA к вычету"),
+    "Suma de deducciones": N_("итого IVA к вычету"),
+    "Suma de resultados": N_("разница: начислено минус к вычету"), "Resultado de la liquidación": N_("итог"),
     "Total resultados a ingresar en las autoliquidaciones de IVA del ejercicio": N_("сумма положительных 303"),
     "Compensación de cuotas del ejercicio anterior": N_("зачтён остаток прошлого года"),
     "A compensar": N_("IV квартал: оставить к зачёту"), "A devolver": N_("IV квартал: вернуть"),

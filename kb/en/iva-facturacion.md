@@ -126,14 +126,15 @@ If the last day is a non-working day (weekend or public holiday), the deadline m
 
 | Content | Casillas |
 |---|---|
-| Ordinary regime by rate (0/4/10/21 %) base/cuota | 01–06, 700–703, 667–670 (21 %: pair 05/06 `[INFERENCE: check against the form]`) |
-| Adquisiciones intracomunitarias de servicios (intra-Community acquisitions of services) base/cuota by rate | 545–548, 551–552, 720–723, 687–690 |
-| Adquisiciones intracomunitarias de bienes (intra-Community acquisitions of goods) | 21–26, 716–719, 683–686 |
+| Ordinary regime by rate base/cuota | 0 %: 700/701; 2 %: 667/668; 4 %: 01/02; 5 %: 702/703; 7,5 %: 669/670; 10 %: 03/04; 21 %: 05/06 |
+| Adquisiciones intracomunitarias de servicios (intra-Community acquisitions of services) base/cuota by rate | 4 %: 545/546; 10 %: 547/548; 21 %: 551/552 (0, 2, 5 and 7,5 %: 720–723, 687–690) |
+| Adquisiciones intracomunitarias de bienes (intra-Community acquisitions of goods) base/cuota by rate | 4 %: 21/22; 10 %: 23/24; 21 %: 25/26 (0, 2, 5 and 7,5 %: 716–719, 683–686) |
 | IVA devengado en otros supuestos de inversión del sujeto pasivo (supplier outside the EU) | 27 / 28 |
 | Modificación de bases y cuotas | 29 / 30 |
 | Total bases y cuotas IVA / Total cuotas de IVA y recargo de equivalencia | 33 / 34; 47 |
-| IVA deducible en operaciones interiores. Bienes y servicios corrientes (sum) | 48 / 49 (by rate 695–698, 190–191 …) |
-| IVA deducible en operaciones interiores. Bienes de inversión | 50 / 51 |
+| IVA deducible en operaciones interiores. Bienes y servicios corrientes | by rate 4 %: 190/191; 10 %: 603/604; 21 %: 605/606; total 48 / 49 |
+| IVA deducible en operaciones interiores. Bienes de inversión | by rate 4 %: 196/197; 10 %: 611/612; 21 %: 613/614; total 50 / 51 |
+| IVA deducible en adquisiciones intracomunitarias. Bienes de inversión / Servicios | by rate 4 %: 220/221 / 587/588; 10 %: 631/632 / 635/636; 21 %: 633/634 / 637/638; total 58 / 59 and 597 / 598 |
 | IVA deducible en importaciones. Bienes corrientes / Bienes de inversión | 52 / 53; 54 / 55 |
 | Suma de resultados / Compensación de cuotas del ejercicio anterior / Resultado de la liquidación | 84, 85, 86 |
 | Total resultados a ingresar en las autoliquidaciones de IVA del ejercicio / A compensar / A devolver | 95, 97, 98 |
@@ -327,7 +328,7 @@ for each one: annual amount (including IVA; for not subject transactions, the ba
 
 ### 8. Modelo 390
 
-Aggregation of the 303 returns of the year: output IVA by rate → 01–06; AIS → group 545–552; ISP non-EU → 27/28; deductible → 48/49, 50/51, 52/53, 54/55 + intra-Community block; 84 = Suma de resultados; 85 = casilla 110 of the first 303 of the year (balance of the previous year); 95 = Σ of the positive c71; 97/98 = result of the last 303 (offset/refund); volume: 99 = Σc07(+04,01), 103 = Σc59, 104 = Σc60, 110 = Σc120, 126 = Σc123, 108 = sum. In addition, statistical data: IAE epígrafe (heading), key A05 («Resto de actividades profesionales», "Other professional activities") or A03 («Resto de actividades empresariales no incluidas en los dos subtipos anteriores», "Other business activities not included in the two previous subtypes"), indicator «Operaciones económicas con terceras personas» ("Economic transactions with third parties") (if there is a 347).
+Aggregation of the 303 returns of the year: output IVA by rate → 01/02 (4 %), 03/04 (10 %), 05/06 (21 %); intra-Community acquisitions by rate: current services (c36) → 545–552, capital goods (c38) → 21–26; ISP non-EU → 27/28; 33/34 and 47 = output totals; deductible by rate with the totals 48/49 (c28/29), 50/51 (c30/31), 58/59 (c38/39) and 597/598 (c36/37); 64 = Σc45; 65 = 84 = Suma de resultados = Σc46; 85 = casilla 110 of the first 303 of the year (balance of the previous year); 86 = 84 − 85; 95 = Σ of the positive c71; 97/98 = result of the last 303 (offset/refund); volume: 99 = Σc07(+04,01), 103 = Σc59, 104 = Σc60, 110 = Σc120, 126 = Σc123, 108 = sum. In addition, statistical data: IAE epígrafe (heading), key A05 («Resto de actividades profesionales», "Other professional activities") or A03 («Resto de actividades empresariales no incluidas en los dos subtipos anteriores», "Other business activities not included in the two previous subtypes"), indicator «Operaciones económicas con terceras personas» ("Economic transactions with third parties") (if there is a 347).
 
 ### 9. Verifactu: records when an invoice is issued
 
@@ -432,7 +433,7 @@ If there were no sales C and D: c27 = 63; c45 = 441; c46 = −378 → Q1 (1T) «
 6. **Negative information casillas 59/120** in rectificativas: how the form behaves has not been checked. Careful approach: limit them to zero and carry over the rest of the correction to the next quarter, with a note in the book.
 7. **Beckham + empresarial versus profesional**: the classification of the activity (IAE section 1 or 2) determines the 24 % or 0 % withholding. The Beckham/IRPF module decides this; here the engine only receives the flag. The status of «actividad emprendedora» ("entrepreneurial activity", ENISA) does not affect IVA.
 8. **Validation margin of ±10 €** between base×rate and the cuota in Verifactu/SII: figure from memory of the AEAT validations document; the 2026 version has not been checked again: **UNVERIFIED**. The engine calculates exactly in any case; the margin is only needed when importing third-party invoices.
-9. **390 casillas by rate** (05/06 for 21 %): derived from the range «01–06» in the instructions, not compared with the form: `[INFERENCE]`. The other 390 numbers (27/28, 545–552, 48–55, 84–86, 95–98, 99–110, 125–126, 108) come from the Instrucciones 390-2025.
+9. **390 casillas by rate**: checked against the diseño de registro DR390 2025 (https://sede.agenciatributaria.gob.es/static_files/Sede/Disenyo_registro/DR_300_399/archivos_25/dr390e2025.xlsx) and the 390 form in the Manual práctico IVA 2025. Engine limit: it treats every current intra-Community acquisition (c36) as services and capital goods (c38, art. 108 LIVA) as goods; it does not separate intra-Community acquisitions of current goods (casillas 21–26 and 56/57).
 10. **IVA rates for 2027**: no changes have been published; RETA/IRPF are outside the scope of this file.
 11. **Code XI / UK after Brexit for services**: the UK is a full «third country» (país tercero) for services (casilla 120); XI only counts as EU for goods. No additional confirmation has been searched for.
 12. **REDEME**: the conditions (no debts, SII) and the option deadline (November) come from general knowledge of art. 30 RIVA; they have not been re-read: **UNVERIFIED**.

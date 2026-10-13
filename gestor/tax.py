@@ -28,9 +28,22 @@ REGION_SCALES = {
                ("53407.20", "21.5", "7810.16"), (70000, "22.5", "11377.62"), (90000, "25", "15877.62"),
                (175000, "26", "37127.62")],
     },
+    "madrid": {  # art. 1 DLeg 1/2010 (Ley 13/2023), from 2023
+        2025: [(0, "8.5", 0), ("13362.22", "10.7", "1135.79"), ("19004.63", "12.8", "1739.53"),
+               ("35425.68", "17.4", "3841.42"), ("57320.40", "20.5", "7651.10")],
+    },
+    "cataluna": {  # art. 611-1 DLeg 1/2024 (Decreto-ley 5/2025), from 2025
+        2025: [(0, "9.5"), (12500, "12.5"), (22000, "16"), (33000, "19"), (53000, "21.5"), (90000, "23.5"),
+               (120000, "24.5"), (175000, "25.5")],
+    },
+    "andalucia": {  # art. 23 Ley 5/2021 (Decreto-ley 7/2022), from 2022
+        2025: [(0, "9.5"), (13000, "12"), (21100, "15"), (35200, "18.5"), (60000, "22.5")],
+    },
 }
-REGION_SCALES["asturias"][2026] = REGION_SCALES["asturias"][2025]
-MINIMO_PERSONAL = {"state": 5550, "valencia": 6105, "asturias": 6105}  # 2025/2026, under 65
+for _r in ("asturias", "madrid", "cataluna", "andalucia"):  # unchanged in 2026
+    REGION_SCALES[_r][2026] = REGION_SCALES[_r][2025]
+MINIMO_PERSONAL = {"state": 5550, "valencia": 6105, "asturias": 6105, "madrid": D("5956.65"), "cataluna": 5550,
+                   "andalucia": 5790}  # 2025/2026, under 65
 
 BECKHAM_GENERAL = [(0, "24"), (600000, "47")]
 GDJ_RATE, GDJ_CAP = D("0.05"), 2000_00  # gastos de difícil justificación, 2025/2026
@@ -237,6 +250,7 @@ def form_303(con, year: int, q: int, carry_in: int, refund_4t=True) -> tuple[dic
             if key:
                 c[key[0]] += sl["base"]
                 c[key[1]] += sl["vat"]
+    by_rate = {}  # (303 base casilla, IVA %) -> [base, cuota, cuota deducible]: the 390 splits these by rate
     for e in (x for x in purchases(con, year) if quarter_of(x["date"]) == q):
         ded = expense_vat_deductible(e)
         inv = is_vat_investment(e)
@@ -244,16 +258,21 @@ def form_303(con, year: int, q: int, carry_in: int, refund_4t=True) -> tuple[dic
         if e["vat_kind"] == "reverse_eu":
             c["10"] += base
             c["11"] += e["vat_cents"]
-            c["38" if inv else "36"] += base
-            c["39" if inv else "37"] += ded
+            k = "38" if inv else "36"
         elif e["vat_kind"] == "reverse_non_eu":
             c["12"] += base
             c["13"] += e["vat_cents"]
-            c["30" if inv else "28"] += base
-            c["31" if inv else "29"] += ded
+            k = "30" if inv else "28"
         elif e["vat_kind"] == "domestic" and ded:
-            c["30" if inv else "28"] += base
-            c["31" if inv else "29"] += ded
+            k = "30" if inv else "28"
+        else:
+            continue
+        c[k] += base
+        c[str(int(k) + 1)] += ded  # the cuota casilla follows its base: 28/29, 30/31, 36/37, 38/39
+        r = by_rate.setdefault((k, e["vat_rate"]), [0, 0, 0])
+        r[0] += base
+        r[1] += e["vat_cents"]
+        r[2] += ded
     c["27"] = c["03"] + c["06"] + c["09"] + c["11"] + c["13"] + c["15"]
     c["45"] = c["29"] + c["31"] + c["37"] + c["39"]
     c["46"] = c["27"] - c["45"]
@@ -307,7 +326,7 @@ def form_303(con, year: int, q: int, carry_in: int, refund_4t=True) -> tuple[dic
               ("87", "Cuotas a compensar de periodos previos pendientes para periodos posteriores"), ("71", "Resultado")]
     boxes = [(k, l, c[k]) for k, l in labels if c[k] or k in ("27", "45", "46", "71")]
     return {"modelo": "303", "title": f"IVA {q}T", "boxes": boxes, "result": c["71"], "notes": notes, "c": c,
-            "carry_out": carry_out}, carry_out
+            "by_rate": by_rate, "carry_out": carry_out}, carry_out
 
 
 def iva_year(con, s, year):
@@ -380,36 +399,71 @@ def form_347(con, year):
                 _("Нужна разбивка по кварталам и NIF каждого контрагента — переносится из книг.")]}
 
 
+# Modelo 390 casillas by IVA rate: AEAT diseño de registro DR390 2025 and the form in the IVA manual [[aeat-390-dr-2025]].
+F390_SALES = ((4, "01", "02", "01", "03"), (10, "03", "04", "04", "06"), (21, "05", "06", "07", "09"))  # rate, 390 base/cuota, 303 base/cuota
+F390_DEV = {  # 303 base casilla of an intra-EU purchase -> 390 IVA devengado: label, {rate: (base, cuota)}
+    "38": ("Adquisiciones intracomunitarias de bienes", {4: ("21", "22"), 10: ("23", "24"), 21: ("25", "26")}),  # bien de inversión = goods
+    "36": ("Adquisiciones intracomunitarias de servicios", {4: ("545", "546"), 10: ("547", "548"), 21: ("551", "552")}),
+}
+F390_DED = {  # 303 base casilla -> 390 IVA deducible: label, {rate: (base, cuota)}, total label, total (base, cuota)
+    "28": ("IVA deducible en operaciones interiores de bienes y servicios corrientes", {4: ("190", "191"), 10: ("603", "604"), 21: ("605", "606")},
+           "Total bases imponibles y cuotas deducibles en operaciones interiores de bienes y servicios corrientes", ("48", "49")),
+    "30": ("IVA deducible en operaciones interiores de bienes de inversión", {4: ("196", "197"), 10: ("611", "612"), 21: ("613", "614")},
+           "Total bases imponibles y cuotas deducibles en operaciones interiores de bienes de inversión", ("50", "51")),
+    "38": ("IVA deducible en adquisiciones intracomunitarias de bienes de inversión", {4: ("220", "221"), 10: ("631", "632"), 21: ("633", "634")},
+           "Total bases imponibles y cuotas deducibles en adquisiciones intracomunitarias de bienes de inversión", ("58", "59")),
+    "36": ("IVA deducible en adquisiciones intracomunitarias de servicios", {4: ("587", "588"), 10: ("635", "636"), 21: ("637", "638")},
+           "Total bases imponibles y cuotas deducibles en adquisiciones intracomunitarias de servicios", ("597", "598")),
+}
+
+
 def form_390(con, year, iva_forms):
-    tot = {}
+    tot, by_rate = {}, {}
     for f in iva_forms:
         for k, v in f["c"].items():
             tot[k] = tot.get(k, 0) + v
+        for k, v in f["by_rate"].items():
+            by_rate[k] = [a + b for a, b in zip(by_rate.get(k, (0, 0, 0)), v)]
     first, last = iva_forms[0]["c"], iva_forms[-1]
     pos = sum(max(f["result"], 0) for f in iva_forms)
     applied_prev = min(first["110"], sum(f["c"]["78"] for f in iva_forms))
     neg = max(-last["result"], 0)
     refunded = neg and not last["carry_out"]
     domestic = tot["07"] + tot["04"] + tot["01"] + tot["14"]
-    boxes = [("01–06", "Régimen ordinario 21 %: Base imponible", tot["07"]), ("01–06", "Régimen ordinario 21 %: Cuota devengada", tot["09"]),
-             ("29", "Modificación de bases y cuotas: Base imponible", tot["14"]), ("30", "Modificación de bases y cuotas: Cuota devengada", tot["15"]),
-             ("545–552", "Adquisiciones intracomunitarias de servicios: Base imponible", tot["10"]),
-             ("545–552", "Adquisiciones intracomunitarias de servicios: Cuota devengada", tot["11"]),
-             ("27", _("IVA devengado en otros supuestos de inversión del sujeto pasivo: Base imponible (вне ЕС)"), tot["12"]),
-             ("28", "IVA devengado en otros supuestos de inversión del sujeto pasivo: Cuota devengada", tot["13"]),
-             ("49", "Total bases imponibles y cuotas deducibles en operaciones interiores de bienes y servicios corrientes: Cuota deducible", tot["29"]),
-             ("51", "Total bases imponibles y cuotas deducibles en operaciones interiores de bienes de inversión: Cuota deducible", tot["31"]),
-             ("", "IVA deducible en adquisiciones intracomunitarias de bienes y servicios: Cuota deducible", tot["37"] + tot["39"]),
-             ("84", "Suma de resultados", tot["46"]), ("95", "Total resultados a ingresar en las autoliquidaciones de IVA del ejercicio", pos),
-             ("85", "Compensación de cuotas del ejercicio anterior", applied_prev),
-             ("97", "A compensar", 0 if refunded else neg), ("98", "A devolver", neg if refunded else 0),
-             ("662", "Cuotas pendientes de compensación generadas en el ejercicio y distintas de las incluidas en la casilla 97", last["c"]["87"]),
-             ("99", "Operaciones en régimen general", domestic),
-             ("103", "Entregas intracomunitarias de bienes y servicios", tot["59"]),
-             ("110", "Operaciones no sujetas por reglas de localización (excepto las incluidas en la casilla 126)", tot["120"]),
-             ("108", "Total volumen de operaciones (Art. 121 Ley IVA)", domestic + tot["59"] + tot["120"])]
-    return {"modelo": "390", "title": "Resumen anual IVA", "boxes": boxes, "result": tot["46"], "result_label": _("IVA за год"),
-            "notes": [_("Номера casillas по ставкам (01–06, 545–552) сверить с формой 390. [[aeat-390-instr]]")]}
+    boxes = []
+    for r, b, cu, b303, cu303 in F390_SALES:
+        boxes += [(b, f"Régimen ordinario {r} %: Base imponible", tot[b303]), (cu, f"Régimen ordinario {r} %: Cuota devengada", tot[cu303])]
+    for k, (label, by) in F390_DEV.items():
+        for r, (b, cu) in by.items():
+            v = by_rate.get((k, r), (0, 0, 0))
+            boxes += [(b, f"{label} {r} %: Base imponible", v[0]), (cu, f"{label} {r} %: Cuota devengada", v[1])]
+    boxes += [("27", _("IVA devengado en otros supuestos de inversión del sujeto pasivo: Base imponible (вне ЕС)"), tot["12"]),
+              ("28", "IVA devengado en otros supuestos de inversión del sujeto pasivo: Cuota devengada", tot["13"]),
+              ("29", "Modificación de bases y cuotas: Base imponible", tot["14"]), ("30", "Modificación de bases y cuotas: Cuota devengada", tot["15"]),
+              ("33", "Total bases y cuotas IVA: Base imponible", tot["01"] + tot["04"] + tot["07"] + tot["10"] + tot["12"] + tot["14"]),
+              ("34", "Total bases y cuotas IVA: Cuota devengada", tot["27"]),
+              ("47", "Total cuotas IVA y recargo de equivalencia", tot["27"])]
+    for k, (label, by, total, (tb, tc)) in F390_DED.items():
+        for r, (b, cu) in by.items():
+            v = by_rate.get((k, r), (0, 0, 0))
+            boxes += [(b, f"{label} {r} %: Base imponible", v[0]), (cu, f"{label} {r} %: Cuota deducible", v[2])]
+        boxes += [(tb, f"{total}: Base imponible", tot[k]), (tc, f"{total}: Cuota deducible", tot[str(int(k) + 1)])]
+    boxes += [("64", "Suma de deducciones", tot["45"]), ("65", "Resultado régimen general", tot["46"]),
+              ("84", "Suma de resultados", tot["46"]), ("85", "Compensación de cuotas del ejercicio anterior", applied_prev),
+              ("86", "Resultado de la liquidación", tot["46"] - applied_prev),
+              ("95", "Total resultados a ingresar en las autoliquidaciones de IVA del ejercicio", pos),
+              ("97", "A compensar", 0 if refunded else neg), ("98", "A devolver", neg if refunded else 0),
+              ("662", "Cuotas pendientes de compensación generadas en el ejercicio y distintas de las incluidas en la casilla 97", last["c"]["87"]),
+              ("99", "Operaciones en régimen general", domestic),
+              ("103", "Entregas intracomunitarias de bienes y servicios", tot["59"]),
+              ("110", "Operaciones no sujetas por reglas de localización (excepto las incluidas en la casilla 126)", tot["120"]),
+              ("108", "Total volumen de operaciones (Art. 121 Ley IVA)", domestic + tot["59"] + tot["120"])]
+    notes = []
+    if any(r not in (4, 10, 21) and any(v) for (_k, r), v in by_rate.items()):
+        notes.append(_("Есть покупки по ставке IVA не 4, 10 или 21 %: в итоговые casillas они вошли, а строки по их ставке "
+                       "заполните в форме 390 сами. [[aeat-390-dr-2025]]"))
+    return {"modelo": "390", "title": "Resumen anual IVA", "result": tot["46"], "result_label": _("IVA за год"), "notes": notes,
+            "boxes": [b for b in boxes if b[2] or b[0] in ("34", "47", "64", "65", "84", "86", "108")]}
 
 
 # ---------- IRPF general (130 / 100) ----------
@@ -569,7 +623,7 @@ def beckham_annual(con, s, year) -> dict:
 def reta_tramo(year, r_monthly_cents: int):
     for name, hi, lo, top in RETA_TRAMOS:
         if hi is None or D(r_monthly_cents) / 100 <= D(str(hi)):
-            mx = top or RETA_MAX_BASE.get(year) or RETA_MAX_BASE[max(RETA_MAX_BASE)]
+            mx = top or _known(RETA_MAX_BASE, year)[0]
             return name, cents(D(lo) * 100), cents(D(mx) * 100)
 
 
@@ -610,13 +664,16 @@ def reta_estimate(con, s, year, net_annual: int, paid_reta: int) -> dict:
     if societario:
         floor = cents(D(_known(RETA_SOCIETARIO_MIN, year)[0]) * 100)
         lo, hi = max(lo, floor), max(hi, floor)
-    rate = _known(RETA_RATE, year)[0]
+    rate, exact = _known(RETA_RATE, year)
     cuota = pct(lo, rate)
     chosen = s.get("reta_base") or 0
     notes = [_("Доход для RETA: {amount} за год (чистый доход + RETA), минус {pct} % → {monthly} в месяц "
                "(дней в RETA: {days}, из них регуляризуемых: {reg_days}) → tramo {tramo}.")
              .format(amount=fmt(a), pct='3' if societario else '7', monthly=fmt(cents(r)), days=total_d, reg_days=reg_d, tramo=name),
              _("Базу меняют в Import@ss до 6 раз в год (с 1 марта, мая, июля, сентября, ноября, января).")]
+    if not exact:
+        notes.append(_("Таблиц RETA за {year} в gestor нет (не опубликованы или не внесены) — расчёт по таблицам {used} года: "
+                       "tramos, базы, ставка.").format(year=year, used=max((y for y in RETA_RATE if y <= year), default=min(RETA_RATE))))
     delta = 0
     if total_d > reg_d:
         notes.append(_("Tarifa plana: {days} дн. фиксированная cuota 80 € + MEI, за них регуляризации нет. "
@@ -769,8 +826,9 @@ FORM_SOURCES = {
     "130": ["rirpf-109", "rirpf-110", "lirpf-99"],
     "349": ["riva-79", "riva-81"],
     "347": ["rgat-33"],
-    "390": ["riva-71", "aeat-390-instr"],
-    "100": ["lirpf-63", "lirpf-57", "lirpf-72", "cv-escala", "ast-escala", "aeat-manual-renta-gastos"],
+    "390": ["riva-71", "aeat-390-instr", "aeat-390-dr-2025", "liva-108"],
+    "100": ["lirpf-63", "lirpf-57", "lirpf-72", "cv-escala", "ast-escala", "mad-escala", "cat-escala", "and-escala",
+            "aeat-manual-renta-gastos"],
     "151": ["lirpf-93", "rirpf-114", "trlirnr-24", "trlirnr-25", "aeat-novedades-rd1008-2023", "orden-hfp-1338-2023",
             "aeat-manual-beckham"],
     "RETA": ["lgss-308", "orden-pjc-178-2025", "orden-pjc-297-2026", "rd2064-1995-46", "rd2064-1995-45", "tgss-importass-base"],
@@ -791,7 +849,8 @@ BOX_SOURCES = {
     ("130", "04"): ["rirpf-110"], ("130", "06"): ["lirpf-101"], ("130", "13"): ["rirpf-110", "aeat-130-instr"],
     ("130", "19"): ["rirpf-110"],
     ("100", "0186"): ["lirpf-30-reta"], ("100", "0208"): ["amort-simplificada"], ("100", "0222"): ["rirpf-30"],
-    ("100", "0234"): ["lirpf-32"], ("100", "0545"): ["lirpf-63", "lirpf-57"], ("100", "0546"): ["cv-escala", "ast-escala"],
+    ("100", "0234"): ["lirpf-32"], ("100", "0545"): ["lirpf-63", "lirpf-57"],
+    ("100", "0546"): ["cv-escala", "ast-escala", "mad-escala", "cat-escala", "and-escala"],
     ("100", "0599"): ["lirpf-101"],
     ("151", "B.03/B.04"): ["trlirnr-24", "dgt-v1112-25"], ("151", "G.19"): ["lirpf-93", "trlirnr-25"], ("151", "G.33"): ["rirpf-114"],
     ("RETA", "tramo"): ["orden-pjc-178-2025", "orden-pjc-297-2026", "lgss-308"],
@@ -864,7 +923,8 @@ def forms(con, s, year) -> list:
     return groups
 
 
-REGION_SOURCES = {"valencia": "cv-escala", "asturias": "ast-escala"}
+REGION_SOURCES = {"valencia": "cv-escala", "asturias": "ast-escala", "madrid": "mad-escala", "cataluna": "cat-escala",
+                  "andalucia": "and-escala"}
 
 
 def applicable(ids, s, year) -> list:
@@ -875,14 +935,29 @@ def applicable(ids, s, year) -> list:
 
 # ---------- calendar ----------
 
+# Fiestas nacionales of art. 45 RD 2001/1983 (6 Jan is substitutable, but no region substituted it in the
+# 2023–2026 BOE calendars). Regional/local holidays (art. 30.6 Ley 39/2015) and Sunday→Monday moves are not modelled.
+NATIONAL_HOLIDAYS = ((1, 1), (1, 6), (5, 1), (8, 15), (10, 12), (11, 1), (12, 6), (12, 8), (12, 25))
+
+
+def good_friday(year: int) -> date:
+    """Viernes Santo: two days before Gregorian Easter Sunday (anonymous Gregorian algorithm)."""
+    a, b, c = year % 19, year // 100, year % 100
+    h = (19 * a + b - b // 4 - (b - (b + 8) // 25 + 1) // 3 + 15) % 30
+    wd = (32 + 2 * (b % 4) + 2 * (c // 4) - h - c % 4) % 7
+    month, day = divmod(h + wd - 7 * ((a + 11 * h + 22 * wd) // 451) + 114, 31)
+    return date(year, month, day + 1) - timedelta(days=2)
+
+
 def business_day(d: date) -> date:
-    while d.weekday() >= 5:
+    """Art. 30.2 and 30.5 Ley 39/2015: a deadline on a Saturday, Sunday or national holiday moves to the next working day."""
+    while d.weekday() >= 5 or (d.month, d.day) in NATIONAL_HOLIDAYS or d == good_friday(d.year):
         d += timedelta(days=1)
     return d
 
 
 def deadline(modelo: str, year: int, q: int) -> str:
-    """Filing deadline for the tax period. Weekend → next Monday (national holidays not modelled)."""
+    """Filing deadline for the tax period, moved past weekends and national holidays (business_day)."""
     if modelo in ("303", "130", "349", "111", "115"):
         if q == 4:
             d = date(year + 1, 1, 20 if modelo in ("111", "115") else 30)
@@ -1174,6 +1249,14 @@ def warnings(con, s, year) -> list:
         if left <= 120:
             w.append(_("ВНЖ истекает {date} (через {days} дн.). Готовьте продление: справки AEAT/TGSS "
                        "«al corriente», vida laboral, декларации. [[rd1155-2024-86]]").format(date=s['permit_until'], days=left))
-    if s["kind"] == "autonomo" and today < date(2027, 7, 1):
-        w.append(_("Verifactu для autónomos — с 01.07.2027 (объявлен перенос на 10.2028). Этот сервис пока не формирует записи Verifactu. [[verifactu-rdl15-2025,verifactu-nota-2026]]"))
+    # DF 4.ª RRSIF (RDL 15/2025): IS taxpayers (art. 3.1.a) before 01.01.2027, the rest before 01.07.2027
+    start, who = (date(2027, 1, 1), _("SL (плательщиков Impuesto sobre Sociedades)")) if s["kind"] == "sl" \
+        else (date(2027, 7, 1), "autónomos")
+    msg = _("Verifactu для {who} — с {date}. Hacienda объявила перенос на 10.2028, но это ещё не норма. "
+            "Этот сервис пока не формирует записи Verifactu. [[verifactu-rd1007-2023,verifactu-rdl15-2025,verifactu-nota-2026]]") \
+        if today < start else \
+        _("Verifactu для {who} обязателен с {date}. Объявленный Hacienda перенос на 10.2028 — проверьте, вышел ли он в BOE; "
+          "если нет, срок уже наступил. Этот сервис не формирует записи Verifactu. "
+          "[[verifactu-rd1007-2023,verifactu-rdl15-2025,verifactu-nota-2026]]")
+    w.append(msg.format(who=who, date=f"{start:%d.%m.%Y}"))
     return w

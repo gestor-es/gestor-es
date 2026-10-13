@@ -5,7 +5,7 @@ English | [Русский](README.ru.md) | [Español](README.es.md)
 A local gestor for autónomos and SLs in Spain: invoices, expenses, IVA/IRPF/Beckham/SL, RETA and a filing calendar. One user, runs locally, no dependencies (Python 3.12+, stdlib). It computes your returns and explains every amount with the law; you file them yourself.
 
 > **Status: alpha.** gestor calculates and explains; it is not tax advice and it files nothing. Check every figure in the Sede before you sign.
-> Covered: autónomo (general IRPF or Beckham) and a one-person SL with service income. Regional IRPF scales: Valencia and Asturias only; other regions use the state scale as an approximation, and the screen says so. The 100, 151 and 200 are estimates. The Sede import files are not yet validated on the real Sede. Not covered: bank import, full SL bookkeeping (journal, annual accounts), Verifactu.
+> Covered: autónomo (general IRPF or Beckham) and a one-person SL with service income. Regional IRPF scales: Comunitat Valenciana, Asturias, Madrid, Cataluña and Andalucía; other regions use the state scale as an approximation, and the screen says so. Deadlines move over weekends and national holidays; regional and local holidays are not modelled. The 100, 151 and 200 are estimates. The Sede import files are not yet validated on the real Sede. Not covered: bank import, full SL bookkeeping (journal, annual accounts), Verifactu.
 
 Everything is in English, Russian and Spanish: the interface, the legal source cards, the knowledge base and the docs. Switch the interface language in the profile menu or in "Questionnaire". The language is stored per profile. The MCP server answers in the same language.
 

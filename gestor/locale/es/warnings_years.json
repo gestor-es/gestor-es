@@ -1,0 +1,6 @@
+{
+ "SL (плательщиков Impuesto sobre Sociedades)": "SL (contribuyentes del Impuesto sobre Sociedades)",
+ "Verifactu для {who} — с {date}. Hacienda объявила перенос на 10.2028, но это ещё не норма. Этот сервис пока не формирует записи Verifactu. [[verifactu-rd1007-2023,verifactu-rdl15-2025,verifactu-nota-2026]]": "Verifactu para {who}: desde el {date}. Hacienda ha anunciado un aplazamiento a 10.2028, pero aún no es norma. Este servicio aún no genera registros Verifactu. [[verifactu-rd1007-2023,verifactu-rdl15-2025,verifactu-nota-2026]]",
+ "Verifactu для {who} обязателен с {date}. Объявленный Hacienda перенос на 10.2028 — проверьте, вышел ли он в BOE; если нет, срок уже наступил. Этот сервис не формирует записи Verifactu. [[verifactu-rd1007-2023,verifactu-rdl15-2025,verifactu-nota-2026]]": "Verifactu para {who}: obligatorio desde el {date}. Hacienda anunció un aplazamiento a 10.2028: compruebe si se ha publicado en el BOE; si no, el plazo ya ha vencido. Este servicio no genera registros Verifactu. [[verifactu-rd1007-2023,verifactu-rdl15-2025,verifactu-nota-2026]]",
+ "Таблиц RETA за {year} в gestor нет (не опубликованы или не внесены) — расчёт по таблицам {used} года: tramos, базы, ставка.": "gestor no tiene las tablas del RETA de {year} (aún no publicadas o no incorporadas): cálculo con las tablas de {used}: tramos, bases y tipo de cotización."
+}

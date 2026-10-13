@@ -1,0 +1,6 @@
+{
+ "SL (плательщиков Impuesto sobre Sociedades)": "SLs (Impuesto sobre Sociedades taxpayers)",
+ "Verifactu для {who} — с {date}. Hacienda объявила перенос на 10.2028, но это ещё не норма. Этот сервис пока не формирует записи Verifactu. [[verifactu-rd1007-2023,verifactu-rdl15-2025,verifactu-nota-2026]]": "Verifactu for {who} starts on {date}. Hacienda has announced a delay to 10.2028, but it is not law yet. This service does not create Verifactu records yet. [[verifactu-rd1007-2023,verifactu-rdl15-2025,verifactu-nota-2026]]",
+ "Verifactu для {who} обязателен с {date}. Объявленный Hacienda перенос на 10.2028 — проверьте, вышел ли он в BOE; если нет, срок уже наступил. Этот сервис не формирует записи Verifactu. [[verifactu-rd1007-2023,verifactu-rdl15-2025,verifactu-nota-2026]]": "Verifactu for {who} has been mandatory since {date}. Hacienda announced a delay to 10.2028: check whether it has been published in the BOE; if not, the deadline has already passed. This service does not create Verifactu records. [[verifactu-rd1007-2023,verifactu-rdl15-2025,verifactu-nota-2026]]",
+ "Таблиц RETA за {year} в gestor нет (не опубликованы или не внесены) — расчёт по таблицам {used} года: tramos, базы, ставка.": "gestor has no RETA tables for {year} (not published yet or not added) — calculated with the {used} tables: tramos, bases, rate."
+}

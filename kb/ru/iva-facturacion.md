@@ -126,14 +126,15 @@
 
 | Содержание | Casillas |
 |---|---|
-| Régimen ordinario по ставкам (0/4/10/21 %), база/cuota | 01–06, 700–703, 667–670 (21 %: пара 05/06 `[INFERENCE: проверить по форме]`) |
-| Adquisiciones intracomunitarias de servicios, база/cuota по ставкам | 545–548, 551–552, 720–723, 687–690 |
-| Adquisiciones intracomunitarias de bienes | 21–26, 716–719, 683–686 |
+| Régimen ordinario по ставкам, база/cuota | 0 %: 700/701; 2 %: 667/668; 4 %: 01/02; 5 %: 702/703; 7,5 %: 669/670; 10 %: 03/04; 21 %: 05/06 |
+| Adquisiciones intracomunitarias de servicios, база/cuota по ставкам | 4 %: 545/546; 10 %: 547/548; 21 %: 551/552 (0, 2, 5 и 7,5 %: 720–723, 687–690) |
+| Adquisiciones intracomunitarias de bienes, база/cuota по ставкам | 4 %: 21/22; 10 %: 23/24; 21 %: 25/26 (0, 2, 5 и 7,5 %: 716–719, 683–686) |
 | IVA devengado en otros supuestos de inversión del sujeto pasivo (поставщик вне ЕС) | 27 / 28 |
 | Modificación de bases y cuotas | 29 / 30 |
 | Total bases y cuotas IVA / Total cuotas de IVA y recargo de equivalencia | 33 / 34; 47 |
-| IVA deducible en operaciones interiores. Bienes y servicios corrientes (сумма) | 48 / 49 (по ставкам 695–698, 190–191 …) |
-| IVA deducible en operaciones interiores. Bienes de inversión | 50 / 51 |
+| IVA deducible en operaciones interiores. Bienes y servicios corrientes | по ставкам 4 %: 190/191; 10 %: 603/604; 21 %: 605/606; итого 48 / 49 |
+| IVA deducible en operaciones interiores. Bienes de inversión | по ставкам 4 %: 196/197; 10 %: 611/612; 21 %: 613/614; итого 50 / 51 |
+| IVA deducible en adquisiciones intracomunitarias. Bienes de inversión / Servicios | по ставкам 4 %: 220/221 / 587/588; 10 %: 631/632 / 635/636; 21 %: 633/634 / 637/638; итого 58 / 59 и 597 / 598 |
 | IVA deducible en importaciones. Bienes corrientes / Bienes de inversión | 52 / 53; 54 / 55 |
 | Suma de resultados / Compensación de cuotas del ejercicio anterior / Resultado de la liquidación | 84, 85, 86 |
 | Total resultados a ingresar en las autoliquidaciones de IVA del ejercicio / A compensar / A devolver | 95, 97, 98 |
@@ -327,7 +328,7 @@ include: испанские поставщики без retención (> 3005.06), 
 
 ### 8. Modelo 390
 
-Агрегация 303 за год: начисленный IVA по ставкам → 01–06; AIS → группа 545–552; ISP non-EU → 27/28; к вычету → 48/49, 50/51, 52/53, 54/55 + внутриевропейский блок; 84 = Suma de resultados; 85 = casilla 110 первой 303 года (остаток предыдущего года); 95 = Σ положительных c71; 97/98 = результат последней 303 (compensar/devolver); volumen: 99 = Σc07(+04,01), 103 = Σc59, 104 = Σc60, 110 = Σc120, 126 = Σc123, 108 = сумма. Кроме того, статистические данные: эпиграф IAE, clave A05 («Resto de actividades profesionales») или A03 («Resto de actividades empresariales no incluidas en los dos subtipos anteriores»), индикатор «Operaciones económicas con terceras personas» (если есть 347).
+Агрегация 303 за год: начисленный IVA по ставкам → 01/02 (4 %), 03/04 (10 %), 05/06 (21 %); внутриевропейские приобретения по ставкам: текущие услуги (c36) → 545–552, основные средства (c38) → 21–26; ISP non-EU → 27/28; 33/34 и 47 = итоги начисленного; к вычету по ставкам с итогами 48/49 (c28/29), 50/51 (c30/31), 58/59 (c38/39) и 597/598 (c36/37); 64 = Σc45; 65 = 84 = Suma de resultados = Σc46; 85 = casilla 110 первой 303 года (остаток предыдущего года); 86 = 84 − 85; 95 = Σ положительных c71; 97/98 = результат последней 303 (compensar/devolver); volumen: 99 = Σc07(+04,01), 103 = Σc59, 104 = Σc60, 110 = Σc120, 126 = Σc123, 108 = сумма. Кроме того, статистические данные: эпиграф IAE, clave A05 («Resto de actividades profesionales») или A03 («Resto de actividades empresariales no incluidas en los dos subtipos anteriores»), индикатор «Operaciones económicas con terceras personas» (если есть 347).
 
 ### 9. Verifactu: записи при выставлении фактуры
 
@@ -432,7 +433,7 @@ rectificativa: новый RegistroAlta TipoFactura=R1..R5, TipoRectificativa=S (
 6. **Отрицательные информационные casillas 59/120** в rectificativas: поведение формы не проверено. Осторожно: ограничивать их нулём и переносить остаток исправления на следующий квартал, с примечанием в libro.
 7. **Beckham + предпринимательская или профессиональная деятельность**: квалификация деятельности (IAE раздел 1ª или 2ª) определяет retención 24 % или 0 %. Это решает модуль Beckham/IRPF; здесь движок только получает индикатор. Статус «предпринимательской деятельности (actividad emprendedora)» (ENISA) на IVA не влияет.
 8. **Допуск валидации ±10 €** между base×tipo и cuota в Verifactu/SII: данные по памяти из документа валидаций AEAT; версия 2026 года повторно не проверена: **UNVERIFIED**. Движок в любом случае считает точно; допуск нужен только при импорте сторонних фактур.
-9. **Casillas 390 по ставкам** (05/06 для 21 %): выведены из диапазона «01–06» в инструкциях, по форме не сверены: `[INFERENCE]`. Остальные номера 390 (27/28, 545–552, 48–55, 84–86, 95–98, 99–110, 125–126, 108) взяты из Instrucciones 390-2025.
+9. **Casillas 390 по ставкам**: сверены с diseño de registro DR390 2025 (https://sede.agenciatributaria.gob.es/static_files/Sede/Disenyo_registro/DR_300_399/archivos_25/dr390e2025.xlsx) и с формой 390 из Manual práctico IVA 2025. Ограничение движка: все текущие внутриевропейские приобретения (c36) он считает услугами, а основные средства (c38, art. 108 LIVA) — товарами; внутриевропейские приобретения текущих товаров (casillas 21–26 и 56/57) не выделяются.
 10. **Ставки IVA на 2027 год**: изменения не опубликованы; RETA/IRPF вне этого файла.
 11. **Код XI / UK после Brexit для услуг**: UK — полноценная «третья страна» для услуг (casilla 120); XI считается ЕС только для товаров. Дополнительное подтверждение не искали.
 12. **REDEME**: условия (отсутствие долгов, SII) и срок выбора (ноябрь) взяты из общих знаний art. 30 RIVA; повторно не перечитаны: **UNVERIFIED**.

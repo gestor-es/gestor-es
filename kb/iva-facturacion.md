@@ -124,14 +124,15 @@ Si el último día es inhábil (fin de semana o festivo), el plazo pasa al sigui
 
 | Contenido | Casillas |
 |---|---|
-| Régimen ordinario por tipos (0/4/10/21 %) base/cuota | 01–06, 700–703, 667–670 (21 %: par 05/06 `[INFERENCE: comprobar en el formulario]`) |
-| Adquisiciones intracomunitarias de servicios base/cuota por tipos | 545–548, 551–552, 720–723, 687–690 |
-| Adquisiciones intracomunitarias de bienes | 21–26, 716–719, 683–686 |
+| Régimen ordinario por tipos base/cuota | 0 %: 700/701; 2 %: 667/668; 4 %: 01/02; 5 %: 702/703; 7,5 %: 669/670; 10 %: 03/04; 21 %: 05/06 |
+| Adquisiciones intracomunitarias de servicios base/cuota por tipos | 4 %: 545/546; 10 %: 547/548; 21 %: 551/552 (0, 2, 5 y 7,5 %: 720–723, 687–690) |
+| Adquisiciones intracomunitarias de bienes base/cuota por tipos | 4 %: 21/22; 10 %: 23/24; 21 %: 25/26 (0, 2, 5 y 7,5 %: 716–719, 683–686) |
 | IVA devengado en otros supuestos de inversión del sujeto pasivo (proveedor fuera de la UE) | 27 / 28 |
 | Modificación de bases y cuotas | 29 / 30 |
 | Total bases y cuotas IVA / Total cuotas de IVA y recargo de equivalencia | 33 / 34; 47 |
-| IVA deducible en operaciones interiores. Bienes y servicios corrientes (suma) | 48 / 49 (por tipos 695–698, 190–191 …) |
-| IVA deducible en operaciones interiores. Bienes de inversión | 50 / 51 |
+| IVA deducible en operaciones interiores. Bienes y servicios corrientes | por tipos 4 %: 190/191; 10 %: 603/604; 21 %: 605/606; total 48 / 49 |
+| IVA deducible en operaciones interiores. Bienes de inversión | por tipos 4 %: 196/197; 10 %: 611/612; 21 %: 613/614; total 50 / 51 |
+| IVA deducible en adquisiciones intracomunitarias. Bienes de inversión / Servicios | por tipos 4 %: 220/221 / 587/588; 10 %: 631/632 / 635/636; 21 %: 633/634 / 637/638; total 58 / 59 y 597 / 598 |
 | IVA deducible en importaciones. Bienes corrientes / Bienes de inversión | 52 / 53; 54 / 55 |
 | Suma de resultados / Compensación de cuotas del ejercicio anterior / Resultado de la liquidación | 84, 85, 86 |
 | Total resultados a ingresar en las autoliquidaciones de IVA del ejercicio / A compensar / A devolver | 95, 97, 98 |
@@ -325,7 +326,7 @@ por cada uno: importe anual (con IVA; para no sujetas, la base) y desglose por t
 
 ### 8. Modelo 390
 
-Agregación de los 303 del año: devengado por tipos → 01–06; AIS → grupo 545–552; ISP non-EU → 27/28; deducible → 48/49, 50/51, 52/53, 54/55 + bloque intracomunitario; 84 = Suma de resultados; 85 = casilla 110 del primer 303 del año (saldo del año anterior); 95 = Σ de los c71 positivos; 97/98 = resultado del último 303 (compensar/devolver); volumen: 99 = Σc07(+04,01), 103 = Σc59, 104 = Σc60, 110 = Σc120, 126 = Σc123, 108 = suma. Además, datos estadísticos: IAE epígrafe, clave A05 («Resto de actividades profesionales») o A03 («Resto de actividades empresariales no incluidas en los dos subtipos anteriores»), indicador «Operaciones económicas con terceras personas» (si hay 347).
+Agregación de los 303 del año: devengado por tipos → 01/02 (4 %), 03/04 (10 %), 05/06 (21 %); adquisiciones intracomunitarias por tipos: servicios corrientes (c36) → 545–552, bienes de inversión (c38) → 21–26; ISP non-EU → 27/28; 33/34 y 47 = totales devengados; deducible por tipos con los totales 48/49 (c28/29), 50/51 (c30/31), 58/59 (c38/39) y 597/598 (c36/37); 64 = Σc45; 65 = 84 = Suma de resultados = Σc46; 85 = casilla 110 del primer 303 del año (saldo del año anterior); 86 = 84 − 85; 95 = Σ de los c71 positivos; 97/98 = resultado del último 303 (compensar/devolver); volumen: 99 = Σc07(+04,01), 103 = Σc59, 104 = Σc60, 110 = Σc120, 126 = Σc123, 108 = suma. Además, datos estadísticos: IAE epígrafe, clave A05 («Resto de actividades profesionales») o A03 («Resto de actividades empresariales no incluidas en los dos subtipos anteriores»), indicador «Operaciones económicas con terceras personas» (si hay 347).
 
 ### 9. Verifactu: registros al expedir una factura
 
@@ -430,7 +431,7 @@ Si no hubiera ventas C y D: c27 = 63; c45 = 441; c46 = −378 → 1T «a compens
 6. **Casillas informativas 59/120 negativas** en las rectificativas: no se ha comprobado cómo se comporta el formulario. Con cautela: limitarlas a cero y trasladar el resto de la corrección al trimestre siguiente, con una nota en el libro.
 7. **Beckham + empresarial frente a profesional**: la calificación de la actividad (IAE sección 1ª o 2ª) determina la retención del 24 % o del 0 %. Lo decide el módulo Beckham/IRPF; aquí el motor solo recibe el indicador. La condición de «actividad emprendedora» (ENISA) no influye en el IVA.
 8. **Margen de validación de ±10 €** entre base×tipo y la cuota en Verifactu/SII: dato de memoria del documento de validaciones de la AEAT; la versión de 2026 no se ha vuelto a comprobar: **UNVERIFIED**. El motor calcula de todas formas con exactitud; el margen solo hace falta al importar facturas de terceros.
-9. **Casillas del 390 por tipos** (05/06 para el 21 %): deducidas del rango «01–06» de las instrucciones, no cotejadas con el formulario: `[INFERENCE]`. Los demás números del 390 (27/28, 545–552, 48–55, 84–86, 95–98, 99–110, 125–126, 108) proceden de las Instrucciones 390-2025.
+9. **Casillas del 390 por tipos**: cotejadas con el diseño de registro DR390 2025 (https://sede.agenciatributaria.gob.es/static_files/Sede/Disenyo_registro/DR_300_399/archivos_25/dr390e2025.xlsx) y con el modelo 390 del Manual práctico IVA 2025. Límite del motor: considera servicios todas las adquisiciones intracomunitarias corrientes (c36) y bienes las de bienes de inversión (c38, art. 108 LIVA); no distingue las adquisiciones intracomunitarias de bienes corrientes (casillas 21–26 y 56/57).
 10. **Tipos de IVA de 2027**: no se han publicado cambios; RETA/IRPF quedan fuera de este archivo.
 11. **Código XI / UK después del Brexit para servicios**: el UK es un «país tercero» completo para los servicios (casilla 120); XI solo cuenta como UE para los bienes. No se ha buscado una confirmación adicional.
 12. **REDEME**: las condiciones (ausencia de deudas, SII) y el plazo de la opción (noviembre) proceden del conocimiento general del art. 30 RIVA; no se han releído: **UNVERIFIED**.
