@@ -42,6 +42,27 @@ Writing (profile_update, client_save, expense_save, invoice_draft_save, filing_m
    (Invoices → the draft → Issue). Issued invoices are changed only with a factura rectificativa, also there.
 3. After a write, read back (`profile`, `books`, `declarations`) when the next step depends on it.
 
+Bank statement (CSV or Excel export the person gives you; read it yourself, gestor never stores it). It is not a tax document:
+it only finds what is missing in gestor. Rules in detail: step 3 of the onboarding file above. Call `books` for every year it
+covers, then:
+1. Each incoming payment ↔ an issued invoice (amount in EUR or the invoice currency, payer ≈ client, paid after the issue date).
+   No invoice: ask what it is (payment for work, refund, transfer from a relative, own money). Payment for work: propose the
+   client (`client_save`) and an invoice draft (`invoice_draft_save`) with operation_date = when the work was done and
+   issue_date = today; say that an invoice to a business was due by the 15th of the next month [[rd1619-11]].
+2. Debits: first skip the ones already in `books` expenses (same supplier and amount). Group the rest: certainly business
+   (RETA cuota, gestoría, bank fees; tax payments are no expense: compare them with `declarations`), possibly business
+   (software, phone and internet, coworking, trips, equipment), home share with a home office, personal (food,
+   entertainment, transfers to people, cash). Ask only about the doubtful ones, a few at a time.
+3. An expense needs a factura completa to the person's NIE/NIF; a statement line is not enough: ask for the factura, read it,
+   propose `expense_save` from it. Two exceptions you propose straight from the statement line: the RETA cuota (category reta;
+   its document is the TGSS recibo, downloadable in Import@ss) and bank fees (category bank, vat_kind none; the bank's own
+   settlement is the document).
+4. The category sets the deductible shares. Two start at 0 % and need the person's numbers in deductible_pct: home (supplies
+   of the flat with a home office: 30 % × the work room's share of the floor area) and meals (only within the daily limits
+   of a business trip). Rent of the flat is not that formula: category rent, deductible_pct = the floor-area share of a room
+   used only for work (details: {DOCS.parent / "kb" / "irpf-autonomo.md"}, home office). Ask for the m² or the trip; never guess.
+5. Show a short summary first: matched, payments without an invoice, expense candidates. Then go one item at a time.
+
 Helping in the AEAT Sede (browser):
 1. The person logs in with Cl@ve or a certificate. Never type PINs, passwords or certificate passphrases.
 2. Open `sede_url`, choose «Nueva declaración», the year and the period.
@@ -55,8 +76,14 @@ START = """Start my session with gestor. Call `profiles`, then `declarations` fo
 incomplete, follow the First session steps from the gestor instructions. Otherwise tell me the nearest deadline, what it needs and
 what is still missing in gestor for it. Talk to me in the language I use here; if I have not written anything yet, ask me first
 whether I prefer English, Russian or Spanish."""
+STATEMENT = """Check my bank statement against gestor: {file}. Follow the Bank statement steps from the gestor instructions. Talk
+to me in the language I use here; if I have not written anything yet, ask me first whether I prefer English, Russian or Spanish."""
 PROMPTS = [{"name": "start", "title": "Start with gestor",
-            "description": "First session: set up the profile step by step. Later: the nearest deadline and what it needs."}]
+            "description": "First session: set up the profile step by step. Later: the nearest deadline and what it needs."},
+           {"name": "statement", "title": "Check a bank statement",
+            "description": "Match a bank statement with gestor: payments without an invoice, expenses without a factura; propose drafts.",
+            "arguments": [{"name": "file", "description": "path to the CSV or Excel export from the bank", "required": False}]}]
+TEXTS = {"start": START, "statement": STATEMENT}
 
 S, I, N, B = {"type": "string"}, {"type": "integer"}, {"type": ["number", "string"]}, {"type": "boolean"}
 YEAR, ID = {"type": "integer", "description": "tax year, e.g. 2026"}, {"type": "integer", "description": "id from `books`; omit to create"}
@@ -334,9 +361,12 @@ def handle(g: Gestor, msg: dict):
     if method == "prompts/list":
         return {"prompts": PROMPTS}
     if method == "prompts/get":
-        if p.get("name") != "start":
-            raise ValueError(f"unknown prompt {p.get('name')}")
-        return {"description": PROMPTS[0]["description"], "messages": [{"role": "user", "content": {"type": "text", "text": START}}]}
+        if (name := p.get("name")) not in TEXTS:
+            raise ValueError(f"unknown prompt {name}")
+        file = (p.get("arguments") or {}).get("file") or "ask me for the file first (CSV or Excel export from the bank)"
+        prompt = next(x for x in PROMPTS if x["name"] == name)
+        return {"description": prompt["description"],
+                "messages": [{"role": "user", "content": {"type": "text", "text": TEXTS[name].format(file=file)}}]}
     if method == "tools/call":
         name, args = p.get("name"), p.get("arguments") or {}
         try:

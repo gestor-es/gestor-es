@@ -307,6 +307,13 @@ def onboarding_hint(req) -> str:
     return '<div class=warn>' + _('Заполните <a href="/settings">профиль</a>: имя, NIE/NIF, режим и регион. Без него расчёты неполные.') + '</div>'
 
 
+def statement_hint() -> str:
+    """The bank statement goes to the person's own agent over MCP: gestor runs no model and keeps no statement."""
+    return '<p class=muted>' + _('Есть выписка из банка? Дайте её своему агенту (Claude Code или Codex) с подключённым gestor: '
+                                 'он найдёт поступления без счетов и расходы без factura и предложит черновики. В Claude Code — '
+                                 '<code>/mcp__gestor__statement</code>, в Codex — «сверь выписку с gestor».') + '</p>'
+
+
 # ---------- dashboard ----------
 
 PAYS = {"303", "130", "111", "115", "202", "100", "151", "200"}  # returns that can end in a payment; 349/390/347 only inform
@@ -631,7 +638,7 @@ def invoices(req):
     body = f"""<h1>{_("Счета")}</h1>{year_switch(req, '/invoices')}
 <p><a class=btn href="/invoices/new">{_("Новый счёт")}</a></p>
 {table([_('Дата'), _('Номер'), _('Клиент'), _('Итого'), _('База, €'), _('Статус')], rows)}
-<p class=muted>{_("База за {y} по выставленным:").format(y=y)} <b>{fmt(tot)}</b></p>"""
+<p class=muted>{_("База за {y} по выставленным:").format(y=y)} <b>{fmt(tot)}</b></p>{statement_hint()}"""
     return page(req, _("Счета"), body)
 
 
@@ -946,7 +953,7 @@ def expenses(req):
     body = f"""<h1>{_('Расходы')}</h1>{year_switch(req, '/expenses')}<p><a class=btn href="/expenses/new">{_('Новый расход')}</a></p>
 {table([_('Дата'), _('Поставщик'), _('Что'), _('Категория'), _('База'), _('В налоговую базу'), _('IVA к вычету'), ''], rows)}
 <p class=muted>{_('Итого {y}: база {base}, уменьшает базу {ded}, IVA к вычету {vat}.').format(y=y, base=fmt(tot_base), ded=fmt(tot_ded), vat=fmt(tot_vat))}</p>
-<p class=muted>{_('Подсказка: расход вычитается только с factura completa на ваш NIE/NIF и только если он связан с деятельностью.')}</p>"""
+<p class=muted>{_('Подсказка: расход вычитается только с factura completa на ваш NIE/NIF и только если он связан с деятельностью.')}</p>{statement_hint()}"""
     return page(req, _("Расходы"), body)
 
 

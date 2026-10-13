@@ -55,6 +55,10 @@ El extracto no es un documento para Hacienda. Sirve para dos cotejos:
 
 La comisión bancaria por una transferencia recibida es un gasto de la actividad si la transferencia es el pago de una factura.
 
+Este cotejo lo hace su agente a través del servidor MCP: `/mcp__gestor__statement` en Claude Code, o «revisa el extracto con gestor» en Codex. El agente lee el fichero; gestor no guarda el extracto. Para un cobro sin factura, el agente propone el cliente y un borrador de factura: la fecha de operación es cuando se hizo el trabajo y la fecha de expedición es hoy. El usuario emite la factura en la interfaz.
+
+Para los cargos, el agente pide la factura y propone el gasto a partir de ella; la cuota del RETA y las comisiones bancarias las propone directamente desde la línea del extracto (justificantes: el recibo de la TGSS, descargable en Import@ss, y la liquidación del banco). Los suministros con despacho en casa (30 % × la proporción de superficie), el alquiler de la vivienda (la proporción de superficie del despacho) y las dietas de viaje se calculan solo con sus m² y sus viajes; el agente no los adivina.
+
 ## 4. Gastos (subir)
 
 - Para cada gasto de la actividad: factura completa a nombre del NIE del usuario. Un tique o una línea del extracto no sirven.

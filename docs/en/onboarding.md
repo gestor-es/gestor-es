@@ -57,6 +57,10 @@ The statement is not a document for the tax office. It serves two checks:
 
 The bank fee for a received transfer is a business expense if the transfer is the payment of an invoice.
 
+Your agent does this check through the MCP server: `/mcp__gestor__statement` in Claude Code, or “check the statement against gestor” in Codex. The agent reads the file itself; gestor does not keep the statement. For a payment without an invoice, the agent proposes the client and an invoice draft: the operation date is when the work was done, the issue date is today. The user issues the invoice in the interface.
+
+For debits, the agent asks for the invoice and proposes the expense from it; the RETA cuota and bank fees it proposes straight from the statement line (supporting documents: the TGSS recibo, downloadable in Import@ss, and the bank's settlement). Utilities with a home office (30 % × the floor-area share), rent of the flat (the floor-area share of the work room) and meals on trips are counted only from your m² and your trips; the agent does not guess them.
+
 ## 4. Expenses (upload)
 
 - For each business expense: a full invoice in the name of the user's NIE. A till receipt or a line in the statement is not enough.

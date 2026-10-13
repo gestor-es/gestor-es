@@ -52,6 +52,8 @@ Las cifras son un cálculo con los datos que usted introduce. La presentación l
 
 `gestor/mcp.py` es un servidor MCP por stdio para todos los perfiles de la carpeta de datos (`profiles`, `profile_create`, el argumento `profile` en cada herramienta). Lee: el cuestionario (`profile`), clientes, facturas y gastos (`books`), las declaraciones del año con plazo y estado (`declarations`) y una declaración en formato Sede con notas § y archivo para «Importar» en `<data>/sede/<perfil>/` (`declaration`). Escribe, después de su «sí» explícito: el cuestionario (`profile_update`), clientes (`client_save`), gastos (`expense_save`, `expense_delete`), borradores de facturas (`invoice_draft_save`, `invoice_draft_delete`) y marcas de presentación (`filing_mark`, `filing_unmark`). No emite facturas: el número se asigna en la interfaz. Prompt `start`: la primera sesión o el plazo más cercano. Mientras el cuestionario no tenga nombre, NIE/NIF y fecha de alta, `declarations` da solo los plazos próximos, sin importes, y el agente le guía por el [alta en gestor](docs/es/onboarding.md). La suscripción es suya, en su propio programa. gestor no guarda claves.
 
+Prompt `statement`: dé al agente su extracto bancario (CSV o Excel). Coteja los cobros con las facturas y los cargos con los gastos, pregunta solo por los dudosos y propone clientes, borradores de facturas y gastos. gestor no guarda el extracto. Las páginas «Facturas» y «Gastos» se lo recuerdan.
+
 ```bash
 claude mcp add -s user gestor -e PYTHONPATH=$PWD -- python3 -m gestor.mcp --entity main
 codex mcp add gestor --env PYTHONPATH=$PWD -- python3 -m gestor.mcp --entity main

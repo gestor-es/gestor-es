@@ -52,6 +52,8 @@ python3 -m unittest tests.test_tax -v  # движок против пример�
 
 `gestor/mcp.py` — MCP-сервер по stdio для всех профилей в папке данных (`profiles`, `profile_create`, аргумент `profile` у каждого инструмента). Читает: анкету (`profile`), клиентов, счета и расходы (`books`), декларации года со сроком и статусом (`declarations`), одну декларацию в формате Sede с заметками § и файлом для «Importar» в `<data>/sede/<профиль>/` (`declaration`). Пишет после вашего явного «да»: анкету (`profile_update`), клиентов (`client_save`), расходы (`expense_save`, `expense_delete`), черновики счетов (`invoice_draft_save`, `invoice_draft_delete`) и отметки о подаче (`filing_mark`, `filing_unmark`). Счёт не выставляет: номер присваивается в интерфейсе. Промпт `start`: первая сессия или ближайший срок. Пока в анкете нет имени, NIE/NIF и даты начала деятельности, `declarations` отдаёт только будущие сроки, без сумм, а агент ведёт вас по [онбордингу](docs/onboarding.md). Подписка — ваша, в вашей программе; gestor ключей не хранит.
 
+Промпт `statement`: дайте агенту выписку из банка (CSV или Excel). Он сверит поступления со счетами и списания с расходами, спросит только про неясные и предложит клиентов, черновики счетов и расходы. gestor выписку не хранит. Страницы «Счета» и «Расходы» напоминают об этом.
+
 ```bash
 claude mcp add -s user gestor -e PYTHONPATH=$PWD -- python3 -m gestor.mcp --entity main
 codex mcp add gestor --env PYTHONPATH=$PWD -- python3 -m gestor.mcp --entity main

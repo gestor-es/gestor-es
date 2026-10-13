@@ -142,6 +142,7 @@
  "неизвестный регион {region}; варианты: {options}": "región desconocida {region}; opciones: {options}",
  "неизвестная форма или статус": "forma jurídica o situación desconocida",
  "неизвестный вид деятельности": "tipo de actividad desconocido",
+ "Есть выписка из банка? Дайте её своему агенту (Claude Code или Codex) с подключённым gestor: он найдёт поступления без счетов и расходы без factura и предложит черновики. В Claude Code — <code>/mcp__gestor__statement</code>, в Codex — «сверь выписку с gestor».": "¿Tiene un extracto bancario? Déselo a su propio agente (Claude Code o Codex) con gestor conectado: encuentra cobros sin factura y gastos sin factura completa y propone borradores. En Claude Code: <code>/mcp__gestor__statement</code>; en Codex: «revisa el extracto con gestor».",
  "год — 4 цифры": "el año debe tener 4 cifras",
  "формат номера: буквы, цифры, - / . _ , {YYYY} и один {NNNN}; например FACT-{YYYY}-{NNNNN}": "formato del número: letras, cifras, - / . _ , {YYYY} y un solo {NNNN}; por ejemplo FACT-{YYYY}-{NNNNN}",
  "неизвестный язык": "idioma desconocido",

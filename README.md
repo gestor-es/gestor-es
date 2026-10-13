@@ -52,6 +52,8 @@ The figures are a calculation from the data you enter. You file them yourself in
 
 `gestor/mcp.py` is an MCP server over stdio for every profile in the data folder (`profiles`, `profile_create`, the `profile` argument on each tool). It reads: the questionnaire (`profile`), clients, invoices and expenses (`books`), the year's returns with deadline and status (`declarations`), and one return in Sede format with notes with § and a file for "Importar" in `<data>/sede/<profile>/` (`declaration`). It writes, after your explicit "yes": the questionnaire (`profile_update`), clients (`client_save`), expenses (`expense_save`, `expense_delete`), invoice drafts (`invoice_draft_save`, `invoice_draft_delete`) and filed marks (`filing_mark`, `filing_unmark`). It never issues an invoice: the number is given in the interface. Prompt `start`: the first session or the nearest deadline. While the questionnaire has no name, NIE/NIF or start date, `declarations` gives only upcoming deadlines, without amounts, and the agent guides you through [onboarding](docs/en/onboarding.md). The subscription is yours, in your own program. gestor stores no keys.
 
+Prompt `statement`: give the agent your bank statement (CSV or Excel). It matches incoming payments with invoices and debits with expenses, asks only about the unclear ones and proposes clients, invoice drafts and expenses. gestor does not keep the statement. The Invoices and Expenses pages remind you of this.
+
 ```bash
 claude mcp add -s user gestor -e PYTHONPATH=$PWD -- python3 -m gestor.mcp --entity main
 codex mcp add gestor --env PYTHONPATH=$PWD -- python3 -m gestor.mcp --entity main
