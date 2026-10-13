@@ -1,78 +1,78 @@
-# Юз-кейсы
+# Casos de uso
 
-Профили: **A** — autónomo + Beckham, **B** — autónomo в общем IRPF, **C** — Sociedad Limitada.
-Статус пребывания выбирается в профиле: виза предпринимателя, виза цифрового кочевника, ВНЖ cuenta propia, ЕС / без ограничений. Новый профиль по умолчанию — autónomo с визой цифрового кочевника в общем IRPF (профиль B), самый частый случай.
-Источники правил — `kb/*.md`.
+Perfiles: **A** — autónomo + Beckham, **B** — autónomo en el IRPF general, **C** — Sociedad Limitada.
+La situación de residencia se elige en el perfil: visado de emprendedor, visado de nómada digital, autorización de residencia por cuenta propia, UE / sin restricciones.
+Fuentes de las reglas: `kb/*.md`.
 
-## Каждый месяц
+## Cada mes
 
-| # | Сценарий | Профили | Что делает сервис |
+| # | Escenario | Perfiles | Qué hace el servicio |
 |---|---|---|---|
-| 1 | Выставить счёт иностранному клиенту (вне ЕС) | A B C | Режим IVA «no sujeta» по стране клиента, оговорка art. 69.Uno.1º, курс ЕЦБ на дату операции (или вручную), база и cuota в EUR. Номер присваивается при выставлении, по порядку и по датам, в формате из анкеты (например FACT-{YYYY}-{NNNNN} → FACT-2026-00001); данные сторон замораживаются в счёте. |
-| 2 | Счёт клиенту из ЕС (B2B) | A B C | Оговорка «inversión del sujeto pasivo», casilla 59 в 303, строка clave S в 349. Без VAT ID и адреса клиента счёт не выставится. |
-| 3 | Счёт испанской компании | A B C | IVA 21 %. Retención: 15 % (7 % в год начала и 2 следующих) — B; 24 % — A; 0 % — C и деятельность empresarial. |
-| 4 | Исправить выставленный счёт | A B C | Только factura rectificativa (серия R) с обязательной причиной и ссылкой на исходный. Черновик можно править и удалять. |
-| 5 | Отметить оплату | A B C | Дата оплаты на счёте. |
-| 6 | Внести расход с чеком | A B C | Категория задаёт % в налоговую базу и % IVA к вычету; чек хранится в `<data>/receipts`. Поставщик из ЕС / вне ЕС без IVA → autorrepercusión (10/11 + 36/37 или 12/13 + 28/29). Техника > 300 € амортизируется (26 % autónomo, 25 % SL). Медстраховка — не больше 500 € в год. Питание — только указанный вами % (лимиты по дням). |
-| 7 | Внести cuota RETA | A B C | Категория «Cuota RETA»: B — расход (casilla 0186); A — не уменьшает базу 151; C — retribución en especie администратора (111). |
-| 8 | Заплатить испанскому профессионалу или за аренду офиса с retención | A B C | Поле «Retención, которую вы удержали» в расходе → Modelo 111 (профессионалы) или 115 (аренда), годовые 190/180 в календаре. |
+| 1 | Emitir una factura a un cliente extranjero (fuera de la UE) | A B C | Régimen de IVA «no sujeta» según el país del cliente, mención art. 69.Uno.1º, tipo de cambio del BCE en la fecha de la operación (o manual), base y cuota en EUR. El número se asigna al emitir, de forma correlativa y por fechas, con el formato del cuestionario (por ejemplo FACT-{YYYY}-{NNNNN} → FACT-2026-00001). Los datos de las partes quedan fijados en la factura. |
+| 2 | Factura a un cliente de la UE (B2B) | A B C | Mención «inversión del sujeto pasivo», casilla 59 del 303, línea con clave S en el 349. Sin el VAT ID y la dirección del cliente, la factura no se emite. |
+| 3 | Factura a una empresa española | A B C | IVA 21 %. Retención: 15 % (7 % el año de inicio y los 2 siguientes) — B; 24 % — A; 0 % — C y actividad empresarial. |
+| 4 | Corregir una factura emitida | A B C | Solo con factura rectificativa (serie R), con motivo obligatorio y referencia a la factura original. El borrador se puede modificar y eliminar. |
+| 5 | Marcar el cobro | A B C | Fecha de cobro en la factura. |
+| 6 | Registrar un gasto con justificante | A B C | La categoría fija el % que entra en la base imponible y el % de IVA deducible. El justificante se guarda en `<data>/receipts`. Proveedor de la UE / de fuera de la UE sin IVA → autorrepercusión (10/11 + 36/37 o 12/13 + 28/29). Los equipos de más de 300 € se amortizan (26 % autónomo, 25 % SL). Seguro médico: no más de 500 € al año. Comidas: solo el % que usted indique (límites por día). |
+| 7 | Registrar la cuota RETA | A B C | Categoría «Cuota RETA»: B — gasto (casilla 0186); A — no reduce la base del 151; C — retribución en especie del administrador (111). |
+| 8 | Pagar a un profesional español o el alquiler de una oficina con retención | A B C | El campo «Retención que usted practicó» del gasto → Modelo 111 (profesionales) o 115 (alquiler). Los anuales 190/180 aparecen en el calendario. |
 
-## Каждый квартал
+## Cada trimestre
 
-| # | Сценарий | Профили | Что делает сервис |
+| # | Escenario | Perfiles | Qué hace el servicio |
 |---|---|---|---|
-| 9 | Modelo 303 | A B C | Все casillas по операциям квартала, перенос «a compensar» между кварталами, возврат в 4T. |
-| 10 | Modelo 130 | B | Нарастающий итог, 20 %, 5 % gastos de difícil justificación (≤ 2 000 €), minoración art. 110.3.c (без данных за прошлый год — 0), перенос отрицательных результатов. Не подаётся при ≥ 70 % дохода с retención в прошлом году (только profesional). |
-| 11 | Без 130 и 210 под Beckham | A | 130 не показывается (применим ли общий 130 к деятельности в режиме — спорно, в «Где gestor может ошибаться»). Квартальный 210 не нужен: это форма нерезидентов, а клиент без представительства в Испании не удерживает (источники — `gestor/sources/beckham.json`). На обзоре — сумма «отложить» по шкале 24 % / 47 %. |
-| 12 | Modelo 349 | A B C | Только если были операции с ЕС: клиенты (S) и поставщики (I). При > 50 000 € в квартал — предупреждение о помесячной подаче. |
-| 13 | Modelo 202 | C | Modalidad 40.2: 18 % от базы последнего Modelo 200 (вносится в профиле; без неё — оценка по счетам или напоминание внести). Первый год — не подаётся. |
-| 14 | Modelo 111 / 115 | A B C | SL: retención 19 % / 35 % с вознаграждения administrador и RETA, оплаченной SL (без оборота прошлого года — 35 %). Все: retenciones, удержанные у профессионалов и арендодателей. |
-| 15 | Отметить подачу | A B C | Сумма из поданной декларации, дата, номер CSV/justificante; отметку можно отменить. Годовые 100/200 учитывают только поданные авансы. |
+| 9 | Modelo 303 | A B C | Todas las casillas según las operaciones del trimestre, cuotas «a compensar» entre trimestres, solicitud de devolución en el 4T. |
+| 10 | Modelo 130 | B | Importe acumulado, 20 %, 5 % gastos de difícil justificación (≤ 2 000 €), minoración art. 110.3.c (sin datos del año anterior: 0), traslado de resultados negativos. No se presenta si en el año anterior ≥ 70 % de los ingresos tuvo retención (solo profesional). |
+| 11 | Sin 130 ni 210 con Beckham | A | El 130 no se muestra (si el 130 general se aplica a la actividad dentro del régimen es discutible; ver «Dónde puede equivocarse gestor»). El 210 trimestral no hace falta: es un modelo de no residentes, y un cliente sin presencia en España no practica retención (fuentes: `gestor/sources/beckham.json`). En el resumen aparece el importe «a reservar» según la escala 24 % / 47 %. |
+| 12 | Modelo 349 | A B C | Solo si hubo operaciones con la UE: clientes (S) y proveedores (I). Si superan 50 000 € en un trimestre: aviso de presentación mensual. |
+| 13 | Modelo 202 | C | Modalidad 40.2: 18 % de la base del último Modelo 200 (se introduce en el perfil; sin ella, estimación según las facturas o recordatorio para introducirla). El primer año no se presenta. |
+| 14 | Modelo 111 / 115 | A B C | SL: retención 19 % / 35 % sobre la retribución del administrador y el RETA pagado por la SL (sin volumen de operaciones del año anterior: 35 %). Todos: retenciones practicadas a profesionales y arrendadores. |
+| 15 | Marcar la presentación | A B C | Importe de la declaración presentada, fecha, Código Seguro de Verificación (CSV) del justificante de presentación. La marca se puede anular. Los anuales 100/200 solo tienen en cuenta los pagos fraccionados presentados. |
 
-## Каждый год
+## Cada año
 
-| # | Сценарий | Профили | Что делает сервис |
+| # | Escenario | Perfiles | Qué hace el servicio |
 |---|---|---|---|
-| 16 | Modelo 390 | A B C | Сводка 303 за год, rectificativas, volumen de operaciones. |
-| 17 | Modelo 347 | A B C | Контрагенты > 3 005,06 € с IVA, без операций из 349, с retención и вознаграждения administrador. |
-| 18 | Modelo 100 (оценка) | B | Шкала государства + региона за год (Valencia 2025/2026/2027, Asturias 2025/2026 с опубликованными cuota fija), mínimo personal, reducción inicio 20 % (если в профиле указан первый прибыльный год), минус поданные 130 и retenciones. Регион — где больше дней в году (art. 72). |
-| 19 | Modelo 151 (оценка) | A | 24 % / 47 % со всей выручки (расходы и RETA базу не уменьшают), минус retenciones и добровольно уплаченные 210 из анкеты (в [34]/[37]; куда их писать после года переезда — спорно). |
-| 20 | Modelo 200 (оценка) | C | Ставки micro: 2024 — 23 %, 2025 — 21/22 %, 2026 — 19/21 %, 2027 — 17/20 % (порог 50 000 € пропорционален короткому первому периоду); 15 % empresa emergente; минус поданные 202. |
-| 21 | RETA: tramo и регуляризация | A B C | Доход для SS → tramo → мин./макс. база → ожидаемая доплата/возврат относительно текущей базы, только за месяцы после tarifa plana. Для C — мин. база societario. Для A — пометка: критерий TGSS для 151 не установлен. |
-| 22 | IVA a compensar между годами | A B C | По умолчанию в 4T — возврат; если оставили a compensar, сумма вносится в профиле и попадает в casilla 110 первого квартала. |
-| 23 | Книги учёта | A B C | CSV libro de facturas emitidas и recibidas (разделитель `;`, BOM для Excel). |
+| 16 | Modelo 390 | A B C | Declaración-resumen anual de los 303 del año, rectificativas, volumen de operaciones. |
+| 17 | Modelo 347 | A B C | Operaciones con terceras personas > 3 005,06 € con IVA, sin las operaciones del 349, sin las operaciones con retención y sin las retribuciones del administrador. |
+| 18 | Modelo 100 (estimación) | B | Escala estatal + autonómica del año (Valencia 2025/2026/2027, Asturias 2025/2026 con cuota fija publicada), mínimo personal, reducción por inicio 20 % (si el perfil indica el primer año con rendimiento positivo), menos los 130 presentados y las retenciones. Comunidad: aquella en la que pasó más días del año (art. 72). |
+| 19 | Modelo 151 (estimación) | A | 24 % / 47 % sobre todos los ingresos (los gastos y el RETA no reducen la base), menos las retenciones y los 210 pagados voluntariamente según el cuestionario (en [34]/[37]; dónde declararlos después del año del traslado es discutible). |
+| 20 | Modelo 200 (estimación) | C | Tipos micro: 2024 — 23 %, 2025 — 21/22 %, 2026 — 19/21 %, 2027 — 17/20 % (el umbral de 50 000 € es proporcional a un primer periodo corto); 15 % empresa emergente; menos los 202 presentados. |
+| 21 | RETA: tramo y regularización | A B C | Rendimiento para la SS → tramo → base mín./máx. → regularización esperada (a pagar o a devolver) respecto a la base actual, solo por los meses posteriores a la tarifa plana. Para C: base mínima de societario. Para A: nota de que la TGSS no ha fijado un criterio para el 151. |
+| 22 | Cuotas de IVA a compensar entre ejercicios | A B C | Por defecto, en el 4T: solicitud de devolución. Si lo dejó «a compensar», el importe se introduce en el perfil y pasa a la casilla 110 («Cuotas a compensar pendientes de períodos anteriores») del primer trimestre. |
+| 23 | Libros registro | A B C | CSV libro de facturas emitidas y recibidas (separador `;`, BOM para Excel). |
 
-## Доверие к цифрам
+## Confianza en las cifras
 
-| # | Сценарий | Что делает сервис |
+| # | Escenario | Qué hace el servicio |
 |---|---|---|
-| 31 | Почему эта casilla такая? | Значок § у каждой casilla, заметки и предупреждения. В карточке: что это значит, статус (прямо в тексте / толкование / спорно), испанская цитата, перевод, ссылки на оригинал и автоперевод страницы, практика DGT и судов. |
-| 32 | Что значит это поле? | Под каждым полем анкеты, счёта, расхода и клиента: на что оно влияет, затем каждый закон — суть одной фразой, ссылка на запись в «Справочнике» и на оригинал. Для категории расхода и вида IVA блок меняется вместе с выбором. |
-| 34 | Как gestor меня понял? | В «Профиле» над анкетой: выводы из ответов простыми фразами; какие декларации вы подаёте и почему именно вы (с законом); какие не подаёте и почему; где в вашем случае закон неясен. |
-| 35 | Совпадает ли моя подача с расчётом? | Сумма из Sede при отметке «подан» сравнивается с текущим расчётом; при расхождении — предупреждение и ссылка на autoliquidación rectificativa. |
-| 36 | Как подать и что дальше? | У каждой декларации блок «Дальше»: что сделать сейчас (подать и оплатить, подать без оплаты, ждать окна, срок прошёл, сохранить justificante, ждать перерасчёта TGSS) и ссылки «Как подать» (/guide — шаги по справке AEAT) и «Открыть в Sede». Casillas подписаны по-испански, как в форме, и строкой ниже на языке интерфейса (в испанском интерфейсе второй строки нет). |
-| 37 | Можно не перепечатывать casillas? | «Скачать файл для Sede» в блоке «Дальше» у 130, 303 (2026), 349 и 151: текстовый файл по официальному diseño de registro AEAT (`gestor/dr/*.json`, извлечено `scripts/dr_extract.py`). В форме Sede — «Importar», затем «Validar» и «Firmar y enviar». Пол, дату рождения, эпиграф IAE и телефон 151 берёт из анкеты; адрес форма спросит. На настоящей Sede файлы ещё не проверялись. |
-| 38 | Помочь заполнить форму в Sede | MCP-сервер `gestor/mcp.py` для Claude Code и Codex с подпиской пользователя: casillas в формате Sede, файл для «Importar», статус и срок. Агент в браузере заполняет и проверяет форму после «Validar», но не подписывает и не отправляет. На настоящей Sede ещё не проверялось. Тот же сервер ведёт первую сессию: агент заполняет анкету, клиентов, расходы и черновики счетов и отмечает поданные декларации, всегда после «да» пользователя; работает со всеми профилями. Счёт он не выставляет: номер присваивает пользователь в интерфейсе. |
-| 39 | Совпадает ли мой censo с тем, что считает gestor? | В анкете — дата certificado censal и обязанности со статусом ALTA (303, 130, 111, 115, ROI). В «Как gestor вас понял» — расхождения: gestor ждёт декларацию без alta, alta без декларации, 349 без ROI; изменения — Modelo 036 за месяц. Телефон из анкеты идёт в файлы 349 и 151. |
-| 40 | Сколько я заплатил и сколько ещё будет? | На обзоре «Налоги и RETA за год»: столбцы по кварталам и за год, таблица модель × квартал. Заплачено — отметки о подаче (130, 303, 111, 115, 202), 210 по кварталам из анкеты, RETA из расходов; осталось — расчёт gestor, RETA до конца года по последнему взносу, годовая 100/151/200. Для Beckham итог — вилка: только выставленное или плюс средний квартал за последний год. |
-| 41 | Интерфейс на английском, русском и испанском | Язык хранится в профиле: выбор в «Анкете» или в меню профиля (EN RU ES); по умолчанию — язык браузера. Карточки источников права — название, суть и перевод цитаты на выбранном языке; на испанском — только оригинал. MCP-сервер отвечает на языке профиля. |
-| 33 | Где gestor может ошибаться? | «Справочник» начинает со спорных мест и говорит, какой осторожный вариант выбран. Дата проверки — у каждого источника. |
+| 31 | ¿Por qué esta casilla tiene este valor? | Símbolo § en cada casilla, nota y aviso. En la ficha: qué significa, estado (literal en el texto / interpretación / discutible), cita en español, traducción, enlaces al original y a la traducción automática de la página, práctica de la DGT y de los tribunales. |
+| 32 | ¿Qué significa este campo? | Debajo de cada campo del cuestionario, de la factura, del gasto y del cliente: en qué influye. Después, cada norma: su contenido en una frase, enlace a la entrada en «Fuentes» y al original. Para la categoría de gasto y el tipo de IVA, el bloque cambia con la selección. |
+| 34 | ¿Cómo me ha entendido gestor? | En «Perfil», encima del cuestionario: conclusiones de sus respuestas en frases sencillas; qué declaraciones presenta y por qué le corresponden a usted (con la norma); cuáles no presenta y por qué; dónde la ley no es clara en su caso. |
+| 35 | ¿Coincide mi presentación con el cálculo? | El importe de la Sede indicado al marcar «presentada» se compara con el cálculo actual. Si hay diferencia: aviso y enlace a la autoliquidación rectificativa. |
+| 36 | ¿Cómo presento y qué hago después? | Cada declaración tiene un bloque «Siguiente paso»: qué hacer ahora (presentar «a ingresar», presentar «sin ingreso», esperar a que se abra el plazo de presentación, presentación fuera de plazo, guardar el justificante de presentación, esperar la regularización de la TGSS) y los enlaces «Cómo presentarlo» (/guide: pasos según la ayuda técnica de la AEAT) y «Abrir en la Sede». Las casillas llevan su nombre en español, como en el formulario; en inglés y en ruso, debajo hay una línea en el idioma de la interfaz. |
+| 37 | ¿Puedo evitar volver a teclear las casillas? | «Descargar el fichero para la Sede» en el bloque «Siguiente paso» del 130, 303 (2026), 349 y 151: fichero de texto según el diseño de registro oficial de la AEAT (`gestor/dr/*.json`, extraído con `scripts/dr_extract.py`). En el formulario de la Sede: «Importar», después «Validar declaración» y «Firmar y enviar». El sexo, la fecha de nacimiento, el epígrafe IAE y el teléfono del 151 se toman del cuestionario. La dirección la pedirá el formulario. Los ficheros aún no se han probado en la Sede real. |
+| 38 | Ayuda para rellenar el formulario en la Sede | Servidor MCP `gestor/mcp.py` para Claude Code y Codex con la suscripción del usuario: casillas en el formato de la Sede, fichero para «Importar», estado y plazo. El agente rellena el formulario en el navegador y lo comprueba después de «Validar declaración», pero no pulsa «Firmar y enviar». Aún no se ha probado en la Sede real. |
+| 39 | ¿Coincide mi censo con lo que calcula gestor? | En el cuestionario: fecha del certificado de situación censal y obligaciones en situación de ALTA (303, 130, 111, 115, ROI). En «Cómo le ha entendido gestor»: las diferencias (gestor espera una declaración sin alta, hay alta sin declaración, 349 sin alta en el Registro de Operadores Intracomunitarios). Las modificaciones censales se comunican con el Modelo 036 en el plazo de un mes. El teléfono del cuestionario se incluye en los ficheros del 349 y del 151. |
+| 40 | ¿Cuánto he pagado y cuánto queda? | En el resumen, «Impuestos y RETA del año»: columnas por trimestre y del año, tabla modelo × trimestre. Pagado: marcas de presentación (130, 303, 111, 115, 202), 210 por trimestre según el cuestionario, RETA según los gastos. Pendiente: cálculo de gestor, RETA hasta final de año según la última cuota, anual 100/151/200. Para Beckham el total es una horquilla: solo lo facturado, o lo facturado más un trimestre medio del último año. |
+| 41 | Interfaz en inglés, ruso y español | El idioma se guarda en el perfil: se elige en el «Cuestionario» o en el menú del perfil (EN RU ES). Por defecto se usa el idioma del navegador. Fichas de fuentes legales: título, contenido y traducción de la cita en el idioma elegido; en español, solo el original. El servidor MCP responde en el idioma del perfil. |
+| 33 | ¿Dónde puede equivocarse gestor? | «Fuentes» empieza por los puntos discutibles e indica qué opción prudente se ha elegido. Cada fuente tiene su fecha de comprobación. |
 
-## Статус пребывания и режимы
+## Situación de residencia y regímenes
 
-| # | Сценарий | Что делает сервис |
+| # | Escenario | Qué hace el servicio |
 |---|---|---|
-| 24 | Виза кочевника | Предупреждение, когда испанские клиенты > 18 % выручки за 12 месяцев (лимит 20 %). |
-| 25 | Beckham + кочевник / cuenta propia | Предупреждение: обычная самозанятость = establecimiento permanente → исключение из режима. |
-| 26 | Конец Beckham | В последний год — предупреждение; со следующего года сервис сам переходит на 100/130. |
-| 27 | Срок Modelo 149 | Напоминание до даты «alta RETA + 6 месяцев». |
-| 28 | Переезд между автономными сообществами | Строки «дата регион» в профиле; регион года считается по дням. Для cuenta propia — предупреждение о региональной привязке первого разрешения. |
-| 29 | Продление ВНЖ | За 120 дней до даты окончания — список документов. |
-| 30 | Несколько профилей | Отдельная база на профиль (личный autónomo, SL), переключатель в шапке. |
+| 24 | Visado de nómada digital | Aviso cuando los clientes españoles superan el 18 % de los ingresos en 12 meses (límite 20 %). |
+| 25 | Beckham + nómada / cuenta propia | Aviso: el trabajo por cuenta propia normal = establecimiento permanente → exclusión del régimen. |
+| 26 | Fin de Beckham | El último año: aviso. Desde el año siguiente, el servicio pasa por sí mismo al 100/130. |
+| 27 | Plazo del Modelo 149 | Recordatorio antes de la fecha «alta RETA + 6 meses». |
+| 28 | Traslado entre comunidades autónomas | Líneas «fecha comunidad» en el perfil. La comunidad del año se calcula por días. Para cuenta propia: aviso sobre la vinculación territorial de la primera autorización. |
+| 29 | Renovación de la autorización de residencia | 120 días antes de la fecha de caducidad: lista de documentos. |
+| 30 | Varios perfiles | Una base de datos por perfil (autónomo personal, SL), selector en la cabecera. |
 
-## Не делает (осознанно)
+## Qué no hace (a propósito)
 
-- Не подаёт декларации в AEAT: подача — в Sede (Cl@ve / сертификат). gestor даёт casillas и файл для «Importar»; подписывает и отправляет пользователь.
-- Не формирует записи Verifactu (обязательно для autónomos с 01.07.2027, объявлен перенос на 10.2028).
-- Не считает дивиденды, сбережения, детей, ипотеку, региональные вычеты, reserva de capitalización, OSS (369), 720/721 — только напоминания.
-- 349: помесячная разбивка и записи-исправления прошлых периодов — вручную (сервис предупреждает).
+- No presenta declaraciones ante la AEAT: la presentación se hace en la Sede electrónica (Cl@ve / certificado electrónico). gestor da las casillas y el fichero para «Importar». El usuario pulsa «Firmar y enviar».
+- No genera registros Verifactu (obligatorio para autónomos desde 01.07.2027; se ha anunciado un aplazamiento a 10.2028).
+- No calcula dividendos, ahorro, hijos, hipoteca, deducciones autonómicas, reserva de capitalización, OSS (369), 720/721: solo recordatorios.
+- 349: el desglose mensual y los registros de rectificación de periodos anteriores se hacen a mano (el servicio avisa).

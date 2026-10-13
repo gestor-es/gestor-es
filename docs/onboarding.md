@@ -1,88 +1,88 @@
-# Онбординг: что загрузить, что спросить, что уточнить
+# Alta de un perfil: qué subir, qué preguntar, qué aclarar
 
-Канонический порядок для нового профиля autónomo. Цель — заполнить все декларации года
-по документам, а не по памяти пользователя. Правило: **официальный документ важнее ответа на вопрос,
-ответ на вопрос важнее догадки gestor по выписке.** Каждая догадка показывается пользователю на
-подтверждение и не попадает в расчёт молча.
+Orden canónico para un perfil nuevo de autónomo. El objetivo es rellenar todas las declaraciones del año
+a partir de documentos, no de la memoria del usuario. Regla: **un documento oficial vale más que la respuesta a una pregunta,
+y la respuesta a una pregunta vale más que una suposición de gestor a partir del extracto.** Cada suposición se muestra al usuario para
+que la confirme. Ninguna suposición entra en el cálculo sin avisar.
 
 ```mermaid
 flowchart TD
-  S0[0. Ближайший срок] --> S1[1. Официальные документы AEAT и TGSS]
-  S1 --> S2[2. Доходы: выставленные счета]
-  S2 --> S3[3. Выписка банка: сверка доходов, кандидаты в расходы]
-  S3 --> S4[4. Расходы: factura на каждый рабочий расход]
-  S4 --> S5[5. Вопросы, на которые документы не ответили]
-  S5 --> S6[6. Расчёт и сверка с поданными декларациями]
+  S0[0. Plazo más próximo] --> S1[1. Documentos oficiales de la AEAT y la TGSS]
+  S1 --> S2[2. Ingresos: facturas emitidas]
+  S2 --> S3[3. Extracto bancario: cotejo de ingresos, posibles gastos]
+  S3 --> S4[4. Gastos: factura de cada gasto de la actividad]
+  S4 --> S5[5. Preguntas que los documentos no han respondido]
+  S5 --> S6[6. Cálculo y cotejo con las declaraciones presentadas]
 ```
 
-## 0. Ближайший срок
+## 0. Plazo más próximo
 
-Первым делом gestor называет ближайший срок подачи (обычно 20-е число после квартала) и что для него нужно.
-Если до срока меньше 15 дней, шаги 1–4 делаются только для этого квартала, остальное — после подачи.
+Lo primero que hace gestor es indicar el plazo de presentación más próximo (normalmente el día 20 tras el trimestre) y lo que hace falta para él.
+Si quedan menos de 15 días, los pasos 1–4 se hacen solo para ese trimestre. El resto, después de presentar.
 
-## 1. Официальные документы (загрузить PDF)
+## 1. Documentos oficiales (subir en PDF)
 
-Эти документы отвечают на большую часть анкеты и задают истину. Все скачиваются с Cl@ve.
+Estos documentos responden a la mayor parte del cuestionario y fijan la verdad. Todos se descargan con Cl@ve.
 
-| Документ | Где взять | Что из него берёт gestor |
+| Documento | Dónde obtenerlo | Qué toma gestor de él |
 |---|---|---|
-| Certificado de situación censal | Sede AEAT → Certificados → Censales | Имя, NIE, domicilio fiscal, дата alta, epígrafe IAE, режим IVA и IRPF, ROI (операции с ЕС), **список обязательств, которые ждёт AEAT** — сверяется с «Что вы подаёте» |
-| Поданные декларации за текущий и прошлый год (303, 130, 349, 390, 347, 100 или 151) | Sede AEAT → Mis expedientes / Consulta de declaraciones presentadas | Отметки «подано» с суммами, IVA a compensar, чистый доход прошлого года (casilla 13 в 130, освобождение 70 %) |
-| Modelo 149 и решение по нему | Sede AEAT, тот же раздел | Действует ли режим Beckham и с какого года |
-| Informe de situación / bases de cotización | Import@ss (TGSS) | Дата alta в RETA, текущая база, период tarifa plana |
-| Разрешение на пребывание (TIE) | у пользователя | Вид визы или ВНЖ, срок действия |
-| Справка о NRC платежей (если в выписке есть «Tax payment» без пояснения) | Sede AEAT → Pagos → Consulta de NRC | Какая декларация оплачена этим платежом |
+| Certificado de situación censal | Sede AEAT → Todas las gestiones → Certificados → Censales → Situación Censal | Nombre, NIE, domicilio fiscal, fecha de alta, epígrafe IAE, régimen de IVA e IRPF, Registro de Operadores Intracomunitarios (ROI), **lista de obligaciones que espera la AEAT**: se coteja con «Qué presenta» |
+| Declaraciones presentadas del año en curso y del año anterior (303, 130, 349, 390, 347, 100 o 151) | Sede AEAT → Área personal → Mis expedientes → Consultar declaraciones presentadas | Marcas de «presentada» con importes, cuotas de IVA a compensar, rendimiento neto del año anterior (casilla 13 del 130, exención del 70 %) |
+| Modelo 149 y la resolución sobre él | Sede AEAT, la misma sección | Si el régimen Beckham está vigente y desde qué año |
+| Informe de situación / bases de cotización | Import@ss (TGSS) | Fecha de alta en el RETA, base actual, periodo de tarifa plana |
+| Autorización de residencia (TIE) | la tiene el usuario | Tipo de visado o de autorización de residencia, vigencia |
+| Consulta del NRC de los pagos (si en el extracto hay un «Tax payment» sin explicación) | Sede AEAT → Pagar, aplazar y consultar → Consultar deudas → Consulta pagos anteriores y Anulación Nrcs | Qué declaración se pagó con ese pago |
 
-Если документа нет, вопрос из шага 5 задаётся вместо него, а ответ помечается «со слов пользователя».
+Si falta un documento, en su lugar se hace la pregunta del paso 5. La respuesta se marca como «según el usuario».
 
-## 2. Доходы (загрузить)
+## 2. Ingresos (subir)
 
-- Все счета (facturas emitidas) за год в PDF: номер, дата, клиент, сумма, валюта.
-- Серия и последний номер счёта у прежнего gestor: нумерация продолжается без пропусков.
-- По каждому клиенту: полное название, адрес, страна, налоговый номер (VAT ID для ЕС), компания или частное лицо.
-- Договор с клиентом, если место оказания услуги неочевидно.
+- Todas las facturas emitidas del año en PDF: número, fecha, cliente, importe, moneda.
+- Serie y último número de factura con el gestor anterior: la numeración continúa sin saltos.
+- De cada cliente: nombre completo, dirección, país, número fiscal (VAT ID para la UE), si es empresa o particular.
+- Contrato con el cliente, si el lugar de prestación del servicio no es evidente.
 
-## 3. Выписка банка (загрузить xlsx или csv)
+## 3. Extracto bancario (subir en xlsx o csv)
 
-Выписка — не документ для налоговой. Она нужна для двух сверок:
+El extracto no es un documento para Hacienda. Sirve para dos cotejos:
 
-1. **Каждое поступление от клиента ↔ счёт.** Поступление без счёта — вопрос пользователю: это оплата работы, возврат, перевод от родственника, личные деньги?
-2. **Кандидаты в рабочие расходы.** gestor раскладывает списания на группы и спрашивает только про спорные:
-   - точно рабочие: взносы TGSS (RETA), услуги gestoría, налоговые платежи (не расход, а сверка с декларациями);
-   - возможно рабочие: софт и подписки, телефон и интернет, коворкинг, поездки, техника;
-   - домашние, частично вычитаемые при домашнем офисе: аренда, электричество, вода (доля площади, для коммунальных — 30 % доли);
-   - личные: еда, развлечения, переводы людям, наличные.
+1. **Cada cobro de un cliente ↔ una factura.** Un cobro sin factura genera una pregunta al usuario: ¿es el pago de un trabajo, una devolución, una transferencia de un familiar, dinero personal?
+2. **Posibles gastos de la actividad.** gestor agrupa los cargos y solo pregunta por los dudosos:
+   - seguro que son de la actividad: cuotas a la TGSS (RETA), servicios de gestoría, pagos de impuestos (no son gasto, sirven para cotejar con las declaraciones);
+   - posiblemente de la actividad: software y suscripciones, teléfono e internet, coworking, viajes, equipos;
+   - domésticos, deducibles en parte si trabaja desde casa: alquiler, electricidad, agua (proporción de la superficie; para los suministros, el 30 % de esa proporción);
+   - personales: comida, ocio, transferencias a personas, efectivo.
 
-Банковская комиссия за входящий перевод — рабочий расход, если перевод — оплата счёта.
+La comisión bancaria por una transferencia recibida es un gasto de la actividad si la transferencia es el pago de una factura.
 
-## 4. Расходы (загрузить)
+## 4. Gastos (subir)
 
-- На каждый рабочий расход — factura completa на NIE пользователя. Чек или строка выписки не подходят.
-- Для домашнего офиса: площадь рабочей комнаты и квартиры в м², договор аренды, счета за свет, воду, интернет.
-- Для техники дороже 300 €: дата покупки и factura (амортизация).
+- Para cada gasto de la actividad: factura completa a nombre del NIE del usuario. Un tique o una línea del extracto no sirven.
+- Para el despacho en casa: superficie de la habitación de trabajo y de la vivienda en m², contrato de alquiler, facturas de luz, agua e internet.
+- Para equipos de más de 300 €: fecha de compra y factura (amortización).
 
-## 5. Вопросы, на которые документы не ответили
+## 5. Preguntas que los documentos no han respondido
 
-Спрашивать только то, чего нет в документах шагов 1–4. Каждый вопрос объясняет, на что влияет ответ.
+Pregunte solo lo que no está en los documentos de los pasos 1–4. Cada pregunta explica en qué influye la respuesta.
 
-1. Где вы живёте и с какой даты; планируется ли переезд в другой регион (регион IRPF года — где больше дней).
-2. Работаете ли из дома: какая комната, сколько м² из общей площади.
-3. Какие страховки платите: медицинская страховка autónomo вычитается до 500 € в год.
-4. Какие телефонные линии и подписки используются только для работы.
-5. Были ли рабочие поездки: даты, цель, клиент.
-6. Есть ли счета, ценные бумаги или недвижимость за рубежом больше 50 000 € в одном блоке (Modelo 720, общий режим).
-7. Работали ли наёмным у того же клиента до начала деятельности (снижение 20 % для новых).
-8. Сообщали ли испанским клиентам о ставке удержания 7 %.
+1. Dónde vive y desde qué fecha; si tiene previsto mudarse a otra comunidad (la comunidad del IRPF del año es aquella en la que pasa más días).
+2. Si trabaja desde casa: qué habitación, cuántos m² de la superficie total.
+3. Qué seguros paga: el seguro médico del autónomo se deduce hasta 500 € al año.
+4. Qué líneas de teléfono y suscripciones usa solo para trabajar.
+5. Si ha hecho viajes de trabajo: fechas, motivo, cliente.
+6. Si tiene cuentas, valores o inmuebles en el extranjero por más de 50 000 € en un mismo bloque (Modelo 720, régimen general).
+7. Si trabajó por cuenta ajena para el mismo cliente antes de iniciar la actividad (reducción del 20 % para nuevos autónomos).
+8. Si comunicó a sus clientes españoles el tipo de retención del 7 %.
 
-## 6. Расчёт и сверка
+## 6. Cálculo y cotejo
 
-1. gestor заполняет профиль и показывает «Как gestor вас понял». Пользователь подтверждает или правит.
-2. «Что вы подаёте» сверяется со списком обязательств из certificado censal. Расхождение — отдельный вопрос.
-3. Пересчитанные декларации сравниваются с поданными суммами. Разница объясняется по строкам: какой счёт или расход её дал.
-4. Только после этого gestor показывает расчёт ближайшего квартала к подаче.
+1. gestor rellena el perfil y muestra «Cómo le ha entendido gestor». El usuario lo confirma o lo corrige.
+2. «Qué presenta» se coteja con la lista de obligaciones del certificado de situación censal. Cada diferencia es una pregunta aparte.
+3. Las declaraciones recalculadas se comparan con los importes presentados. La diferencia se explica línea por línea: qué factura o qué gasto la ha producido.
+4. Solo después gestor muestra el cálculo del trimestre más próximo para presentar.
 
-## Чего gestor не делает
+## Qué no hace gestor
 
-- Не подаёт декларации и не платит: пользователь сам переносит casillas в Sede.
-- Не хранит выписку целиком: из неё остаются только подтверждённые пользователем доходы и расходы.
-- Не принимает догадку по выписке без подтверждения пользователя.
+- No presenta declaraciones ni paga: el usuario copia él mismo las casillas en la Sede electrónica de la AEAT.
+- No guarda el extracto completo: de él solo quedan los ingresos y gastos que el usuario ha confirmado.
+- No acepta una suposición basada en el extracto sin la confirmación del usuario.

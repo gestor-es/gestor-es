@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ru">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>gestor: как он работает сейчас</title>
+<title>gestor: cómo funciona ahora</title>
 <style>
 :root {
   --desk: #d5d9d6; --paper: #fff; --print: #24302a; --print-2: #4a5a51; --rule: #9aa79f; --band: #e4ebe6;
@@ -115,42 +115,42 @@ ul.no li { margin: 6px 0; }
 </head>
 <body>
 <main class="sheet">
-<h1>gestor: как он работает сейчас</h1>
+<h1>gestor: cómo funciona ahora</h1>
 <p class="lead" id="meta"></p>
 
-<h2><small>01</small>Одна мысль</h2>
-<p>gestor хранит только факты. Каждый раз он заново считает из них все декларации. Подаёте вы сами.</p>
+<h2><small>01</small>Una idea</h2>
+<p>gestor solo guarda hechos. Cada vez vuelve a calcular a partir de ellos todas las declaraciones. Usted presenta las declaraciones.</p>
 <div class="idea">
-  <div><span class="n">ВХОД</span><b>Факты</b>Счета, расходы, профиль и поданные декларации. Их вводите вы в формах.</div>
-  <div><span class="n">ВНУТРИ</span><b>Расчёт</b>Движок считает casillas при каждом открытии страницы. Готовых сумм он не хранит.</div>
-  <div><span class="n">ВЫХОД</span><b>Вы подаёте</b>gestor даёт casillas, закон с § и файл для Sede. Подписываете в Sede вы.</div>
+  <div><span class="n">ENTRADA</span><b>Hechos</b>Facturas, gastos, perfil y declaraciones presentadas. Usted los introduce en formularios.</div>
+  <div><span class="n">DENTRO</span><b>Cálculo</b>El motor calcula las casillas cada vez que se abre una página. No guarda importes ya calculados.</div>
+  <div><span class="n">SALIDA</span><b>Usted presenta</b>gestor le da las casillas, la norma con § y el fichero para la Sede. Usted firma en la Sede.</div>
 </div>
 
-<h2><small>02</small>Из чего состоит</h2>
-<p class="lead">Нажмите на блок, чтобы увидеть, что он делает. Кнопки ниже показывают, какой путь проходит каждое действие.</p>
+<h2><small>02</small>De qué se compone</h2>
+<p class="lead">Pulse un bloque para ver qué hace. Los botones de abajo muestran qué recorrido sigue cada acción.</p>
 <div class="flows" id="flows"></div>
 <div class="map">
-  <svg id="svg" viewBox="0 0 760 375" role="img" aria-label="Схема частей gestor"></svg>
+  <svg id="svg" viewBox="0 0 760 375" role="img" aria-label="Esquema de las partes de gestor"></svg>
   <div class="panel" id="panel"></div>
 </div>
 
-<h2><small>03</small>Путь одного счёта</h2>
+<h2><small>03</small>El recorrido de una factura</h2>
 <p class="lead" id="steplead"></p>
 <div class="steps">
   <ol id="steplist"></ol>
   <div>
     <div class="card" id="stepcard"></div>
-    <div class="nav2"><button id="prev">← Назад</button><button id="next">Дальше →</button></div>
+    <div class="nav2"><button id="prev">← Atrás</button><button id="next">Siguiente →</button></div>
   </div>
 </div>
 
-<h2><small>04</small>Q3 2026: откуда 303 = <span id="r303h"></span></h2>
-<p class="lead">Слева факты из базы. Справа casillas, которые движок из них посчитал. Наведите на casilla: подсветятся факты, из которых она получена.</p>
+<h2><small>04</small>Q3 2026: de dónde sale 303 = <span id="r303h"></span></h2>
+<p class="lead">A la izquierda, los hechos de la base de datos. A la derecha, las casillas que el motor ha calculado a partir de ellos. Pase el cursor sobre una casilla: se resaltarán los hechos de los que se obtiene.</p>
 <div class="two">
   <div>
-    <h3>Счета Q3, тип eu_b2b, IVA 0 %</h3>
+    <h3>Facturas Q3, tipo eu_b2b, IVA 0 %</h3>
     <table id="tinv"></table>
-    <h3>Расходы Q3 с IVA</h3>
+    <h3>Gastos Q3 con IVA</h3>
     <table id="texp"></table>
   </div>
   <div>
@@ -162,130 +162,130 @@ ul.no li { margin: 6px 0; }
 </div>
 <p id="q3note"></p>
 
-<h2><small>05</small>Что будет, если выставить ещё один счёт</h2>
-<p class="lead">Счёт тому же клиенту на Кипре, 2026 год. Движок применяет правила режима Beckham. Двигайте ползунок.</p>
+<h2><small>05</small>Qué pasa si emite otra factura</h2>
+<p class="lead">Factura al mismo cliente de Chipre, año 2026. El motor aplica las reglas del régimen Beckham. Mueva el control deslizante.</p>
 <div class="calc">
   <div class="big" id="xval"></div>
-  <input type="range" id="x" min="0" max="20000" step="500" value="0" aria-label="Сумма нового счёта, евро">
+  <input type="range" id="x" min="0" max="20000" step="500" value="0" aria-label="Importe de la nueva factura, euros">
   <div class="out">
-    <div><div class="lbl">303 за квартал</div><div class="v" id="o303"></div><div class="d">IVA 0 %: результат не меняется. Растёт только casilla 59.</div></div>
-    <div><div class="lbl">349 за квартал</div><div class="v" id="o349"></div><div class="d">Сведения, платить ничего не нужно.</div></div>
-    <div><div class="lbl">151 за 2026, к доплате</div><div class="v" id="o151"></div><div class="d" id="d151"></div></div>
+    <div><div class="lbl">303 del trimestre</div><div class="v" id="o303"></div><div class="d">IVA 0 %: el resultado no cambia. Solo aumenta la casilla 59.</div></div>
+    <div><div class="lbl">349 del trimestre</div><div class="v" id="o349"></div><div class="d">Es una declaración informativa: no hay que ingresar nada.</div></div>
+    <div><div class="lbl">151 de 2026, a ingresar</div><div class="v" id="o151"></div><div class="d" id="d151"></div></div>
   </div>
 </div>
 <p id="calcnote" class="muted"></p>
 
-<h2><small>06</small>Режим решает, что вы подаёте</h2>
-<p class="lead">Одна настройка <code>beckham_first_year</code> меняет весь набор деклараций. Обе таблицы ниже построил движок (<code>tax.duties()</code>) на данных примера за 2026 год.</p>
+<h2><small>06</small>El régimen decide qué presenta usted</h2>
+<p class="lead">Un solo ajuste, <code>beckham_first_year</code>, cambia todo el conjunto de declaraciones. El motor (<code>tax.duties()</code>) ha generado las dos tablas de abajo con los datos del ejemplo de 2026.</p>
 <div class="flows">
-  <button data-reg="beckham" aria-pressed="true">Beckham (режим примера)</button>
-  <button data-reg="general" aria-pressed="false">Если бы общий IRPF</button>
+  <button data-reg="beckham" aria-pressed="true">Beckham (régimen del ejemplo)</button>
+  <button data-reg="general" aria-pressed="false">Si fuera IRPF general</button>
 </div>
 <table class="duty" id="tduty"></table>
 
-<h2><small>07</small>Как агент помогает с Sede</h2>
-<p class="lead">Claude Code или Codex работает через <code>mcp.py</code>. Он читает расчёт, но не может ничего изменить в базе.</p>
+<h2><small>07</small>Cómo ayuda el agente con la Sede</h2>
+<p class="lead">Claude Code o Codex trabaja a través de <code>mcp.py</code>. Lee el cálculo, pero no puede cambiar nada en la base de datos.</p>
 <div class="lane">
-  <div><b>1. АГЕНТ</b>Вызывает <code>declarations</code>: список деклараций года со сроками и статусом.</div>
-  <div><b>2. MCP</b>Вызывает <code>declaration</code>: casillas, заметки с § и файл в <code>~/.gestor/sede/main/</code>.</div>
-  <div><b>3. CHROME</b>Агент открывает форму Sede в вашем браузере, где вы уже вошли.</div>
-  <div><b>4. ПРОВЕРКА</b>Загружает файл или вписывает casillas. Нажимает «Validar». Сверяет экран с gestor.</div>
-  <div><b>5. ЗАПРЕЩЕНО</b><span class="stamp late">не нажимает</span><br><br>«Presentar» и «Firmar y enviar». Это правило записано в <code>INSTRUCTIONS</code>. Подписываете вы.</div>
+  <div><b>1. AGENTE</b>Llama a <code>declarations</code>: lista de declaraciones del año con plazos y estado.</div>
+  <div><b>2. MCP</b>Llama a <code>declaration</code>: casillas, notas con § y fichero en <code>~/.gestor/sede/main/</code>.</div>
+  <div><b>3. CHROME</b>El agente abre el formulario de la Sede en su navegador, donde usted ya ha iniciado sesión.</div>
+  <div><b>4. COMPROBACIÓN</b>Sube el fichero o escribe las casillas. Pulsa «Validar declaración». Compara la pantalla con gestor.</div>
+  <div><b>5. PROHIBIDO</b><span class="stamp late">no pulsa</span><br><br>«Presentar declaración» ni «Firmar y enviar». Esta regla está escrita en <code>INSTRUCTIONS</code>. Usted firma.</div>
 </div>
 
-<h2><small>08</small>Чего gestor не делает</h2>
+<h2><small>08</small>Qué no hace gestor</h2>
 <ul class="no">
-  <li>Не подаёт декларации и не платит.</li>
-  <li>Не читает банк. Выписку вносите вы или агент.</li>
-  <li>Не считает штрафы за опоздание.</li>
-  <li>Casilla 72 декларации 303 есть только в заметке.</li>
-  <li>Не знает праздников. Если срок выпадает на выходной, gestor переносит его на понедельник. Национальные и региональные праздники он не учитывает.</li>
-  <li>Файлы для «Importar» на настоящей Sede ещё не проверены. В файле 151 поля пола, даты рождения и IAE совпали байт в байт с эталонным файлом другой программы.</li>
+  <li>No presenta declaraciones ni paga.</li>
+  <li>No lee el banco. El extracto lo introduce usted o el agente.</li>
+  <li>No calcula los recargos por declaración extemporánea.</li>
+  <li>La casilla 72 del modelo 303 solo aparece en una nota.</li>
+  <li>No conoce los festivos. Si el plazo cae en fin de semana, gestor lo traslada al lunes. No tiene en cuenta los festivos nacionales ni autonómicos.</li>
+  <li>Los ficheros para «Importar» aún no se han probado en la Sede real. En el fichero del 151, los campos de sexo, fecha de nacimiento e IAE coincidieron byte a byte con el fichero de referencia de otro programa.</li>
 </ul>
 
 <div class="colophon" id="colophon"></div>
 </main>
 
 <script>
-const D = {"today": "2026-10-13", "lines": {"__main__.py": 13, "core.py": 99, "db.py": 129, "i18n.py": 47, "mcp.py": 152, "rules.py": 120, "sede.py": 211, "sources.py": 74, "tax.py": 1179, "web.py": 1587}, "sources": {"verified": 116, "interpretation": 10, "disputed": 4}, "inv": [{"no": "FACT-2026-00007", "date": "2026-07-31", "notes": "", "base": 400000}, {"no": "FACT-2026-00008", "date": "2026-08-31", "notes": "", "base": 400000}, {"no": "FACT-2026-00009", "date": "2026-09-30", "notes": "", "base": 400000}], "exp": [{"date": "2026-07-05", "who": "Gestoría Ejemplo SL", "base": 5000, "vat": 1050}, {"date": "2026-08-05", "who": "Gestoría Ejemplo SL", "base": 5000, "vat": 1050}, {"date": "2026-09-05", "who": "Gestoría Ejemplo SL", "base": 5000, "vat": 1050}], "f303": [["27", "Total cuota devengada", 0], ["28", "Por cuotas soportadas en operaciones interiores corrientes: Base", 15000], ["29", "Por cuotas soportadas en operaciones interiores corrientes: Cuota", 3150], ["45", "Total a deducir", 3150], ["46", "Resultado régimen general", -3150], ["59", "Entregas intracomunitarias de bienes y servicios", 1200000], ["66", "Atribuible a la Administración del Estado", -3150], ["110", "Cuotas a compensar pendientes de periodos anteriores", 6300], ["87", "Cuotas a compensar de periodos previos pendientes para periodos posteriores", 6300], ["71", "Resultado", -3150]], "r303": -3150, "f349": [["S", "CY99999999L", 1200000]], "deadline": "2026-10-20", "carry303": 9450, "f151": [["B.02", "Ingresos íntegros (все клиенты, в т.ч. иностранные)", 3600000], ["B.03/B.04", "Gastos de personal; Gastos de aprovisionamiento de materiales y de suministros (только они)", 0], ["B.05 = F.17", "Rendimiento neto: positivo = Base liquidable general", 3600000], ["G.19", "Cuota correspondiente a la base liquidable general: 24 % до 600 000 €, 47 % сверх", 864000], ["G.33", "Retenciones e ingresos a cuenta", 0], ["G.34", "Cuotas del Impuesto sobre la Renta de no Residentes pagadas respecto de rentas incluidas en la declaración (Modelo 210)", 0], ["G.43", "Resultado de la declaración: + a ingresar / − a devolver", 864000]], "r151": 864000, "high151": 1080000, "income": 3600000, "paid210": 0, "duty": {"beckham": {"yes": [{"m": "303", "what": "IVA за квартал", "why": "У вас деятельность в Испании. 303 подаётся каждый квартал, даже если IVA нет."}, {"m": "349", "what": "Сведения об операциях с бизнесом из ЕС", "why": "В 2026 есть счета бизнесу из ЕС или услуги поставщиков из ЕС."}, {"m": "390", "what": "Годовая сводка IVA", "why": "Её подаёт каждый, кто подаёт 303 (кроме участников SII и режимов, освобождённых приказом)."}, {"m": "151", "what": "Годовая декларация режима Beckham", "why": "2026 — год режима Beckham (первый год 2025)."}, {"m": "RETA", "what": "Взнос в Seguridad Social autónomo", "why": "Вы в RETA с 2025-02-01."}], "no": [{"m": "130", "what": "Аванс IRPF: 20 % прибыли с 1 января", "why": "В режиме Beckham авансы — только удержания клиентов по правилам IRNR. Применяется ли общий 130 к деятельности в режиме, закон прямо не говорит."}, {"m": "100", "what": "Годовая декларация IRPF (Renta)", "why": "Вместо обычной Renta — Modelo 151."}, {"m": "210", "what": "Декларация IRNR нерезидента без постоянного представительства", "why": "Вы налогоплательщик IRPF, а 210 подают нерезиденты. Клиент без представительства в Испании не удерживает налог, поэтому квартального платежа закон не требует. Уплаченные добровольно 210 впишите в анкете — gestor вычтет их в 151."}, {"m": "347", "what": "Контрагенты с оборотом за год больше 3 005,06 € (бизнес из ЕС идёт в 349)", "why": "Ни с одним контрагентом — в Испании или вне ЕС — оборот не больше 3 005,06 €. Операции из 349 и с удержанием не считаются."}, {"m": "111", "what": "Удержания IRPF, которые сделали вы", "why": "Вы не платили вознаграждений, с которых надо удерживать IRPF."}, {"m": "115", "what": "Удержание 19 % с аренды помещения", "why": "В 2026 нет расходов на аренду, с которых вы удержали 19 %."}]}, "general": {"yes": [{"m": "303", "what": "IVA за квартал", "why": "У вас деятельность в Испании. 303 подаётся каждый квартал, даже если IVA нет."}, {"m": "130", "what": "Аванс IRPF: 20 % прибыли с 1 января", "why": "Общий IRPF. Освобождение (не меньше 70 % дохода за прошлый год с удержанием клиента) к вам не применяется."}, {"m": "349", "what": "Сведения об операциях с бизнесом из ЕС", "why": "В 2026 есть счета бизнесу из ЕС или услуги поставщиков из ЕС."}, {"m": "390", "what": "Годовая сводка IVA", "why": "Её подаёт каждый, кто подаёт 303 (кроме участников SII и режимов, освобождённых приказом)."}, {"m": "720", "what": "Имущество за рубежом", "why": "Только если за рубежом больше 50 000 € в одном блоке: счета, ценные бумаги или недвижимость. Этого gestor не видит."}, {"m": "100", "what": "Годовая декларация IRPF (Renta)", "why": "В 2026 у вас общий режим IRPF."}, {"m": "RETA", "what": "Взнос в Seguridad Social autónomo", "why": "Вы в RETA с 2025-02-01."}], "no": [{"m": "347", "what": "Контрагенты с оборотом за год больше 3 005,06 € (бизнес из ЕС идёт в 349)", "why": "Ни с одним контрагентом — в Испании или вне ЕС — оборот не больше 3 005,06 €. Операции из 349 и с удержанием не считаются."}, {"m": "111", "what": "Удержания IRPF, которые сделали вы", "why": "Вы не платили вознаграждений, с которых надо удерживать IRPF."}, {"m": "115", "what": "Удержание 19 % с аренды помещения", "why": "В 2026 нет расходов на аренду, с которых вы удержали 19 %."}]}}, "counts": {"clients": 1, "invoices": 9, "expenses": 18, "filings": 0}};
+const D = {"today": "2026-10-13", "lines": {"__main__.py": 13, "core.py": 99, "db.py": 129, "i18n.py": 47, "mcp.py": 152, "rules.py": 120, "sede.py": 211, "sources.py": 74, "tax.py": 1179, "web.py": 1587}, "sources": {"verified": 116, "interpretation": 10, "disputed": 4}, "inv": [{"no": "FACT-2026-00007", "date": "2026-07-31", "notes": "", "base": 400000}, {"no": "FACT-2026-00008", "date": "2026-08-31", "notes": "", "base": 400000}, {"no": "FACT-2026-00009", "date": "2026-09-30", "notes": "", "base": 400000}], "exp": [{"date": "2026-07-05", "who": "Gestoría Ejemplo SL", "base": 5000, "vat": 1050}, {"date": "2026-08-05", "who": "Gestoría Ejemplo SL", "base": 5000, "vat": 1050}, {"date": "2026-09-05", "who": "Gestoría Ejemplo SL", "base": 5000, "vat": 1050}], "f303": [["27", "Total cuota devengada", 0], ["28", "Por cuotas soportadas en operaciones interiores corrientes: Base", 15000], ["29", "Por cuotas soportadas en operaciones interiores corrientes: Cuota", 3150], ["45", "Total a deducir", 3150], ["46", "Resultado régimen general", -3150], ["59", "Entregas intracomunitarias de bienes y servicios", 1200000], ["66", "Atribuible a la Administración del Estado", -3150], ["110", "Cuotas a compensar pendientes de periodos anteriores", 6300], ["87", "Cuotas a compensar de periodos previos pendientes para periodos posteriores", 6300], ["71", "Resultado", -3150]], "r303": -3150, "f349": [["S", "CY99999999L", 1200000]], "deadline": "2026-10-20", "carry303": 9450, "f151": [["B.02", "Ingresos íntegros (todos los clientes, incluidos los extranjeros)", 3600000], ["B.03/B.04", "Gastos de personal; Gastos de aprovisionamiento de materiales y de suministros (solo estos)", 0], ["B.05 = F.17", "Rendimiento neto: positivo = Base liquidable general", 3600000], ["G.19", "Cuota correspondiente a la base liquidable general: 24 % hasta 600 000 €, 47 % por encima", 864000], ["G.33", "Retenciones e ingresos a cuenta", 0], ["G.34", "Cuotas del Impuesto sobre la Renta de no Residentes pagadas respecto de rentas incluidas en la declaración (Modelo 210)", 0], ["G.43", "Resultado de la declaración: + a ingresar / − a devolver", 864000]], "r151": 864000, "high151": 1080000, "income": 3600000, "paid210": 0, "duty": {"beckham": {"yes": [{"m": "303", "what": "IVA. Autoliquidación", "why": "Tiene actividad en España. El 303 se presenta cada trimestre, aunque no haya IVA."}, {"m": "349", "what": "Declaración recapitulativa de operaciones intracomunitarias", "why": "En 2026 hay facturas a empresas de la UE o servicios de proveedores de la UE."}, {"m": "390", "what": "IVA. Declaración Resumen Anual", "why": "La presenta todo el que presenta el 303 (salvo quienes están en el SII y los regímenes exonerados por orden)."}, {"m": "151", "what": "Declaración anual del régimen Beckham", "why": "2026 es un año del régimen Beckham (primer año 2025)."}, {"m": "RETA", "what": "Cuota a la Seguridad Social del autónomo", "why": "Está en el RETA desde el 2025-02-01."}], "no": [{"m": "130", "what": "Pago fraccionado del IRPF: 20 % del beneficio desde el 1 de enero", "why": "En el régimen Beckham, los pagos a cuenta son solo las retenciones de los clientes según las reglas del IRNR. La ley no dice expresamente si el 130 general se aplica a la actividad en el régimen."}, {"m": "100", "what": "Declaración anual del IRPF (Renta)", "why": "En lugar de la Renta habitual, se presenta el Modelo 151."}, {"m": "210", "what": "Declaración del IRNR de no residente sin establecimiento permanente", "why": "Usted es contribuyente del IRPF, y el 210 lo presentan los no residentes. Un cliente sin establecimiento en España no retiene el impuesto, por eso la ley no exige un pago trimestral. Anote en su perfil los 210 pagados voluntariamente. gestor los restará en el 151."}, {"m": "347", "what": "Operaciones con terceras personas de más de 3 005,06 € al año (las operaciones con empresas de la UE van en el 349)", "why": "Ningún operador, en España o fuera de la UE, supera 3 005,06 € de volumen. No cuentan las operaciones del 349 ni las operaciones con retención."}, {"m": "111", "what": "Retenciones de IRPF que usted practicó", "why": "No ha pagado retribuciones de las que haya que retener IRPF."}, {"m": "115", "what": "Retención del 19 % sobre el alquiler del local", "why": "En 2026 no hay gastos de alquiler en los que haya retenido el 19 %."}]}, "general": {"yes": [{"m": "303", "what": "IVA. Autoliquidación", "why": "Tiene actividad en España. El 303 se presenta cada trimestre, aunque no haya IVA."}, {"m": "130", "what": "Pago fraccionado del IRPF: 20 % del beneficio desde el 1 de enero", "why": "IRPF general. La exención (al menos el 70 % de los ingresos del año pasado con retención del cliente) no se le aplica."}, {"m": "349", "what": "Declaración recapitulativa de operaciones intracomunitarias", "why": "En 2026 hay facturas a empresas de la UE o servicios de proveedores de la UE."}, {"m": "390", "what": "IVA. Declaración Resumen Anual", "why": "La presenta todo el que presenta el 303 (salvo quienes están en el SII y los regímenes exonerados por orden)."}, {"m": "720", "what": "Declaración sobre bienes y derechos situados en el extranjero", "why": "Solo si tiene más de 50 000 € en el extranjero en un bloque: cuentas, valores o inmuebles. gestor no puede verlo."}, {"m": "100", "what": "Declaración anual del IRPF (Renta)", "why": "En 2026 está en el régimen general del IRPF."}, {"m": "RETA", "what": "Cuota a la Seguridad Social del autónomo", "why": "Está en el RETA desde el 2025-02-01."}], "no": [{"m": "347", "what": "Operaciones con terceras personas de más de 3 005,06 € al año (las operaciones con empresas de la UE van en el 349)", "why": "Ningún operador, en España o fuera de la UE, supera 3 005,06 € de volumen. No cuentan las operaciones del 349 ni las operaciones con retención."}, {"m": "111", "what": "Retenciones de IRPF que usted practicó", "why": "No ha pagado retribuciones de las que haya que retener IRPF."}, {"m": "115", "what": "Retención del 19 % sobre el alquiler del local", "why": "En 2026 no hay gastos de alquiler en los que haya retenido el 19 %."}]}}, "counts": {"clients": 1, "invoices": 9, "expenses": 18, "filings": 0}};
 const $ = id => document.getElementById(id);
 const eur = c => (c < 0 ? "−" : "") + (Math.abs(c) / 100).toLocaleString("de-DE", {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " €";
 const dmy = iso => iso.slice(8, 10) + "." + iso.slice(5, 7) + "." + iso.slice(0, 4);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
 const st = D.sources, nsrc = Object.values(st).reduce((a, b) => a + b, 0);
 
-$("meta").innerHTML = `Состояние на ${dmy(D.today)}. Данные вымышленные: autónomo в режиме Beckham, один клиент на Кипре, счёт на 4.000 € каждый месяц.
-Все суммы на этой странице посчитал движок gestor из этого профиля в момент сборки. Руками в страницу не вписано ни одной суммы.`;
+$("meta").innerHTML = `Situación a ${dmy(D.today)}. Datos ficticios: autónomo en régimen Beckham, un cliente en Chipre, una factura de 4.000 € cada mes.
+Todos los importes de esta página los ha calculado el motor de gestor a partir de este perfil en el momento de generarla. Ningún importe se ha escrito a mano en la página.`;
 
 /* ---------- 02 map ---------- */
 const N = {
-  you:   {x: 20,  y: 170, t: "Вы, браузер", s: "127.0.0.1:8765", ext: true},
-  web:   {x: 210, y: 170, t: "web.py", s: `${D.lines["web.py"]} строк`},
+  you:   {x: 20,  y: 170, t: "Usted, navegador", s: "127.0.0.1:8765", ext: true},
+  web:   {x: 210, y: 170, t: "web.py", s: `${D.lines["web.py"]} líneas`},
   db:    {x: 400, y: 40,  t: "main.db", s: "SQLite"},
-  tax:   {x: 400, y: 170, t: "tax.py", s: `${D.lines["tax.py"]} строк`},
-  src:   {x: 590, y: 170, t: "sources/*.json", s: `${nsrc} норм`},
-  sede:  {x: 400, y: 310, t: "sede.py", s: "файл Importar"},
-  aeat:  {x: 20,  y: 310, t: "Sede AEAT", s: "вне gestor", ext: true},
-  agent: {x: 20,  y: 40,  t: "Claude / Codex", s: "ваша подписка", ext: true},
-  mcp:   {x: 210, y: 40,  t: "mcp.py", s: `${D.lines["mcp.py"]} строк`},
+  tax:   {x: 400, y: 170, t: "tax.py", s: `${D.lines["tax.py"]} líneas`},
+  src:   {x: 590, y: 170, t: "sources/*.json", s: `${nsrc} normas`},
+  sede:  {x: 400, y: 310, t: "sede.py", s: "fichero Importar"},
+  aeat:  {x: 20,  y: 310, t: "Sede AEAT", s: "fuera de gestor", ext: true},
+  agent: {x: 20,  y: 40,  t: "Claude / Codex", s: "su suscripción", ext: true},
+  mcp:   {x: 210, y: 40,  t: "mcp.py", s: `${D.lines["mcp.py"]} líneas`},
 };
 const W = 150, H = 52;
 const E = [["you","web"],["web","db"],["web","tax"],["tax","db"],["tax","src"],["web","sede"],["sede","tax"],["sede","aeat"],
            ["agent","mcp"],["mcp","tax"],["mcp","sede"],["agent","aeat"]];
 const INFO = {
-  you: ["Вы, браузер", "http://127.0.0.1:8765", [
-    "Обычные HTML-формы. JavaScript-фреймворков нет.",
-    "Профиль выбирается cookie <code>entity</code>. Если cookie нет, открывается <code>main</code>.",
-    "Даты на экране в формате dd.mm.yyyy. В базе они хранятся как ISO."]],
-  web: ["Интерфейс", "gestor/web.py", [
-    `${D.lines["web.py"]} строк. 26 адресов в списке <code>ROUTES</code>.`,
-    "Собирает HTML на сервере и отдаёт готовую страницу.",
-    "Отклоняет POST с чужого сайта: проверяет заголовок Origin.",
-    "Сам ничего не считает. Расчёт он берёт у tax.py."]],
-  db: ["Хранилище", "~/.gestor/main.db", [
-    "Один файл SQLite на профиль. 6 таблиц.",
-    "Деньги хранятся целыми центами, поэтому ошибок округления нет.",
-    `Сейчас в базе: ${D.counts.invoices} счетов, ${D.counts.expenses} расходов, ${D.counts.filings} поданных деклараций, ${D.counts.clients} клиент.`,
-    "Бэкап: скопировать папку <code>~/.gestor</code>."]],
-  tax: ["Движок", "gestor/tax.py", [
-    `${D.lines["tax.py"]} строк. Считает 303, 349, 347, 390, 130, 100, 151, 202, 111, 115, 200, RETA и сроки.`,
-    "Только читает базу. Ничего не пишет.",
-    "Работает при каждом открытии страницы. Добавили счёт, и на следующей странице цифры уже новые.",
-    "К каждой сумме прикладывает id норм для значка §."]],
-  src: ["Нормы закона", "gestor/sources/", [
-    `${nsrc} норм из BOE, AEAT и DGT: испанский оригинал, перевод и что это значит для вас.`,
-    `Статусы: ${st.verified} подтверждены текстом закона, ${st.interpretation} толкование, ${st.disputed} спорные.`,
-    "Значок § у суммы открывает карточку нормы.",
-    "Тест <code>tests.test_sources</code> проверяет, что каждый § ведёт к полной карточке."]],
-  sede: ["Файл для Sede", "gestor/sede.py", [
-    "Строит файл фиксированной ширины для кнопки «Importar» в форме Sede.",
-    "Декларации: 303, 349, 130 и 151.",
-    "Позиции полей для 303, 130 и 151 взяты из официальных дизайнов AEAT: <code>gestor/dr/*.json</code>.",
-    "Без NIE в профиле файл не строится: Sede его не примет."]],
+  you: ["Usted, navegador", "http://127.0.0.1:8765", [
+    "Formularios HTML normales. No hay frameworks de JavaScript.",
+    "El perfil se elige con la cookie <code>entity</code>. Si no hay cookie, se abre <code>main</code>.",
+    "En pantalla, las fechas tienen el formato dd.mm.yyyy. En la base de datos se guardan como ISO."]],
+  web: ["Interfaz", "gestor/web.py", [
+    `${D.lines["web.py"]} líneas. 26 direcciones en la lista <code>ROUTES</code>.`,
+    "Genera el HTML en el servidor y entrega la página terminada.",
+    "Rechaza los POST de otro sitio web: comprueba la cabecera Origin.",
+    "No calcula nada por sí misma. El cálculo lo obtiene de tax.py."]],
+  db: ["Almacenamiento", "~/.gestor/main.db", [
+    "Un fichero SQLite por perfil. 6 tablas.",
+    "El dinero se guarda en céntimos enteros, por eso no hay errores de redondeo.",
+    `Ahora en la base de datos: ${D.counts.invoices} facturas, ${D.counts.expenses} gastos, ${D.counts.filings} declaraciones presentadas, ${D.counts.clients} cliente.`,
+    "Copia de seguridad: copiar la carpeta <code>~/.gestor</code>."]],
+  tax: ["Motor", "gestor/tax.py", [
+    `${D.lines["tax.py"]} líneas. Calcula 303, 349, 347, 390, 130, 100, 151, 202, 111, 115, 200, RETA y plazos.`,
+    "Solo lee la base de datos. No escribe nada.",
+    "Se ejecuta cada vez que se abre una página. Si añade una factura, en la página siguiente las cifras ya son nuevas.",
+    "A cada importe le añade los id de las normas para el símbolo §."]],
+  src: ["Normas legales", "gestor/sources/", [
+    `${nsrc} normas del BOE, la AEAT y la DGT: original en español, traducción y qué significa para usted.`,
+    `Estados: ${st.verified} confirmadas por el texto de la ley, ${st.interpretation} interpretación, ${st.disputed} discutibles.`,
+    "El símbolo § junto a un importe abre la ficha de la norma.",
+    "La prueba <code>tests.test_sources</code> comprueba que cada § lleva a una ficha completa."]],
+  sede: ["Fichero para la Sede", "gestor/sede.py", [
+    "Genera un fichero de ancho fijo para el botón «Importar» del formulario de la Sede.",
+    "Declaraciones: 303, 349, 130 y 151.",
+    "Las posiciones de los campos del 303, 130 y 151 se han tomado de los diseños oficiales de la AEAT: <code>gestor/dr/*.json</code>.",
+    "Sin NIE en el perfil no se genera el fichero: la Sede no lo aceptaría."]],
   aeat: ["Sede AEAT", "sede.agenciatributaria.gob.es", [
-    "Это внешняя система, а не часть gestor.",
-    "Вы входите, загружаете файл, нажимаете «Validar» и подписываете.",
-    "gestor ничего туда не отправляет.",
-    "После подачи вы вносите код CSV в gestor: «Отметить поданной»."]],
-  agent: ["Агент", "Claude Code или Codex", [
-    "Работает на вашей подписке. gestor не хранит ключей.",
-    "Видит и меняет только то, что даёт mcp.py: анкету, книги, декларации.",
-    "В Chrome может заполнить форму Sede, но не подать её."]],
-  mcp: ["MCP-сервер", "gestor/mcp.py", [
-    "Протокол MCP через stdio. 14 инструментов и промпт <code>start</code>, все профили.",
-    "Пишет анкету, клиентов, расходы, черновики счетов и отметки о подаче — после вашего «да».",
-    "Счёт не выставляет: номер присваиваете вы в интерфейсе. Файлы для Sede — в <code>~/.gestor/sede/&lt;профиль&gt;/</code>.",
-    "В <code>INSTRUCTIONS</code> есть запрет нажимать «Presentar» и «Firmar y enviar»."]],
+    "Es un sistema externo, no forma parte de gestor.",
+    "Usted accede, sube el fichero con «Importar», pulsa «Validar declaración» y firma.",
+    "gestor no envía nada allí.",
+    "Después de presentar, usted introduce en gestor el Código Seguro de Verificación (CSV) del justificante de presentación: «Marcar como presentada»."]],
+  agent: ["Agente", "Claude Code o Codex", [
+    "Funciona con su suscripción. gestor no guarda claves.",
+    "Solo ve lo que entrega mcp.py: las casillas de una declaración.",
+    "En Chrome puede rellenar el formulario de la Sede, pero no presentarlo."]],
+  mcp: ["Servidor MCP", "gestor/mcp.py", [
+    "Protocolo MCP por stdio, solo lectura.",
+    "2 herramientas: <code>declarations</code> y <code>declaration</code>.",
+    "Solo escribe ficheros para la Sede en <code>~/.gestor/sede/main/</code>.",
+    "En <code>INSTRUCTIONS</code> está prohibido pulsar «Presentar declaración» y «Firmar y enviar»."]],
 };
 const FLOWS = {
-  "Открыть обзор": [["you","web"],["web","tax"],["tax","db"],["tax","src"],
-    ["Вы открываете страницу.", "web.py просит tax.py посчитать год.", "tax.py читает счета и расходы из main.db.", "tax.py прикладывает нормы §.", "web.py собирает HTML и отдаёт его вам."]],
-  "Выставить счёт": [["you","web"],["web","db"],
-    ["Вы нажимаете «Выставить».", "web.py присваивает номер и замораживает данные сторон.", "Счёт записан в main.db. Изменить его больше нельзя."]],
-  "Файл для Sede": [["you","web"],["web","sede"],["sede","tax"],["sede","aeat"],
-    ["Вы нажимаете «Файл для Sede» на странице /taxes.", "sede.py берёт casillas у tax.py.", "Вы скачиваете файл.", "Вы загружаете его в Sede и подписываете сами."]],
-  "Агент и Sede": [["agent","mcp"],["mcp","tax"],["mcp","sede"],["agent","aeat"],
-    ["Агент спрашивает mcp.py о декларации.", "mcp.py берёт casillas у tax.py.", "mcp.py пишет файл для Sede.", "Агент заполняет форму в Sede и нажимает «Validar». Подаёте вы."]],
+  "Abrir el resumen": [["you","web"],["web","tax"],["tax","db"],["tax","src"],
+    ["Usted abre la página.", "web.py pide a tax.py que calcule el año.", "tax.py lee las facturas y los gastos de main.db.", "tax.py añade las normas §.", "web.py genera el HTML y se lo entrega."]],
+  "Emitir una factura": [["you","web"],["web","db"],
+    ["Usted pulsa «Emitir».", "web.py asigna el número y fija los datos de las partes.", "La factura queda guardada en main.db. Ya no se puede modificar."]],
+  "Fichero para la Sede": [["you","web"],["web","sede"],["sede","tax"],["sede","aeat"],
+    ["Usted pulsa «Fichero para la Sede» en la página /taxes.", "sede.py obtiene las casillas de tax.py.", "Usted descarga el fichero.", "Usted lo sube a la Sede y firma."]],
+  "Agente y Sede": [["agent","mcp"],["mcp","tax"],["mcp","sede"],["agent","aeat"],
+    ["El agente pregunta a mcp.py por la declaración.", "mcp.py obtiene las casillas de tax.py.", "mcp.py escribe el fichero para la Sede.", "El agente rellena el formulario en la Sede y pulsa «Validar declaración». Usted presenta."]],
 };
 const svg = $("svg"), NS = "http://www.w3.org/2000/svg";
 const mk = (tag, attrs, parent = svg) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
@@ -342,30 +342,30 @@ showNode("tax");
 
 /* ---------- 03 stepper ---------- */
 const last = D.inv.at(-1), q3total = D.inv.reduce((a, i) => a + i.base, 0);
-$("steplead").textContent = `Пример: счёт ${last.no} от ${dmy(last.date)} на ${eur(last.base)}. Так через gestor проходит любой счёт.`;
+$("steplead").textContent = `Ejemplo: factura ${last.no} del ${dmy(last.date)} por ${eur(last.base)}. Así pasa cualquier factura por gestor.`;
 const tax24 = Math.round(last.base * 0.24);
 const STEPS = [
-  ["Черновик", "черновик", "doubt", `Вы заполняете форму «Новый счёт». В базе появляется строка, но без номера.`,
+  ["Borrador", "borrador", "doubt", `Usted rellena el formulario «Nueva factura». En la base de datos aparece una fila, pero sin número.`,
    `invoices: number = <em>NULL</em>, issue_date = ${last.date}\ninvoice_lines: «${esc(last.notes || "services")}», ${eur(last.base)}`,
-   "Черновик можно править и удалить. В расчёты налогов он не попадает."],
-  ["Выставить", "выставлен", "", `Вы нажимаете «Выставить». gestor берёт следующий номер серии по шаблону FACT-{YYYY}-{NNNNN}.`,
-   `invoices: number = <em>${last.no.split("-").at(-1)}</em> → ${last.no}\nparties = <em>JSON с данными вас и клиента на этот день</em>`,
-   "Данные сторон замораживаются. Если вы потом смените адрес, старый счёт не изменится. Выставленный счёт исправляет только factura rectificativa."],
-  ["Квартал", "3T", "", `Движок (<code>tax.sales()</code>) кладёт счёт в квартал по дате операции.`,
-   `${dmy(last.date)} → месяц ${+last.date.slice(5, 7)} → <em>3T 2026</em>`,
-   "Дата оплаты на квартал не влияет."],
-  ["IVA: 303 и 349", "eu_b2b", "", `Клиент — бизнес на Кипре с VAT ID. Тип счёта <code>eu_b2b</code>: IVA 0 %, inversión del sujeto pasivo.`,
+   "El borrador se puede modificar y eliminar. No entra en los cálculos de impuestos."],
+  ["Emitir", "emitida", "", `Usted pulsa «Emitir». gestor toma el siguiente número de la serie según la plantilla FACT-{YYYY}-{NNNNN}.`,
+   `invoices: number = <em>${last.no.split("-").at(-1)}</em> → ${last.no}\nparties = <em>JSON con sus datos y los del cliente en ese día</em>`,
+   "Los datos de las partes quedan fijados. Si después cambia de dirección, la factura antigua no cambia. Una factura emitida solo se corrige con una factura rectificativa."],
+  ["Trimestre", "3T", "", `El motor (<code>tax.sales()</code>) asigna la factura al trimestre según la fecha de la operación.`,
+   `${dmy(last.date)} → mes ${+last.date.slice(5, 7)} → <em>3T 2026</em>`,
+   "La fecha de cobro no influye en el trimestre."],
+  ["IVA: 303 y 349", "eu_b2b", "", `El cliente es una empresa de Chipre con VAT ID. Tipo de factura <code>eu_b2b</code>: IVA 0 %, inversión del sujeto pasivo.`,
    `303, 3T: casilla 59 += <em>${eur(last.base)}</em>, IVA = 0\n349, 3T: ${D.f349[0][1]}, clave S += <em>${eur(last.base)}</em>`,
-   "IVA с этого счёта платит клиент у себя на Кипре. Вы только сообщаете о нём в 349."],
-  ["Beckham: 151", "151", "", `Режим Beckham: доход облагается по ставке 24 % до 600.000 €. Расходы и RETA базу не уменьшают.`,
+   "El IVA de esta factura lo paga el cliente en Chipre. Usted solo la declara en el 349."],
+  ["Beckham: 151", "151", "", `Régimen Beckham: los rendimientos tributan al 24 % hasta 600.000 €. Los gastos y el RETA no reducen la base.`,
    `151, 2026: B.02 ingresos += <em>${eur(last.base)}</em>\nG.19 cuota += 24 % = <em>${eur(tax24)}</em>`,
-   "Налог за год gestor считает в 151. Добровольные платежи 210 засчитываются в G.34."],
-  ["Подача", "вы", "late", `На странице /taxes вы видите casillas и скачиваете файл. Потом загружаете его в Sede и подписываете.`,
-   `Срок 303 и 349 за 3T: <em>${dmy(D.deadline)}</em>`,
-   "gestor ничего не отправляет сам. Это граница, которую он не переходит."],
-  ["Отметка", "presentado", "", `После подачи вы нажимаете «Отметить поданной» и вносите сумму и код CSV из justificante.`,
+   "gestor calcula el impuesto del año en el 151. Los pagos voluntarios del 210 se descuentan en G.34."],
+  ["Presentación", "usted", "late", `En la página /taxes usted ve las casillas y descarga el fichero. Después lo sube a la Sede y firma.`,
+   `Plazo del 303 y del 349 del 3T: <em>${dmy(D.deadline)}</em>`,
+   "gestor no envía nada por sí mismo. Es un límite que no cruza."],
+  ["Marca", "presentado", "", `Después de presentar, usted pulsa «Marcar como presentada» e introduce el importe y el CSV del justificante de presentación.`,
    `filings: modelo 303, 2026, 3T, filed_on, amount, <em>CSV</em>`,
-   "Обзор переносит сумму из «≈ к оплате» в «оплачено». Если потом добавить счёт в этот квартал, gestor покажет расхождение с поданной суммой."],
+   "El resumen pasa el importe de «≈ a pagar» a «pagado». Si después añade una factura a ese trimestre, gestor mostrará la diferencia con el importe presentado."],
 ];
 let cur = 0;
 $("steplist").innerHTML = STEPS.map((s, i) => `<li data-i="${i}">${s[0]}</li>`).join("");
@@ -383,15 +383,15 @@ go(0);
 
 /* ---------- 04 Q3 ---------- */
 $("r303h").textContent = eur(D.r303);
-$("tinv").innerHTML = "<tr><th>Номер</th><th>Дата</th><th style='text-align:right'>База</th></tr>" +
+$("tinv").innerHTML = "<tr><th>Número</th><th>Fecha</th><th style='text-align:right'>Base</th></tr>" +
   D.inv.map(i => `<tr data-src="inv"><td>${i.no}</td><td>${dmy(i.date)}</td><td class="num">${eur(i.base)}</td></tr>`).join("") +
-  `<tr class="total" data-src="inv"><td>Итого</td><td></td><td class="num">${eur(q3total)}</td></tr>`;
-$("texp").innerHTML = "<tr><th>Дата</th><th>Поставщик</th><th style='text-align:right'>База</th><th style='text-align:right'>IVA 21 %</th></tr>" +
+  `<tr class="total" data-src="inv"><td>Total</td><td></td><td class="num">${eur(q3total)}</td></tr>`;
+$("texp").innerHTML = "<tr><th>Fecha</th><th>Proveedor</th><th style='text-align:right'>Base</th><th style='text-align:right'>IVA 21 %</th></tr>" +
   D.exp.map(e => `<tr data-src="exp"><td>${dmy(e.date)}</td><td>${esc(e.who)}</td><td class="num">${eur(e.base)}</td><td class="num">${eur(e.vat)}</td></tr>`).join("");
 const FEED = {"59": ["inv"], "28": ["exp"], "29": ["exp"], "45": ["exp"], "46": ["exp"], "66": ["exp"], "71": ["exp"]};
-$("t303").innerHTML = "<tr><th>Casilla</th><th>Что это</th><th style='text-align:right'>Сумма</th></tr>" +
+$("t303").innerHTML = "<tr><th>Casilla</th><th>Qué es</th><th style='text-align:right'>Importe</th></tr>" +
   D.f303.map(([b, l, v]) => `<tr data-box="${b}" class="${b === "71" ? "total" : ""}"><td class="box">${b}</td><td>${esc(l)}</td><td class="num">${eur(v)}</td></tr>`).join("");
-$("t349").innerHTML = "<tr><th>Clave</th><th>VAT ID</th><th style='text-align:right'>Сумма</th></tr>" +
+$("t349").innerHTML = "<tr><th>Clave</th><th>VAT ID</th><th style='text-align:right'>Importe</th></tr>" +
   D.f349.map(([b, l, v]) => `<tr data-box="349"><td class="box">${b}</td><td>${esc(l)}</td><td class="num">${eur(v)}</td></tr>`).join("");
 FEED["349"] = ["inv"];
 document.querySelectorAll("[data-box]").forEach(tr => {
@@ -399,9 +399,9 @@ document.querySelectorAll("[data-box]").forEach(tr => {
   tr.onmouseleave = () => document.querySelectorAll(".hot").forEach(r => r.classList.remove("hot"));
 });
 const expVat = D.exp.reduce((a, e) => a + e.vat, 0);
-$("q3note").innerHTML = `Итог: продажи дают IVA 0, а расходы на gestoría дают IVA к вычету ${eur(expVat)}. Поэтому результат ${eur(D.r303)}. Это не платёж, а сумма к переносу на следующие кварталы.
-Casilla 87 показывает только остаток прошлых периодов, ${eur(D.f303.find(b => b[0] === "87")[2])}. Вместе с новыми ${eur(-D.r303)} в 4T перейдёт ${eur(D.carry303)}.
-Срок подачи: <b>${dmy(D.deadline)}</b>.`;
+$("q3note").innerHTML = `Resultado: las ventas dan IVA 0, y los gastos de gestoría dan un IVA deducible de ${eur(expVat)}. Por eso el resultado es ${eur(D.r303)}. No es un pago, sino un importe a compensar en los trimestres siguientes.
+La casilla 87 solo muestra las cuotas a compensar de periodos previos, ${eur(D.f303.find(b => b[0] === "87")[2])}. Junto con los nuevos ${eur(-D.r303)}, al 4T pasarán ${eur(D.carry303)}.
+Plazo de presentación: <b>${dmy(D.deadline)}</b>.`;
 
 /* ---------- 05 slider ---------- */
 const b02 = D.f151.find(b => b[0] === "B.02")[2], g34 = D.f151.find(b => b[0] === "G.34")[2];
@@ -412,28 +412,28 @@ function calc() {
   $("o349").textContent = eur(q3total + x);
   const r = Math.round((b02 + x) * 0.24) - g34; // G.19 24 % (below 600.000 €) minus G.34
   $("o151").textContent = eur(r);
-  $("d151").textContent = x ? `+ ${eur(Math.round(x * 0.24))} = 24 % от нового счёта.` : `24 % от ${eur(b02)} минус 210 ${eur(g34)}.`;
+  $("d151").textContent = x ? `+ ${eur(Math.round(x * 0.24))} = 24 % de la nueva factura.` : `24 % de ${eur(b02)} menos 210 ${eur(g34)}.`;
 }
 $("x").oninput = calc; calc();
-$("calcnote").innerHTML = `Проверка: при нуле на ползунке 151 = ${eur(D.r151)}, как в движке. Это нижняя граница по счетам на сегодня.
-Верхняя граница на обзоре — ${eur(D.high151)}: к ней gestor добавляет 4T как средний квартал прошлого года.`;
+$("calcnote").innerHTML = `Comprobación: con el control deslizante a cero, 151 = ${eur(D.r151)}, igual que en el motor. Es el límite inferior según las facturas a día de hoy.
+El límite superior en el resumen es ${eur(D.high151)}: para obtenerlo, gestor añade el 4T como un trimestre medio del año anterior.`;
 
 /* ---------- 06 regime ---------- */
 function duty(reg) {
   document.querySelectorAll("[data-reg]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.reg === reg)));
   const d = D.duty[reg];
-  $("tduty").innerHTML = "<tr><th>Modelo</th><th>Что это</th><th>Почему, по вашим данным</th></tr>" +
+  $("tduty").innerHTML = "<tr><th>Modelo</th><th>Qué es</th><th>Por qué, según sus datos</th></tr>" +
     d.yes.map(r => `<tr><td>${r.m}</td><td>${esc(r.what)}</td><td>${esc(r.why)}</td></tr>`).join("") +
-    `<tr><th colspan="3">Не подаёте</th></tr>` +
+    `<tr><th colspan="3">No presenta</th></tr>` +
     d.no.map(r => `<tr class="gone"><td>${r.m}</td><td>${esc(r.what)}</td><td>${esc(r.why)}</td></tr>`).join("");
 }
 document.querySelectorAll("[data-reg]").forEach(b => b.onclick = () => duty(b.dataset.reg)); duty("beckham");
 
 /* ---------- colophon ---------- */
-$("colophon").innerHTML = `Откуда цифры. Страницу собрал одноразовый скрипт: он вызвал функции движка
-<code>tax.forms()</code>, <code>tax.sales()</code>, <code>tax.duties()</code> и <code>tax.payments()</code> на вымышленном профиле.
-Код: <code>gestor/</code>. Описание: <code>README.md</code>, порядок онбординга: <code>docs/onboarding.md</code>.
-Страница — это представление. Источник истины — код, база и нормы в <code>gestor/sources/</code>.`;
+$("colophon").innerHTML = `De dónde salen las cifras. La página la ha generado un script de un solo uso: llamó a las funciones del motor
+<code>tax.forms()</code>, <code>tax.sales()</code>, <code>tax.duties()</code> y <code>tax.payments()</code> con un perfil ficticio.
+Código: <code>gestor/</code>. Descripción: <code>README.es.md</code>; orden de alta: <code>docs/onboarding.md</code>.
+La página es una presentación. La fuente de verdad es el código, la base de datos y las normas de <code>gestor/sources/</code>.`;
 </script>
 </body>
 </html>

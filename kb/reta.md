@@ -1,97 +1,97 @@
-## Кратко
+## Resumen
 
-- RETA — личное обязательство autónomo, а не налог SL. С 01.01.2023 применяется система rendimientos reales; прогноз определяет предварительную base, данные AEAT — последующую regularización TGSS.
-- Для обычного autónomo в estimación directa исходная величина — **rendimiento neto fiscal + вычтенные собственные cuotas RETA**, затем вычет **7% gastos genéricos**. Это не просто выручка минус банковские расходы.
-- Для autónomo societario при выполнении правила 90 дней применяется **3%**, а не 7%; учитываются также вознаграждение от соответствующей компании и определённые дивиденды. Прибыль SL, оставленная в компании, сама по себе не становится личным rendimiento.
-- Таблица 2026 подтверждена **Orden PJC/297/2026, art. 18**, с эффектом с 01.01.2026: границы tramos и минимальные базы сохранены от 2025; максимум G11/G12 вырос с 4.909,50 до 5.101,20 €. Это не полная заморозка cuotas.
-- Полная обычная ставка — **31,40% в 2025**, **31,50% в 2026**. В том числе cese de actividad **0,90%**, FP **0,10%**, MEI соответственно **0,80% / 0,90%**.
-- Для societarios и familiares colaboradores минимум 2025 — **base 1.000 €**, но окончательный минимум 2026 — **1.424,40 €**, если выполнено правило 90 дней. Сохранение предварительной базы 1.000 € в 2026 не освобождает от доплаты.
-- **Beckham требует отдельного контроля**: обнаружено разъяснение TGSS Valencia о непоступлении стандартных данных по modelo 151 и применении технической базы 1.000 € при предыдущих regularizaciones. Это не надёжное общенациональное правило расчёта 2025/2026 и не доказательство освобождения от rendimientos reales.
-- Cuota reducida: 80 € закреплены законом для 2023–2025; MEI добавляется отдельно. В актуально индексируемой guía Importass для 2026 указаны 80 € + MEI и итог 88,64 €, но нормативное закрепление именно суммы 80 € на 2026 и арифметика этого итога не полностью согласованы с найденными нормами. См. «Неясности»; нельзя обещать фиксированное списание без решения TGSS.
-- Изменить base можно до шести раз в год, с эффектом 1 марта, мая, июля, сентября, ноября и января следующего года. Изменение в декабре не исправляет декабрьскую cuota.
-- Regularización ниже минимума означает доплату до последнего дня месяца после уведомления; выше максимума — возврат. Если средняя предварительная base внутри допустимого диапазона, добровольная более высокая база не возвращается до минимума.
-- Переезд между автономными сообществами не меняет национальные ставки RETA; региональные субсидии — отдельный вопрос. Ни российское гражданство, ни visa de emprendedor, ни Beckham сами по себе не отменяют RETA.
-- Для 2027 новая таблица tramos в проверенных первичных источниках не найдена (**UNVERIFIED**); уже установлен MEI **1,00%**. Нельзя подставлять переговорные проекты как действующее право.
+- El RETA es una obligación personal del autónomo, no un impuesto de la SL. Desde el 01.01.2023 se aplica el sistema de rendimientos reales. La previsión determina la base provisional. Los datos de la AEAT determinan la regularización posterior de la TGSS.
+- Para un autónomo ordinario en estimación directa, la magnitud de partida es **rendimiento neto fiscal + cuotas propias del RETA deducidas**. Después se resta un **7% de gastos genéricos**. No se trata simplemente de los ingresos menos los gastos bancarios.
+- Para el autónomo societario que cumple la regla de los 90 días se aplica el **3%**, no el 7%. También se computan la retribución de la sociedad correspondiente y determinados dividendos. El beneficio de la SL que permanece en la sociedad no se convierte por sí solo en rendimiento personal.
+- La tabla de 2026 está confirmada por la **Orden PJC/297/2026, art. 18**, con efectos desde el 01.01.2026. Los límites de los tramos y las bases mínimas se mantienen respecto de 2025. El máximo de G11/G12 sube de 4.909,50 a 5.101,20 €. No es una congelación completa de las cuotas.
+- El tipo ordinario completo es del **31,40% en 2025** y del **31,50% en 2026**. Incluye cese de actividad **0,90%**, FP **0,10%** y MEI **0,80% / 0,90%** respectivamente.
+- Para societarios y familiares colaboradores, el mínimo de 2025 es una **base de 1.000 €**. El mínimo definitivo de 2026 es de **1.424,40 €** si se cumple la regla de los 90 días. Mantener la base de cotización provisional de 1.000 € en 2026 no evita una diferencia a ingresar en la regularización anual de cuotas.
+- **El régimen Beckham requiere un control aparte**: se ha encontrado una aclaración de la TGSS de Valencia. Según ella, no llegan los datos estándar del modelo 151 y en regularizaciones anteriores se aplicó una base técnica de 1.000 €. No es una regla nacional fiable de cálculo para 2025/2026. Tampoco prueba una exención de los rendimientos reales.
+- Cuota reducida: los 80 € están fijados por ley para 2023–2025. El MEI se suma aparte. La guía de Importass indexada actualmente para 2026 indica 80 € + MEI y un total de 88,64 €. Sin embargo, la fijación normativa de la cifra de 80 € para 2026 y la aritmética de ese total no concuerdan del todo con las normas encontradas. Consulte «Puntos no aclarados». No se puede prometer un cargo fijo sin resolución de la TGSS.
+- La base puede cambiarse hasta seis veces al año, con efectos el 1 de marzo, mayo, julio, septiembre, noviembre y enero del año siguiente. Un cambio en diciembre no corrige la cuota de diciembre.
+- Una regularización por debajo del mínimo da un resultado «A ingresar», con plazo hasta el último día del mes siguiente a la notificación. Por encima del máximo da un resultado «A devolver». Si la base de cotización provisional promedio está dentro del rango permitido, la base voluntaria más alta no se devuelve hasta el mínimo.
+- El traslado entre comunidades autónomas no cambia los tipos nacionales del RETA. Las subvenciones autonómicas son una cuestión aparte. Ni la nacionalidad rusa, ni el visado de emprendedor, ni el régimen Beckham anulan por sí solos el RETA.
+- Para 2027 no se ha encontrado una nueva tabla de tramos en las fuentes primarias comprobadas (**UNVERIFIED**). Ya está fijado un MEI del **1,00%**. No se pueden aplicar proyectos en negociación como si fueran derecho vigente.
 
-## Правила
+## Reglas
 
-1. **Кого включать.** RETA применяется к личной, непосредственной, привычной самостоятельной деятельности и к administrador/socio с efectivo control в случаях art. 305 LGSS. Для контроля важны не только прямые 25%/33%, но и презумпции семейного контроля; administrador без контроля может относиться к Régimen General asimilado, а не RETA. Одна регистрация RETA охватывает несколько собственных видов деятельности; их rendimientos суммируются. Низкий доход сам по себе не является законодательным автоматическим освобождением от alta. **Период:** 2025–2026; система rendimientos reales действует с 01.01.2023. **Источники:** [LGSS, arts. 305, 308](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a305), [RDL 13/2022, art. primero](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#ap).
+1. **A quién incluir.** El RETA se aplica a la actividad por cuenta propia personal, directa y habitual. También se aplica al administrador/socio con control efectivo en los casos del art. 305 LGSS. Para el control no solo importan los porcentajes directos del 25%/33%. También importan las presunciones de control familiar. Un administrador sin control puede corresponder al Régimen General asimilado y no al RETA. Una sola alta en el RETA cubre varias actividades propias; sus rendimientos se suman. Un ingreso bajo no es por sí solo una exención legal automática del alta. **Periodo:** 2025–2026; el sistema de rendimientos reales rige desde el 01.01.2023. **Fuentes:** [LGSS, arts. 305, 308](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a305), [RDL 13/2022, art. primero](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#ap).
 
-2. **Обычный rendimiento SS.** Для estimación directa взять rendimiento neto по IRPF до индивидуальных reducciones, прибавить собственные cuotas SS/mutualidad alternativa, учесть обратную корректировку regularizaciones прошлых лет, затем применить 7%. Вычет IRPF gastos de difícil justificación в estimación directa simplificada уже входит в rendimiento neto и не отменяется только потому, что SS дополнительно применяет 7%. IVA repercutido и retención IRPF не являются уменьшением дохода от деятельности; retención — предоплата налога. **Период:** 2025–2026; основное правило с 01.01.2023. **Источники:** [LGSS, art. 308.1.c](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a308), [AEAT: точные casillas для SS](https://sede.agenciatributaria.gob.es/Sede/empresarios-individuales-profesionales/nuevo-sistema-cotizacion-autonomos/informacion-determinar-rendimiento-neto.html).
+2. **Rendimiento ordinario para la Seguridad Social.** En estimación directa, tome el rendimiento neto del IRPF antes de las reducciones individuales. Sume las cuotas propias de la Seguridad Social o de la mutualidad alternativa. Tenga en cuenta el ajuste inverso de las regularizaciones de años anteriores. Después aplique el 7%. La deducción de gastos de difícil justificación del IRPF en estimación directa simplificada ya forma parte del rendimiento neto. No se anula solo porque la Seguridad Social aplique además el 7%. El IVA repercutido y la retención del IRPF no reducen el rendimiento de la actividad; la retención es un pago anticipado del impuesto. **Periodo:** 2025–2026; regla principal desde el 01.01.2023. **Fuentes:** [LGSS, art. 308.1.c](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a308), [AEAT: casillas exactas para la Seguridad Social](https://sede.agenciatributaria.gob.es/Sede/empresarios-individuales-profesionales/nuevo-sistema-cotizacion-autonomos/informacion-determinar-rendimiento-neto.html).
 
-3. **Societario: доходы компании и 3%.** Включить собственную профессиональную прибыль и rendimientos íntegros, dinerarios/en especie от участия в fondos propios компаний, в которых на дату devengo IS имеется ≥33% капитала либо, для administrador, ≥25%; также доходы от работы в этих компаниях. Дивиденды включаются **до удержания**, независимо от того, что в обычном IRPF они относятся к ahorro. Не добавлять автоматически дивиденды от любого биржевого портфеля, продажу акций или нераспределённую прибыль SL. Для art. 305.2.b/e вычет 3% применяется при ≥90 днях такого статуса за регуляризуемый период; обычный colaborador из art. 305.2.k не становится получателем 3% только из-за общего минимального пола. **Период:** 2025–2026, с 01.01.2023. **Источники:** [RDL 13/2022: текст art. 308.1.c, reglas 1–2](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#ap), [AEAT: societarios и modelos 190/193](https://sede.agenciatributaria.gob.es/Sede/empresarios-individuales-profesionales/nuevo-sistema-cotizacion-autonomos/informacion-determinar-rendimiento-neto.html).
+3. **Societario: rendimientos de la sociedad y 3%.** Incluya el beneficio profesional propio. Incluya también los rendimientos íntegros, dinerarios o en especie, derivados de la participación en los fondos propios de sociedades en las que, en la fecha de devengo del IS, tenga ≥33% del capital o, si es administrador, ≥25%. Incluya también los rendimientos del trabajo obtenidos en esas sociedades. Los dividendos se incluyen **antes de la retención**, aunque en el IRPF ordinario pertenezcan a la base del ahorro. No sume automáticamente los dividendos de cualquier cartera bursátil, la venta de acciones ni el beneficio no distribuido de la SL. Para el art. 305.2.b/e, la deducción del 3% se aplica si se han cumplido ≥90 días en esa situación durante el periodo regularizado. Un colaborador ordinario del art. 305.2.k no pasa a tener derecho al 3% solo por el suelo mínimo común. **Periodo:** 2025–2026, desde el 01.01.2023. **Fuentes:** [RDL 13/2022: texto del art. 308.1.c, reglas 1–2](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#ap), [AEAT: societarios y modelos 190/193](https://sede.agenciatributaria.gob.es/Sede/empresarios-individuales-profesionales/nuevo-sistema-cotizacion-autonomos/informacion-determinar-rendimiento-neto.html).
 
-4. **Минимальная база societario/colaborador.** При ≥90 днях соответствующего статуса действует специальный пол, даже если доход отрицателен или ниже SMI: 1.000 € за 2025; 1.424,40 € за 2026. Для 2026 Orden разрешает сохранять предварительную базу 2025, но итоговая regularización использует минимум grupo 7. Это база, не mensualidad к оплате. Наличие признанной cuota reducida рассматривается отдельно от обычного минимума. **Период:** отдельно 01.01–31.12.2025 и 01.01–31.12.2026. **Источники:** [Orden PJC/178/2025, art. 18.4](https://www.boe.es/buscar/act.php?id=BOE-A-2025-3780#a1-10), [Orden PJC/297/2026, arts. 3, 18.4](https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296#a1-10), [BNR 05/2026, с. 9–10](https://www.seg-social.es/wps/wcm/connect/wss/61f4db39-8366-4d8f-863b-34332b1d527a/BNR+5_2026.pdf?MOD=AJPERES).
+4. **Base mínima del societario/colaborador.** Con ≥90 días en la situación correspondiente rige un suelo especial, aunque el rendimiento sea negativo o inferior al SMI: 1.000 € para 2025; 1.424,40 € para 2026. Para 2026 la Orden permite mantener la base provisional de 2025. Sin embargo, la regularización final utiliza el mínimo del grupo 7. Es una base, no una mensualidad a pagar. Tener reconocida la cuota reducida se analiza por separado del mínimo ordinario. **Periodo:** por separado del 01.01 al 31.12.2025 y del 01.01 al 31.12.2026. **Fuentes:** [Orden PJC/178/2025, art. 18.4](https://www.boe.es/buscar/act.php?id=BOE-A-2025-3780#a1-10), [Orden PJC/297/2026, arts. 3, 18.4](https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296#a1-10), [BNR 05/2026, págs. 9–10](https://www.seg-social.es/wps/wcm/connect/wss/61f4db39-8366-4d8f-863b-34332b1d527a/BNR+5_2026.pdf?MOD=AJPERES).
 
-5. **Beckham не имеет собственного опубликованного тарифа RETA.** Art. 308 отсылает к normas IRPF, но нельзя механически принять валовой доход modelo 151 за casilla 0224 обычного IRPF или вычесть расходы, не допускаемые специальным налоговым режимом. В ответе Dirección Provincial TGSS Valencia, опубликованном профессиональной коллегией в феврале 2026, указано: при modelo 151 не поступают rendimientos в стандартном обмене AEAT; «en estos momentos» устанавливается база 1.000 €, вопрос передан в Subdirección General. Документ относится к текущей тогда regularización прошлых лет; он не устанавливает постоянное преимущество для Beckham. В BNR 05/2026 прямо указан общий fallback 1.424,40 € за 2026 при отсутствии декларации/обменных доходов, но modelo 151 специально не разрешён. **Период:** наблюдаемая практика февраля 2026; применимость к regularización 2025/2026 — **UNVERIFIED**. **Источники:** [TGSS Valencia, с. 5, копия на сайте коллегии](https://www.cograsova.es/images/adjuntosmail/2026/20260226/consultas.pdf), [BNR 05/2026, с. 10](https://www.seg-social.es/wps/wcm/connect/wss/61f4db39-8366-4d8f-863b-34332b1d527a/BNR+5_2026.pdf?MOD=AJPERES), [LGSS, art. 308](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a308).
+5. **El régimen Beckham no tiene una tarifa propia publicada del RETA.** El art. 308 remite a las normas del IRPF. Sin embargo, no se puede tomar mecánicamente el ingreso bruto del modelo 151 como la casilla 0224 del IRPF ordinario. Tampoco se pueden restar gastos que el régimen fiscal especial no admite. La Dirección Provincial de la TGSS de Valencia respondió en una nota que un colegio profesional publicó en febrero de 2026. A la pregunta sobre los impatriados del modelo 151, la respuesta dice: «En estos momentos al no constar rendimientos en los modelos relacionados por la AEAT la base que se pondrá será de 1000 euros. No obstante, por parte de esta Dirección Provincial se ha elevado consulta a la Subdirección General de Ordenación e Impugnaciones para su valoración y modificación normativa si procediese.» El documento se refiere a la regularización de años anteriores en curso en ese momento. No establece una ventaja permanente para el régimen Beckham. El BNR 05/2026 indica expresamente un valor general por defecto de 1.424,40 € para 2026 cuando no hay declaración ni rendimientos del intercambio. Sin embargo, no resuelve de forma específica el caso del modelo 151. **Periodo:** práctica observada en febrero de 2026; aplicabilidad a la regularización de 2025/2026: **UNVERIFIED**. **Fuentes:** [TGSS Valencia, pág. 5, copia en la web del colegio](https://www.cograsova.es/images/adjuntosmail/2026/20260226/consultas.pdf), [BNR 05/2026, pág. 10](https://www.seg-social.es/wps/wcm/connect/wss/61f4db39-8366-4d8f-863b-34332b1d527a/BNR+5_2026.pdf?MOD=AJPERES), [LGSS, art. 308](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a308).
 
-6. **Cuota reducida / tarifa plana.** Alta inicial либо отсутствие alta за предыдущие 2 года; 3 года, если льгота уже использовалась. Заявление при alta. Закон говорит о периоде от даты alta и последующих 12 полных календарных месяцах, поэтому не заменять решение TGSS простым счётчиком 365 дней. Следующие 12 полных месяцев — по предварительному заявлению до начала продолжения, если годовые rendimientos netos ниже годового SMI; если продолжение захватывает два года, условие проверяется в каждом. Первый период не regularizable из-за высокого дохода; при утрате доходного условия второго производится regularización затронутой части. Societarios могут пользоваться льготой, colaboradores — нет. При discapacidad ≥33%, violencia de género/terrorismo периоды 24 + 36 месяцев; сумму специального второго периода не приравнивать без проверки к 80 €. Cese/FP в период cuota reducida не начисляются, MEI не bonificable. **Период:** схема с 01.01.2023, действует в 2025–2026; сумма 80 € прямо зафиксирована для 2023–2025. **Источники:** [RDL 13/2022, art. tercero / art. 38 ter LETA и DT quinta](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#at), [DT quinta](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#dt-5), [Importass guía](https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/trabajo%2Bautonomo/guia), [LGSS art. 127 bis](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a1-5).
+6. **Cuota reducida / tarifa plana.** Requiere alta inicial o no haber estado de alta en los 2 años anteriores. Son 3 años si ya disfrutó antes del beneficio. Se solicita al darse de alta. La ley habla de un periodo desde la fecha de alta y los 12 meses naturales completos siguientes. Por eso no sustituya la resolución de la TGSS por un simple contador de 365 días. Los 12 meses completos siguientes se conceden previa solicitud antes del inicio de la prórroga, si los rendimientos netos anuales son inferiores al SMI anual. Si la prórroga abarca dos años, el requisito se comprueba en cada uno. El primer periodo no es regularizable por un rendimiento alto. Si deja de cumplirse el requisito de rendimientos del segundo periodo, se regulariza la parte afectada. Los societarios pueden disfrutar del beneficio; los colaboradores, no. Con discapacidad ≥33% o violencia de género/terrorismo, los periodos son de 24 + 36 meses. No equipare sin comprobarlo el importe del segundo periodo especial a 80 €. Durante la cuota reducida no se cotiza por cese ni por FP. El MEI no es bonificable. **Periodo:** esquema desde el 01.01.2023, vigente en 2025–2026; el importe de 80 € está fijado expresamente para 2023–2025. **Fuentes:** [RDL 13/2022, art. tercero / art. 38 ter LETA y DT quinta](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#at), [DT quinta](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#dt-5), [guía de Importass](https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/trabajo%2Bautonomo/guia), [LGSS art. 127 bis](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a1-5).
 
-7. **Другие bonificaciones не равны скидке на всю cuota.** Colaborador, не имевший alta 5 лет: 50% первые 18 месяцев и 25% следующие 6 от cuota CC на минимальную base G1. Nacimiento/adopción/riesgo embarazo/lactancia: 100% соответствующей CC без IT, рассчитанной по средней базе предыдущих 12 месяцев; возвращающейся autónoma в течение 2 лет после прекращения по предусмотренным семейным основаниям — 80% такой CC на 24 месяца. Cuidado menor cáncer/enfermedad grave — 75% CC без IT в период признанной prestación. Conciliación vinculada a contratación: до 12 месяцев, 100% CC без IT при выполнении условий art. 30, 50% при допустимом неполном рабочем времени замещающего работника; не общая льгота за наличие ребёнка. **Период:** правила 2025–2026; основания и расчёт обновлены с 01.01.2023. **Источники:** [LETA arts. 30, 35, 38, 38 bis, 38 quater](https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409#a30), [RDL 13/2022, art. tercero](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#at). Для фактической суммы льготы хранить resolución TGSS и базу/исключённый компонент IT; не вычитать проценты из 31,4/31,5%.
+7. **Las demás bonificaciones no equivalen a un descuento sobre toda la cuota.** Colaborador que no ha estado de alta en 5 años: 50% durante los primeros 18 meses y 25% durante los 6 siguientes, sobre la cuota por CC de la base mínima del G1. Nacimiento/adopción/riesgo durante el embarazo/lactancia: 100% de la CC correspondiente sin IT, calculada sobre la base media de los 12 meses anteriores. Autónoma que se reincorpora en los 2 años siguientes al cese por las causas familiares previstas: 80% de esa CC durante 24 meses. Cuidado de menor con cáncer/enfermedad grave: 75% de la CC sin IT durante el periodo de la prestación reconocida. Conciliación vinculada a contratación: hasta 12 meses. Es el 100% de la CC sin IT si se cumplen las condiciones del art. 30. Es el 50% si el trabajador sustituto tiene una jornada parcial admitida. No es un beneficio general por tener un hijo. **Periodo:** reglas de 2025–2026; supuestos y cálculo actualizados desde el 01.01.2023. **Fuentes:** [LETA arts. 30, 35, 38, 38 bis, 38 quater](https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409#a30), [RDL 13/2022, art. tercero](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#at). Para el importe real del beneficio, conserve la resolución de la TGSS y la base o el componente de IT excluido. No reste porcentajes del 31,4/31,5%.
 
-8. **Изменение базы.** Не более шести эффектов за год; заявление одновременно содержит новый прогноз среднемесячного годового rendimiento. Можно выбрать любую базу внутри разрешённого диапазона, а не обязательно минимальную. **Период:** с 01.01.2023, включая 2025–2026. **Источник:** [RDL 13/2022, art. quinto, art. 45 Reglamento](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#aq).
+8. **Cambio de base.** Como máximo seis efectos al año. La solicitud se hace en el servicio «Base de cotización y rendimientos» de Importass e incluye al mismo tiempo una nueva previsión del promedio mensual de los rendimientos netos anuales. Puede elegir cualquier base de cotización dentro de los límites mínimo y máximo aplicables; no tiene que ser la mínima. **Periodo:** desde el 01.01.2023, incluido 2025–2026. **Fuente:** [RDL 13/2022, art. quinto, art. 45 del Reglamento](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#aq).
 
-9. **Regularización — годовой процесс, не доплата по каждой фактуре.** TGSS получает данные AEAT, исключает не regularizables периоды, определяет среднюю предварительную базу и фактический tramo. Если средняя база внутри min/max, сохраняет предварительные базы; если ниже/выше — пересчитывает регуляризуемые месяцы до min/max, суммируя положительные и отрицательные разницы. Применяются ставки соответствующего прошлого периода, а не года уведомления. Выплаты, для которых база уже использована при назначении prestación, и предусмотренные льготные периоды имеют специальные исключения. **Период:** редакция art. 46 действует с 01.08.2024, применима к 2025–2026. **Источники:** [RD 665/2024, полный новый art. 46](https://www.boe.es/boe/dias/2024/07/10/pdfs/BOE-A-2024-14086.pdf), [TGSS manual, с. 6](https://www.seg-social.es/wps/wcm/connect/wss/9334b014-b8de-45d4-8b0c-c76e44486853/Manual%2Bregularizacion%2BRETA%2BSistema%2BRED_Opcion%2Bpor%2Bbase%2Bsuperior_v2.pdf?MOD=AJPERES).
+9. **La regularización anual de cuotas se hace una vez al año, no como una diferencia a ingresar por cada factura.** La TGSS recibe los datos de la AEAT. Excluye los periodos no regularizables. Determina la base de cotización provisional promedio y el tramo real. Si esa base promedio está dentro del mínimo/máximo, mantiene las bases de cotización provisionales. Si está por debajo o por encima, recalcula los meses regularizables hasta el mínimo/máximo y suma las diferencias positivas y negativas. Se aplican los tipos del periodo pasado correspondiente, no los del año de la notificación. Hay excepciones especiales para las bases ya utilizadas al reconocer una prestación y para los periodos bonificados previstos. **Periodo:** la redacción del art. 46 rige desde el 01.08.2024 y se aplica a 2025–2026. **Fuentes:** [RD 665/2024, nuevo art. 46 completo](https://www.boe.es/boe/dias/2024/07/10/pdfs/BOE-A-2024-14086.pdf), [manual de la TGSS, pág. 6](https://www.seg-social.es/wps/wcm/connect/wss/9334b014-b8de-45d4-8b0c-c76e44486853/Manual%2Bregularizacion%2BRETA%2BSistema%2BRED_Opcion%2Bpor%2Bbase%2Bsuperior_v2.pdf?MOD=AJPERES).
 
-10. **Оплата и просрочка.** Обычная cuota перечисляется за текущий месяц; domiciliación списывается в последний рабочий банковский день месяца. При исполненных обязанностях по liquidación recargo 10% при платеже в первый следующий календарный месяц, 20% позднее. При неисполненных обязанностях — 20% до конца срока reclamación/acta и 35% после. Возможны intereses и потеря льгот; это не шкала AEAT за позднюю налоговую декларацию. Доплата regularización в её специальный срок не несёт recargo/intereses. **Период:** 2025–2026. **Источники:** [официальная Revista Seguridad Social](https://revista.seg-social.es/-/si-eres-aut%C3%B3nomo-puedes-consultar-cada-mes-tu-cuota-a-la-seguridad-social-de-manera-telem%C3%A1tica/1000), [TGSS: recargos](https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/CotizacionRecaudacionTrabajadores/10721/10957/583?changeLanguage=es), [LGSS arts. 30–31](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a30).
+10. **Pago y retraso.** La cuota ordinaria se ingresa por el mes en curso. Con domiciliación, el cargo se hace el último día hábil bancario del mes. Si se han cumplido las obligaciones de liquidación, el recargo es del 10% si se paga en el primer mes natural siguiente y del 20% si se paga después. Si no se han cumplido, es del 20% hasta el fin del plazo de la reclamación/acta y del 35% después. Pueden aplicarse intereses y perderse beneficios. No es la escala de la AEAT por presentar tarde una declaración tributaria. La diferencia a ingresar de la regularización, pagada dentro de su plazo especial, no lleva recargo ni intereses. **Periodo:** 2025–2026. **Fuentes:** [Revista oficial de la Seguridad Social](https://revista.seg-social.es/-/si-eres-aut%C3%B3nomo-puedes-consultar-cada-mes-tu-cuota-a-la-seguridad-social-de-manera-telem%C3%A1tica/1000), [TGSS: recargos](https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/CotizacionRecaudacionTrabajadores/10721/10957/583?changeLanguage=es), [LGSS arts. 30–31](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a30).
 
-11. **Вычет в обычном IRPF.** Собственные cuotas — gasto deducible; при одновременных доходах administrador и собственной деятельности единую cuota можно отнести к работе либо деятельности, но нельзя вычесть дважды. Доплата regularización — расход года её исполнения; возврат — уменьшение расхода этого года, превышение над расходами — доход. Это не повод переделывать исходную декларацию за год предварительных cuotas. **Период:** 2025–2026; casillas ниже подтверждены формой/руководством 2025. **Источник:** [AEAT Manual IRPF 2025, gastos del titular](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c07-rendimientos-actividades-economicas-estimacion-directa/fase-1-determinacion-rendimiento-neto/gastos-fiscalmente-deducibles/gastos-titular-actividad.html). Для Beckham вычет не переносится автоматически из обычного IRPF.
+11. **Deducción en el IRPF ordinario.** Las cuotas propias son gasto deducible. Si percibe a la vez rendimientos como administrador y de su propia actividad, puede imputar la cuota única al trabajo o a la actividad, pero no deducirla dos veces. La diferencia a ingresar de la regularización es gasto del año en que se paga. La devolución reduce el gasto de ese año; el exceso sobre los gastos es ingreso. No es motivo para rehacer la declaración original del año de las cuotas provisionales. **Periodo:** 2025–2026; las casillas de abajo están confirmadas por el formulario/manual de 2025. **Fuente:** [AEAT Manual IRPF 2025, gastos del titular](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c07-rendimientos-actividades-economicas-estimacion-directa/fase-1-determinacion-rendimiento-neto/gastos-fiscalmente-deducibles/gastos-titular-actividad.html). En el régimen Beckham, la deducción no se traslada automáticamente desde el IRPF ordinario.
 
-12. **SL оплачивает RETA administrador.** Обязанным остаётся физлицо. Если SL несёт стоимость, это вознаграждение, обычно en especie; если только перечисляет удержанную из денежного вознаграждения сумму, не создавать второе вознаграждение. Для IS расход оценивается как реальное документированное вознаграждение: contabilización, devengo, обоснование услуг, надлежащие корпоративные решения и правила operaciones vinculadas, когда применимы. Это не автоматический gasto de Seguridad Social empresarial. Если расчёт идёт как préstamo/cuenta con socio с возвратом, расхода по IS нет. Нельзя автоматически отказать в вычете исключительно из-за дефекта estatutos, игнорируя судебную практику; спорные случаи требуют отдельной квалификации. **Период:** 2025–2026. **Источники:** [LIS arts. 10, 11, 15.e, 18](https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328), [AEAT Manual IS 2025: liberalidades](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-sociedades-2025/capitulo-05-liquidacion-is-determinacion-imponible/bi-antes-reserva-capitalizac-compensac-00550/detalle-correcc-result-cuenta-perdidas-is/gastos-no-deducibles/gastos-donativos-liberalidades.html), [DGT V0067-19, официальный адрес; текст непосредственно не получен — UNVERIFIED на первичном сайте](https://petete.tributos.hacienda.gob.es/consultas/?num_consulta=V0067-19).
+12. **La SL paga el RETA del administrador.** El obligado sigue siendo la persona física. Si la SL asume el coste, es una retribución, normalmente en especie. Si la SL solo ingresa la cantidad retenida de la retribución dineraria, no cree una segunda retribución. Para el IS, el gasto se valora como una retribución real y documentada: contabilización, devengo, justificación de los servicios, acuerdos societarios adecuados y reglas de operaciones vinculadas cuando sean aplicables. No es un gasto automático de Seguridad Social empresarial. Si se trata como préstamo/cuenta con socio con devolución, no hay gasto en el IS. No se puede denegar automáticamente la deducción solo por un defecto de los estatutos e ignorar la jurisprudencia. Los casos discutidos requieren una calificación aparte. **Periodo:** 2025–2026. **Fuentes:** [LIS arts. 10, 11, 15.e, 18](https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328), [AEAT Manual IS 2025: liberalidades](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-sociedades-2025/capitulo-05-liquidacion-is-determinacion-imponible/bi-antes-reserva-capitalizac-compensac-00550/detalle-correcc-result-cuenta-perdidas-is/gastos-no-deducibles/gastos-donativos-liberalidades.html), [DGT V0067-19, dirección oficial; texto no obtenido directamente: UNVERIFIED en el sitio primario](https://petete.tributos.hacienda.gob.es/consultas/?num_consulta=V0067-19).
 
-## Цифры
+## Cifras
 
-### Полные таблицы 2025 и 2026
+### Tablas completas de 2025 y 2026
 
-Все суммы в €/месяц. `R` — promedio mensual de rendimientos netos **после** корректировок SS, не base и не выручка. `R1–R3` — tabla reducida; `G1–G12` — tabla general. Квоты ниже — расчёт `round(base mínima × tipo total, 2)` для полного месяца без льгот/особых покрытий, а не гарантия до цента банковского recibo.
+Todos los importes están en €/mes. `R` es el promedio mensual de rendimientos netos **después** de los ajustes de la Seguridad Social; no es la base ni los ingresos. `R1–R3` es la tabla reducida; `G1–G12` es la tabla general. Las cuotas de abajo son el cálculo `round(base mínima × tipo total, 2)` para un mes completo sin beneficios ni coberturas especiales. No garantizan al céntimo el recibo bancario.
 
-| Tramo | R, одинаковые границы 2025/2026 | Base mín. 2025 | Base máx. 2025 | Cuota mín. 2025, 31,40% | Base mín. 2026 | Base máx. 2026 | Cuota mín. 2026, 31,50% |
+| Tramo | R, mismos límites 2025/2026 | Base mín. 2025 | Base máx. 2025 | Cuota mín. 2025, 31,40% | Base mín. 2026 | Base máx. 2026 | Cuota mín. 2026, 31,50% |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | R1 | ≤670 | 653,59 | 718,94 | 205,23 | 653,59 | 718,94 | 205,88 |
-| R2 | >670 и ≤900 | 718,95 | 900,00 | 225,75 | 718,95 | 900,00 | 226,47 |
-| R3 | >900 и <1.166,70 | 849,67 | 1.166,70 | 266,80 | 849,67 | 1.166,70 | 267,65 |
-| G1 | ≥1.166,70 и ≤1.300 | 950,98 | 1.300,00 | 298,61 | 950,98 | 1.300,00 | 299,56 |
-| G2 | >1.300 и ≤1.500 | 960,78 | 1.500,00 | 301,68 | 960,78 | 1.500,00 | 302,65 |
-| G3 | >1.500 и ≤1.700 | 960,78 | 1.700,00 | 301,68 | 960,78 | 1.700,00 | 302,65 |
-| G4 | >1.700 и ≤1.850 | 1.143,79 | 1.850,00 | 359,15 | 1.143,79 | 1.850,00 | 360,29 |
-| G5 | >1.850 и ≤2.030 | 1.209,15 | 2.030,00 | 379,67 | 1.209,15 | 2.030,00 | 380,88 |
-| G6 | >2.030 и ≤2.330 | 1.274,51 | 2.330,00 | 400,20 | 1.274,51 | 2.330,00 | 401,47 |
-| G7 | >2.330 и ≤2.760 | 1.356,21 | 2.760,00 | 425,85 | 1.356,21 | 2.760,00 | 427,21 |
-| G8 | >2.760 и ≤3.190 | 1.437,91 | 3.190,00 | 451,50 | 1.437,91 | 3.190,00 | 452,94 |
-| G9 | >3.190 и ≤3.620 | 1.519,61 | 3.620,00 | 477,16 | 1.519,61 | 3.620,00 | 478,68 |
-| G10 | >3.620 и ≤4.050 | 1.601,31 | 4.050,00 | 502,81 | 1.601,31 | 4.050,00 | 504,41 |
-| G11 | >4.050 и ≤6.000 | 1.732,03 | 4.909,50 | 543,86 | 1.732,03 | 5.101,20 | 545,59 |
+| R2 | >670 y ≤900 | 718,95 | 900,00 | 225,75 | 718,95 | 900,00 | 226,47 |
+| R3 | >900 y <1.166,70 | 849,67 | 1.166,70 | 266,80 | 849,67 | 1.166,70 | 267,65 |
+| G1 | ≥1.166,70 y ≤1.300 | 950,98 | 1.300,00 | 298,61 | 950,98 | 1.300,00 | 299,56 |
+| G2 | >1.300 y ≤1.500 | 960,78 | 1.500,00 | 301,68 | 960,78 | 1.500,00 | 302,65 |
+| G3 | >1.500 y ≤1.700 | 960,78 | 1.700,00 | 301,68 | 960,78 | 1.700,00 | 302,65 |
+| G4 | >1.700 y ≤1.850 | 1.143,79 | 1.850,00 | 359,15 | 1.143,79 | 1.850,00 | 360,29 |
+| G5 | >1.850 y ≤2.030 | 1.209,15 | 2.030,00 | 379,67 | 1.209,15 | 2.030,00 | 380,88 |
+| G6 | >2.030 y ≤2.330 | 1.274,51 | 2.330,00 | 400,20 | 1.274,51 | 2.330,00 | 401,47 |
+| G7 | >2.330 y ≤2.760 | 1.356,21 | 2.760,00 | 425,85 | 1.356,21 | 2.760,00 | 427,21 |
+| G8 | >2.760 y ≤3.190 | 1.437,91 | 3.190,00 | 451,50 | 1.437,91 | 3.190,00 | 452,94 |
+| G9 | >3.190 y ≤3.620 | 1.519,61 | 3.620,00 | 477,16 | 1.519,61 | 3.620,00 | 478,68 |
+| G10 | >3.620 y ≤4.050 | 1.601,31 | 4.050,00 | 502,81 | 1.601,31 | 4.050,00 | 504,41 |
+| G11 | >4.050 y ≤6.000 | 1.732,03 | 4.909,50 | 543,86 | 1.732,03 | 5.101,20 | 545,59 |
 | G12 | >6.000 | 1.928,10 | 4.909,50 | 605,42 | 1.928,10 | 5.101,20 | 607,35 |
 
-Источники: [2025, art. 18](https://www.boe.es/buscar/act.php?id=BOE-A-2025-3780#a1-10), [2026, art. 18](https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296#a1-10). 2026 основан на prórroga и [RDL 3/2026, art. 3](https://www.boe.es/buscar/act.php?id=BOE-A-2026-2548#a3), а не на уже отменённом RDL 16/2025.
+Fuentes: [2025, art. 18](https://www.boe.es/buscar/act.php?id=BOE-A-2025-3780#a1-10), [2026, art. 18](https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296#a1-10). La tabla de 2026 se basa en la prórroga y en el [RDL 3/2026, art. 3](https://www.boe.es/buscar/act.php?id=BOE-A-2026-2548#a3), no en el RDL 16/2025, ya derogado.
 
-### Состав ставки и специальные суммы
+### Composición del tipo e importes especiales
 
-| Параметр | 2025 | 2026 | 2027, только уже установленное |
+| Parámetro | 2025 | 2026 | 2027, solo lo ya fijado |
 |---|---:|---:|---|
-| Contingencias comunes | 28,30% | 28,30% | Годовая ставка не подтверждена |
-| Contingencias profesionales | 1,30% = 0,66% IT + 0,64% IMS | 1,30% | Не подтверждена |
-| Cese de actividad | 0,90% | 0,90% | Не подтверждена |
-| Formación profesional | 0,10% | 0,10% | Не подтверждена |
-| MEI, полностью за счёт autónomo | 0,80% | 0,90% | **1,00%** |
-| Итого обычный RETA | **31,40%** | **31,50%** | Не фиксировать 31,60% как принятую годовую ставку без оговорки о прочих компонентах |
-| Пол societario/colaborador ≥90 дней | 1.000,00 € | 1.424,40 € definitive | Не подтверждён |
-| Обычная cuota на этот пол | 314,00 € | 448,69 € | Не подтверждена |
-| Cuota при разрешённой provisional base 1.000 € | 314,00 € | 315,00 €; возможна доплата | — |
-| SMI месяц, 14 выплат | 1.184 € | 1.221 € | Не подтверждён |
-| SMI год для продолжения cuota reducida | 16.576 € | 17.094 € | Не подтверждён |
-| Cuota reducida без MEI | 80 € | 80 € указано Importass; нормативная сумма UNVERIFIED | Не подтверждена |
-| Расчёт 80 € + MEI на base G1 950,98 € | 87,61 € | 88,56 €; Importass публикует 88,64 €, см. неясности | — |
-| Порог возврата при pluriactividad, CC за год | 16.672,66 € | 17.323,68 € | Не подтверждён |
-| Gastos genéricos SS | 7% / 3% | 7% / 3% | Действующая общая норма, если не изменится |
+| Contingencias comunes | 28,30% | 28,30% | Tipo anual no confirmado |
+| Contingencias profesionales | 1,30% = 0,66% IT + 0,64% IMS | 1,30% | No confirmado |
+| Cese de actividad | 0,90% | 0,90% | No confirmado |
+| Formación profesional | 0,10% | 0,10% | No confirmado |
+| MEI, íntegramente a cargo del autónomo | 0,80% | 0,90% | **1,00%** |
+| Total RETA ordinario | **31,40%** | **31,50%** | No fije el 31,60% como tipo anual aprobado sin advertir sobre los demás componentes |
+| Suelo societario/colaborador ≥90 días | 1.000,00 € | 1.424,40 € definitiva | No confirmado |
+| Cuota ordinaria sobre ese suelo | 314,00 € | 448,69 € | No confirmada |
+| Cuota con la base de cotización provisional permitida de 1.000 € | 314,00 € | 315,00 €; puede haber diferencia a ingresar | — |
+| SMI mensual, 14 pagas | 1.184 € | 1.221 € | No confirmado |
+| SMI anual para la prórroga de la cuota reducida | 16.576 € | 17.094 € | No confirmado |
+| Cuota reducida sin MEI | 80 € | 80 € según Importass; importe normativo UNVERIFIED | No confirmada |
+| Cálculo de 80 € + MEI sobre la base G1 de 950,98 € | 87,61 € | 88,56 €; Importass publica 88,64 €, consulte los puntos no aclarados | — |
+| Umbral de devolución por pluriactividad, CC anual | 16.672,66 € | 17.323,68 € | No confirmado |
+| Gastos genéricos de la Seguridad Social | 7% / 3% | 7% / 3% | Norma general vigente, salvo que cambie |
 
-Источники ставок: arts. 18 и 37 [Orden 2025](https://www.boe.es/buscar/act.php?id=BOE-A-2025-3780), [Orden 2026](https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296). SMI: [RD 87/2025](https://www.boe.es/buscar/act.php?id=BOE-A-2025-2576), [RD 126/2026](https://www.boe.es/buscar/act.php?id=BOE-A-2026-3815). MEI 2027: [RDL 2/2023, изменение DT 43 LGSS](https://www.boe.es/buscar/act.php?id=BOE-A-2023-6967). Полная таблица 2027 не обнаружена; это отсутствие подтверждения, а не утверждение, что она обязательно будет такой же.
+Fuentes de los tipos: arts. 18 y 37 de la [Orden de 2025](https://www.boe.es/buscar/act.php?id=BOE-A-2025-3780) y de la [Orden de 2026](https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296). SMI: [RD 87/2025](https://www.boe.es/buscar/act.php?id=BOE-A-2025-2576), [RD 126/2026](https://www.boe.es/buscar/act.php?id=BOE-A-2026-3815). MEI de 2027: [RDL 2/2023, modificación de la DT 43 LGSS](https://www.boe.es/buscar/act.php?id=BOE-A-2023-6967). No se ha encontrado la tabla completa de 2027. Esto significa falta de confirmación; no afirma que la tabla vaya a ser necesariamente igual.
 
-## Формулы для движка
+## Fórmulas para el motor
 
-### Данные и классификация
+### Datos y clasificación
 
-Использовать Decimal, суммы в евро; не вычислять деньги через binary float. Хранить отдельно: год начисления, месяц, статус alta, календарные дни alta, días regularizables TGSS, предварительную base, оплаченный recibo, компоненты cuota, льготы и периоды их признания, declaración AEAT и certificado de rendimientos, дату уведомления TGSS, дату исполнения доплаты/возврата. Иметь **раздельные** `tax_regime` и `social_security_status`: Beckham не равен типу RETA.
+Use Decimal, con importes en euros. No calcule dinero con binary float. Guarde por separado: el año de devengo, el mes, la situación de alta, los días naturales de alta, los días regularizables de la TGSS, la base de cotización provisional, el recibo pagado, los componentes de la cuota, los beneficios y sus periodos de reconocimiento, la declaración de la AEAT y el certificado de rendimientos, la fecha de notificación de la TGSS y la fecha de pago de la diferencia a ingresar o de la devolución. Tenga campos `tax_regime` y `social_security_status` **separados**: el régimen Beckham no es un tipo de RETA.
 
 ```text
 inputs:
@@ -114,53 +114,53 @@ if Beckham and no written TGSS determination for relevant year:
   do not label either scenario as legally final; do not silently set income=0
 ```
 
-### Обычный IRPF: связь с modelo 100
+### IRPF ordinario: relación con el modelo 100
 
-Для каждого вида деятельности, затем суммирование:
+Para cada actividad, y después se suma:
 
 ```text
 A_directa = casilla[0224] + casilla[0186] + casilla[0196] - casilla[0197]
 ```
 
-Это опубликованное AEAT соответствие. `[0224]` уже включает допустимый IRPF вычет gastos de difícil justificación; не заменять её на rendimiento neto reducido. Не прибавлять cuotas второй раз, если вход уже задан как rendimiento antes de RETA. При возврате сверх текущих cuotas часть находится в `[0178]`; такую аномалию сверять с certificado IRPF и фактически переданным AEAT доходом, а не вычитать одну и ту же сумму дважды.
+Es la correspondencia publicada por la AEAT. `[0224]` ya incluye la deducción admitida en el IRPF por gastos de difícil justificación. No la sustituya por el rendimiento neto reducido. No sume las cuotas una segunda vez si el dato de entrada ya es el rendimiento antes del RETA. Si la devolución supera las cuotas del año, una parte está en `[0178]`. Concilie esta anomalía con el certificado del IRPF y con el rendimiento que la AEAT ha transmitido realmente. No reste dos veces el mismo importe.
 
 ```text
 A_societario = qualifying_gross_remuneration_from_company
              + qualifying_gross_equity_distributions
-# Если RETA уже включена в remuneration en especie, повторно не добавлять.
-# Не вычитать из этих валовых сумм retenciones, личную cuota или 2.000 € gastos trabajo.
+# Si el RETA ya está incluido en la remuneración en especie, no volver a sumarlo.
+# No restar de estos importes brutos las retenciones, la cuota personal ni los 2.000 € de gastos del trabajo.
 
 A_total = sum(A_directa) + A_societario + other_art308_computable_income
 p = 0.03 if qualifying_art305_b_or_e_days >= 90 else 0.07
 N = A_total - A_total * p
 ```
 
-Отрицательный результат не превращается в «нет поданной декларации»: это разные правовые состояния. Для обычного autónomo отрицательный R попадает в R1, не в fallback 1.000/1.424,40 €.
+Un resultado negativo no se convierte en «declaración no presentada»: son situaciones jurídicas distintas. Para un autónomo ordinario, un R negativo cae en R1, no en el valor por defecto de 1.000/1.424,40 €.
 
-### Среднемесячный доход, диапазон, рекомендация
+### Rendimiento medio mensual, rango y recomendación
 
-Art. 44/46 Reglamento задаёт `R = N / D_regularizable × 30`. `D_regularizable` — дни, учитываемые TGSS после исключений, а не просто число оплаченных invoices. Для полного года прогноз `N/12` удобно показывать отдельно, но нельзя без оговорки объявлять его точной формулой regularización: буквальная формула нормы использует дни. При обычном календарном полном 2025/2026 году `N/365×30`; в импортированном расчёте TGSS использовать его подтверждённый счётчик дней. Практическое расхождение с приводимым в некоторых материалах условным годом 360 дней отмечено ниже.
+El art. 44/46 del Reglamento establece `R = N / D_regularizable × 30`. `D_regularizable` son los días que la TGSS computa después de las exclusiones. No es simplemente el número de facturas cobradas. Para un año completo es útil mostrar aparte la previsión `N/12`. Sin embargo, no la presente sin advertencia como la fórmula exacta de la regularización: la fórmula literal de la norma usa días. En un año natural completo ordinario de 2025/2026 es `N/365×30`. En un cálculo importado de la TGSS, use su contador de días confirmado. Más abajo se señala la diferencia práctica con el año convencional de 360 días que citan algunos materiales.
 
 ```text
 if D_regularizable == 0:
   income_regularization = 0
   keep recognized nonregularizable bases
 else:
-  R = N / D_regularizable * 30          # не округлять перед выбором tramo
-  (lo, hi) = table[year].lookup(R)      # точные <, <=, >= как в таблице
+  R = N / D_regularizable * 30          # no redondear antes de elegir el tramo
+  (lo, hi) = table[year].lookup(R)      # <, <=, >= exactos como en la tabla
   if special_floor_applies:
     lo = max(lo, floor[year])
-    hi = max(hi, lo)                   # специальный пол не блокируется низким tramo
-  recommended_base = lo               # цель: минимальные обязательные платежи
+    hi = max(hi, lo)                   # un tramo bajo no bloquea el suelo especial
+  recommended_base = lo               # objetivo: pagos obligatorios mínimos
   if user_explicitly_wants_higher_benefit_base:
     selected_base = chosen amount in [lo, hi]
   else:
     selected_base = recommended_base
 ```
 
-Прогнозировать год из факта с начала года + ожидаемых оставшихся доходов/расходов; включать разовые бонусы/дивиденды societario. Возле границы показывать диапазон возможных tramos, а не советовать искусственно заниженный прогноз. Изменение базы действует только в очередное разрешённое окно. Не увеличивать минимум «на всякий случай» скрытой надбавкой.
+Prevea el año a partir de los datos reales desde el inicio del año más los ingresos y gastos restantes esperados. Incluya las primas o dividendos puntuales del societario. Cerca de un límite, muestre el rango de tramos posibles. No aconseje una previsión artificialmente reducida. El cambio de base solo surte efecto en la siguiente ventana permitida. No aumente el mínimo «por si acaso» con un recargo oculto.
 
-### Cuota и округление
+### Cuota y redondeo
 
 ```text
 ordinary_rate[2025] = .283 + .013 + .009 + .001 + .008 = .314
@@ -168,21 +168,21 @@ ordinary_rate[2026] = .283 + .013 + .009 + .001 + .009 = .315
 estimated_full_month_cuota = ROUND_HALF_UP(selected_base * rate, 2)
 ```
 
-Хранить расчёт каждого компонента без раннего округления и отдельно официальный recibo. Порядок округления отдельных компонентов/разниц в внутренней системе TGSS до цента первичным техническим документом не подтверждён; таблицы и примеры используют округление общей месячной суммы. Финальная сумма к перечислению — из documento de ingreso TGSS. Нельзя выдавать самостоятельно рассчитанную сумму за официальный платёжный документ.
+Guarde el cálculo de cada componente sin redondeo anticipado. Guarde aparte el recibo oficial. Ningún documento técnico primario confirma el orden de redondeo al céntimo de cada componente o diferencia en el sistema interno de la TGSS. Las tablas y los ejemplos redondean el importe mensual total. El importe final a ingresar es el del documento de pago de la TGSS. No presente un importe calculado por su cuenta como documento oficial de pago.
 
-Частичный месяц и не regularizables интервалы: учитывать пропорциональную base по правилам liquidación и фактическим días TGSS; не начислять автоматически полный месяц за один день, но помнить, что льготная дневная alta/baja ограничена тремя случаями в год. Для cuota reducida использовать признанную фиксированную часть + MEI на применимую базу; не добавлять cese/FP и не применять к ней обычные 31,4/31,5%.
+Mes parcial e intervalos no regularizables: compute la base proporcional según las reglas de liquidación y los días reales de la TGSS. No cobre automáticamente un mes completo por un solo día. Recuerde que el alta/baja con cotización por días está limitada a tres veces al año. Para la cuota reducida, use la parte fija reconocida + MEI sobre la base aplicable. No añada cese ni FP. No le aplique el 31,4/31,5% ordinario.
 
 ### Regularización
 
-Не делать `sum(clamp(base каждого месяца))`: нормативно сначала сравнивается **средняя база** всего регуляризуемого периода.
+No haga `sum(clamp(base de cada mes))`: según la norma, primero se compara la **base de cotización provisional promedio** de todo el periodo regularizable.
 
 ```text
 B_sum = sum(provisional bases attributable to regularizable periods)
-B_avg = B_sum / D_regularizable * 30       # art46; взять нормализованные данные TGSS
+B_avg = B_sum / D_regularizable * 30       # art46; tomar los datos normalizados de la TGSS
 (lo, hi) = permitted interval for actual R and special category
 
 if no_IRPF_or_no_reported_income_condition_confirmed_by_TGSS:
-  target_base = missing_data_floor[year]  # 1000 / 1424.40; не выбирать по нулевой прибыли
+  target_base = missing_data_floor[year]  # 1000 / 1424.40; no elegir por beneficio cero
 elif lo <= B_avg <= hi:
   preserve each provisional base
   income_related_delta = 0
@@ -204,115 +204,115 @@ negative -> estimated refund
 cash_reserve = max(0, estimated_result)
 ```
 
-Art. 46.2.7 предписывает применять ставки и условия к **разницам баз**. Для прогноза до цента допускается округлять месячную разницу, но сравнивать результат с официальным recibo/решением. Учесть, что задолженность по неоплаченным предварительным cuotas, recargos и intereses не исчезает автоматически при снижении окончательной базы. Возможны отдельные исправления статуса/покрытия даже для периодов с уже definitive base.
+El art. 46.2.7 ordena aplicar los tipos y las condiciones a las **diferencias de bases**. Para una previsión al céntimo se admite redondear la diferencia mensual. Sin embargo, compare el resultado con el recibo o la resolución oficial. Tenga en cuenta que la deuda por cuotas provisionales impagadas, recargos e intereses no desaparece automáticamente si baja la base definitiva. Puede haber correcciones aparte de la situación o de la cobertura incluso en periodos con base ya definitiva.
 
-Возврат по pluriactividad считать **после** основной regularización:
+Calcule la devolución por pluriactividad **después** de la regularización principal:
 
 ```text
 excess = max(0, CC_RETA_paid + CC_employee_paid + CC_employer_paid - annual_threshold)
 refund_pluriactividad = min(excess * .50, CC_RETA_paid * .50)
 ```
 
-### Проводка в налоговые формы
+### Traslado a los modelos tributarios
 
-| Операция | Форма и направление |
+| Operación | Modelo y sentido |
 |---|---|
-| Обычная cuota autónomo по деятельности | Modelo 100 `[0186]`; включается в gastos modelo 130 `[02]` acumulados, если существует обязанность 130 |
-| Доплата regularización прошлых лет | Modelo 100 `[0196]` в году исполнения, не перерасчёт старого года; соответствующее увеличение gastos 130 `[02]` |
-| Возврат regularización | Modelo 100 `[0197]` уменьшает текущие расходы; превышение над соответствующими cuotas → `[0178]` otros ingresos; в 130 уменьшение `[02]`, доходная часть → `[01]` |
-| Cuota как gasto de rendimientos del trabajo administrador | Раздел trabajo modelo 100, cotizaciones Seguridad Social `[0013]`; не одновременно `[0186]` |
-| SL действительно оплачивает за administrador | Учесть вознаграждение/ingreso a cuenta и reporting 111/190; для administrador normalmente clave E. В modelo 200 расход проходит через бухгалтерский результат, отдельной универсальной casilla «RETA administrador» нет |
-| Необоснованная liberalidad, признанная недопустимой в IS | Положительная corrección modelo 200 `[00339]`, а не повторное вычитание cuota |
-| Beckham | Не переносить эти casillas в modelo 151; требуется его собственная налоговая квалификация |
+| Cuota ordinaria de autónomo por la actividad | Modelo 100 `[0186]`; se incluye en los gastos acumulados del modelo 130 `[02]` si existe obligación de presentar el 130 |
+| Regularización cuotas RETA de años anteriores (si resulta una cantidad a ingresar) | Modelo 100 `[0196]` en el año del pago, sin recalcular el año antiguo; aumento correspondiente de los gastos del 130 `[02]` |
+| Regularización cuotas RETA (si resulta una cantidad a devolver) | Modelo 100 `[0197]` reduce los gastos del año; el exceso sobre las cuotas correspondientes → `[0178]` otros ingresos; en el 130, reducción de `[02]`, y la parte de ingreso → `[01]` |
+| Cuota como gasto de rendimientos del trabajo del administrador | Apartado de trabajo del modelo 100, cotizaciones a la Seguridad Social `[0013]`; no a la vez en `[0186]` |
+| La SL paga realmente por el administrador | Compute la retribución/ingreso a cuenta y la información de los modelos 111/190; para el administrador, normalmente clave E. En el modelo 200 el gasto pasa por el resultado contable; no hay una casilla universal aparte «RETA administrador» |
+| Liberalidad no justificada, declarada no deducible en el IS | Corrección positiva en el modelo 200 `[00339]`, no una nueva deducción de la cuota |
+| Beckham | No traslade estas casillas al modelo 151; requiere su propia calificación tributaria |
 
-Номера modelo 100 относятся к подтверждённой документации Renta 2025; для декларации за **2026, подаваемой в 2027**, номера и XML/XSD формы — **UNVERIFIED**, нельзя автоматически считать их неизменными. RETA сама по себе не подаётся как квартальная autoliquidación AEAT.
+Los números del modelo 100 corresponden a la documentación confirmada de la Renta 2025. Para la declaración de **2026, que se presenta en 2027**, los números y el XML/XSD del modelo son **UNVERIFIED**. No se puede dar por hecho que no cambien. El RETA en sí no se presenta como una autoliquidación trimestral ante la AEAT.
 
-Технический источник annual mapping: [официальный diccionario XSD modelo 100 за 2025](https://sede.agenciatributaria.gob.es/static_files/Sede/Disenyo_registro/DR_100_199/diccionarioXSD_2025.properties). На следующий год необходима соответствующая новая версия, а не переименование файла 2025.
+Fuente técnica de la correspondencia anual: [diccionario XSD oficial del modelo 100 de 2025](https://sede.agenciatributaria.gob.es/static_files/Sede/Disenyo_registro/DR_100_199/diccionarioXSD_2025.properties). Para el año siguiente hace falta la nueva versión correspondiente, no renombrar el archivo de 2025.
 
-### Пример: 4.000 € в месяц до RETA
+### Ejemplo: 4.000 € al mes antes del RETA
 
-**Вариант A — дан именно налоговый rendimiento до RETA**, то есть 48.000 € в год уже после остальных допустимых расходов, включая применимый gastos de difícil justificación. Полный год, нет tarifa plana, prestaciones, задолженностей или других льгот; autónomo индивидуальный.
+**Variante A: el dato es precisamente el rendimiento fiscal antes del RETA**, es decir, 48.000 € al año ya después de los demás gastos admitidos, incluidos los gastos de difícil justificación aplicables. Año completo, sin tarifa plana, prestaciones, deudas ni otros beneficios; autónomo persona física.
 
-`A=48.000; N=48.000×0,93=44.640 €`. Упрощённый месячный прогноз `N/12=3.720 €`; по календарному счётчику 365 дней `N/365×30=3.669,041095… €`. **В обоих случаях G10**, base 1.601,31–4.050,00 €. Выбираем минимум 1.601,31 €.
+`A=48.000; N=48.000×0,93=44.640 €`. Previsión mensual simplificada `N/12=3.720 €`; con el contador natural de 365 días `N/365×30=3.669,041095… €`. **En ambos casos es G10**, con base de 1.601,31–4.050,00 €. Se elige el mínimo de 1.601,31 €.
 
-| Величина | 2025 | 2026 |
+| Magnitud | 2025 | 2026 |
 |---|---:|---:|
-| Правильная минимальная base G10 | 1.601,31 | 1.601,31 |
-| Расчёт cuota на месяц | 1.601,31 × 31,4% = **502,81** | 1.601,31 × 31,5% = **504,41** |
-| 12 округлённых месячных cuotas | 6.033,72 | 6.052,92 |
-| Если весь год выбрана mínima **G1**: base | 950,98 | 950,98 |
-| Предварительная cuota G1 / месяц | 298,61 | 299,56 |
-| Оценка доплаты за 12 полных месяцев | **2.450,40** | **2.458,20** |
-| Если под «tramo 1» имелся в виду **R1**: base | 653,59 | 653,59 |
-| Предварительная cuota R1 / месяц | 205,23 | 205,88 |
-| Оценка доплаты от R1 за 12 месяцев | **3.570,96** | **3.582,36** |
+| Base mínima correcta G10 | 1.601,31 | 1.601,31 |
+| Cálculo de la cuota mensual | 1.601,31 × 31,4% = **502,81** | 1.601,31 × 31,5% = **504,41** |
+| 12 cuotas mensuales redondeadas | 6.033,72 | 6.052,92 |
+| Si todo el año se eligió la mínima del **G1**: base | 950,98 | 950,98 |
+| Cuota provisional G1 / mes | 298,61 | 299,56 |
+| Estimación de la diferencia a ingresar por 12 meses completos | **2.450,40** | **2.458,20** |
+| Si por «tramo 1» se entendía **R1**: base | 653,59 | 653,59 |
+| Cuota provisional R1 / mes | 205,23 | 205,88 |
+| Estimación de la diferencia a ingresar desde R1 por 12 meses | **3.570,96** | **3.582,36** |
 
-Например, 2025 от G1: `(1.601,31−950,98)×0,314 = 204,19962 → 204,20 €/месяц`, ×12 = 2.450,40 €. Это regularización без штрафа, если оплатить в специальный срок; само первоначальное занижение прогноза не превращает разницу в бесплатный кредит навсегда.
+Por ejemplo, 2025 desde G1: `(1.601,31−950,98)×0,314 = 204,19962 → 204,20 €/mes`, ×12 = 2.450,40 €. Es una regularización sin sanción si se paga en el plazo especial. Infravalorar la previsión inicial no convierte la diferencia en un crédito gratuito para siempre.
 
-**Вариант B — 4.000 € это операционная прибыль до RETA и до gastos de difícil justificación**, что часто и имеется в виду пользователем normal IRPF simplificada. При действительном праве на 5% и достижении годового потолка 2.000 € исходное `A=48.000−2.000=46.000 €`, `N=42.780 €`. Месячный прогноз 3.565 €, календарный расчёт 3.516,16438… €: **G9**, а не G10. Cuota 477,16 € / 478,68 €; доплата с G1 за 12 месяцев **2.142,60 € / 2.149,44 €**, с R1 **3.263,16 € / 3.273,60 €**. Движок обязан уточнять семантику входа, а не дважды вычитать generic expenses. При 4.000 € месячных валовых qualifying доходов societario и отсутствии иных доходов `48.000×0,97/12=3.880 €`: G10; добавленные дивиденды способны перевести его выше. **Ни один вариант не является подтверждённым окончательным расчётом для Beckham.**
+**Variante B: los 4.000 € son el beneficio operativo antes del RETA y antes de los gastos de difícil justificación.** Es lo que el usuario suele querer decir en el IRPF ordinario con estimación directa simplificada. Si existe derecho real al 5% y se alcanza el límite anual de 2.000 €, el dato de partida es `A=48.000−2.000=46.000 €` y `N=42.780 €`. Previsión mensual de 3.565 €; cálculo natural de 3.516,16438… €: **G9**, no G10. Cuota de 477,16 € / 478,68 €. Diferencia a ingresar desde G1 por 12 meses: **2.142,60 € / 2.149,44 €**; desde R1: **3.263,16 € / 3.273,60 €**. El motor debe precisar el significado del dato de entrada. No debe restar dos veces los gastos genéricos. Para un societario con 4.000 € mensuales de rendimientos brutos computables y sin otros ingresos: `48.000×0,97/12=3.880 €`: G10. Los dividendos añadidos pueden llevarlo a un tramo superior. **Ninguna variante es un cálculo definitivo confirmado para el régimen Beckham.**
 
-## Сроки и модели
+## Plazos y modelos
 
-| Обязанность / действие | Когда | Кто / исключения / канал |
+| Obligación / trámite | Cuándo | Quién / excepciones / canal |
 |---|---|---|
-| Alta RETA и сообщение всех видов деятельности, mutua, IBAN, доходного прогноза, выбранной базы | До начала деятельности, можно за 60 календарных дней | Autónomo/соответствующий societario; Importass или RED, семейство TA.0521 по категории. Alta AEAT не заменяет RETA |
-| Baja / изменение обычных регистрационных данных | Обычно 3 календарных дня с прекращения/изменения | Importass/RED; для изменения base действует специальное окно ниже |
-| Заявление cuota reducida | Вместе с alta | При выполнении условий; не автоматическая льгота всех вновь зарегистрированных иностранцев |
-| Продление cuota reducida | До начала второго периода | Заявление с прогнозом ниже SMI; не ждать завершения годового IRPF |
-| Ежемесячная cuota | За текущий месяц; domiciliación в последний рабочий день | Каждый месяц alta; отдельной квартальной «модели RETA» нет |
-| Проверка электронной notificación | 10 календарных дней для открытия; затем возможен эффект вручения без открытия | NOTESS/Importass; срок доплаты считать от юридической даты уведомления, не от дня прочтения email |
-| Доплата annual regularización | До последнего дня месяца после уведомления | Documento de ingreso из решения TGSS; не считать, что обычная domiciliación автоматически погасит её |
-| Возврат annual regularización | До 30 апреля года после года передачи AEAT данных TGSS | De oficio. Для доходов 2025 при передаче в 2026 — до 30.04.2027; если данные переданы позже, отсчёт иной |
-| Сохранение допустимой более высокой base, право на 31.12.2022 | До последнего дня месяца после сообщения результата | Только при предусмотренном праве; renuncia devolución, не общая возможность выбрать любой максимум после закрытия года |
-| Возврат pluriactividad | Обычно ≤4 месяцев после regularización, с законными исключениями | De oficio; расчёт по CC и установленному порогу |
-| Recurso de alzada на ошибочное решение | Обычно 1 месяц от уведомления expresa; смотреть pie de recurso | Не считать, что жалоба сама приостанавливает исполнение/срок платежа |
-| Modelo 100 либо соответствующая declaración régimen especial | Ежегодная кампания Renta | Обычный RETA обязан декларировать независимо от малого дохода; при Beckham сохраняется правильный modelo 151, не подмена его modelo 100 ради обмена TGSS |
-| Modelos 130/111/190/193/200 | По соответствующему налоговому календарю | RETA — расход/элемент remuneration, но наличие RETA само не создаёт все эти модели; см. налоговые разделы базы знаний |
+| Alta en el RETA y comunicación de todas las actividades, la mutua, el IBAN, la previsión de rendimientos y la base de cotización elegida | Antes del inicio de la actividad; se puede hacer con 60 días naturales de antelación | Autónomo o societario correspondiente; Importass (servicio «Alta en trabajo autónomo») o Sistema RED, familia TA.0521 según la categoría. El alta en la AEAT no sustituye al RETA |
+| Baja / cambio de los datos registrales ordinarios | Normalmente 3 días naturales desde el cese o el cambio | Importass (servicios «Baja en trabajo autónomo» y «Modificación de datos de trabajo autónomo») o Sistema RED; para el cambio de base rige la ventana especial de abajo |
+| Solicitud de la cuota reducida | Junto con el alta | Si se cumplen los requisitos; no es un beneficio automático para todos los extranjeros recién dados de alta |
+| Prórroga de la cuota reducida | Antes del inicio del segundo periodo | Solicitud con previsión inferior al SMI; no espere a que termine el IRPF anual |
+| Cuota mensual | Por el mes en curso; domiciliación el último día hábil | Cada mes de alta; no existe un «modelo RETA» trimestral aparte |
+| Revisión de la notificación electrónica | 10 días naturales para abrirla; después puede darse por notificada sin abrirla | NOTESS (servicio de notificaciones telemáticas de la Seguridad Social)/Importass; cuente el plazo de la diferencia a ingresar desde la fecha jurídica de la notificación, no desde el día en que lee el email |
+| Resultado «A ingresar» de la regularización anual de cuotas | Hasta el último día del mes siguiente a la notificación | Documento de pago anexo a la resolución, en el servicio «Regularización anual de cuotas de Trabajo Autónomo»; no suponga que la domiciliación ordinaria lo pagará automáticamente |
+| Resultado «A devolver» de la regularización anual de cuotas | Hasta el 30 de abril del año siguiente a aquel en que la AEAT transmite los datos a la TGSS | De oficio. Para los rendimientos de 2025 transmitidos en 2026: hasta el 30.04.2027; si los datos se transmiten más tarde, el cómputo es otro |
+| Optar por mantener una base de cotización superior, derecho a 31.12.2022 | Hasta el último día del mes siguiente a la comunicación del resultado | Solo con el derecho previsto; renuncia a la devolución. No es una posibilidad general de elegir cualquier máximo después de cerrar el año |
+| Devolución por pluriactividad | Normalmente ≤4 meses después de la regularización, con las excepciones legales | De oficio; cálculo según la CC y el umbral establecido |
+| Recurso de alzada contra una resolución errónea | Normalmente 1 mes desde la notificación expresa; consulte el pie de recurso | No suponga que el recurso suspende por sí solo la ejecución o el plazo de pago |
+| Modelo 100 o la declaración del régimen especial correspondiente | Campaña anual de la Renta | El RETA ordinario obliga a declarar aunque el rendimiento sea pequeño; con el régimen Beckham se mantiene el modelo 151 correcto, sin sustituirlo por el modelo 100 para el intercambio con la TGSS |
+| Modelos 130/111/190/193/200 | Según el calendario tributario correspondiente | El RETA es un gasto o un elemento de la retribución, pero tener RETA no genera por sí solo todos estos modelos; consulte las secciones tributarias de la base de conocimiento |
 
-Основания сроков: [TGSS alta/baja](https://www.seg-social.es/wps/portal/wss/internet/InformacionUtil/44539/44113/44128?changeLanguage=es), [сервис regularización](https://portal.seg-social.gob.es/wps/wcm/connect/importass/importass_contenidos/categorias/consulta+de+pagos+y+deudas/pagosdevoluciones_/regularizacionreta), [RD 665/2024, art. 46](https://www.boe.es/boe/dias/2024/07/10/pdfs/BOE-A-2024-14086.pdf), [AEAT обязанность IRPF](https://sede.agenciatributaria.gob.es/Sede/empresarios-individuales-profesionales/nuevo-sistema-cotizacion-autonomos/informacion-determinar-rendimiento-neto.html), [Ley 39/2015 arts. 43, 117, 122](https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565).
+Base de los plazos: [TGSS alta/baja](https://www.seg-social.es/wps/portal/wss/internet/InformacionUtil/44539/44113/44128?changeLanguage=es), [Importass: Regularización anual de cuotas de Trabajo Autónomo](https://portal.seg-social.gob.es/wps/wcm/connect/importass/importass_contenidos/categorias/consulta+de+pagos+y+deudas/pagosdevoluciones_/regularizacionreta), [RD 665/2024, art. 46](https://www.boe.es/boe/dias/2024/07/10/pdfs/BOE-A-2024-14086.pdf), [AEAT: obligación del IRPF](https://sede.agenciatributaria.gob.es/Sede/empresarios-individuales-profesionales/nuevo-sistema-cotizacion-autonomos/informacion-determinar-rendimiento-neto.html), [Ley 39/2015 arts. 43, 117, 122](https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565).
 
-| Подача запроса cambio de base | Начало новой базы |
+| Presentación de la solicitud de cambio de base | Inicio de la nueva base |
 |---|---|
-| 1 января – последний календарный день февраля | 1 марта |
-| 1 марта – 30 апреля | 1 мая |
-| 1 мая – 30 июня | 1 июля |
-| 1 июля – 31 августа | 1 сентября |
-| 1 сентября – 31 октября | 1 ноября |
-| 1 ноября – 31 декабря | 1 января следующего года |
+| 1 de enero – último día natural de febrero | 1 de marzo |
+| 1 de marzo – 30 de abril | 1 de mayo |
+| 1 de mayo – 30 de junio | 1 de julio |
+| 1 de julio – 31 de agosto | 1 de septiembre |
+| 1 de septiembre – 31 de octubre | 1 de noviembre |
+| 1 de noviembre – 31 de diciembre | 1 de enero del año siguiente |
 
-Источник: [art. 45 Reglamento в RDL 13/2022](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#aq). Применимо к 2025 и 2026. Не ставить фиктивную дату annual regularización «31 декабря»: фактическое уведомление приходит позднее. Официальный календарь TGSS показывает regularización доходов **2024 в январе–марте 2026**, то есть уведомление может отставать более чем на один календарный год: [TGSS календарь](https://www.seg-social.es/wps/portal/wss/internet/HerramientasWeb/a0f05310-9c20-45ba-9dd2-47c9e88f34c1/4a7e4a73-afc6-4327-a462-048d35592cd7?changeLanguage=es).
+Fuente: [art. 45 del Reglamento en el RDL 13/2022](https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482#aq). Se aplica a 2025 y 2026. No ponga una fecha ficticia de regularización anual «31 de diciembre»: la notificación real llega más tarde. El calendario oficial de la TGSS muestra la regularización de los rendimientos de **2024 en enero–marzo de 2026**. Es decir, la notificación puede retrasarse más de un año natural: [calendario de la TGSS](https://www.seg-social.es/wps/portal/wss/internet/HerramientasWeb/a0f05310-9c20-45ba-9dd2-47c9e88f34c1/4a7e4a73-afc6-4327-a462-048d35592cd7?changeLanguage=es).
 
-## Пограничные случаи
+## Casos límite
 
-- **Одна фактура в месяц / иностранный клиент.** Страна клиента, reverse charge, отсутствие IVA в фактуре и удержание испанского IRPF сами по себе не меняют RETA. Нужен доход по налоговому признанию, не чистый приход банка.
-- **IRPF simplificada и 7%.** Это два разных вычета; учитывать fiscal resultado после допустимого gastos de difícil justificación, затем SS 7%. Не заменять 5% налогового вычета на 7% и не считать cuotas SS дважды.
-- **90 дней societario.** Классификацию, вычет 3% и минимальный пол определять по годовым данным статуса, а не только по состоянию 31 декабря. Не распространять порог владения для включения дивидендов автоматически на все способы доказать efectivo control.
-- **Год со сменой autónomo → SL.** Доходы индивидуальной деятельности и qualifying вознаграждение/дивиденды могут суммироваться; применяется один RETA, но нужны даты статусов и единая проверка 90 дней. Два регистрационных вида деятельности не означают две cuotas.
-- **Colaborador без собственной зарплаты.** Отсутствие личного дохода не отменяет специальный минимум; отсутствие обменных данных и реально заявленный отрицательный resultado не смешивать. Familiares colaboradores обычно не применяют самостоятельную estimación directa к деятельности основного autónomo.
-- **Prestaciones / IT.** После 60 дней IT при соответствующем праве cuotas оплачивает mutua/SEPE; месяцы выплат и использованные для расчёта prestación базы могут стать no regularizables. Не резервировать обычную доплату за каждый такой месяц автоматически. Источник: [LGSS art. 309](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a309).
-- **Pluriactividad.** Зарплата обычного стороннего работодателя не становится доходом RETA только потому, что физлицо одновременно autónomo. Сначала regularización, затем возврат превышения CC; это не освобождение от RETA из-за полного взноса в Régimen General.
-- **Доход на границе.** Ровно 1.166,70 € → G1; ровно 900 → R2; ровно 4.050 → G10. Сравнивать неокруглённый расчёт, округлять отображение отдельно; решение TGSS с собственными округлениями сохранять как факт.
-- **Существовавшая до 2023 высокая база.** Возможность сохранить её требует условий DT sexta и своевременной опции; не предлагать её впервые зарегистрировавшемуся в 2025.
-- **Переезд по Испании.** Нет отдельной региональной шкалы RETA. Региональная cuota cero или субсидия — отдельная выплата с условиями и потенциальной налоговой квалификацией; не уменьшать национальную cuota до её признания. Обновить domicilio в TGSS и AEAT отдельно.
-- **Паспорт РФ.** Соглашение España–Rusia о Seguridad Social существует, действует с 22.02.1996. Обычная пятилетняя схема desplazamiento относится к работникам por cuenta ajena; autónomo не получает автоматическое освобождение, для него возможны согласованные otras excepciones с E/R.2. Без подтверждённого применимого покрытия не исключать RETA. [TGSS: Federación de Rusia](https://www.seg-social.es/wps/portal/wss/internet/InformacionUtil/32078/32253/1437/1440/119870?changeLanguage=es).
-- **Полученная доплата после ухода из деятельности.** Налоговая квалификация regularización сохраняется по природе прежней деятельности/работы; нельзя списать её на новую SL только потому, что платёж пришёл уже после её регистрации. Бухгалтерский расход прогнозируемой будущей доплаты не равен уже исполненному налоговому расходу физлица.
+- **Una factura al mes / cliente extranjero.** El país del cliente, la inversión del sujeto pasivo, la falta de IVA en la factura y la retención del IRPF español no cambian por sí solos el RETA. Hace falta el rendimiento según el criterio fiscal, no el saldo neto que entra en el banco.
+- **IRPF en estimación directa simplificada y 7%.** Son dos deducciones distintas. Tome el resultado fiscal después de los gastos de difícil justificación admitidos y después aplique el 7% de la Seguridad Social. No sustituya el 5% de la deducción fiscal por el 7% y no compute dos veces las cuotas de la Seguridad Social.
+- **90 días del societario.** Determine la clasificación, la deducción del 3% y el suelo mínimo con los datos anuales de la situación, no solo con la situación a 31 de diciembre. No extienda automáticamente el umbral de participación para incluir dividendos a todas las formas de acreditar el control efectivo.
+- **Año con paso de autónomo a SL.** Los rendimientos de la actividad individual y la retribución o los dividendos computables pueden sumarse. Se aplica un solo RETA, pero hacen falta las fechas de cada situación y una comprobación única de los 90 días. Dos actividades registradas no significan dos cuotas.
+- **Colaborador sin salario propio.** La falta de rendimiento personal no anula el mínimo especial. No mezcle la falta de datos del intercambio con un resultado negativo realmente declarado. Los familiares colaboradores normalmente no aplican una estimación directa propia a la actividad del autónomo principal.
+- **Prestaciones / IT.** Después de 60 días de IT, si existe el derecho correspondiente, las cuotas las paga la mutua/el SEPE. Los meses de pago y las bases usadas para calcular la prestación pueden pasar a ser no regularizables. No reserve automáticamente una diferencia a ingresar por cada uno de esos meses. Fuente: [LGSS art. 309](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a309).
+- **Pluriactividad.** El salario de un empleador ajeno ordinario no se convierte en rendimiento del RETA solo porque la persona física sea a la vez autónoma. Primero va la regularización y después la devolución del exceso de CC. No es una exención del RETA por cotizar íntegramente en el Régimen General.
+- **Rendimiento en el límite.** Exactamente 1.166,70 € → G1; exactamente 900 → R2; exactamente 4.050 → G10. Compare el cálculo sin redondear y redondee por separado lo que se muestra. Guarde como hecho la resolución de la TGSS con sus propios redondeos.
+- **Base alta existente antes de 2023.** Para poder mantenerla hay que cumplir las condiciones de la DT sexta y ejercer la opción a tiempo. No la proponga a quien se da de alta por primera vez en 2025.
+- **Traslado dentro de España.** No hay una escala autonómica propia del RETA. La cuota cero o la subvención autonómica es un pago aparte, con sus condiciones y su posible calificación tributaria. No reduzca la cuota nacional hasta que se reconozca. Actualice el domicilio en la TGSS y en la AEAT por separado.
+- **Pasaporte ruso.** Existe el Convenio España–Rusia de Seguridad Social, vigente desde el 22.02.1996. El esquema ordinario de desplazamiento de cinco años se refiere a los trabajadores por cuenta ajena. El autónomo no obtiene una exención automática; para él pueden acordarse otras excepciones con el E/R.2. Sin una cobertura aplicable confirmada, no excluya el RETA. [TGSS: Federación de Rusia](https://www.seg-social.es/wps/portal/wss/internet/InformacionUtil/32078/32253/1437/1440/119870?changeLanguage=es).
+- **Diferencia a ingresar notificada después de dejar la actividad.** La calificación tributaria de la regularización sigue la naturaleza de la actividad o del trabajo anterior. No se puede imputar a la nueva SL solo porque el pago llegó después de constituirla. El gasto contable de una diferencia a ingresar futura prevista no equivale a un gasto fiscal ya pagado por la persona física.
 
-## Неясности
+## Puntos no aclarados
 
-1. **Beckham — блокирующая неопределённость для автоматической окончательной regularización.** Найден конкретный ответ TGSS Valencia по modelo 151, но он размещён на сайте коллегии, не является BOE/DGT общим нормативным актом и описывает практику прошлой regularización. Не найден опубликованный общенациональный ответ, какой именно налоговый net yield брать для предпринимателя art. 93 и как передавать его из modelo 151. Не обещать, что «всегда только база 1.000 €»; для 2026 национальный fallback уже 1.424,40 €. Осторожная реализация: письменный запрос в TGSS/CASIA с годом и конкретным статусом, хранить ответ и resolución; до этого прогнозы обозначать **UNVERIFIED**, фактические платежи учитывать по recibos. Это не основание подавать неправильный modelo 100.
+1. **Régimen Beckham: incertidumbre que bloquea una regularización definitiva automática.** Se ha encontrado una respuesta concreta de la TGSS de Valencia sobre el modelo 151. Sin embargo, está publicada en la web de un colegio, no es una norma general del BOE ni de la DGT y describe la práctica de una regularización pasada. No se ha encontrado una respuesta nacional publicada sobre qué rendimiento neto fiscal exacto debe tomarse para un empresario del art. 93 ni sobre cómo transmitirlo desde el modelo 151. No prometa que «siempre será solo la base de 1.000 €»; para 2026 el valor nacional por defecto ya es de 1.424,40 €. Implementación con cautela: consulta escrita a la TGSS/CASIA con el año y la situación concreta. Guarde la respuesta y la resolución. Hasta entonces, marque las previsiones como **UNVERIFIED** y registre los pagos reales según los recibos. No es motivo para presentar un modelo 100 incorrecto.
 
-   Для **налоговой** стороны есть конкретная проверенная граница: [инструкция AEAT modelo 151, epígrafe B](https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-personas-fisicas/modelo-151-decla_____los-trabajadores-desplazados-espanol_/instrucciones-cumplimentacion-ejercicio-2023-siguientes.html) допускает по art. 24.2 TRLIRNR только gastos de personal `[03]`, aprovisionamiento de materiales и suministros `[04]`. Cargas sociales персонала — не личная cuota RETA предпринимателя. Поэтому собственную RETA не включать в эти расходы и не переносить туда `[0186]` обычного modelo 100. Наличие в 151 собственного «rendimiento neto» не решает, какое именно значение TGSS должен получить для art. 308.
+   Para la parte **tributaria** hay un límite concreto comprobado. Las [instrucciones de la AEAT del modelo 151, epígrafe B](https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-personas-fisicas/modelo-151-decla_____los-trabajadores-desplazados-espanol_/instrucciones-cumplimentacion-ejercicio-2023-siguientes.html) admiten, según el art. 24.2 TRLIRNR, solo los gastos de personal `[03]` y el aprovisionamiento de materiales y suministros `[04]`. Las cargas sociales del personal no son la cuota personal del RETA del empresario. Por eso no incluya su propio RETA en esos gastos y no traslade ahí la `[0186]` del modelo 100 ordinario. Que el 151 tenga su propio «rendimiento neto» no resuelve qué valor exacto debe recibir la TGSS a efectos del art. 308.
 
-2. **Cuota reducida 2026 и MEI: противоречие первичных материалов.** DT quinta RDL 13/2022 прямо ограничивает 80 € годами 2023–2025 и отсылает с 2026 к LPGE. В изученных RDL 3/2026 и Orden PJC/297/2026 отдельное закрепление 80 € не обнаружено. Индексируемая официальная guía Importass одновременно публикует 80 € + 0,9% MEI = 88,64 €. Но минимальная G1 в Orden — 950,98 €, что даёт 88,56 €, тогда как 88,64 € соответствует старой базе 960,60 €. Нормативное основание такого MEI-basis и суммы на новое alta 2026 — **UNVERIFIED**. Сервис показывает это расхождение и использует признанное alta/recibo; не выводит сумму 88,64 € из выдуманной формулы.
+2. **Cuota reducida de 2026 y MEI: contradicción entre materiales primarios.** La DT quinta del RDL 13/2022 limita expresamente los 80 € a los años 2023–2025 y, a partir de 2026, remite a la LPGE. En el RDL 3/2026 y en la Orden PJC/297/2026 estudiados no se ha encontrado una fijación aparte de los 80 €. La guía oficial indexada de Importass publica a la vez 80 € + 0,9% MEI = 88,64 €. Pero la mínima G1 de la Orden es de 950,98 €, lo que da 88,56 €. En cambio, 88,64 € corresponde a la base antigua de 960,60 €. El fundamento normativo de esa base del MEI y del importe para una nueva alta en 2026 es **UNVERIFIED**. El servicio muestra esta discrepancia y utiliza el alta/recibo reconocido. No deduce el importe de 88,64 € con una fórmula inventada.
 
-3. **Дни regularización.** BOE art. 44/46 и руководство RED задают деление на учитываемые дни alta с умножением на 30; встречаются профессиональные пересказы с 360 днями полного года против буквальных 365 календарных. Доступный первичный технический алгоритм нормализации всех полных/частичных месяцев не найден. Простой `annual/12` не объявлять универсальным юридическим алгоритмом. Внутри engine нужны отдельные подтверждённые `D_regularizable` и нормализованные базы из TGSS; для прогноза хранить оба сценария, если рядом граница. Пример 4.000 € специально даёт одинаковый tramo при обоих счётчиках. Точная эквивалентность самодельного календарного счётчика данным TGSS — **UNVERIFIED**.
+3. **Días de la regularización.** El art. 44/46 del BOE y el manual de RED establecen la división entre los días de alta computables y la multiplicación por 30. Hay resúmenes profesionales que usan 360 días para un año completo en lugar de los 365 días naturales literales. No se ha encontrado un algoritmo técnico primario accesible para normalizar todos los meses completos y parciales. No presente un simple `annual/12` como algoritmo jurídico universal. Dentro del motor hacen falta `D_regularizable` confirmados aparte y bases normalizadas de la TGSS. Para la previsión, guarde ambos escenarios si hay un límite cerca. El ejemplo de 4.000 € da a propósito el mismo tramo con ambos contadores. La equivalencia exacta de un contador natural propio con los datos de la TGSS es **UNVERIFIED**.
 
-4. **Округление до цента.** Ставки и базы проверены, произведения таблиц вычислены; точный порядок округления по CC/CP/cese/FP/MEI, частичным месяцам и разницам не подтверждён технической спецификацией TGSS. Поэтому суммы — estimación; official settlement по documento de ingreso. Не вводить скрытый допуск, превращающий настоящий долг в ноль.
+4. **Redondeo al céntimo.** Los tipos y las bases están comprobados y los productos de las tablas están calculados. Ninguna especificación técnica de la TGSS confirma el orden exacto de redondeo por CC/CP/cese/FP/MEI, por meses parciales y por diferencias. Por eso los importes son una estimación; la liquidación oficial es la del documento de pago. No introduzca una tolerancia oculta que convierta una deuda real en cero.
 
-5. **Номера налоговых casillas за 2026.** На дату исследования руководство/схема будущей кампании Renta 2026 не подтверждены. Формулы отделены от annual form mapping; `[0186]/[0196]/[0197]/[0224]` подтверждены актуальной страницей AEAT и Renta 2025, но будущий exporter обязан загрузить утверждённую форму, а не копировать её вслепую.
+5. **Números de las casillas tributarias de 2026.** En la fecha del estudio no están confirmados el manual ni el esquema de la futura campaña de la Renta 2026. Las fórmulas están separadas de la correspondencia anual con el formulario. `[0186]/[0196]/[0197]/[0224]` están confirmadas por la página vigente de la AEAT y por la Renta 2025. Sin embargo, el futuro exportador debe cargar el formulario aprobado y no copiarlo a ciegas.
 
-6. **IS и administrador.** Общие правила deducibilidad подтверждены LIS/AEAT, но полный текст конкретной DGT V0067-19 с официального сайта не получен: URL отдавал оболочку поисковика. Утверждение о точной формулировке этой consulta помечено **UNVERIFIED**; первично подтверждена самостоятельная вычитаемость личной cuota в обычном IRPF. При выплате SL нужны надлежащая квалификация remuneration, ingreso a cuenta и корпоративные документы, а не универсальный переключатель «SS за директора deductible».
+6. **IS y administrador.** Las reglas generales de deducibilidad están confirmadas por la LIS y la AEAT. Sin embargo, no se ha obtenido del sitio oficial el texto completo de la DGT V0067-19 concreta: la URL devolvía solo la estructura del buscador. La afirmación sobre la redacción exacta de esa consulta está marcada como **UNVERIFIED**. En fuente primaria está confirmada la deducibilidad propia de la cuota personal en el IRPF ordinario. Si paga la SL, hacen falta una calificación adecuada de la retribución, el ingreso a cuenta y los documentos societarios. No basta un interruptor universal «SS del director deducible».
 
-   Дополнительное подтверждение найдено в полном тексте **DGT V1796-25 от 13.10.2025**, воспроизведённом [Fiscal Impuestos, с. 2–3](https://www.fiscal-impuestos.com/sites/fiscal-impuestos.com/files/V1796-2025.pdf): оплата RETA за socio-trabajador создаёт mayor retribución; при прямой оплате — en especie с ingreso a cuenta (добавляемым к оценке дохода, если он не переложен на получателя), при выдаче денег — dineraria. Cuota одновременно deducible для физлица по art. 19 LIRPF. Это доступная копия текста DGT, но **не первичный хост**; она укрепляет квалификацию IRPF, не является отдельным решением о вычете IS. Вознаграждение за обычную работу, отличную от функций administrador, не получает автоматически clave E/ставку administrador.
+   Se ha encontrado una confirmación adicional en el texto completo de la **DGT V1796-25 de 13.10.2025**, reproducido en [Fiscal Impuestos, págs. 2–3](https://www.fiscal-impuestos.com/sites/fiscal-impuestos.com/files/V1796-2025.pdf). El pago del RETA de un socio trabajador supone una mayor retribución. Si se paga directamente, es en especie con ingreso a cuenta, que se suma a la valoración del rendimiento si no se repercute al perceptor. Si se entrega dinero, es dineraria. Al mismo tiempo, la cuota es deducible para la persona física según el art. 19 LIRPF. Es una copia accesible del texto de la DGT, pero **no es el sitio primario**. Refuerza la calificación en el IRPF; no es una resolución aparte sobre la deducción en el IS. La retribución por un trabajo ordinario distinto de las funciones de administrador no recibe automáticamente la clave E ni el tipo de administrador.
 
-7. **2027 и региональные ayudas.** Принятая таблица RETA 2027 и окончательные суммы региональных cuota cero для данного лица не найдены. MEI 1% подтверждён; новые границы/base/SMI — **UNVERIFIED**. Движок не должен применять законопроекты или условное продление без версии источника и даты действия.
+7. **2027 y ayudas autonómicas.** No se han encontrado la tabla aprobada del RETA de 2027 ni los importes definitivos de la cuota cero autonómica para una persona concreta. El MEI del 1% está confirmado. Los nuevos límites, bases y el SMI son **UNVERIFIED**. El motor no debe aplicar proyectos de ley ni una prórroga condicional sin la versión de la fuente y la fecha de vigencia.

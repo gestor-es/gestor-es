@@ -119,22 +119,22 @@ ul.no li { margin: 6px 0; }
 <p class="lead" id="meta"></p>
 
 <h2><small>01</small>One idea</h2>
-<p>gestor stores only facts. Each time it calculates all the returns from them again. You file them yourself.</p>
+<p>gestor stores only facts. Each time, it recalculates all the returns from them. You file the returns.</p>
 <div class="idea">
-  <div><span class="n">INPUT</span><b>Facts</b>Invoices, expenses, the profile and filed returns. You enter them in forms.</div>
-  <div><span class="n">INSIDE</span><b>Calculation</b>The engine calculates the casillas every time a page opens. It does not store finished amounts.</div>
-  <div><span class="n">OUTPUT</span><b>You file</b>gestor gives you the casillas, the law with § and a file for the Sede. You sign in the Sede.</div>
+  <div><span class="n">INPUT</span><b>Facts</b>Invoices, expenses, profile and filed returns. You enter them in forms.</div>
+  <div><span class="n">INSIDE</span><b>Calculation</b>The engine calculates the casillas each time a page opens. It does not store amounts that it has already calculated.</div>
+  <div><span class="n">OUTPUT</span><b>You file</b>gestor gives you the casillas, the rule with § and the file for the Sede. You sign on the Sede.</div>
 </div>
 
 <h2><small>02</small>What it is made of</h2>
-<p class="lead">Click a block to see what it does. The buttons below show the path each action takes.</p>
+<p class="lead">Click a block to see what it does. The buttons below show which path each action takes.</p>
 <div class="flows" id="flows"></div>
 <div class="map">
   <svg id="svg" viewBox="0 0 760 375" role="img" aria-label="Diagram of the parts of gestor"></svg>
   <div class="panel" id="panel"></div>
 </div>
 
-<h2><small>03</small>The path of one invoice</h2>
+<h2><small>03</small>The path of an invoice</h2>
 <p class="lead" id="steplead"></p>
 <div class="steps">
   <ol id="steplist"></ol>
@@ -145,7 +145,7 @@ ul.no li { margin: 6px 0; }
 </div>
 
 <h2><small>04</small>Q3 2026: where 303 = <span id="r303h"></span> comes from</h2>
-<p class="lead">On the left: facts from the database. On the right: the casillas the engine calculated from them. Hover over a casilla to highlight the facts it comes from.</p>
+<p class="lead">On the left: the facts from the database. On the right: the casillas that the engine calculated from them. Hover over a casilla: the facts that it comes from are highlighted.</p>
 <div class="two">
   <div>
     <h3>Q3 invoices, type eu_b2b, IVA 0 %</h3>
@@ -162,23 +162,23 @@ ul.no li { margin: 6px 0; }
 </div>
 <p id="q3note"></p>
 
-<h2><small>05</small>What happens if you issue one more invoice</h2>
+<h2><small>05</small>What happens if you issue another invoice</h2>
 <p class="lead">An invoice to the same client in Cyprus, year 2026. The engine applies the rules of the régimen Beckham. Move the slider.</p>
 <div class="calc">
   <div class="big" id="xval"></div>
   <input type="range" id="x" min="0" max="20000" step="500" value="0" aria-label="Amount of the new invoice, euros">
   <div class="out">
     <div><div class="lbl">303 for the quarter</div><div class="v" id="o303"></div><div class="d">IVA 0 %: the result does not change. Only casilla 59 grows.</div></div>
-    <div><div class="lbl">349 for the quarter</div><div class="v" id="o349"></div><div class="d">An information return: you do not need to pay anything.</div></div>
-    <div><div class="lbl">151 for 2026, still to pay</div><div class="v" id="o151"></div><div class="d" id="d151"></div></div>
+    <div><div class="lbl">349 for the quarter</div><div class="v" id="o349"></div><div class="d">It is an information return: there is nothing to pay.</div></div>
+    <div><div class="lbl">151 for 2026, to pay</div><div class="v" id="o151"></div><div class="d" id="d151"></div></div>
   </div>
 </div>
 <p id="calcnote" class="muted"></p>
 
 <h2><small>06</small>The regime decides what you file</h2>
-<p class="lead">One setting, <code>beckham_first_year</code>, changes the whole set of returns. The engine (<code>tax.duties()</code>) built both tables below from the example data for 2026.</p>
+<p class="lead">A single setting, <code>beckham_first_year</code>, changes the whole set of returns. The engine (<code>tax.duties()</code>) generated both tables below from the 2026 example data.</p>
 <div class="flows">
-  <button data-reg="beckham" aria-pressed="true">Beckham (the example's regime)</button>
+  <button data-reg="beckham" aria-pressed="true">Beckham (the regime of the example)</button>
   <button data-reg="general" aria-pressed="false">If it were the general IRPF</button>
 </div>
 <table class="duty" id="tduty"></table>
@@ -186,21 +186,21 @@ ul.no li { margin: 6px 0; }
 <h2><small>07</small>How the agent helps with the Sede</h2>
 <p class="lead">Claude Code or Codex works through <code>mcp.py</code>. It reads the calculation, but it cannot change anything in the database.</p>
 <div class="lane">
-  <div><b>1. AGENT</b>Calls <code>declarations</code>: the list of the year's returns with deadlines and status.</div>
+  <div><b>1. AGENT</b>Calls <code>declarations</code>: the list of returns of the year with deadlines and status.</div>
   <div><b>2. MCP</b>Calls <code>declaration</code>: casillas, notes with § and a file in <code>~/.gestor/sede/main/</code>.</div>
-  <div><b>3. CHROME</b>The agent opens the Sede form in your browser, where you are already signed in.</div>
-  <div><b>4. CHECK</b>It uploads the file or types in the casillas. It clicks "Validar". It compares the screen with gestor.</div>
-  <div><b>5. FORBIDDEN</b><span class="stamp late">does not click</span><br><br>"Presentar" and "Firmar y enviar". This rule is written in <code>INSTRUCTIONS</code>. You sign.</div>
+  <div><b>3. CHROME</b>The agent opens the Sede form in your browser, where you have already signed in.</div>
+  <div><b>4. CHECK</b>It uploads the file or types the casillas. It clicks “Validar declaración”. It compares the screen with gestor.</div>
+  <div><b>5. FORBIDDEN</b><span class="stamp late">does not click</span><br><br>“Presentar declaración” or “Firmar y enviar”. This rule is written in <code>INSTRUCTIONS</code>. You sign.</div>
 </div>
 
 <h2><small>08</small>What gestor does not do</h2>
 <ul class="no">
   <li>It does not file returns and does not pay.</li>
   <li>It does not read the bank. You or the agent enter the statement.</li>
-  <li>It does not calculate late-filing penalties.</li>
-  <li>Casilla 72 of the 303 appears only in a note.</li>
-  <li>It does not know public holidays. If a deadline falls on a weekend, gestor moves it to Monday. It does not take national and regional holidays into account.</li>
-  <li>The files for "Importar" have not yet been tested on the real Sede. In the 151 file, the gender, date of birth and IAE fields matched a reference file from another program byte for byte.</li>
+  <li>It does not calculate the surcharges for late returns.</li>
+  <li>Casilla 72 of modelo 303 appears only in a note.</li>
+  <li>It does not know public holidays. If a deadline falls on a weekend, gestor moves it to Monday. It does not take national or regional holidays into account.</li>
+  <li>The files for “Importar” have not yet been tested on the real Sede. In the 151 file, the fields for sex, date of birth and IAE matched the reference file of another program byte for byte.</li>
 </ul>
 
 <div class="colophon" id="colophon"></div>
@@ -214,8 +214,8 @@ const dmy = iso => iso.slice(8, 10) + "." + iso.slice(5, 7) + "." + iso.slice(0,
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
 const st = D.sources, nsrc = Object.values(st).reduce((a, b) => a + b, 0);
 
-$("meta").innerHTML = `State as of ${dmy(D.today)}. The data is fictional: an autónomo under the régimen Beckham, one client in Cyprus, an invoice for 4.000 € every month.
-The gestor engine calculated every amount on this page from this profile when the page was built. Not a single amount was typed into the page by hand.`;
+$("meta").innerHTML = `Status as of ${dmy(D.today)}. Fictional data: an autónomo under the régimen Beckham, one client in Cyprus, an invoice of 4.000 € every month.
+The gestor engine calculated every amount on this page from this profile at the moment the page was generated. No amount was written into the page by hand.`;
 
 /* ---------- 02 map ---------- */
 const N = {
@@ -234,58 +234,58 @@ const E = [["you","web"],["web","db"],["web","tax"],["tax","db"],["tax","src"],[
            ["agent","mcp"],["mcp","tax"],["mcp","sede"],["agent","aeat"]];
 const INFO = {
   you: ["You, browser", "http://127.0.0.1:8765", [
-    "Plain HTML forms. No JavaScript frameworks.",
-    "The profile is chosen by the cookie <code>entity</code>. If there is no cookie, <code>main</code> opens.",
-    "Dates on screen use the format dd.mm.yyyy. The database stores them as ISO."]],
+    "Plain HTML forms. There are no JavaScript frameworks.",
+    "The profile is chosen with the cookie <code>entity</code>. If there is no cookie, <code>main</code> opens.",
+    "On screen, dates have the format dd.mm.yyyy. In the database they are stored as ISO."]],
   web: ["Interface", "gestor/web.py", [
     `${D.lines["web.py"]} lines. 26 addresses in the <code>ROUTES</code> list.`,
-    "Builds the HTML on the server and returns the finished page.",
-    "Rejects a POST from another site: it checks the Origin header.",
-    "It calculates nothing itself. It takes the calculation from tax.py."]],
+    "It generates the HTML on the server and delivers the finished page.",
+    "It rejects POST requests from another website: it checks the Origin header.",
+    "It calculates nothing by itself. It gets the calculation from tax.py."]],
   db: ["Storage", "~/.gestor/main.db", [
     "One SQLite file per profile. 6 tables.",
-    "Money is stored as whole cents, so there are no rounding errors.",
+    "Money is stored in whole cents, so there are no rounding errors.",
     `Now in the database: ${D.counts.invoices} invoices, ${D.counts.expenses} expenses, ${D.counts.filings} filed returns, ${D.counts.clients} client.`,
     "Backup: copy the folder <code>~/.gestor</code>."]],
   tax: ["Engine", "gestor/tax.py", [
-    `${D.lines["tax.py"]} lines. Calculates 303, 349, 347, 390, 130, 100, 151, 202, 111, 115, 200, RETA and deadlines.`,
+    `${D.lines["tax.py"]} lines. It calculates 303, 349, 347, 390, 130, 100, 151, 202, 111, 115, 200, RETA and deadlines.`,
     "It only reads the database. It writes nothing.",
-    "It runs every time a page opens. You add an invoice, and the next page already shows new figures.",
-    "It attaches the ids of the rules to each amount for the § sign."]],
+    "It runs each time a page opens. If you add an invoice, the figures on the next page are already new.",
+    "It adds the ids of the rules to each amount for the § symbol."]],
   src: ["Legal rules", "gestor/sources/", [
-    `${nsrc} rules from the BOE, AEAT and DGT: the Spanish original, a translation and what it means for you.`,
+    `${nsrc} rules from the BOE, the AEAT and the DGT: Spanish original, translation and what it means for you.`,
     `Statuses: ${st.verified} confirmed by the text of the law, ${st.interpretation} interpretation, ${st.disputed} disputed.`,
-    "The § sign next to an amount opens the card of the rule.",
-    "The test <code>tests.test_sources</code> checks that every § leads to a complete card."]],
+    "The § symbol next to an amount opens the card of the rule.",
+    "The test <code>tests.test_sources</code> checks that each § leads to a complete card."]],
   sede: ["File for the Sede", "gestor/sede.py", [
-    "Builds a fixed-width file for the \"Importar\" button in the Sede form.",
+    "It generates a fixed-width file for the “Importar” button of the Sede form.",
     "Returns: 303, 349, 130 and 151.",
-    "The field positions for 303, 130 and 151 come from the official AEAT designs: <code>gestor/dr/*.json</code>.",
-    "Without a NIE in the profile the file is not built: the Sede would not accept it."]],
+    "The field positions of the 303, 130 and 151 were taken from the official AEAT layouts: <code>gestor/dr/*.json</code>.",
+    "Without an NIE in the profile, the file is not generated: the Sede would not accept it."]],
   aeat: ["Sede AEAT", "sede.agenciatributaria.gob.es", [
-    "This is an external system, not part of gestor.",
-    "You sign in, upload the file, click \"Validar\" and sign.",
+    "It is an external system. It is not part of gestor.",
+    "You sign in, upload the file with “Importar”, click “Validar declaración” and sign.",
     "gestor sends nothing there.",
-    "After filing you enter the CSV code in gestor: \"Mark as filed\"."]],
+    "After filing, you enter in gestor the Código Seguro de Verificación (CSV) of the justificante de presentación: “Mark as filed”."]],
   agent: ["Agent", "Claude Code or Codex", [
-    "It runs on your subscription. gestor stores no keys.",
-    "It sees and changes only what mcp.py gives: the questionnaire, the books, the returns.",
+    "It works with your subscription. gestor stores no keys.",
+    "It sees only what mcp.py delivers: the casillas of one return.",
     "In Chrome it can fill in the Sede form, but it cannot file it."]],
   mcp: ["MCP server", "gestor/mcp.py", [
-    "The MCP protocol over stdio. 14 tools and the <code>start</code> prompt, every profile.",
-    "It writes the questionnaire, clients, expenses, invoice drafts and filed marks, after your \"yes\".",
-    "It does not issue invoices: you give the number in the interface. Files for the Sede go to <code>~/.gestor/sede/&lt;profile&gt;/</code>.",
-    "<code>INSTRUCTIONS</code> forbids clicking \"Presentar\" and \"Firmar y enviar\"."]],
+    "MCP protocol over stdio, read-only.",
+    "2 tools: <code>declarations</code> and <code>declaration</code>.",
+    "It only writes files for the Sede in <code>~/.gestor/sede/main/</code>.",
+    "<code>INSTRUCTIONS</code> forbid clicking “Presentar declaración” and “Firmar y enviar”."]],
 };
 const FLOWS = {
   "Open the overview": [["you","web"],["web","tax"],["tax","db"],["tax","src"],
-    ["You open the page.", "web.py asks tax.py to calculate the year.", "tax.py reads the invoices and expenses from main.db.", "tax.py attaches the § rules.", "web.py builds the HTML and returns it to you."]],
+    ["You open the page.", "web.py asks tax.py to calculate the year.", "tax.py reads the invoices and expenses from main.db.", "tax.py adds the § rules.", "web.py generates the HTML and delivers it to you."]],
   "Issue an invoice": [["you","web"],["web","db"],
-    ["You click \"Issue\".", "web.py assigns a number and freezes the data of both parties.", "The invoice is saved in main.db. It can no longer be changed."]],
+    ["You click “Issue”.", "web.py assigns the number and fixes the details of the parties.", "The invoice is stored in main.db. It can no longer be changed."]],
   "File for the Sede": [["you","web"],["web","sede"],["sede","tax"],["sede","aeat"],
-    ["You click \"File for the Sede\" on the /taxes page.", "sede.py takes the casillas from tax.py.", "You download the file.", "You upload it to the Sede and sign it yourself."]],
+    ["You click “Download the file for the Sede” on the /taxes page.", "sede.py gets the casillas from tax.py.", "You download the file.", "You upload it to the Sede and sign."]],
   "Agent and Sede": [["agent","mcp"],["mcp","tax"],["mcp","sede"],["agent","aeat"],
-    ["The agent asks mcp.py about a return.", "mcp.py takes the casillas from tax.py.", "mcp.py writes the file for the Sede.", "The agent fills in the form in the Sede and clicks \"Validar\". You file."]],
+    ["The agent asks mcp.py for the return.", "mcp.py gets the casillas from tax.py.", "mcp.py writes the file for the Sede.", "The agent fills in the form on the Sede and clicks “Validar declaración”. You file."]],
 };
 const svg = $("svg"), NS = "http://www.w3.org/2000/svg";
 const mk = (tag, attrs, parent = svg) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
@@ -345,27 +345,27 @@ const last = D.inv.at(-1), q3total = D.inv.reduce((a, i) => a + i.base, 0);
 $("steplead").textContent = `Example: invoice ${last.no} of ${dmy(last.date)} for ${eur(last.base)}. Every invoice goes through gestor this way.`;
 const tax24 = Math.round(last.base * 0.24);
 const STEPS = [
-  ["Draft", "draft", "doubt", `You fill in the "New invoice" form. A row appears in the database, but without a number.`,
-   `invoices: number = <em>NULL</em>, issue_date = ${last.date}\ninvoice_lines: "${esc(last.notes || "services")}", ${eur(last.base)}`,
-   "A draft can be edited and deleted. It does not enter the tax calculations."],
-  ["Issue", "issued", "", `You click "Issue". gestor takes the next number in the series using the pattern FACT-{YYYY}-{NNNNN}.`,
-   `invoices: number = <em>${last.no.split("-").at(-1)}</em> → ${last.no}\nparties = <em>JSON with your data and the client's data on that day</em>`,
-   "The data of both parties is frozen. If you change your address later, the old invoice does not change. An issued invoice can only be corrected with a factura rectificativa."],
-  ["Quarter", "3T", "", `The engine (<code>tax.sales()</code>) puts the invoice into a quarter by the transaction date.`,
+  ["Draft", "draft", "doubt", `You fill in the “New invoice” form. A row appears in the database, but without a number.`,
+   `invoices: number = <em>NULL</em>, issue_date = ${last.date}\ninvoice_lines: «${esc(last.notes || "services")}», ${eur(last.base)}`,
+   "The draft can be changed and deleted. It does not enter the tax calculations."],
+  ["Issue", "issued", "", `You click “Issue”. gestor takes the next number of the series from the template FACT-{YYYY}-{NNNNN}.`,
+   `invoices: number = <em>${last.no.split("-").at(-1)}</em> → ${last.no}\nparties = <em>JSON with your details and the client's details on that day</em>`,
+   "The details of the parties are fixed. If you change your address later, the old invoice does not change. An issued invoice can only be corrected with a factura rectificativa."],
+  ["Quarter", "3T", "", `The engine (<code>tax.sales()</code>) assigns the invoice to the quarter by the date of the transaction.`,
    `${dmy(last.date)} → month ${+last.date.slice(5, 7)} → <em>3T 2026</em>`,
    "The payment date does not affect the quarter."],
-  ["IVA: 303 and 349", "eu_b2b", "", `The client is a business in Cyprus with a VAT ID. Invoice type <code>eu_b2b</code>: IVA 0 %, inversión del sujeto pasivo.`,
-   `303, 3T: casilla 59 += <em>${eur(last.base)}</em>, IVA = 0\n349, 3T: ${D.f349[0][1]}, clave S += <em>${eur(last.base)}</em>`,
-   "The client pays the IVA on this invoice in Cyprus. You only report it in the 349."],
-  ["Beckham: 151", "151", "", `Régimen Beckham: income is taxed at 24 % up to 600.000 €. Expenses and RETA do not reduce the base.`,
-   `151, 2026: B.02 ingresos += <em>${eur(last.base)}</em>\nG.19 cuota += 24 % = <em>${eur(tax24)}</em>`,
-   "gestor calculates the tax for the year in the 151. Voluntary 210 payments are credited in G.34."],
+  ["IVA: 303 and 349", "eu_b2b", "", `The client is a company in Cyprus with a VAT ID. Invoice type <code>eu_b2b</code>: IVA 0 %, inversión del sujeto pasivo.`,
+   `303, 3T: casilla 59 += <em>${eur(last.base)}</em>, IVA = 0\n349, 3T: ${D.f349[0][1]}, key S += <em>${eur(last.base)}</em>`,
+   "The client pays the IVA of this invoice in Cyprus. You only declare it in the 349."],
+  ["Beckham: 151", "151", "", `Régimen Beckham: the income is taxed at 24 % up to 600.000 €. Expenses and the RETA do not reduce the base.`,
+   `151, 2026: B.02 income += <em>${eur(last.base)}</em>\nG.19 cuota += 24 % = <em>${eur(tax24)}</em>`,
+   "gestor calculates the tax of the year in the 151. The voluntary payments of the 210 are deducted in G.34."],
   ["Filing", "you", "late", `On the /taxes page you see the casillas and download the file. Then you upload it to the Sede and sign.`,
-   `Deadline for the 303 and 349 for 3T: <em>${dmy(D.deadline)}</em>`,
-   "gestor sends nothing by itself. This is a line it does not cross."],
-  ["Mark", "presentado", "", `After filing you click "Mark as filed" and enter the amount and the CSV code from the justificante.`,
+   `Deadline for the 303 and the 349 of 3T: <em>${dmy(D.deadline)}</em>`,
+   "gestor sends nothing by itself. It is a limit that it does not cross."],
+  ["Mark", "filed", "", `After filing, you click “Mark as filed” and enter the amount and the CSV of the justificante de presentación.`,
    `filings: modelo 303, 2026, 3T, filed_on, amount, <em>CSV</em>`,
-   "The overview moves the amount from \"≈ to pay\" to \"paid\". If you later add an invoice to this quarter, gestor shows the difference from the filed amount."],
+   "The overview moves the amount from “≈ to pay” to “paid”. If you later add an invoice to that quarter, gestor shows the difference from the filed amount."],
 ];
 let cur = 0;
 $("steplist").innerHTML = STEPS.map((s, i) => `<li data-i="${i}">${s[0]}</li>`).join("");
@@ -391,7 +391,7 @@ $("texp").innerHTML = "<tr><th>Date</th><th>Supplier</th><th style='text-align:r
 const FEED = {"59": ["inv"], "28": ["exp"], "29": ["exp"], "45": ["exp"], "46": ["exp"], "66": ["exp"], "71": ["exp"]};
 $("t303").innerHTML = "<tr><th>Casilla</th><th>What it is</th><th style='text-align:right'>Amount</th></tr>" +
   D.f303.map(([b, l, v]) => `<tr data-box="${b}" class="${b === "71" ? "total" : ""}"><td class="box">${b}</td><td>${esc(l)}</td><td class="num">${eur(v)}</td></tr>`).join("");
-$("t349").innerHTML = "<tr><th>Clave</th><th>VAT ID</th><th style='text-align:right'>Amount</th></tr>" +
+$("t349").innerHTML = "<tr><th>Key</th><th>VAT ID</th><th style='text-align:right'>Amount</th></tr>" +
   D.f349.map(([b, l, v]) => `<tr data-box="349"><td class="box">${b}</td><td>${esc(l)}</td><td class="num">${eur(v)}</td></tr>`).join("");
 FEED["349"] = ["inv"];
 document.querySelectorAll("[data-box]").forEach(tr => {
@@ -399,8 +399,8 @@ document.querySelectorAll("[data-box]").forEach(tr => {
   tr.onmouseleave = () => document.querySelectorAll(".hot").forEach(r => r.classList.remove("hot"));
 });
 const expVat = D.exp.reduce((a, e) => a + e.vat, 0);
-$("q3note").innerHTML = `Result: sales give IVA 0, and gestoría expenses give deductible IVA of ${eur(expVat)}. So the result is ${eur(D.r303)}. This is not a payment, but an amount carried over to the next quarters.
-Casilla 87 shows only the balance from past periods, ${eur(D.f303.find(b => b[0] === "87")[2])}. Together with the new ${eur(-D.r303)}, ${eur(D.carry303)} will carry over to 4T.
+$("q3note").innerHTML = `Result: the sales give IVA 0, and the gestoría expenses give deductible IVA of ${eur(expVat)}. That is why the result is ${eur(D.r303)}. It is not a payment. It is an amount a compensar in the following quarters.
+Casilla 87 only shows the cuotas a compensar from earlier periods, ${eur(D.f303.find(b => b[0] === "87")[2])}. Together with the new ${eur(-D.r303)}, ${eur(D.carry303)} will pass to 4T.
 Filing deadline: <b>${dmy(D.deadline)}</b>.`;
 
 /* ---------- 05 slider ---------- */
@@ -415,8 +415,8 @@ function calc() {
   $("d151").textContent = x ? `+ ${eur(Math.round(x * 0.24))} = 24 % of the new invoice.` : `24 % of ${eur(b02)} minus 210 ${eur(g34)}.`;
 }
 $("x").oninput = calc; calc();
-$("calcnote").innerHTML = `Check: with the slider at zero, 151 = ${eur(D.r151)}, as in the engine. This is the lower limit based on today's invoices.
-The upper limit on the overview is ${eur(D.high151)}: for it, gestor adds 4T as an average quarter of the last year.`;
+$("calcnote").innerHTML = `Check: with the slider at zero, 151 = ${eur(D.r151)}, the same as in the engine. It is the lower limit based on the invoices as of today.
+The upper limit in the overview is ${eur(D.high151)}: to get it, gestor adds 4T as an average quarter of the previous year.`;
 
 /* ---------- 06 regime ---------- */
 function duty(reg) {
@@ -430,10 +430,10 @@ function duty(reg) {
 document.querySelectorAll("[data-reg]").forEach(b => b.onclick = () => duty(b.dataset.reg)); duty("beckham");
 
 /* ---------- colophon ---------- */
-$("colophon").innerHTML = `Where the figures come from. A one-off script built this page: it called the engine functions
-<code>tax.forms()</code>, <code>tax.sales()</code>, <code>tax.duties()</code> and <code>tax.payments()</code> on a fictional profile.
-Code: <code>gestor/</code>. Description: <code>README.md</code>, onboarding order: <code>docs/en/onboarding.md</code>.
-The page is a view. The source of truth is the code, the database and the rules in <code>gestor/sources/</code>.`;
+$("colophon").innerHTML = `Where the figures come from. A one-off script generated the page: it called the engine functions
+<code>tax.forms()</code>, <code>tax.sales()</code>, <code>tax.duties()</code> and <code>tax.payments()</code> with a fictional profile.
+Code: <code>gestor/</code>. Description: <code>README.md</code>; setup order: <code>docs/en/onboarding.md</code>.
+The page is a presentation. The source of truth is the code, the database and the rules in <code>gestor/sources/</code>.`;
 </script>
 </body>
 </html>
