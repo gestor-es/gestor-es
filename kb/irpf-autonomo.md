@@ -1,14 +1,14 @@
 ## Resumen
 
 - Ámbito: persona física residente fiscal en España, **IRPF ordinario**, actividad económica en estimación directa simplificada (EDS). No es el cálculo del régimen Beckham ni el Impuesto sobre Sociedades de una SL. La nacionalidad rusa por sí sola no cambia las reglas; se tiene en cuenta la renta mundial.
-- Comprobado con fuentes primarias a fecha de **08.10.2026**: Manual Renta 2025 de la AEAT, LIRPF/RIRPF vigentes, leyes de la Comunitat Valenciana y de Asturias. La legislación de 2026 ya se puede usar para el cálculo; el formulario y las casillas definitivos del Modelo 100 de 2026 todavía no se pueden considerar aprobados.
+- Comprobado con fuentes primarias a fecha de **08.10.2026**: Manual Renta 2025 de la AEAT, LIRPF/RIRPF vigentes, leyes de la Comunitat Valenciana y de Asturias; a fecha de **13.10.2026**, la escala autonómica y el mínimo del contribuyente de la Comunidad de Madrid, Cataluña y Andalucía. La legislación de 2026 ya se puede usar para el cálculo; el formulario y las casillas definitivos del Modelo 100 de 2026 todavía no se pueden considerar aprobados.
 - EDS: cifra de negocios de todas las actividades en el año anterior no superior a **600 000 €**, sin método incompatible ni renuncia. Ingresos menos gastos acreditados, RETA y amortización; después, **5% de gastos de difícil justificación**, con un máximo de **2 000 € al año por contribuyente**, en 2025 y 2026.
 - Corrección importante a las premisas iniciales: la manutención propia en España es de **26,67 €/día sin la pernocta correspondiente y 53,34 €/día con ella**, no 48,08 €. En el extranjero, 48,08/91,35 €. Es un límite del gasto real, no una dieta diaria automática.
 - El art. 32.2 para determinados autónomos no es un beneficio general para cualquier freelance. Además de cliente único/TRADE, se exige que ≥70% de los ingresos estén sujetos a retención y otras condiciones. **6 498 €**, y no 7 302 €, es la reducción adicional para rentas bajas; 7 302 € corresponde a los rendimientos del trabajo del art. 20.
 - Retención del profesional: normalmente **15%**; para un nuevo profesional que cumpla las condiciones, **7% en el año de inicio y en los dos años naturales fiscales siguientes**. Normalmente el cliente B2B español retiene; el cliente extranjero sin obligación española de retener, no.
 - El Modelo 130 es un pago fraccionado, no el impuesto definitivo del 20%: los datos son acumulados desde el 1 de enero. La casilla 05 no es simplemente el dinero ingresado realmente antes; el formulario la define así: «De los trimestres anteriores: suma de los importes positivos de la casilla 07 menos la suma de los importes de la casilla 16».
 - La actividad profesional queda exonerada del 130 si en el año anterior ≥70% de sus ingresos fueron objeto de retención; el primer año se comprueba el trimestre correspondiente. Esto no exime del Modelo 100 anual.
-- El mínimo personal reduce la **cuota según la escala**, no la base antes de aplicar el tipo marginal. En el ejemplo, menor de 65 años: estatal 5 550 €, autonómico en las dos regiones consideradas 6 105 €.
+- El mínimo personal reduce la **cuota según la escala**, no la base antes de aplicar el tipo marginal. En el ejemplo, menor de 65 años: estatal 5 550 €; autonómico 6 105 € en Valencia y Asturias, 5 956,65 € en Madrid, 5 550 € en Cataluña y 5 790 € en Andalucía.
 - **Asturias cambió la escala y los mínimos ya para 2025**: no se puede usar el antiguo mínimo de 5 550 € ni el antiguo tipo inicial del 10%. **Valencia cambió la escala para 2026**, y una nueva rebaja para **2027 ya está aprobada**, Ley 5/2026.
 - Un traslado no divide el IRPF anual en meses de dos regiones: se determina una sola Comunidad Autónoma, ante todo por el mayor número de días del año; después se aplican su escala y sus mínimos a todo el año.
 - Con 60 000 € de ingresos, 6 000 € de gastos y 3 600 € de RETA, sin beneficios adicionales: rendimiento neto **48 400 €**, pagos fraccionados **9 680 €**, IRPF 2025 **12 538,05 € en Valencia** o **12 576,83 € en Asturias**.
@@ -37,6 +37,8 @@
 10. **IRPF anual y mínimos.** En 2025–2026 se suman la cuota estatal y la cuota autonómica de la base general; el ahorro se calcula por separado. La escala estatal de los arts. 63 rige desde 2021; los últimos tramos del ahorro se modificaron desde el 01.01.2025 al 30% en conjunto. El mínimo personal/familiar se aplica con el método «impuesto sobre la base completa menos impuesto sobre el mínimo». Si la base general no basta, el resto del mínimo pasa al ahorro. Los mínimos familiares exigen edad, convivencia/dependencia y rentas de la persona ≤8 000 € sin contar las exentas; hay limitaciones si esa persona presenta su propia declaración con >1 800 €. El reparto entre los familiares con derecho es obligatorio. Fuentes: [LIRPF arts. 56–61, 63, 66, 74, 76](https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), [Valencia art. 2 bis](https://www.boe.es/buscar/act.php?id=BOE-A-1998-8202#a2-2), [Asturias mínimos 2025](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c14-adecuacion-impuesto-circunstancias-personales/minimo-autonomico-personal-familiar/comunidad-autonoma-principado-asturias.html).
 
 11. **Las escalas autonómicas deben versionarse.** La Ley 3/2025 de Asturias estableció una nueva escala y nuevos mínimos aplicables al ejercicio 2025; se mantienen en la redacción comprobada para 2026. La escala de Valencia de 2025 es el anterior art. 2. La Ley 5/2026, de 31 de julio, en su art. 18, la modificó para los devengos desde el 01.01.2026. La DT3 ya fija la siguiente escala desde el 01.01.2027. Fuentes: [Asturias Ley 3/2025](https://www.boe.es/eli/es-as/l/2025/11/19/3), [Asturias texto refundido](https://www.boe.es/buscar/act.php?id=BOE-A-2015-945), [Valencia 2025 AEAT](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c15-calculo-impuesto-determinacion-cuotas-integras/gravamen-base-liquidable-general/gravamen-autonomico/comunitat-valenciana.html), [Valencia art. 2 vigente y nota sobre 2027](https://www.boe.es/buscar/act.php?id=BOE-A-1998-8202#a2).
+
+   Madrid, Cataluña y Andalucía no han modificado su escala para 2026: la misma escala rige en 2025 y 2026. Madrid aplica la escala y el mínimo del contribuyente de la Ley 13/2023 desde 2023 (texto consolidado del BOE a 10.07.2026). Cataluña aplica la escala del Decreto-ley 5/2025 con efectos del 01.01.2025: el primer tipo es del 9,5% en lugar del 10,5%. Andalucía aplica la escala y el mínimo del Decreto-ley 7/2022 desde 2022 (texto consolidado del BOE a 31.12.2025). Fuentes: [Madrid DLeg 1/2010, arts. 1 y 2](https://www.boe.es/buscar/act.php?id=BOCM-m-2010-90068#a1), [Cataluña DLeg 1/2024, arts. 611-1 y 611-2](https://www.boe.es/buscar/act.php?id=BOE-A-2024-6951#a6), [Andalucía Ley 5/2021, arts. 23 y 23 bis](https://www.boe.es/buscar/act.php?id=BOE-A-2021-17915#a2-5).
 
 12. **Principales deducciones autonómicas para el contribuyente individual.** En 2025–2026: Valencia, alquiler de vivienda habitual 20%/800 €; 25%/950 € con una condición especial; 30%/1 100 € con dos. Las condiciones especiales son: ≤35 años, discapacidad reconocida, víctima de violencia de género. El límite se reduce según los días del contrato/de las condiciones, el número de declarantes con derecho y la renta. Se exigen: un contrato adecuado de al menos un año posterior al 23.04.1998, residencia efectiva, no tener derecho a la deducción incompatible por inversión en vivienda, las limitaciones por disponer de otra vivienda a <50 km y el pago bancario. Asturias: alquiler general 10%/500 €; alquiler bonificado 30%/1 500 € para jóvenes/concejos rurales correspondientes y otros grupos indicados. Inicio como autónomo en un concejo adecuado: 1 000 €, pero no por el simple traslado de un autónomo que ya ejerce. Traslado por motivos laborales: 15%/1 000 € (hasta 2 000 € para trabajos especialmente cualificados); si se cumplen las condiciones, también está disponible por cuenta propia. Gastos vitales para jóvenes: hasta 2 000/1 500/1 000 €. Son deducciones de la cuota autonómica, no gastos del negocio. Fuentes y condiciones completas: [Valencia alquiler](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025-deducciones-autonomicas/comunitat-valenciana/arrendamiento-pago-cesion-uso-vivienda-habitual.html), [Asturias alquiler](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-ayuda-presentacion/irpf-2025/10-cumplimentacion-irpf-deducciones-autonomicas/10_3-principado-asturias/10_3_4-arrendamiento-vivienda-habitual.html), [Asturias inicio](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025-deducciones-autonomicas/comunidad-autonoma-principado-asturias/contribuyentes-que-se-establezcan-autonomos-despoblamiento.html), [Asturias arts. 7, 14 quinquies, 14 octies, 14 sexdecies](https://www.boe.es/buscar/act.php?id=BOE-A-2015-945), [gastos vitales AEAT](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025-deducciones-autonomicas/comunidad-autonoma-principado-asturias/gastos-vitales-que-incurran-contribuyentes-anos.html).
 
@@ -128,7 +130,46 @@ Usar `cuota fija + (base − límite inferior) × tipo`.
 | 90 000 | 175 000 | 15 877,62 | 25% |
 | 175 000 | ∞ | 37 127,62 | 26% |
 
-### Ahorro, 2025 y 2026, Valencia y Asturias
+### Comunidad de Madrid, escala general autonómica 2025 y 2026
+
+| Límite inferior | Límite superior | Cuota fija | Tipo |
+|---:|---:|---:|---:|
+| 0 | 13 362,22 | 0 | 8,50% |
+| 13 362,22 | 19 004,63 | 1 135,79 | 10,70% |
+| 19 004,63 | 35 425,68 | 1 739,53 | 12,80% |
+| 35 425,68 | 57 320,40 | 3 841,42 | 17,40% |
+| 57 320,40 | ∞ | 7 651,10 | 20,50% |
+
+Fuente: art. 1 del Decreto Legislativo 1/2010 de la Comunidad de Madrid, redacción dada por el art. único.1 de la Ley 13/2023, de 15 de diciembre, períodos impositivos desde el 01.01.2023: [BOE, texto consolidado](https://www.boe.es/buscar/act.php?id=BOCM-m-2010-90068#a1).
+
+### Cataluña, escala general autonómica 2025 y 2026
+
+| Límite inferior | Límite superior | Cuota fija | Tipo |
+|---:|---:|---:|---:|
+| 0 | 12 500 | 0 | 9,50% |
+| 12 500 | 22 000 | 1 187,50 | 12,50% |
+| 22 000 | 33 000 | 2 375 | 16% |
+| 33 000 | 53 000 | 4 135 | 19% |
+| 53 000 | 90 000 | 7 935 | 21,50% |
+| 90 000 | 120 000 | 15 890 | 23,50% |
+| 120 000 | 175 000 | 22 940 | 24,50% |
+| 175 000 | ∞ | 36 415 | 25,50% |
+
+Fuente: art. 611-1 del libro sexto del Código tributario de Cataluña (Decreto Legislativo 1/2024), redacción del art. 3.1 del Decreto-ley 5/2025, de 25 de marzo, con efectos del 01.01.2025: [BOE, texto consolidado](https://www.boe.es/buscar/act.php?id=BOE-A-2024-6951#a6).
+
+### Andalucía, escala general autonómica 2025 y 2026
+
+| Límite inferior | Límite superior | Cuota fija | Tipo |
+|---:|---:|---:|---:|
+| 0 | 13 000 | 0 | 9,50% |
+| 13 000 | 21 100 | 1 235 | 12% |
+| 21 100 | 35 200 | 2 207 | 15% |
+| 35 200 | 60 000 | 4 322 | 18,50% |
+| 60 000 | ∞ | 8 910 | 22,50% |
+
+Fuente: art. 23 de la Ley 5/2021, de 20 de octubre, de Tributos Cedidos de la Comunidad Autónoma de Andalucía, redacción dada por el art. 1 del Decreto-ley 7/2022, de 20 de septiembre, con efectos desde el 01.01.2022: [BOE, texto consolidado](https://www.boe.es/buscar/act.php?id=BOE-A-2021-17915#a2-5).
+
+### Ahorro, 2025 y 2026, Valencia, Asturias, Madrid, Cataluña y Andalucía
 
 | Límite inferior | Límite superior | Cuota fija de cada mitad | Estatal | Autonómico | Total |
 |---:|---:|---:|---:|---:|---:|
@@ -158,6 +199,16 @@ Usar `cuota fija + (base − límite inferior) × tipo`.
 
 El descendiente normalmente es <25 años o tiene discapacidad, con independencia de la edad. Compruebe la convivencia/dependencia, las rentas y el reparto del mínimo. Para los ascendientes también se exige la convivencia durante al menos la mitad del periodo. La edad y las circunstancias personales normalmente se determinan a la fecha de devengo. Las reglas especiales de nacimiento, fallecimiento y adopción no se reducen a esta tabla general.
 
+### Mínimo del contribuyente autonómico de Madrid, Cataluña y Andalucía, 2025/2026
+
+| Comunidad | Mínimo del contribuyente, con carácter general | Texto legal |
+|---|---:|---|
+| Comunidad de Madrid | 5 956,65 | art. 2 DLeg 1/2010: «a) El mínimo del contribuyente será, con carácter general, de 5.956,65 euros anuales.» |
+| Cataluña | 5 550 | art. 611-2 DLeg 1/2024: «El importe del mínimo personal del contribuyente es, con carácter general, de 5.550 euros anuales.» |
+| Andalucía | 5 790 | art. 23 bis.1 Ley 5/2021: «a) Con carácter general, 5.790 euros anuales.» |
+
+Los incrementos por edad, descendientes, ascendientes y discapacidad de estas tres comunidades no se han comprobado y no figuran aquí. No los sustituya por los importes estatales ni por los de Valencia/Asturias.
+
 ### Límites de los beneficios autonómicos 2025/2026
 
 | Beneficio | Cálculo / máximo | Prueba de renta |
@@ -176,7 +227,7 @@ Para el traslado se tienen en cuenta los gastos documentados de viaje/mudanza, l
 
 - Entrada: ejercicio, régimen, fechas de actividad, IAE/tipo profesional, criterio temporal, ingresos/gastos con el IVA y la retención por separado, bienes de inversión, RETA/regularizaciones, rentas del año anterior, otras rentas/pérdidas mundiales, residencia por días, circunstancias familiares, gastos con beneficio fiscal y documentos.
 - Las operaciones monetarias se hacen en decimal, no en float binario. Los campos de las declaraciones tienen 2 decimales. Para la especificación, `R(x)` = redondeo al céntimo, al valor más próximo; la mitad exacta se redondea alejándose de cero. Redondee el resultado de cada casilla monetaria visible, no todas las fracciones intermedias de superficie/tipo. La política concreta de Renta WEB para los casos de empate no está publicada en las fuentes leídas; véase «Puntos dudosos».
-- La escala se toma según el **ejercicio**, no según el año de presentación. Use las cuotas fijas publicadas, sobre todo en Asturias, donde ya están redondeadas al céntimo. No vuelva a acumular las fracciones infinitas de los tramos anteriores.
+- La escala se toma según el **ejercicio**, no según el año de presentación. Use las cuotas fijas publicadas, sobre todo en Asturias y Madrid, donde ya están redondeadas al céntimo. No vuelva a acumular las fracciones infinitas de los tramos anteriores.
 - Los números del Modelo 100 que siguen están confirmados para **2025** por la Orden HAC/277/2026, anexo I. Para 2026 los cálculos de fondo rigen según la ley, pero los números/el diseño de exportación requieren el formulario aprobado de 2026.
 
 ### Catálogo de gastos y casillas del Modelo 100, ejercicio 2025

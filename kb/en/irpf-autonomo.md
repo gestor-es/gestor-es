@@ -3,14 +3,14 @@
 ## Summary
 
 - Scope: an individual who is tax resident in Spain, **ordinary IRPF**, economic activity under simplified direct estimation (EDS). This is not the calculation of the régimen Beckham. It is not the Corporate Income Tax (Impuesto sobre Sociedades) of an SL. Russian nationality alone does not change the rules. Worldwide income is taken into account.
-- Checked against primary sources as of **08.10.2026**: the AEAT Manual Renta 2025, the LIRPF/RIRPF in force, and the laws of the Comunitat Valenciana and of Asturias. The 2026 legislation can already be used for the calculation. The final form and casillas of the Modelo 100 for 2026 cannot yet be considered approved.
+- Checked against primary sources as of **08.10.2026**: the AEAT Manual Renta 2025, the LIRPF/RIRPF in force, and the laws of the Comunitat Valenciana and of Asturias. As of **13.10.2026**: the regional scale and the taxpayer minimum of the Comunidad de Madrid, Cataluña and Andalucía. The 2026 legislation can already be used for the calculation. The final form and casillas of the Modelo 100 for 2026 cannot yet be considered approved.
 - EDS: the turnover of all activities in the previous year must not exceed **600 000 €**. There must be no incompatible method and no waiver. Income minus documented expenses, RETA and depreciation. Then **5% for expenses that are hard to justify**, with a maximum of **2 000 € per year per taxpayer**, in 2025 and 2026.
 - Important correction to the initial assumptions: own meals in Spain are **26,67 €/day without the corresponding overnight stay and 53,34 €/day with it**, not 48,08 €. Abroad, 48,08/91,35 €. This is a cap on the real expense. It is not an automatic daily allowance.
 - Art. 32.2 for certain autónomos is not a general benefit for any freelancer. Besides a single client/TRADE, it requires that ≥70% of income is subject to withholding, plus other conditions. **6 498 €**, not 7 302 €, is the additional reduction for low income. 7 302 € belongs to employment income under art. 20.
 - Withholding for a professional: normally **15%**. For a new professional who meets the conditions, **7% in the start year and in the next two calendar tax years**. Normally the Spanish B2B client withholds. A foreign client without a Spanish obligation to withhold does not.
 - The Modelo 130 is an instalment payment. It is not the final 20% tax. The data are cumulative from 1 January. Casilla 05 is not simply the money actually paid before. The form defines it like this: «From the previous quarters: sum of the positive amounts of casilla 07 minus the sum of the amounts of casilla 16».
 - A professional activity is exempt from the 130 if in the previous year ≥70% of its income was subject to withholding. In the first year, the relevant quarter is checked. This does not exempt from the annual Modelo 100.
-- The personal minimum reduces the **tax amount per the scale**. It does not reduce the base before the marginal rate is applied. In the example, under 65 years: state 5 550 €, regional in the two regions considered 6 105 €.
+- The personal minimum reduces the **tax amount per the scale**. It does not reduce the base before the marginal rate is applied. In the example, under 65 years: state 5 550 €; regional 6 105 € in Valencia and Asturias, 5 956,65 € in Madrid, 5 550 € in Cataluña and 5 790 € in Andalucía.
 - **Asturias changed its scale and minimums already for 2025**: you cannot use the old minimum of 5 550 € or the old starting rate of 10%. **Valencia changed its scale for 2026**, and a further cut for **2027 is already approved**, Ley 5/2026.
 - A move does not split the annual IRPF into months of two regions. A single Autonomous Community is determined, mainly by the largest number of days in the year. Then its scale and its minimums apply to the whole year.
 - With 60 000 € of income, 6 000 € of expenses and 3 600 € of RETA, without additional benefits: net income **48 400 €**, instalment payments **9 680 €**, IRPF 2025 **12 538,05 € in Valencia** or **12 576,83 € in Asturias**.
@@ -39,6 +39,8 @@
 10. **Annual IRPF and minimums.** In 2025–2026 the state tax amount and the regional tax amount on the general base are added. Savings are calculated separately. The state scale of arts. 63 applies from 2021. The top savings brackets were changed from 01.01.2025 to 30% in total. The personal/family minimum is applied with the method «tax on the full base minus tax on the minimum». If the general base is not enough, the rest of the minimum moves to savings. Family minimums require age, living together/dependency and income of the person ≤8 000 € without counting exempt income. There are limits if that person files their own return with >1 800 €. Splitting between the family members with the right is mandatory. Sources: [LIRPF arts. 56–61, 63, 66, 74, 76](https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), [Valencia art. 2 bis](https://www.boe.es/buscar/act.php?id=BOE-A-1998-8202#a2-2), [Asturias minimums 2025](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c14-adecuacion-impuesto-circunstancias-personales/minimo-autonomico-personal-familiar/comunidad-autonoma-principado-asturias.html).
 
 11. **Regional scales must be versioned.** Ley 3/2025 of Asturias set a new scale and new minimums that apply to tax year 2025. They remain in the wording checked for 2026. The Valencia scale for 2025 is the earlier art. 2. Ley 5/2026, of 31 July, in its art. 18, changed it for accruals from 01.01.2026. DT3 already sets the next scale from 01.01.2027. Sources: [Asturias Ley 3/2025](https://www.boe.es/eli/es-as/l/2025/11/19/3), [Asturias consolidated text](https://www.boe.es/buscar/act.php?id=BOE-A-2015-945), [Valencia 2025 AEAT](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c15-calculo-impuesto-determinacion-cuotas-integras/gravamen-base-liquidable-general/gravamen-autonomico/comunitat-valenciana.html), [Valencia art. 2 in force and note on 2027](https://www.boe.es/buscar/act.php?id=BOE-A-1998-8202#a2).
+
+   Madrid, Cataluña and Andalucía have not changed their scale for 2026: the same scale applies in 2025 and 2026. Madrid applies the scale and the taxpayer minimum of Ley 13/2023 from 2023 (BOE consolidated text as of 10.07.2026). Cataluña applies the scale of Decreto-ley 5/2025 with effect from 01.01.2025: the first rate is 9,5% instead of 10,5%. Andalucía applies the scale and the minimum of Decreto-ley 7/2022 from 2022 (BOE consolidated text as of 31.12.2025). Sources: [Madrid DLeg 1/2010, arts. 1 and 2](https://www.boe.es/buscar/act.php?id=BOCM-m-2010-90068#a1), [Cataluña DLeg 1/2024, arts. 611-1 and 611-2](https://www.boe.es/buscar/act.php?id=BOE-A-2024-6951#a6), [Andalucía Ley 5/2021, arts. 23 and 23 bis](https://www.boe.es/buscar/act.php?id=BOE-A-2021-17915#a2-5).
 
 12. **Main regional deductions for the individual taxpayer.** In 2025–2026: Valencia, rent of the main home 20%/800 €; 25%/950 € with one special condition; 30%/1 100 € with two. The special conditions are: ≤35 years, recognised disability, victim of gender violence. The limit is reduced by the days of the contract/of the conditions, by the number of filers with the right and by income. The following are required: a suitable contract of at least one year after 23.04.1998, actual residence, no right to the incompatible deduction for home investment, the limits on having another home at <50 km, and bank payment. Asturias: general rent 10%/500 €; subsidised rent 30%/1 500 € for young people/the relevant rural concejos and other listed groups. Starting as an autónomo in a suitable concejo: 1 000 €, but not for the mere move of an autónomo who already works. Move for work reasons: 15%/1 000 € (up to 2 000 € for especially qualified jobs). If the conditions are met, it is also available for self-employment. Living expenses for young people: up to 2 000/1 500/1 000 €. These are deductions from the regional tax amount. They are not business expenses. Sources and full conditions: [Valencia rent](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025-deducciones-autonomicas/comunitat-valenciana/arrendamiento-pago-cesion-uso-vivienda-habitual.html), [Asturias rent](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-ayuda-presentacion/irpf-2025/10-cumplimentacion-irpf-deducciones-autonomicas/10_3-principado-asturias/10_3_4-arrendamiento-vivienda-habitual.html), [Asturias start-up](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025-deducciones-autonomicas/comunidad-autonoma-principado-asturias/contribuyentes-que-se-establezcan-autonomos-despoblamiento.html), [Asturias arts. 7, 14 quinquies, 14 octies, 14 sexdecies](https://www.boe.es/buscar/act.php?id=BOE-A-2015-945), [AEAT living expenses](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025-deducciones-autonomicas/comunidad-autonoma-principado-asturias/gastos-vitales-que-incurran-contribuyentes-anos.html).
 
@@ -130,7 +132,46 @@ Use `fixed amount + (base − lower limit) × rate`.
 | 90 000 | 175 000 | 15 877,62 | 25% |
 | 175 000 | ∞ | 37 127,62 | 26% |
 
-### Savings, 2025 and 2026, Valencia and Asturias
+### Comunidad de Madrid, general regional scale 2025 and 2026
+
+| Lower limit | Upper limit | Fixed amount | Rate |
+|---:|---:|---:|---:|
+| 0 | 13 362,22 | 0 | 8,50% |
+| 13 362,22 | 19 004,63 | 1 135,79 | 10,70% |
+| 19 004,63 | 35 425,68 | 1 739,53 | 12,80% |
+| 35 425,68 | 57 320,40 | 3 841,42 | 17,40% |
+| 57 320,40 | ∞ | 7 651,10 | 20,50% |
+
+Source: art. 1 of Decreto Legislativo 1/2010 of the Comunidad de Madrid, as worded by art. único.1 of Ley 13/2023, of 15 December, tax periods from 01.01.2023: [BOE, consolidated text](https://www.boe.es/buscar/act.php?id=BOCM-m-2010-90068#a1).
+
+### Cataluña, general regional scale 2025 and 2026
+
+| Lower limit | Upper limit | Fixed amount | Rate |
+|---:|---:|---:|---:|
+| 0 | 12 500 | 0 | 9,50% |
+| 12 500 | 22 000 | 1 187,50 | 12,50% |
+| 22 000 | 33 000 | 2 375 | 16% |
+| 33 000 | 53 000 | 4 135 | 19% |
+| 53 000 | 90 000 | 7 935 | 21,50% |
+| 90 000 | 120 000 | 15 890 | 23,50% |
+| 120 000 | 175 000 | 22 940 | 24,50% |
+| 175 000 | ∞ | 36 415 | 25,50% |
+
+Source: art. 611-1 of book six of the Tax Code of Cataluña (Decreto Legislativo 1/2024), as worded by art. 3.1 of Decreto-ley 5/2025, of 25 March, with effect from 01.01.2025: [BOE, consolidated text](https://www.boe.es/buscar/act.php?id=BOE-A-2024-6951#a6).
+
+### Andalucía, general regional scale 2025 and 2026
+
+| Lower limit | Upper limit | Fixed amount | Rate |
+|---:|---:|---:|---:|
+| 0 | 13 000 | 0 | 9,50% |
+| 13 000 | 21 100 | 1 235 | 12% |
+| 21 100 | 35 200 | 2 207 | 15% |
+| 35 200 | 60 000 | 4 322 | 18,50% |
+| 60 000 | ∞ | 8 910 | 22,50% |
+
+Source: art. 23 of Ley 5/2021, of 20 October, on Ceded Taxes of the Comunidad Autónoma de Andalucía, as worded by art. 1 of Decreto-ley 7/2022, of 20 September, with effect from 01.01.2022: [BOE, consolidated text](https://www.boe.es/buscar/act.php?id=BOE-A-2021-17915#a2-5).
+
+### Savings, 2025 and 2026, Valencia, Asturias, Madrid, Cataluña and Andalucía
 
 | Lower limit | Upper limit | Fixed amount of each half | State | Regional | Total |
 |---:|---:|---:|---:|---:|---:|
@@ -160,6 +201,16 @@ Use `fixed amount + (base − lower limit) × rate`.
 
 A descendant is normally <25 years or has a disability, regardless of age. Check living together/dependency, income and the split of the minimum. For ascendants, living together for at least half of the period is also required. Age and personal circumstances are normally determined at the accrual date. The special rules for birth, death and adoption are not reduced to this general table.
 
+### Regional taxpayer minimum of Madrid, Cataluña and Andalucía, 2025/2026
+
+| Community | Taxpayer minimum, general case | Legal text |
+|---|---:|---|
+| Comunidad de Madrid | 5 956,65 | art. 2 DLeg 1/2010: «a) The taxpayer minimum shall be, in general, 5 956,65 euros per year.» |
+| Cataluña | 5 550 | art. 611-2 DLeg 1/2024: «The amount of the taxpayer's personal minimum is, in general, 5 550 euros per year.» |
+| Andalucía | 5 790 | art. 23 bis.1 Ley 5/2021: «a) In general, 5 790 euros per year.» |
+
+The increases for age, descendants, ascendants and disability in these three communities have not been checked and are not listed here. Do not replace them with the state amounts or with those of Valencia/Asturias.
+
 ### Limits of the regional benefits 2025/2026
 
 | Benefit | Calculation / maximum | Income test |
@@ -178,7 +229,7 @@ For the move, the following are taken into account: documented travel/removal ex
 
 - Input: tax year, regime, activity dates, IAE/professional type, time criterion, income/expenses with IVA and withholding kept separately, investment assets, RETA/regularisations, previous-year income, other worldwide income/losses, residence by days, family circumstances, expenses with a tax benefit, and documents.
 - Money operations use decimal, not binary float. Return fields have 2 decimal places. For the specification, `R(x)` = rounding to the cent, to the nearest value. An exact half is rounded away from zero. Round the result of each visible money casilla. Do not round every intermediate fraction of area/rate. The specific Renta WEB policy for ties is not published in the sources read; see «Doubtful points».
-- The scale is taken by **tax year (ejercicio)**, not by the filing year. Use the published fixed amounts, especially in Asturias, where they are already rounded to the cent. Do not re-accumulate the infinite fractions of the earlier brackets.
+- The scale is taken by **tax year (ejercicio)**, not by the filing year. Use the published fixed amounts, especially in Asturias and Madrid, where they are already rounded to the cent. Do not re-accumulate the infinite fractions of the earlier brackets.
 - The Modelo 100 numbers below are confirmed for **2025** by Orden HAC/277/2026, annex I. For 2026 the substantive calculations follow the law. The numbers/export layout require the approved 2026 form.
 
 ### Catalogue of expenses and Modelo 100 casillas, tax year 2025
