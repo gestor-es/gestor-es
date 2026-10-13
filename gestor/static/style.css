@@ -1,0 +1,350 @@
+/* Variant B «Бланк modelo»: white sheet on a grey desk, pre-printed green-grey ink,
+   ballpoint blue for every value you copy to the Sede, office stamps for status. */
+:root {
+  --desk: #d5d9d6; --paper: #fff;
+  --print: #24302a; --print-2: #4a5a51; --rule: #9aa79f; --band: #e4ebe6;
+  --pen: #1b3a9e; --pen-soft: #eef1fb;
+  --stamp-ok: #4b3a9a; --stamp-late: #b0261c; --doubt: #8a5a00;
+  --mono: "PT Mono", ui-monospace, monospace; --sans: "PT Sans", system-ui, sans-serif;
+  --display: "Prata", "PT Serif", Georgia, serif;  /* headings and the oversized seam words only */
+}
+* { box-sizing: border-box; }
+html { background: var(--desk); }
+body { margin: 0; color: var(--print); font: 16px/1.45 var(--sans); font-variant-numeric: tabular-nums; }
+::selection { background: var(--pen); color: #fff; }
+a { color: var(--pen); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+
+/* ---- page grid: index on the left, app bar and sheet on the right; the colophon spans both ---- */
+.layout { max-width: 1416px; margin: 0 auto; padding: 0 18px; display: grid; grid-template-columns: 200px minmax(0, 1fr);
+  grid-template-areas: ". head" "toc main"; column-gap: 18px; align-items: start; }
+/* app bar on one line: brand | sections | reference | the person, who is also the profile menu */
+.appbar { grid-area: head; display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto;
+  grid-template-areas: "brand nav ref me"; align-items: baseline; column-gap: 30px; padding: 18px 4px 14px; }
+.brand { grid-area: brand; font: 400 26px/1 var(--display); letter-spacing: -.01em; color: var(--print); text-decoration: none; }
+.appbar nav { grid-area: nav; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+nav a, .ref { color: var(--print-2); text-decoration: none; padding-bottom: 3px; border-bottom: 2px solid transparent; }
+nav a:hover, .ref:hover { color: var(--print); }
+nav a[aria-current], .ref[aria-current] { color: var(--print); border-color: var(--print); }
+.ref { grid-area: ref; }
+.me { grid-area: me; position: relative; }
+.me summary { list-style: none; cursor: pointer; color: var(--pen); white-space: nowrap; }
+.me summary::-webkit-details-marker { display: none; }
+.me summary::after { content: ""; display: inline-block; width: 6px; height: 6px; margin: 0 2px 3px 9px;
+  border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
+.me[open] summary::after { transform: rotate(-135deg); margin-bottom: -1px; }
+.me summary small { margin-left: 4px; font-size: 14px; color: var(--print-2); }
+.menu { position: absolute; right: 0; top: calc(100% + 10px); z-index: 5; min-width: 300px; padding: 8px 0; background: var(--paper);
+  box-shadow: 0 1px 2px rgba(20, 30, 25, .18), 0 10px 26px -8px rgba(20, 30, 25, .35); font-size: 15px; }
+.menu a, .menu button, .menu .on { display: block; width: 100%; height: auto; padding: 8px 18px; border: 0; background: none;
+  font: inherit; text-align: left; color: var(--print); text-decoration: none; cursor: pointer; }
+.menu a:hover, .menu button:hover { background: var(--band); }
+.menu small { display: block; font-size: 13px; color: var(--print-2); }
+.menu .on { box-shadow: inset 3px 0 var(--pen); cursor: default; }
+.menu .langs { display: flex; gap: 4px; padding: 4px 10px; border-top: 1px solid var(--band); margin-top: 6px; }
+.menu .langs button { width: auto; padding: 6px 8px; font-family: var(--mono); color: var(--print-2); }
+.menu .langs button[aria-current] { color: var(--pen); box-shadow: inset 0 -2px var(--pen); }
+.menu .label { margin-top: 12px; padding: 6px 18px 2px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--print-2); }
+.menu .add { margin-top: 8px; color: var(--pen); }
+main { grid-area: main; min-width: 0; margin: 0 0 4px; padding: 34px 40px 28px; background: var(--paper);
+  box-shadow: 0 1px 2px rgba(20, 30, 25, .18), 0 6px 18px -10px rgba(20, 30, 25, .25); }
+h1 { margin: 0 0 6px; font: 400 40px/1.1 var(--display); letter-spacing: -.01em; }
+h1 small { font: 400 15px var(--sans); color: var(--print-2); margin-left: 8px; letter-spacing: 0; }
+h2 { margin: 30px 0 10px; font: 400 25px/1.2 var(--display); }
+h3 { margin: 18px 0 6px; font-size: 16px; }
+/* oversized word standing on the seam between two blocks: whole letters, baseline on the rule (decoration, aria-hidden) */
+.junction { margin: 30px -40px 0; height: .73em; overflow: hidden; border-bottom: 1px solid var(--print);
+  font: 400 clamp(96px, 15vw, 210px)/1 var(--display); color: #dae2dc; text-transform: uppercase;
+  letter-spacing: -.02em; white-space: nowrap; user-select: none; pointer-events: none; }
+.junction span { display: block; margin: .02em 0 0 30px; }
+.junction + h2 { margin-top: 14px; }
+/* colophon on the desk: the wordmark whole at the top and cut at the bottom, beside a header of
+   Spanish papel sellado (stamp-duty paper, 1806–1813, public domain). Sizes follow the colophon width (cqw). */
+.colophon { max-width: 1416px; margin: 0 auto; padding: 0 18px 0 236px;  /* = sheet column: 18 + 200 + 18 */
+  container-type: inline-size; overflow: hidden;
+  display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 2cqw; }
+.colophon .giant { min-width: 0; height: .76em; overflow: hidden; padding-top: .02em; font: 400 15cqw/1 var(--display); color: #c5ccc7;
+  text-transform: uppercase; letter-spacing: -.03em; white-space: nowrap; user-select: none; }
+/* same top (cap line) and bottom (cut line) as the wordmark box: 0.3cqw ≈ .02em of 15cqw, 11.1cqw = .76em − that */
+.colophon img { display: block; height: 11.1cqw; width: auto; margin-top: .3cqw;
+  mix-blend-mode: multiply; filter: grayscale(1) contrast(2.2); }
+
+/* ---- index of the page (left column), set like the contents of a book:
+   serif entry · dot leader · the deadline as the page number; modelos beneath, overdue in red ---- */
+.toc-col { grid-area: toc; position: sticky; top: 30px; max-height: calc(100vh - 60px); overflow-y: auto; padding: 26px 4px 0 0; }
+.toc { display: block; }
+.toc a { border-bottom: 0; padding-bottom: 0; text-decoration: none; }  /* the index is a <nav>: drop the top-nav underline */
+.toc-year { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.toc-year b { font: 400 34px/1 var(--display); color: var(--print); font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+.toc-year a { font: 20px var(--display); color: var(--print-2); }
+.toc-year a:hover { color: var(--pen); }
+.toc ol { margin: 0; padding: 0; list-style: none; }
+.toc li { margin: 0 0 13px; }
+.toc .entry { display: flex; align-items: baseline; gap: 6px; color: var(--print); font: 400 16px/1.25 var(--display); }
+.toc .entry::after { content: ""; order: 2; flex: 1; min-width: 12px; border-bottom: 1px dotted var(--rule); transform: translateY(-4px); }
+.toc .entry span { order: 3; font: 13px var(--mono); color: var(--print-2); }
+.toc .entry:has(span:empty)::after { display: none; }  /* no deadline → no leader */
+.toc .entry:hover, .toc .entry.on, .toc .entry.on span { color: var(--pen); }
+.toc-forms { margin-top: 2px; font-size: 13px; color: var(--print-2); }
+.toc-forms a { color: var(--print-2); }
+.toc-forms a + a, .links a + a, .gaps a + a { margin-left: 12px; }  /* space, not a dot, between equal links */
+.matrix thead small { display: block; font-weight: 400; color: var(--print-2); }
+.toc-forms a:hover { color: var(--pen); }
+.toc-forms a.late { color: var(--stamp-late); }
+main .years { display: none; }  /* the index carries the years on wide screens */
+.sub { margin: 0 0 24px; color: var(--print-2); font-size: 15px; }
+.band { margin: 26px 0 10px; background: var(--band); padding: 6px 10px; font-weight: 700; font-size: 14px; }
+.muted, .small { color: var(--print-2); font-size: 14px; }
+.ok { color: var(--stamp-ok); }
+.warn { color: var(--stamp-late); }
+div.warn { margin: 10px 0; padding: 10px 12px; border-left: 3px solid var(--stamp-late); background: #fbf1ef; color: var(--print); font-size: 15px; }
+.years { margin: 0 0 18px; font-size: 15px; }
+.years a { color: var(--print-2); text-decoration: none; margin: 0 8px; }
+.foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 20px; margin-top: 28px; padding-top: 12px;
+  border-top: 1px solid var(--rule); font-size: 13px; color: var(--print-2); }
+
+/* ---- tables ---- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; }
+th { text-align: left; font-size: 13px; font-weight: 700; color: var(--print-2); }
+/* rows are separated by space, not rules: one light rule under the column heads is the only line in a table */
+th, td { padding: 10px 8px; vertical-align: top; }
+thead th { border-bottom: 1px solid var(--rule); }
+td.num, th.num { text-align: right; white-space: nowrap; font-family: var(--mono); }
+
+/* ---- stamps ---- */
+.stamp { display: inline-block; padding: 3px 8px 2px; border: 1.5px solid currentColor; font: 700 12px/1.3 var(--sans);
+  letter-spacing: .06em; transform: rotate(-1.5deg); white-space: nowrap; }
+.stamp.ok { color: var(--stamp-ok); }
+.stamp.late { color: var(--stamp-late); }
+.stamp.wait { color: var(--print-2); border-style: dashed; transform: none; }
+.stamp.verified { color: var(--stamp-ok); transform: none; }
+.stamp.interpretation { color: var(--doubt); transform: none; }
+.stamp.disputed { color: var(--stamp-late); transform: none; }
+td small, .matrix small { display: block; font-size: 13px; color: var(--print-2); }
+
+/* ---- payment slip (documento de ingreso) ---- */
+.slip { display: grid; grid-template-columns: 1fr auto; gap: 8px 32px; align-items: end; padding: 22px 24px 20px; margin: 0 0 26px;
+  background: var(--pen-soft); border-top: 1px dashed var(--print-2); border-bottom: 1px dashed var(--print-2); }
+.slip .label { font-size: 15px; }
+.slip .amount { display: block; margin-top: 2px; font: 46px/1.05 var(--mono); color: var(--pen); letter-spacing: -0.02em; }
+.slip .ref { margin-top: 6px; font-size: 14px; color: var(--print-2); }
+.slip .rest { grid-column: 1 / -1; margin: 14px 0 0; padding: 0; font-size: 15px; list-style: none; }
+.cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; }
+.matrix tbody th { font: 18px var(--mono); color: var(--print); width: 120px; }
+.matrix tbody th small { font: 13px var(--sans); white-space: nowrap; margin-top: 2px; }  /* the quarter's one deadline */
+.matrix td { vertical-align: middle; }
+.matrix td.later { font-size: 14px; color: var(--print-2); }
+table.dates td:first-child { width: 48px; font-family: var(--mono); }
+table.dates td:last-child { text-align: right; white-space: nowrap; }
+/* «Налоги и RETA за год»: one ink per kind — advances pen, RETA stamp violet, annual returns light pen, 303/111/115 print;
+   paid is solid, not paid yet is a dashed outline and ≈ in italics */
+.money-total { margin: 8px 0 2px; font: 40px/1.1 var(--mono); color: var(--pen); }
+.money-chart { display: block; width: 100%; height: auto; margin: 18px 0 6px; overflow: visible; }
+.money-chart text { font: 13px var(--mono); fill: var(--print); text-anchor: middle; }
+.money-chart .axis { font-family: var(--sans); fill: var(--print-2); }
+.money-chart .base { stroke: var(--rule); }
+.money-chart .sep { stroke: var(--rule); stroke-dasharray: 2 4; }
+.money-chart .ink-pen { fill: var(--pen); } .money-chart .ink-stamp { fill: var(--stamp-ok); }
+.money-chart .ink-light { fill: color-mix(in srgb, var(--pen) 55%, var(--paper)); } .money-chart .ink-print { fill: var(--print-2); }
+.money-chart .fore { fill: none; stroke-width: 1.5; stroke-dasharray: 4 3; }
+.money-chart .ink-pen.fore { stroke: var(--pen); } .money-chart .ink-stamp.fore { stroke: var(--stamp-ok); }
+.money-chart .ink-light.fore { stroke: color-mix(in srgb, var(--pen) 55%, var(--paper)); } .money-chart .ink-print.fore { stroke: var(--print-2); }
+.money-chart .seg { cursor: default; outline: none; pointer-events: all; }  /* dashed blocks have no fill: hover the whole area */
+.money-chart .seg:focus { stroke: var(--print); stroke-width: 2; }
+.money-chart:has(.seg:hover, .seg:focus) .seg:not(:hover, :focus) { opacity: .35; }
+.money-chart .tip { display: none; pointer-events: none; }  /* shown per block by the chart's own inline rules */
+.money-chart .tip-bg { fill: var(--paper); stroke: var(--print-2); }
+.money-chart .tip-h { font: 700 13px var(--sans); text-anchor: start; }
+.money-chart .tip-v { font: 700 14px var(--mono); fill: var(--pen); text-anchor: start; }
+.money-chart .tip-l { font: 12px var(--sans); fill: var(--print-2); text-anchor: start; }
+table.money th { font-weight: 400; white-space: nowrap; }
+table.money td.num, table.money th.num { text-align: right; }
+table.money td.num i, table.money td.due { font-style: italic; }
+table.money tfoot th, table.money tfoot td { font-weight: 700; border-top: 1px solid var(--rule); }
+.chip { display: inline-block; width: 10px; height: 10px; margin-right: 8px; vertical-align: -1px; }
+.chip.ink-pen { background: var(--pen); } .chip.ink-stamp { background: var(--stamp-ok); }
+.chip.ink-light { background: color-mix(in srgb, var(--pen) 55%, var(--paper)); } .chip.ink-print { background: var(--print-2); }
+
+/* ---- forms (inputs) ---- */
+form.grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px 24px; }
+form.grid > *, form.grid input, form.grid select, form.grid textarea { min-width: 0; max-width: 100%; }
+form.grid > fieldset, form.grid > label:has(textarea), form.grid > button, form.grid > p,
+form.grid > .band, form.grid > .explain, form.grid > details { grid-column: 1 / -1; }
+form.grid > .band { margin: 14px 0 0; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: var(--print-2); }
+label.check { flex-direction: row; align-items: center; gap: 8px; color: var(--print); font-size: 15px; }
+/* one control language: every input, select and button is 40 px tall, square, the same border and type */
+input, select, textarea { box-sizing: border-box; min-height: 40px; font: 16px var(--sans); padding: 8px 10px;
+  border: 1px solid var(--print-2); border-radius: 0; background: #fff; color: var(--pen); }
+input[type=checkbox] { width: 18px; height: 18px; min-height: 0; accent-color: var(--pen); }
+input[type=date] { font-family: var(--sans); }
+button, .btn { box-sizing: border-box; display: inline-flex; align-items: center; justify-self: start; height: 40px; padding: 0 16px;
+  border: 1px solid var(--print); border-radius: 0; background: var(--paper); color: var(--print); font: 700 15px var(--sans);
+  text-decoration: none; cursor: pointer; white-space: nowrap; }
+button:hover, .btn:hover { background: var(--band); }
+button.primary, .btn.primary { background: var(--pen); border-color: var(--pen); color: #fff; }
+button.primary:hover, .btn.primary:hover { background: #142c7a; }
+fieldset { border: 1px solid var(--rule); padding: 10px 12px; }
+legend { color: var(--print-2); font-size: 14px; }
+.line { display: grid; grid-template-columns: 1fr 70px 120px; gap: 8px; margin-bottom: 6px; }
+form.inline { display: inline-flex; flex-wrap: wrap; gap: 8px; margin: 0 6px 6px 0; align-items: flex-end; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+
+/* explain: what the field means + where the rule comes from, always visible next to the input */
+.explain { margin: -6px 0 6px; padding: 8px 12px; border-left: 2px solid var(--rule); font-size: 14px; color: var(--print); }
+.explain > p { margin: 0 0 4px; }
+.explain ul { margin: 0; padding: 0; list-style: none; }
+.explain li { margin: 4px 0 0; color: var(--print-2); }
+.explain li .stamp { font-size: 11px; padding: 1px 5px; margin-left: 4px; }
+
+/* ---- profile: how gestor understood you ---- */
+.understood { margin: 0 0 8px; padding: 0; list-style: none; font-size: 17px; }
+.understood li { padding: 6px 0; }
+.understood a { font-size: 14px; }
+table.duties td:first-child { font: 18px var(--mono); white-space: nowrap; width: 80px; }
+table.duties td:nth-child(2) { width: 28%; }
+table.duties td small { margin-top: 2px; }
+ul.why-not { padding-left: 18px; }
+ul.why-not li { margin: 6px 0; }
+
+/* ---- taxes: forms as pre-printed sheets ---- */
+/* expandable form: chevron on the band; when open the whole block (band + boxes + notes + filing) sits in one frame */
+details.form { margin: 0 0 14px; border: 1px solid var(--rule); border-top: 1px solid var(--print); background: var(--paper); }
+details.form > summary { cursor: pointer; display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; padding: 8px 12px 8px 34px;
+  position: relative; background: var(--band); font-size: 16px; list-style: none; }
+details.form > summary::-webkit-details-marker { display: none; }
+details.form > summary::before { content: ""; position: absolute; left: 13px; top: 15px; width: 7px; height: 7px;
+  border-right: 2px solid var(--print); border-bottom: 2px solid var(--print); transform: rotate(-45deg); transition: transform .15s ease-out; }
+details.form[open] > summary::before { transform: rotate(45deg); top: 13px; }
+details.form > summary:hover { background: #d9e2dc; }
+details.form[open] { border-color: var(--print-2); border-top-color: var(--print); box-shadow: inset 3px 0 0 var(--pen); }
+details.form > :not(summary) { margin-left: 12px; margin-right: 12px; }
+details.form > table { width: calc(100% - 24px); }
+details.form > summary b { font-size: 19px; }
+.due { color: var(--print-2); font-size: 14px; }
+.res { margin-left: auto; font-family: var(--mono); color: var(--pen); }
+details.form > summary .about { flex-basis: 100%; margin-top: -6px; font-size: 14px; color: var(--print-2); }
+table.boxes td { vertical-align: middle; padding: 5px 8px; }
+/* stripes only where the eye travels far or long: casillas (§ links far right, rows of different height), duties,
+   lists (invoices, expenses, clients, /guide). Short tables (≤ 5 rows), the stamp matrix and the invoice document stay plain. */
+:is(table.boxes, table.duties, table.list, table.money) tbody tr:nth-child(even) { background: color-mix(in srgb, var(--band) 45%, var(--paper)); }
+table.boxes td.v { width: 150px; }
+.box { position: relative; display: block; border: 1px solid var(--print-2); padding: 15px 8px 4px; text-align: right;
+  font: 16px var(--mono); color: var(--pen); background: #fff; }
+.box sup { position: absolute; left: 5px; top: 2px; font: 11px var(--sans); color: var(--print-2); }
+table.boxes td.basis { width: 34%; }
+.ru { display: block; margin-top: 1px; font-size: 13px; color: var(--print-2); }  /* Russian under the Sede label */
+ul.notes { margin: 10px 0; padding-left: 20px; font-size: 14px; color: var(--print-2); max-width: 90ch; }
+ul.notes li { margin: 4px 0; }
+.mark { margin-top: 18px; margin-bottom: 12px; }
+/* «Дальше»: the one next step for this return, and where to do it */
+.next { margin: 0 0 12px; padding: 10px 12px; background: var(--pen-soft); border-left: 3px solid var(--pen); font-size: 15px; }
+.next b { display: block; margin-bottom: 2px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--pen); }
+.next.late { background: #fbf1ef; border-left-color: var(--stamp-late); }
+.next.late b { color: var(--stamp-late); }
+.next.done { background: transparent; border-left-color: var(--stamp-ok); }
+.next.done b { color: var(--stamp-ok); }
+.next .go { display: inline-block; margin-top: 6px; margin-right: 14px; font-size: 14px; }
+td .stepnow { display: block; font-size: 13px; color: var(--print-2); }
+
+/* ---- invoice document ---- */
+.invoice { border: 1px solid var(--rule); padding: 40px; color: #111; }
+.inv-head { display: flex; justify-content: space-between; gap: 24px; }
+.inv-head h1 { margin-top: 0; }
+.right { text-align: right; }
+.bill { margin: 24px 0; }
+.invoice tfoot td { border: 0; padding-top: 4px; }
+.invoice tfoot td:last-child { text-align: right; }
+.invoice tr.total td { font-weight: 700; border-top: 1px solid var(--print); }
+
+/* ---- legal sources ---- */
+.cites { display: inline; }
+button.cite { display: inline; height: auto; min-height: 0; white-space: normal; margin: 0 8px 2px 0; padding: 0; border: 0; background: none; font: 13px/1.5 var(--sans);
+  color: var(--pen); text-align: left; text-decoration: underline dotted; text-underline-offset: 3px; cursor: pointer; }
+button.cite:hover { background: none; text-decoration-style: solid; }
+button.cite.interpretation { color: var(--doubt); }
+button.cite.disputed { color: var(--stamp-late); }
+.cite.missing { color: var(--stamp-late); font-size: 13px; }
+/* source card: a panel sliding over the right edge of the sheet; the page underneath does not move */
+.src-panel { position: fixed; inset: 0 0 0 auto; width: min(560px, 100vw); height: 100vh; max-height: none; margin: 0;
+  overflow-y: auto; padding: 22px 26px 30px; border: 0; border-left: 1px solid var(--print); background: var(--paper);
+  color: var(--print); font-size: 15px; box-shadow: -10px 0 30px -12px rgba(20, 30, 25, .35); }
+.src-panel::backdrop { background: rgba(36, 48, 42, .25); }
+.src-panel .close { float: right; margin: 0 0 10px 16px; height: 34px; padding: 4px 12px; font-size: 14px; }
+.src-head { margin: 0 0 6px; }
+.meaning { margin: 0 0 8px; font-weight: 700; }
+.status-note { margin: 0 0 8px; }
+.status-note .stamp { margin-right: 6px; }
+blockquote { margin: 8px 0; padding: 8px 12px; border-left: 2px solid var(--rule); background: #fff; font-size: 15px; }
+blockquote.tr small { display: block; margin-top: 4px; color: var(--print-2); font-size: 13px; }
+.practice { margin: 4px 0 8px; padding-left: 18px; font-size: 15px; }
+.links { margin: 6px 0 0; }
+div.basis { margin: 8px 0; font-size: 14px; color: var(--print-2); }
+article.src { padding: 16px 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 16px; }
+article.src:target { background: var(--pen-soft); box-shadow: 0 0 0 10px var(--pen-soft); }
+p.lead { max-width: 75ch; font-size: 17px; }
+table.trust { max-width: 820px; margin: 4px 0 18px; }
+table.trust td { padding: 9px 8px; font-size: 15px; vertical-align: baseline; }
+table.trust td.num { width: 64px; font: 400 26px var(--display); color: var(--print); font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+table.trust .stamp { margin-right: 6px; }
+ul.risky li { margin-bottom: 6px; }
+
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "main"; }
+  .toc-col { display: none; }
+  main .years { display: block; }
+  .colophon { padding-left: 18px; }
+}
+@media (max-width: 760px) {
+  .layout, .colophon { padding: 0; }
+  .colophon { padding-left: 0; }
+  .colophon img { display: none; }
+  .colophon .giant { font-size: 21cqw; }
+  .junction { margin-left: -14px; margin-right: -14px; }
+  .junction span { margin-left: 12px; }
+  .appbar { padding: 12px 12px 10px; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "brand me" "nav nav" "ref ref"; gap: 8px 18px; }
+  .me { justify-self: end; }
+  .ref { justify-self: start; }
+  main { padding: 20px 14px 18px; }
+  h1 { font-size: 25px; }
+  .slip { grid-template-columns: 1fr; padding: 18px 14px; }
+  .slip .amount { font-size: 38px; }
+  .cols, form.grid { grid-template-columns: 1fr; }
+  table { display: block; overflow-x: auto; }
+  table.boxes, table.duties { display: table; }
+  table.quarter { display: table; }
+  table.quarter thead { display: none; }
+  table.quarter tr { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; padding: 8px 0; border-bottom: 1px solid var(--rule); }
+  table.quarter td { border: 0; padding: 0; }
+  table.quarter td:nth-child(3) { grid-column: 1; font-size: 14px; color: var(--print-2); }
+  table.quarter td:nth-child(4) { grid-column: 2; grid-row: 2; }
+  .line { grid-template-columns: 1fr 1fr; }
+  .line label:first-child { grid-column: 1 / -1; }
+  .line input { min-width: 0; width: 100%; }
+  .matrix th, .matrix td { padding: 8px 4px; }
+  .stamp { font-size: 11px; padding: 2px 5px; }
+  table.boxes td.basis { grid-column: 1 / -1; width: auto; border: 0; padding-top: 0; }
+  table.boxes tr { display: grid; grid-template-columns: 1fr 130px; }
+  details.form > :not(summary) { margin-left: 8px; margin-right: 8px; }
+  details.form > table { width: calc(100% - 16px); }
+  details.form > summary { padding-left: 30px; }
+  table.boxes td { border: 0; }
+  table.boxes td.v { grid-column: 2; grid-row: 1; width: auto; }
+  table.boxes td:nth-child(2) { grid-column: 1; grid-row: 1; }
+  table.boxes thead { display: none; }
+  table.duties thead { display: none; }
+  table.duties tr, table.duties td { display: block; width: auto; border: 0; padding: 4px 0; }
+  table.duties tr { border-top: 1px solid var(--rule); padding: 8px 0; }
+  table.duties td:nth-child(2) { width: auto; }
+  button.cite { overflow-wrap: anywhere; }
+  .src-panel { padding: 16px 16px 24px; }
+  .invoice { padding: 18px; }
+}
+@media print {
+  html { background: #fff; }
+  .appbar, .noprint, .cites, .src-panel, .junction, .colophon, .toc-col { display: none; }
+  .layout { display: block; padding: 0; }
+  main { box-shadow: none; padding: 0; max-width: none; }
+  .invoice { border: 0; padding: 0; }
+}
+@media (prefers-reduced-motion: no-preference) { button, .btn { transition: background-color .15s ease-out; } }

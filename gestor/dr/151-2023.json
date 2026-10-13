@@ -1,0 +1,6621 @@
+{
+ "source": "https://sede.agenciatributaria.gob.es/static_files/Sede/Disenyo_registro/DR_100_199/DR151E2023.xls",
+ "file": "DR151E2023.xlsx",
+ "pages": {
+  "M15100": {
+   "length": 328,
+   "declared_length": null,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Constante.",
+     "const": "<T",
+     "content": "\"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "An",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "\"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 1,
+     "type": "An",
+     "desc": "Constante.",
+     "const": "0",
+     "content": "\"0\"",
+     "box": null
+    },
+    {
+     "pos": 7,
+     "len": 4,
+     "type": "An",
+     "desc": "Ejercicio devengo. (AAAA)",
+     "const": null,
+     "content": "2023",
+     "box": null
+    },
+    {
+     "pos": 11,
+     "len": 2,
+     "type": "An",
+     "desc": "Período. (PP)",
+     "const": null,
+     "content": "0A",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 5,
+     "type": "An",
+     "desc": "Constante.",
+     "const": "0000>",
+     "content": "\"0000>\"",
+     "box": null
+    },
+    {
+     "pos": 18,
+     "len": 5,
+     "type": "An",
+     "desc": "Constante",
+     "const": "<AUX>",
+     "content": "\"<AUX>\"",
+     "box": null
+    },
+    {
+     "pos": 23,
+     "len": 70,
+     "type": "An",
+     "desc": "Reservado para la Administración. Rellenar con blancos",
+     "const": null,
+     "content": "BLANCOS",
+     "box": null
+    },
+    {
+     "pos": 93,
+     "len": 4,
+     "type": "An",
+     "desc": "Versión del Programa (Nota 1)",
+     "const": null,
+     "content": "",
+     "box": null
+    },
+    {
+     "pos": 97,
+     "len": 4,
+     "type": "An",
+     "desc": "Reservado para la Administración. Rellenar con blancos",
+     "const": null,
+     "content": "BLANCOS",
+     "box": null
+    },
+    {
+     "pos": 101,
+     "len": 9,
+     "type": "An",
+     "desc": "NIF Empresa Desarrollo (Nota 1)",
+     "const": null,
+     "content": "",
+     "box": null
+    },
+    {
+     "pos": 110,
+     "len": 213,
+     "type": "An",
+     "desc": "Reservado para la Administración. Rellenar con blancos",
+     "const": null,
+     "content": "BLANCOS",
+     "box": null
+    },
+    {
+     "pos": 323,
+     "len": 6,
+     "type": "An",
+     "desc": "Constante",
+     "const": "</AUX>",
+     "content": "\"</AUX>\"",
+     "box": null
+    }
+   ]
+  },
+  "M15101000": {
+   "length": 1150,
+   "declared_length": 1150,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Inicio del identificador de modelo y página",
+     "const": "<T",
+     "content": "Constante \"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "N",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "Constante \"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 2,
+     "type": "An",
+     "desc": "Página",
+     "const": "01",
+     "content": "Constante \"01\"",
+     "box": null
+    },
+    {
+     "pos": 8,
+     "len": 4,
+     "type": "An",
+     "desc": "Fin de identificador de modelo",
+     "const": "000>",
+     "content": "Constante \"000>\"",
+     "box": null
+    },
+    {
+     "pos": 12,
+     "len": 1,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 1,
+     "type": "A",
+     "desc": "Tipo de declaración",
+     "const": null,
+     "content": "Ver nota 1",
+     "box": null
+    },
+    {
+     "pos": 14,
+     "len": 9,
+     "type": "An",
+     "desc": "Contribuyente. NIF [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 23,
+     "len": 80,
+     "type": "An",
+     "desc": "Contribuyente. Apellidos y nombre [03]",
+     "const": null,
+     "content": "",
+     "box": "03"
+    },
+    {
+     "pos": 103,
+     "len": 4,
+     "type": "An",
+     "desc": "Devengo. Ejercicio [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 107,
+     "len": 2,
+     "type": "An",
+     "desc": "Devengo - Periodo",
+     "const": null,
+     "content": "0A",
+     "box": null
+    },
+    {
+     "pos": 109,
+     "len": 1,
+     "type": "An",
+     "desc": "Contribuyente. Sexo [04]",
+     "const": null,
+     "content": "\"H\" o \"M\"",
+     "box": "04"
+    },
+    {
+     "pos": 110,
+     "len": 8,
+     "type": "Num",
+     "desc": "Contribuyente. Fecha de nacimiento [05]",
+     "const": null,
+     "content": "Formato: \"dd/MM/yyyy\"",
+     "box": "05"
+    },
+    {
+     "pos": 118,
+     "len": 1,
+     "type": "An",
+     "desc": "Contribuyente. Condicion. Contribuyente principal [06]",
+     "const": null,
+     "content": "X ó blanco",
+     "box": "06"
+    },
+    {
+     "pos": 119,
+     "len": 1,
+     "type": "An",
+     "desc": "Contribuyente. Condicion. Contribuyente asociado a otro principal [07]",
+     "const": null,
+     "content": "X ó blanco",
+     "box": "07"
+    },
+    {
+     "pos": 120,
+     "len": 1,
+     "type": "An",
+     "desc": "Contribuyente. Tipo de vinculación. Cónyuge [08]",
+     "const": null,
+     "content": "X ó blanco",
+     "box": "08"
+    },
+    {
+     "pos": 121,
+     "len": 1,
+     "type": "An",
+     "desc": "Contribuyente. Tipo de vinculación. Progenitor sin vínculo matrimonial [09]",
+     "const": null,
+     "content": "X ó blanco",
+     "box": "09"
+    },
+    {
+     "pos": 122,
+     "len": 1,
+     "type": "An",
+     "desc": "Contribuyente. Tipo de vinculación. Hijo/a [10]",
+     "const": null,
+     "content": "X ó blanco",
+     "box": "10"
+    },
+    {
+     "pos": 123,
+     "len": 9,
+     "type": "An",
+     "desc": "Contribuyente. Datos del contribuyente principal. NIF [11]",
+     "const": null,
+     "content": "",
+     "box": "11"
+    },
+    {
+     "pos": 132,
+     "len": 80,
+     "type": "An",
+     "desc": "Contribuyente. Datos del contribuyente principal. Apellidos y nombre [12]",
+     "const": null,
+     "content": "",
+     "box": "12"
+    },
+    {
+     "pos": 212,
+     "len": 1,
+     "type": "An",
+     "desc": "Contribuyente. Cambio de domicilio [13]",
+     "const": null,
+     "content": "X ó blanco",
+     "box": "13"
+    },
+    {
+     "pos": 213,
+     "len": 5,
+     "type": "An",
+     "desc": "Contribuyente. Tipo de vía [26]",
+     "const": null,
+     "content": "",
+     "box": "26"
+    },
+    {
+     "pos": 218,
+     "len": 50,
+     "type": "An",
+     "desc": "Contribuyente. Nombre de la vía pública [27]",
+     "const": null,
+     "content": "",
+     "box": "27"
+    },
+    {
+     "pos": 268,
+     "len": 3,
+     "type": "An",
+     "desc": "Contribuyente. Tipo de numeración [28]",
+     "const": null,
+     "content": "",
+     "box": "28"
+    },
+    {
+     "pos": 271,
+     "len": 5,
+     "type": "Num",
+     "desc": "Contribuyente. Número de casa [29]",
+     "const": null,
+     "content": "",
+     "box": "29"
+    },
+    {
+     "pos": 276,
+     "len": 3,
+     "type": "An",
+     "desc": "Contribuyente. Calificador de número [30]",
+     "const": null,
+     "content": "",
+     "box": "30"
+    },
+    {
+     "pos": 279,
+     "len": 3,
+     "type": "An",
+     "desc": "Contribuyente. Bloque [31]",
+     "const": null,
+     "content": "",
+     "box": "31"
+    },
+    {
+     "pos": 282,
+     "len": 3,
+     "type": "An",
+     "desc": "Contribuyente. Portal [32]",
+     "const": null,
+     "content": "",
+     "box": "32"
+    },
+    {
+     "pos": 285,
+     "len": 3,
+     "type": "An",
+     "desc": "Contribuyente. Escalera [33]",
+     "const": null,
+     "content": "",
+     "box": "33"
+    },
+    {
+     "pos": 288,
+     "len": 3,
+     "type": "An",
+     "desc": "Contribuyente. Planta [34]",
+     "const": null,
+     "content": "",
+     "box": "34"
+    },
+    {
+     "pos": 291,
+     "len": 3,
+     "type": "An",
+     "desc": "Contribuyente. Puerta [35]",
+     "const": null,
+     "content": "",
+     "box": "35"
+    },
+    {
+     "pos": 294,
+     "len": 40,
+     "type": "An",
+     "desc": "Contribuyente. Datos complementarios del domicilio [36]",
+     "const": null,
+     "content": "",
+     "box": "36"
+    },
+    {
+     "pos": 334,
+     "len": 30,
+     "type": "An",
+     "desc": "Contribuyente. Localidad/Poblacion [37]",
+     "const": null,
+     "content": "",
+     "box": "37"
+    },
+    {
+     "pos": 364,
+     "len": 5,
+     "type": "Num",
+     "desc": "Contribuyente. Código postal del domicilio [38]",
+     "const": null,
+     "content": "",
+     "box": "38"
+    },
+    {
+     "pos": 369,
+     "len": 2,
+     "type": "Num",
+     "desc": "Contribuyente. Codigo de Provincia [40]",
+     "const": null,
+     "content": "",
+     "box": "40"
+    },
+    {
+     "pos": 371,
+     "len": 5,
+     "type": "Num",
+     "desc": "Contribuyente. Nombre del Municipio [39]",
+     "const": null,
+     "content": "",
+     "box": "39"
+    },
+    {
+     "pos": 376,
+     "len": 9,
+     "type": "An",
+     "desc": "Contribuyente. Teléfono fijo [41]",
+     "const": null,
+     "content": "",
+     "box": "41"
+    },
+    {
+     "pos": 385,
+     "len": 9,
+     "type": "An",
+     "desc": "Contribuyente. Teléfono móvil [42]",
+     "const": null,
+     "content": "",
+     "box": "42"
+    },
+    {
+     "pos": 394,
+     "len": 50,
+     "type": "An",
+     "desc": "Contribuyente Domicilio Extranjero. Domicilio [43]",
+     "const": null,
+     "content": "",
+     "box": "43"
+    },
+    {
+     "pos": 444,
+     "len": 40,
+     "type": "An",
+     "desc": "Contribuyente Domicilio Extranjero. Datos complementarios domicilio [44]",
+     "const": null,
+     "content": "",
+     "box": "44"
+    },
+    {
+     "pos": 484,
+     "len": 30,
+     "type": "An",
+     "desc": "Contribuyente Domicilio Extranjero. Poblacion/Ciudad [45]",
+     "const": null,
+     "content": "",
+     "box": "45"
+    },
+    {
+     "pos": 514,
+     "len": 100,
+     "type": "An",
+     "desc": "Contribuyente Domicilio Extranjero. Email [46]",
+     "const": null,
+     "content": "",
+     "box": "46"
+    },
+    {
+     "pos": 614,
+     "len": 10,
+     "type": "An",
+     "desc": "Contribuyente Domicilio Extranjero. Codigo postal/ZIP [47]",
+     "const": null,
+     "content": "",
+     "box": "47"
+    },
+    {
+     "pos": 624,
+     "len": 30,
+     "type": "An",
+     "desc": "Contribuyente Domicilio Extranjero. Provincia/Region/Estado [48]",
+     "const": null,
+     "content": "",
+     "box": "48"
+    },
+    {
+     "pos": 654,
+     "len": 2,
+     "type": "An",
+     "desc": "Contribuyente Domicilio Extranjero. Pais [50]",
+     "const": null,
+     "content": "",
+     "box": "50"
+    },
+    {
+     "pos": 656,
+     "len": 15,
+     "type": "An",
+     "desc": "Contribuyente Domicilio Extranjero. Teléfono Fijo [51]",
+     "const": null,
+     "content": "",
+     "box": "51"
+    },
+    {
+     "pos": 671,
+     "len": 15,
+     "type": "An",
+     "desc": "Contribuyente Domicilio Extranjero. Teléfono Móvil [52]",
+     "const": null,
+     "content": "",
+     "box": "52"
+    },
+    {
+     "pos": 686,
+     "len": 1,
+     "type": "Num",
+     "desc": "Contribuyente Datos Adicionales vivienda actual. Titularidad [14]",
+     "const": null,
+     "content": "1,2,3,4",
+     "box": "14"
+    },
+    {
+     "pos": 687,
+     "len": 5,
+     "type": "Num",
+     "desc": "Contribuyente Datos Adicionales vivienda actual. Porcentaje participación [15]",
+     "const": null,
+     "content": "[3 enteros + 2 decmales]",
+     "box": "15"
+    },
+    {
+     "pos": 692,
+     "len": 1,
+     "type": "Num",
+     "desc": "Contribuyente Datos Adicionales vivienda actual. Situacion [16]",
+     "const": null,
+     "content": "1,2,3",
+     "box": "16"
+    },
+    {
+     "pos": 693,
+     "len": 20,
+     "type": "An",
+     "desc": "Contribuyente Datos Adicionales vivienda actual. Referencia catastral [17]",
+     "const": null,
+     "content": "",
+     "box": "17"
+    },
+    {
+     "pos": 713,
+     "len": 9,
+     "type": "An",
+     "desc": "Representante. NIF [18]",
+     "const": null,
+     "content": "",
+     "box": "18"
+    },
+    {
+     "pos": 722,
+     "len": 80,
+     "type": "An",
+     "desc": "Representante. Apellidos y nombre o razón social o denominación [19]",
+     "const": null,
+     "content": "",
+     "box": "19"
+    },
+    {
+     "pos": 802,
+     "len": 5,
+     "type": "An",
+     "desc": "Representante. Tipo de vía [26]",
+     "const": null,
+     "content": "",
+     "box": "26"
+    },
+    {
+     "pos": 807,
+     "len": 50,
+     "type": "An",
+     "desc": "Representante. Nombre de la vía pública [27]",
+     "const": null,
+     "content": "",
+     "box": "27"
+    },
+    {
+     "pos": 857,
+     "len": 3,
+     "type": "An",
+     "desc": "Representante. Tipo de numeración [28]",
+     "const": null,
+     "content": "",
+     "box": "28"
+    },
+    {
+     "pos": 860,
+     "len": 5,
+     "type": "Num",
+     "desc": "Representante. Número de casa [29]",
+     "const": null,
+     "content": "",
+     "box": "29"
+    },
+    {
+     "pos": 865,
+     "len": 3,
+     "type": "An",
+     "desc": "Representante. Calificador de número [30]",
+     "const": null,
+     "content": "",
+     "box": "30"
+    },
+    {
+     "pos": 868,
+     "len": 3,
+     "type": "An",
+     "desc": "Representante. Bloque [31]",
+     "const": null,
+     "content": "",
+     "box": "31"
+    },
+    {
+     "pos": 871,
+     "len": 3,
+     "type": "An",
+     "desc": "Representante. Portal [32]",
+     "const": null,
+     "content": "",
+     "box": "32"
+    },
+    {
+     "pos": 874,
+     "len": 3,
+     "type": "An",
+     "desc": "Representante. Escalera [33]",
+     "const": null,
+     "content": "",
+     "box": "33"
+    },
+    {
+     "pos": 877,
+     "len": 3,
+     "type": "An",
+     "desc": "Representante. Planta [34]",
+     "const": null,
+     "content": "",
+     "box": "34"
+    },
+    {
+     "pos": 880,
+     "len": 3,
+     "type": "An",
+     "desc": "Representante. Puerta [35]",
+     "const": null,
+     "content": "",
+     "box": "35"
+    },
+    {
+     "pos": 883,
+     "len": 40,
+     "type": "An",
+     "desc": "Representante. Datos complementarios del domicilio [36]",
+     "const": null,
+     "content": "",
+     "box": "36"
+    },
+    {
+     "pos": 923,
+     "len": 30,
+     "type": "An",
+     "desc": "Representante. Localidad/Poblacion (si es distinta del municipio) [37]",
+     "const": null,
+     "content": "",
+     "box": "37"
+    },
+    {
+     "pos": 953,
+     "len": 5,
+     "type": "Num",
+     "desc": "Representante. Código postal del domicilio [38]",
+     "const": null,
+     "content": "",
+     "box": "38"
+    },
+    {
+     "pos": 958,
+     "len": 2,
+     "type": "Num",
+     "desc": "Representante. Nombre del Municipio [39]",
+     "const": null,
+     "content": "",
+     "box": "39"
+    },
+    {
+     "pos": 960,
+     "len": 5,
+     "type": "Num",
+     "desc": "Representante. Codigo de Provincia [40]",
+     "const": null,
+     "content": "",
+     "box": "40"
+    },
+    {
+     "pos": 965,
+     "len": 9,
+     "type": "An",
+     "desc": "Representante. Teléfono fijo [41]",
+     "const": null,
+     "content": "",
+     "box": "41"
+    },
+    {
+     "pos": 974,
+     "len": 9,
+     "type": "An",
+     "desc": "Representante. Teléfono móvil [42]",
+     "const": null,
+     "content": "",
+     "box": "42"
+    },
+    {
+     "pos": 983,
+     "len": 2,
+     "type": "Num",
+     "desc": "Comunidad Autonoma de residencia durante el ejercicio indicado [20]",
+     "const": null,
+     "content": "",
+     "box": "20"
+    },
+    {
+     "pos": 985,
+     "len": 1,
+     "type": "An",
+     "desc": "Asignacion Tributaria a la Iglesia Catolica [21]",
+     "const": null,
+     "content": "X ó blanco",
+     "box": "21"
+    },
+    {
+     "pos": 986,
+     "len": 1,
+     "type": "An",
+     "desc": "Asignacion de cantidades a fines sociales [22]",
+     "const": null,
+     "content": "X ó blanco",
+     "box": "22"
+    },
+    {
+     "pos": 987,
+     "len": 1,
+     "type": "An",
+     "desc": "Declaracion Complementaria [23]",
+     "const": null,
+     "content": "X ó blanco",
+     "box": "23"
+    },
+    {
+     "pos": 988,
+     "len": 1,
+     "type": "An",
+     "desc": "Declaracion Complementaria 2 [24]",
+     "const": null,
+     "content": "X ó blanco",
+     "box": "24"
+    },
+    {
+     "pos": 989,
+     "len": 13,
+     "type": "An",
+     "desc": "Número de Justificante [25]",
+     "const": null,
+     "content": "",
+     "box": "25"
+    },
+    {
+     "pos": 1002,
+     "len": 137,
+     "type": "An",
+     "desc": "Reservado AEAT",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 1139,
+     "len": 12,
+     "type": "An",
+     "desc": "Indicador de fin de registro",
+     "const": "</T15101000>",
+     "content": "Constante \"</T15101000>\"",
+     "box": null
+    }
+   ]
+  },
+  "M15102000": {
+   "length": 1100,
+   "declared_length": 1100,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Inicio del identificador de modelo y página",
+     "const": "<T",
+     "content": "Constante \"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "N",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "Constante \"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 2,
+     "type": "An",
+     "desc": "Página",
+     "const": "02",
+     "content": "Constante \"02\"",
+     "box": null
+    },
+    {
+     "pos": 8,
+     "len": 4,
+     "type": "An",
+     "desc": "Fin de identificador de modelo",
+     "const": "000>",
+     "content": "Constante \"000>\"",
+     "box": null
+    },
+    {
+     "pos": 12,
+     "len": 1,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 15,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 16,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 33,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 50,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 67,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro/Renta inmobiliaria imputada [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 84,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 101,
+     "len": 9,
+     "type": "An",
+     "desc": "Pagador. NIF [50]",
+     "const": null,
+     "content": "",
+     "box": "50"
+    },
+    {
+     "pos": 110,
+     "len": 1,
+     "type": "An",
+     "desc": "Pagador. F/J [51]",
+     "const": null,
+     "content": "\"F\", \"J\"",
+     "box": "51"
+    },
+    {
+     "pos": 111,
+     "len": 80,
+     "type": "An",
+     "desc": "Pagador. Apellidos y nombre o razón social [52]",
+     "const": null,
+     "content": "",
+     "box": "52"
+    },
+    {
+     "pos": 191,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Rendimiento íntegro obtenido y gravado en el extranjero [08]",
+     "const": null,
+     "content": "",
+     "box": "08"
+    },
+    {
+     "pos": 208,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Impuesto satisfecho en el extranjero [09]",
+     "const": null,
+     "content": "",
+     "box": "09"
+    },
+    {
+     "pos": 225,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Propiedad (%) [10]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "10"
+    },
+    {
+     "pos": 230,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Usufructo (%) [11]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "11"
+    },
+    {
+     "pos": 235,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Origen [12]",
+     "const": null,
+     "content": "",
+     "box": "12"
+    },
+    {
+     "pos": 236,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Situación [13]",
+     "const": null,
+     "content": "1,2,3",
+     "box": "13"
+    },
+    {
+     "pos": 237,
+     "len": 20,
+     "type": "An",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Referencia catastral [14]",
+     "const": null,
+     "content": "",
+     "box": "14"
+    },
+    {
+     "pos": 257,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 259,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 260,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 277,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 294,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 311,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro/Renta inmobiliaria imputada [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 328,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 345,
+     "len": 9,
+     "type": "An",
+     "desc": "Pagador. NIF [50]",
+     "const": null,
+     "content": "",
+     "box": "50"
+    },
+    {
+     "pos": 354,
+     "len": 1,
+     "type": "An",
+     "desc": "Pagador. F/J [51]",
+     "const": null,
+     "content": "\"F\", \"J\"",
+     "box": "51"
+    },
+    {
+     "pos": 355,
+     "len": 80,
+     "type": "An",
+     "desc": "Pagador. Apellidos y nombre o razón social [52]",
+     "const": null,
+     "content": "",
+     "box": "52"
+    },
+    {
+     "pos": 435,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Rendimiento íntegro obtenido y gravado en el extranjero [08]",
+     "const": null,
+     "content": "",
+     "box": "08"
+    },
+    {
+     "pos": 452,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Impuesto satisfecho en el extranjero [09]",
+     "const": null,
+     "content": "",
+     "box": "09"
+    },
+    {
+     "pos": 469,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Propiedad (%) [10]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "10"
+    },
+    {
+     "pos": 474,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Usufructo (%) [11]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "11"
+    },
+    {
+     "pos": 479,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Origen [12]",
+     "const": null,
+     "content": "",
+     "box": "12"
+    },
+    {
+     "pos": 480,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Situación [13]",
+     "const": null,
+     "content": "1,2,3",
+     "box": "13"
+    },
+    {
+     "pos": 481,
+     "len": 20,
+     "type": "An",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Referencia catastral [14]",
+     "const": null,
+     "content": "",
+     "box": "14"
+    },
+    {
+     "pos": 501,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 503,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 504,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 521,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 538,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 555,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro/Renta inmobiliaria imputada [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 572,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 589,
+     "len": 9,
+     "type": "An",
+     "desc": "Pagador. NIF [50]",
+     "const": null,
+     "content": "",
+     "box": "50"
+    },
+    {
+     "pos": 598,
+     "len": 1,
+     "type": "An",
+     "desc": "Pagador. F/J [51]",
+     "const": null,
+     "content": "\"F\", \"J\"",
+     "box": "51"
+    },
+    {
+     "pos": 599,
+     "len": 80,
+     "type": "An",
+     "desc": "Pagador. Apellidos y nombre o razón social [52]",
+     "const": null,
+     "content": "",
+     "box": "52"
+    },
+    {
+     "pos": 679,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Rendimiento íntegro obtenido y gravado en el extranjero [08]",
+     "const": null,
+     "content": "",
+     "box": "08"
+    },
+    {
+     "pos": 696,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Impuesto satisfecho en el extranjero [09]",
+     "const": null,
+     "content": "",
+     "box": "09"
+    },
+    {
+     "pos": 713,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Propiedad (%) [10]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "10"
+    },
+    {
+     "pos": 718,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Usufructo (%) [11]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "11"
+    },
+    {
+     "pos": 723,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Origen [12]",
+     "const": null,
+     "content": "",
+     "box": "12"
+    },
+    {
+     "pos": 724,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Situación [13]",
+     "const": null,
+     "content": "1,2,3",
+     "box": "13"
+    },
+    {
+     "pos": 725,
+     "len": 20,
+     "type": "An",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Referencia catastral [14]",
+     "const": null,
+     "content": "",
+     "box": "14"
+    },
+    {
+     "pos": 745,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 747,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 748,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 765,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 782,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 799,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro/Renta inmobiliaria imputada [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 816,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 833,
+     "len": 9,
+     "type": "An",
+     "desc": "Pagador. NIF [50]",
+     "const": null,
+     "content": "",
+     "box": "50"
+    },
+    {
+     "pos": 842,
+     "len": 1,
+     "type": "An",
+     "desc": "Pagador. F/J [51]",
+     "const": null,
+     "content": "\"F\", \"J\"",
+     "box": "51"
+    },
+    {
+     "pos": 843,
+     "len": 80,
+     "type": "An",
+     "desc": "Pagador. Apellidos y nombre o razón social [52]",
+     "const": null,
+     "content": "",
+     "box": "52"
+    },
+    {
+     "pos": 923,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Rendimiento íntegro obtenido y gravado en el extranjero [08]",
+     "const": null,
+     "content": "",
+     "box": "08"
+    },
+    {
+     "pos": 940,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Impuesto satisfecho en el extranjero [09]",
+     "const": null,
+     "content": "",
+     "box": "09"
+    },
+    {
+     "pos": 957,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Propiedad (%) [10]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "10"
+    },
+    {
+     "pos": 962,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Usufructo (%) [11]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "11"
+    },
+    {
+     "pos": 967,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Origen [12]",
+     "const": null,
+     "content": "",
+     "box": "12"
+    },
+    {
+     "pos": 968,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Situación [13]",
+     "const": null,
+     "content": "1,2,3",
+     "box": "13"
+    },
+    {
+     "pos": 969,
+     "len": 20,
+     "type": "An",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Referencia catastral [14]",
+     "const": null,
+     "content": "",
+     "box": "14"
+    },
+    {
+     "pos": 989,
+     "len": 100,
+     "type": "An",
+     "desc": "Reservado AEAT",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 1089,
+     "len": 12,
+     "type": "An",
+     "desc": "Indicador de fin de registro",
+     "const": "</T15102000>",
+     "content": "Constante \"</T15102000>\"",
+     "box": null
+    }
+   ]
+  },
+  "M15103000": {
+   "length": 1150,
+   "declared_length": 1150,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Inicio del identificador de modelo y página",
+     "const": "<T",
+     "content": "Constante \"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "N",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "Constante \"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 2,
+     "type": "An",
+     "desc": "Página",
+     "const": "03",
+     "content": "Constante \"03\"",
+     "box": null
+    },
+    {
+     "pos": 8,
+     "len": 4,
+     "type": "An",
+     "desc": "Fin de identificador de modelo",
+     "const": "000>",
+     "content": "Constante \"000>\"",
+     "box": null
+    },
+    {
+     "pos": 12,
+     "len": 1,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 15,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 16,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 33,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 50,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 67,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro/Renta inmobiliaria imputada [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 84,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 101,
+     "len": 9,
+     "type": "An",
+     "desc": "Pagador. NIF [50]",
+     "const": null,
+     "content": "",
+     "box": "50"
+    },
+    {
+     "pos": 110,
+     "len": 1,
+     "type": "An",
+     "desc": "Pagador. F/J [51]",
+     "const": null,
+     "content": "\"F\", \"J\"",
+     "box": "51"
+    },
+    {
+     "pos": 111,
+     "len": 80,
+     "type": "An",
+     "desc": "Pagador. Apellidos y nombre o razón social [52]",
+     "const": null,
+     "content": "",
+     "box": "52"
+    },
+    {
+     "pos": 191,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Rendimiento íntegro obtenido y gravado en el extranjero [08]",
+     "const": null,
+     "content": "",
+     "box": "08"
+    },
+    {
+     "pos": 208,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Impuesto satisfecho en el extranjero [09]",
+     "const": null,
+     "content": "",
+     "box": "09"
+    },
+    {
+     "pos": 225,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Propiedad (%) [10]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "10"
+    },
+    {
+     "pos": 230,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Usufructo (%) [11]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "11"
+    },
+    {
+     "pos": 235,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Origen [12]",
+     "const": null,
+     "content": "",
+     "box": "12"
+    },
+    {
+     "pos": 236,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Situación [13]",
+     "const": null,
+     "content": "1,2,3",
+     "box": "13"
+    },
+    {
+     "pos": 237,
+     "len": 20,
+     "type": "An",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Referencia catastral [14]",
+     "const": null,
+     "content": "",
+     "box": "14"
+    },
+    {
+     "pos": 257,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 259,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 260,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 277,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 294,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 311,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro/Renta inmobiliaria imputada [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 328,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 345,
+     "len": 9,
+     "type": "An",
+     "desc": "Pagador. NIF [50]",
+     "const": null,
+     "content": "",
+     "box": "50"
+    },
+    {
+     "pos": 354,
+     "len": 1,
+     "type": "An",
+     "desc": "Pagador. F/J [51]",
+     "const": null,
+     "content": "\"F\", \"J\"",
+     "box": "51"
+    },
+    {
+     "pos": 355,
+     "len": 80,
+     "type": "An",
+     "desc": "Pagador. Apellidos y nombre o razón social [52]",
+     "const": null,
+     "content": "",
+     "box": "52"
+    },
+    {
+     "pos": 435,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Rendimiento íntegro obtenido y gravado en el extranjero [08]",
+     "const": null,
+     "content": "",
+     "box": "08"
+    },
+    {
+     "pos": 452,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Impuesto satisfecho en el extranjero [09]",
+     "const": null,
+     "content": "",
+     "box": "09"
+    },
+    {
+     "pos": 469,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Propiedad (%) [10]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "10"
+    },
+    {
+     "pos": 474,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Usufructo (%) [11]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "11"
+    },
+    {
+     "pos": 479,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Origen [12]",
+     "const": null,
+     "content": "",
+     "box": "12"
+    },
+    {
+     "pos": 480,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Situación [13]",
+     "const": null,
+     "content": "1,2,3",
+     "box": "13"
+    },
+    {
+     "pos": 481,
+     "len": 20,
+     "type": "An",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Referencia catastral [14]",
+     "const": null,
+     "content": "",
+     "box": "14"
+    },
+    {
+     "pos": 501,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 503,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 504,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 521,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 538,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 555,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro/Renta inmobiliaria imputada [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 572,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 589,
+     "len": 9,
+     "type": "An",
+     "desc": "Pagador. NIF [50]",
+     "const": null,
+     "content": "",
+     "box": "50"
+    },
+    {
+     "pos": 598,
+     "len": 1,
+     "type": "An",
+     "desc": "Pagador. F/J [51]",
+     "const": null,
+     "content": "\"F\", \"J\"",
+     "box": "51"
+    },
+    {
+     "pos": 599,
+     "len": 80,
+     "type": "An",
+     "desc": "Pagador. Apellidos y nombre o razón social [52]",
+     "const": null,
+     "content": "",
+     "box": "52"
+    },
+    {
+     "pos": 679,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Rendimiento íntegro obtenido y gravado en el extranjero [08]",
+     "const": null,
+     "content": "",
+     "box": "08"
+    },
+    {
+     "pos": 696,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Impuesto satisfecho en el extranjero [09]",
+     "const": null,
+     "content": "",
+     "box": "09"
+    },
+    {
+     "pos": 713,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Propiedad (%) [10]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "10"
+    },
+    {
+     "pos": 718,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Usufructo (%) [11]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "11"
+    },
+    {
+     "pos": 723,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Origen [12]",
+     "const": null,
+     "content": "",
+     "box": "12"
+    },
+    {
+     "pos": 724,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Situación [13]",
+     "const": null,
+     "content": "1,2,3",
+     "box": "13"
+    },
+    {
+     "pos": 725,
+     "len": 20,
+     "type": "An",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Referencia catastral [14]",
+     "const": null,
+     "content": "",
+     "box": "14"
+    },
+    {
+     "pos": 745,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 747,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 748,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 765,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 782,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 799,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro/Renta inmobiliaria imputada [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 816,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 833,
+     "len": 9,
+     "type": "An",
+     "desc": "Pagador. NIF [50]",
+     "const": null,
+     "content": "",
+     "box": "50"
+    },
+    {
+     "pos": 842,
+     "len": 1,
+     "type": "An",
+     "desc": "Pagador. F/J [51]",
+     "const": null,
+     "content": "\"F\", \"J\"",
+     "box": "51"
+    },
+    {
+     "pos": 843,
+     "len": 80,
+     "type": "An",
+     "desc": "Pagador. Apellidos y nombre o razón social [52]",
+     "const": null,
+     "content": "",
+     "box": "52"
+    },
+    {
+     "pos": 923,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Rendimiento íntegro obtenido y gravado en el extranjero [08]",
+     "const": null,
+     "content": "",
+     "box": "08"
+    },
+    {
+     "pos": 940,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos Adicionales Rendimiento Trabajo. Impuesto satisfecho en el extranjero [09]",
+     "const": null,
+     "content": "",
+     "box": "09"
+    },
+    {
+     "pos": 957,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Propiedad (%) [10]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "10"
+    },
+    {
+     "pos": 962,
+     "len": 5,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Usufructo (%) [11]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "11"
+    },
+    {
+     "pos": 967,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Origen [12]",
+     "const": null,
+     "content": "",
+     "box": "12"
+    },
+    {
+     "pos": 968,
+     "len": 1,
+     "type": "Num",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Situación [13]",
+     "const": null,
+     "content": "1,2,3",
+     "box": "13"
+    },
+    {
+     "pos": 969,
+     "len": 20,
+     "type": "An",
+     "desc": "Datos Adicionales de las rentas derivadas de bienes e inmuebles. Referencia catastral [14]",
+     "const": null,
+     "content": "",
+     "box": "14"
+    },
+    {
+     "pos": 989,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Rendimiento integro/Renta inmobiliaria imputada [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 1006,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 1023,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total rendimientos íntegros/Renta inmobiliaria imputada [15]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "15"
+    },
+    {
+     "pos": 1040,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total retenciones o ingresos a cuenta [16]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "16"
+    },
+    {
+     "pos": 1057,
+     "len": 82,
+     "type": "An",
+     "desc": "Reservado AEAT",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 1139,
+     "len": 12,
+     "type": "An",
+     "desc": "Indicador de fin de registro",
+     "const": "</T15103000>",
+     "content": "Constante \"</T15103000>\"",
+     "box": null
+    }
+   ]
+  },
+  "M15104000": {
+   "length": 1000,
+   "declared_length": 1000,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Inicio del identificador de modelo y página",
+     "const": "<T",
+     "content": "Constante \"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "N",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "Constante \"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 2,
+     "type": "An",
+     "desc": "Página",
+     "const": "04",
+     "content": "Constante \"04\"",
+     "box": null
+    },
+    {
+     "pos": 8,
+     "len": 4,
+     "type": "An",
+     "desc": "Fin de identificador de modelo",
+     "const": "000>",
+     "content": "Constante \"000>\"",
+     "box": null
+    },
+    {
+     "pos": 12,
+     "len": 1,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 15,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 16,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 33,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 50,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 67,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 84,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 101,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 103,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 104,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 121,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 138,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 155,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 172,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 189,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 191,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 192,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 209,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 226,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 243,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 260,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 277,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 279,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 280,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 297,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 314,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 331,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 348,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 365,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 367,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 368,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 385,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 402,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 419,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 436,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 453,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 455,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 456,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 473,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 490,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 507,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 524,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 541,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 543,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 544,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 561,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 578,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 595,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 612,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 629,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 631,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 632,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 649,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 666,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 683,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 700,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 717,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 719,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 720,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valoración [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 737,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 754,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos a cuenta repercutidos [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 771,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento integro [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 788,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 805,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Rendimientos íntegro [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 822,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Rentención o ingreso a cuenta [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 839,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total rendimientos íntegros [08]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "08"
+    },
+    {
+     "pos": 856,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total retenciones o ingresos a cuenta [09]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "09"
+    },
+    {
+     "pos": 873,
+     "len": 116,
+     "type": "An",
+     "desc": "Reservado AEAT",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 989,
+     "len": 12,
+     "type": "An",
+     "desc": "Indicador de fin de registro",
+     "const": "</T15104000>",
+     "content": "Constante \"</T15104000>\"",
+     "box": null
+    }
+   ]
+  },
+  "M15105000": {
+   "length": 800,
+   "declared_length": 800,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Inicio del identificador de modelo y página",
+     "const": "<T",
+     "content": "Constante \"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "N",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "Constante \"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 2,
+     "type": "An",
+     "desc": "Página",
+     "const": "05",
+     "content": "Constante \"05\"",
+     "box": null
+    },
+    {
+     "pos": 8,
+     "len": 4,
+     "type": "An",
+     "desc": "Fin de identificador de modelo",
+     "const": "000>",
+     "content": "Constante \"000>\"",
+     "box": null
+    },
+    {
+     "pos": 12,
+     "len": 1,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 15,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos íntegros [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 32,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de personal [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 49,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de aprovisionamiento de materiales y de suministros [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 66,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento neto: positivo [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 83,
+     "len": 17,
+     "type": "N",
+     "desc": "Rendimiento neto: negativo [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 100,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 117,
+     "len": 1,
+     "type": "An",
+     "desc": "Actividad: Código y tipo de actividad [10]",
+     "const": null,
+     "content": "Nota 1",
+     "box": "10"
+    },
+    {
+     "pos": 118,
+     "len": 3,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 121,
+     "len": 4,
+     "type": "An",
+     "desc": "Actividad: Grupo o epígrafe IAE [11]",
+     "const": null,
+     "content": "",
+     "box": "11"
+    },
+    {
+     "pos": 125,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Rendimiento íntegro obtenido y gravado en el extranjero [12]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "12"
+    },
+    {
+     "pos": 142,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Impuesto satisfecho en el extranjero [13]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "13"
+    },
+    {
+     "pos": 159,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 161,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos íntegros [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 178,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de personal [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 195,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de aprovisionamiento de materiales y de suministros [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 212,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento neto: positivo [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 229,
+     "len": 17,
+     "type": "N",
+     "desc": "Rendimiento neto: negativo [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 246,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 263,
+     "len": 1,
+     "type": "An",
+     "desc": "Actividad: Código y tipo de actividad [10]",
+     "const": null,
+     "content": "Nota 1",
+     "box": "10"
+    },
+    {
+     "pos": 264,
+     "len": 3,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 267,
+     "len": 4,
+     "type": "An",
+     "desc": "Actividad: Grupo o epígrafe IAE [11]",
+     "const": null,
+     "content": "",
+     "box": "11"
+    },
+    {
+     "pos": 271,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Rendimiento íntegro obtenido y gravado en el extranjero [12]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "12"
+    },
+    {
+     "pos": 288,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Impuesto satisfecho en el extranjero [13]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "13"
+    },
+    {
+     "pos": 305,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 307,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos íntegros [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 324,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de personal [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 341,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de aprovisionamiento de materiales y de suministros [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 358,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento neto: positivo [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 375,
+     "len": 17,
+     "type": "N",
+     "desc": "Rendimiento neto: negativo [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 392,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 409,
+     "len": 1,
+     "type": "An",
+     "desc": "Actividad: Código y tipo de actividad [10]",
+     "const": null,
+     "content": "Nota 1",
+     "box": "10"
+    },
+    {
+     "pos": 410,
+     "len": 3,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 413,
+     "len": 4,
+     "type": "An",
+     "desc": "Actividad: Grupo o epígrafe IAE [11]",
+     "const": null,
+     "content": "",
+     "box": "11"
+    },
+    {
+     "pos": 417,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Rendimiento íntegro obtenido y gravado en el extranjero [12]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "12"
+    },
+    {
+     "pos": 434,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Impuesto satisfecho en el extranjero [13]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "13"
+    },
+    {
+     "pos": 451,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 453,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos íntegros [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 470,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de personal [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 487,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de aprovisionamiento de materiales y de suministros [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 504,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento neto: positivo [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 521,
+     "len": 17,
+     "type": "N",
+     "desc": "Rendimiento neto: negativo [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 538,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 555,
+     "len": 1,
+     "type": "An",
+     "desc": "Actividad: Código y tipo de actividad [10]",
+     "const": null,
+     "content": "Nota 1",
+     "box": "10"
+    },
+    {
+     "pos": 556,
+     "len": 3,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 559,
+     "len": 4,
+     "type": "An",
+     "desc": "Actividad: Grupo o epígrafe IAE [11]",
+     "const": null,
+     "content": "",
+     "box": "11"
+    },
+    {
+     "pos": 563,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Rendimiento íntegro obtenido y gravado en el extranjero [12]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "12"
+    },
+    {
+     "pos": 580,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Impuesto satisfecho en el extranjero [13]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "13"
+    },
+    {
+     "pos": 597,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 599,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos íntegros [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 616,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de personal [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 633,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de aprovisionamiento de materiales y de suministros [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 650,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento neto: positivo [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 667,
+     "len": 17,
+     "type": "N",
+     "desc": "Rendimiento neto: negativo [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 684,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 701,
+     "len": 1,
+     "type": "An",
+     "desc": "Actividad: Código y tipo de actividad [10]",
+     "const": null,
+     "content": "Nota 1",
+     "box": "10"
+    },
+    {
+     "pos": 702,
+     "len": 3,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 705,
+     "len": 4,
+     "type": "An",
+     "desc": "Actividad: Grupo o epígrafe IAE [11]",
+     "const": null,
+     "content": "",
+     "box": "11"
+    },
+    {
+     "pos": 709,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Rendimiento íntegro obtenido y gravado en el extranjero [12]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "12"
+    },
+    {
+     "pos": 726,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Impuesto satisfecho en el extranjero [13]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "13"
+    },
+    {
+     "pos": 743,
+     "len": 46,
+     "type": "An",
+     "desc": "Reservado AEAT",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 789,
+     "len": 12,
+     "type": "An",
+     "desc": "Indicador de fin de registro",
+     "const": "</T15105000>",
+     "content": "Constante \"</T15105000>\"",
+     "box": null
+    }
+   ]
+  },
+  "M15106000": {
+   "length": 800,
+   "declared_length": 800,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Inicio del identificador de modelo y página",
+     "const": "<T",
+     "content": "Constante \"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "N",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "Constante \"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 2,
+     "type": "An",
+     "desc": "Página",
+     "const": "06",
+     "content": "Constante \"06\"",
+     "box": null
+    },
+    {
+     "pos": 8,
+     "len": 4,
+     "type": "An",
+     "desc": "Fin de identificador de modelo",
+     "const": "000>",
+     "content": "Constante \"000>\"",
+     "box": null
+    },
+    {
+     "pos": 12,
+     "len": 1,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 15,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos íntegros [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 32,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de personal [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 49,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de aprovisionamiento de materiales y de suministros [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 66,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento neto: positivo [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 83,
+     "len": 17,
+     "type": "N",
+     "desc": "Rendimiento neto: negativo [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 100,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 117,
+     "len": 1,
+     "type": "An",
+     "desc": "Actividad: Código y tipo de actividad [10]",
+     "const": null,
+     "content": "Nota 1",
+     "box": "10"
+    },
+    {
+     "pos": 118,
+     "len": 3,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 121,
+     "len": 4,
+     "type": "An",
+     "desc": "Actividad: Grupo o epígrafe IAE [11]",
+     "const": null,
+     "content": "",
+     "box": "11"
+    },
+    {
+     "pos": 125,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Rendimiento íntegro obtenido y gravado en el extranjero [12]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "12"
+    },
+    {
+     "pos": 142,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Impuesto satisfecho en el extranjero [13]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "13"
+    },
+    {
+     "pos": 159,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 161,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos íntegros [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 178,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de personal [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 195,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de aprovisionamiento de materiales y de suministros [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 212,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento neto: positivo [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 229,
+     "len": 17,
+     "type": "N",
+     "desc": "Rendimiento neto: negativo [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 246,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 263,
+     "len": 1,
+     "type": "An",
+     "desc": "Actividad: Código y tipo de actividad [10]",
+     "const": null,
+     "content": "Nota 1",
+     "box": "10"
+    },
+    {
+     "pos": 264,
+     "len": 3,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 267,
+     "len": 4,
+     "type": "An",
+     "desc": "Actividad: Grupo o epígrafe IAE [11]",
+     "const": null,
+     "content": "",
+     "box": "11"
+    },
+    {
+     "pos": 271,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Rendimiento íntegro obtenido y gravado en el extranjero [12]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "12"
+    },
+    {
+     "pos": 288,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Impuesto satisfecho en el extranjero [13]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "13"
+    },
+    {
+     "pos": 305,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 307,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos íntegros [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 324,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de personal [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 341,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de aprovisionamiento de materiales y de suministros [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 358,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento neto: positivo [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 375,
+     "len": 17,
+     "type": "N",
+     "desc": "Rendimiento neto: negativo [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 392,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 409,
+     "len": 1,
+     "type": "An",
+     "desc": "Actividad: Código y tipo de actividad [10]",
+     "const": null,
+     "content": "Nota 1",
+     "box": "10"
+    },
+    {
+     "pos": 410,
+     "len": 3,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 413,
+     "len": 4,
+     "type": "An",
+     "desc": "Actividad: Grupo o epígrafe IAE [11]",
+     "const": null,
+     "content": "",
+     "box": "11"
+    },
+    {
+     "pos": 417,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Rendimiento íntegro obtenido y gravado en el extranjero [12]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "12"
+    },
+    {
+     "pos": 434,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Impuesto satisfecho en el extranjero [13]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "13"
+    },
+    {
+     "pos": 451,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 453,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ingresos íntegros [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 470,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de personal [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 487,
+     "len": 17,
+     "type": "Num",
+     "desc": "Gastos de aprovisionamiento de materiales y de suministros [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 504,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rendimiento neto: positivo [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 521,
+     "len": 17,
+     "type": "N",
+     "desc": "Rendimiento neto: negativo [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 538,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 555,
+     "len": 1,
+     "type": "An",
+     "desc": "Actividad: Código y tipo de actividad [10]",
+     "const": null,
+     "content": "Nota 1",
+     "box": "10"
+    },
+    {
+     "pos": 556,
+     "len": 3,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 559,
+     "len": 4,
+     "type": "An",
+     "desc": "Actividad: Grupo o epígrafe IAE [11]",
+     "const": null,
+     "content": "",
+     "box": "11"
+    },
+    {
+     "pos": 563,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Rendimiento íntegro obtenido y gravado en el extranjero [12]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "12"
+    },
+    {
+     "pos": 580,
+     "len": 17,
+     "type": "Num",
+     "desc": "Datos adicionales (actividad emprendedora. Impuesto satisfecho en el extranjero [13]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "13"
+    },
+    {
+     "pos": 597,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Rendimiento neto: positivo [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 614,
+     "len": 17,
+     "type": "N",
+     "desc": "RESTO. Rendimiento neto: negativo [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 631,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Rentención o ingreso a cuenta [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 648,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total rendimientos netos positivos [08]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "08"
+    },
+    {
+     "pos": 665,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total retenciones o ingresos a cuenta [09]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "09"
+    },
+    {
+     "pos": 682,
+     "len": 107,
+     "type": "An",
+     "desc": "Reservado AEAT",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 789,
+     "len": 12,
+     "type": "An",
+     "desc": "Indicador de fin de registro",
+     "const": "</T15106000>",
+     "content": "Constante \"</T15106000>\"",
+     "box": null
+    }
+   ]
+  },
+  "M15107000": {
+   "length": 500,
+   "declared_length": 500,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Inicio del identificador de modelo y página",
+     "const": "<T",
+     "content": "Constante \"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "N",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "Constante \"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 2,
+     "type": "An",
+     "desc": "Página",
+     "const": "07",
+     "content": "Constante \"07\"",
+     "box": null
+    },
+    {
+     "pos": 8,
+     "len": 4,
+     "type": "An",
+     "desc": "Fin de identificador de modelo",
+     "const": "000>",
+     "content": "Constante \"000>\"",
+     "box": null
+    },
+    {
+     "pos": 12,
+     "len": 1,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 15,
+     "len": 9,
+     "type": "An",
+     "desc": "NIF de la sociedad o fondo de inversión [53]",
+     "const": null,
+     "content": "",
+     "box": "53"
+    },
+    {
+     "pos": 24,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia Patrimonial [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 41,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 58,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 60,
+     "len": 9,
+     "type": "An",
+     "desc": "NIF de la sociedad o fondo de inversión [53]",
+     "const": null,
+     "content": "",
+     "box": "53"
+    },
+    {
+     "pos": 69,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia Patrimonial [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 86,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 103,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 105,
+     "len": 9,
+     "type": "An",
+     "desc": "NIF de la sociedad o fondo de inversión [53]",
+     "const": null,
+     "content": "",
+     "box": "53"
+    },
+    {
+     "pos": 114,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia Patrimonial [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 131,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 148,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 150,
+     "len": 9,
+     "type": "An",
+     "desc": "NIF de la sociedad o fondo de inversión [53]",
+     "const": null,
+     "content": "",
+     "box": "53"
+    },
+    {
+     "pos": 159,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia Patrimonial [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 176,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 193,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 195,
+     "len": 9,
+     "type": "An",
+     "desc": "NIF de la sociedad o fondo de inversión [53]",
+     "const": null,
+     "content": "",
+     "box": "53"
+    },
+    {
+     "pos": 204,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia Patrimonial [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 221,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 238,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 240,
+     "len": 9,
+     "type": "An",
+     "desc": "NIF de la sociedad o fondo de inversión [53]",
+     "const": null,
+     "content": "",
+     "box": "53"
+    },
+    {
+     "pos": 249,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia Patrimonial [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 266,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 283,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 285,
+     "len": 9,
+     "type": "An",
+     "desc": "NIF de la sociedad o fondo de inversión [53]",
+     "const": null,
+     "content": "",
+     "box": "53"
+    },
+    {
+     "pos": 294,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia Patrimonial [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 311,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 328,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 330,
+     "len": 9,
+     "type": "An",
+     "desc": "NIF de la sociedad o fondo de inversión [53]",
+     "const": null,
+     "content": "",
+     "box": "53"
+    },
+    {
+     "pos": 339,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia Patrimonial [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 356,
+     "len": 17,
+     "type": "Num",
+     "desc": "Rentención o ingreso a cuenta [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 373,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Ganancia Patrimonial [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 390,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Rentención o ingreso a cuenta [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 407,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total ganancias patrimoniales [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 424,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total retenciones o ingresos a cuenta [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 441,
+     "len": 48,
+     "type": "An",
+     "desc": "Reservado AEAT",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 489,
+     "len": 12,
+     "type": "An",
+     "desc": "Indicador de fin de registro",
+     "const": "</T15107000>",
+     "content": "Constante \"</T15107000>\"",
+     "box": null
+    }
+   ]
+  },
+  "M15108000": {
+   "length": 1400,
+   "declared_length": 1400,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Inicio del identificador de modelo y página",
+     "const": "<T",
+     "content": "Constante \"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "N",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "Constante \"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 2,
+     "type": "An",
+     "desc": "Página",
+     "const": "08",
+     "content": "Constante \"08\"",
+     "box": null
+    },
+    {
+     "pos": 8,
+     "len": 4,
+     "type": "An",
+     "desc": "Fin de identificador de modelo",
+     "const": "000>",
+     "content": "Constante \"000>\"",
+     "box": null
+    },
+    {
+     "pos": 12,
+     "len": 1,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 15,
+     "len": 13,
+     "type": "An",
+     "desc": "Número Justificante del modelo 211 [54]",
+     "const": null,
+     "content": "",
+     "box": "54"
+    },
+    {
+     "pos": 28,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión (Adquisición) [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 45,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de adquisición (Adquisición) [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 62,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia (Adquisición) [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 79,
+     "len": 17,
+     "type": "N",
+     "desc": "Ganancia o pérdida (Adquisición) [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 96,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión (Mejora o 2ª adquisición) [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 113,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de Mejora o 2ª adquisición (Mejora o 2ª adquisición) [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 130,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia (Mejora o 2ª adquisición) [08]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "08"
+    },
+    {
+     "pos": 147,
+     "len": 17,
+     "type": "N",
+     "desc": "Ganancia o pérdida (Mejora o 2ª adquisición) [09]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "09"
+    },
+    {
+     "pos": 164,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia Patrimonial total obtenida [10]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "10"
+    },
+    {
+     "pos": 181,
+     "len": 17,
+     "type": "Num",
+     "desc": "Retención o ingreso a cuenta [11]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "11"
+    },
+    {
+     "pos": 198,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de adquisición [55]",
+     "const": null,
+     "content": "",
+     "box": "55"
+    },
+    {
+     "pos": 206,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de mejora o 2ª adquisición [56]",
+     "const": null,
+     "content": "",
+     "box": "56"
+    },
+    {
+     "pos": 214,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de transmisión [57]",
+     "const": null,
+     "content": "",
+     "box": "57"
+    },
+    {
+     "pos": 222,
+     "len": 5,
+     "type": "Num",
+     "desc": "Cuota de participación [58]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "58"
+    },
+    {
+     "pos": 227,
+     "len": 9,
+     "type": "An",
+     "desc": "Adquiriente. NIF [59]",
+     "const": null,
+     "content": "",
+     "box": "59"
+    },
+    {
+     "pos": 236,
+     "len": 1,
+     "type": "An",
+     "desc": "Adquiriente. F/J [60]",
+     "const": null,
+     "content": "\"F\", \"J\"",
+     "box": "60"
+    },
+    {
+     "pos": 237,
+     "len": 80,
+     "type": "An",
+     "desc": "Adquiriente. Apellidos y nombre o razón social [61]",
+     "const": null,
+     "content": "",
+     "box": "61"
+    },
+    {
+     "pos": 317,
+     "len": 5,
+     "type": "An",
+     "desc": "Tipo de vía [26]",
+     "const": null,
+     "content": "",
+     "box": "26"
+    },
+    {
+     "pos": 322,
+     "len": 50,
+     "type": "An",
+     "desc": "Nombre de la vía pública [27]",
+     "const": null,
+     "content": "",
+     "box": "27"
+    },
+    {
+     "pos": 372,
+     "len": 3,
+     "type": "An",
+     "desc": "Tipo de numeración [28]",
+     "const": null,
+     "content": "",
+     "box": "28"
+    },
+    {
+     "pos": 375,
+     "len": 5,
+     "type": "Num",
+     "desc": "Número de casa [29]",
+     "const": null,
+     "content": "",
+     "box": "29"
+    },
+    {
+     "pos": 380,
+     "len": 3,
+     "type": "An",
+     "desc": "Calificador de número [30]",
+     "const": null,
+     "content": "",
+     "box": "30"
+    },
+    {
+     "pos": 383,
+     "len": 3,
+     "type": "An",
+     "desc": "Bloque [31]",
+     "const": null,
+     "content": "",
+     "box": "31"
+    },
+    {
+     "pos": 386,
+     "len": 3,
+     "type": "An",
+     "desc": "Portal [32]",
+     "const": null,
+     "content": "",
+     "box": "32"
+    },
+    {
+     "pos": 389,
+     "len": 3,
+     "type": "An",
+     "desc": "Escalera [33]",
+     "const": null,
+     "content": "",
+     "box": "33"
+    },
+    {
+     "pos": 392,
+     "len": 3,
+     "type": "An",
+     "desc": "Planta [34]",
+     "const": null,
+     "content": "",
+     "box": "34"
+    },
+    {
+     "pos": 395,
+     "len": 3,
+     "type": "An",
+     "desc": "Puerta [35]",
+     "const": null,
+     "content": "",
+     "box": "35"
+    },
+    {
+     "pos": 398,
+     "len": 40,
+     "type": "An",
+     "desc": "Datos complementarios de domicilio [36]",
+     "const": null,
+     "content": "",
+     "box": "36"
+    },
+    {
+     "pos": 438,
+     "len": 30,
+     "type": "An",
+     "desc": "Localidad/Población [37]",
+     "const": null,
+     "content": "",
+     "box": "37"
+    },
+    {
+     "pos": 468,
+     "len": 5,
+     "type": "Num",
+     "desc": "Código postal [38]",
+     "const": null,
+     "content": "",
+     "box": "38"
+    },
+    {
+     "pos": 473,
+     "len": 2,
+     "type": "Num",
+     "desc": "Provincia [39]",
+     "const": null,
+     "content": "",
+     "box": "39"
+    },
+    {
+     "pos": 475,
+     "len": 5,
+     "type": "Num",
+     "desc": "Municipio [40]",
+     "const": null,
+     "content": "",
+     "box": "40"
+    },
+    {
+     "pos": 480,
+     "len": 20,
+     "type": "An",
+     "desc": "Referencia Catastral [53]",
+     "const": null,
+     "content": "",
+     "box": "53"
+    },
+    {
+     "pos": 500,
+     "len": 1,
+     "type": "Num",
+     "desc": "Documento publico o privado [62] [63]",
+     "const": null,
+     "content": "0,1,2",
+     "box": "63"
+    },
+    {
+     "pos": 501,
+     "len": 100,
+     "type": "An",
+     "desc": "Notario o fedetario [64]",
+     "const": null,
+     "content": "",
+     "box": "64"
+    },
+    {
+     "pos": 601,
+     "len": 20,
+     "type": "An",
+     "desc": "Número de protocolo [65]",
+     "const": null,
+     "content": "",
+     "box": "65"
+    },
+    {
+     "pos": 621,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 623,
+     "len": 13,
+     "type": "An",
+     "desc": "Número Justificante del modelo 211 [54]",
+     "const": null,
+     "content": "",
+     "box": "54"
+    },
+    {
+     "pos": 636,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión (Adquisición) [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 653,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de adquisición (Adquisición) [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 670,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia (Adquisición) [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 687,
+     "len": 17,
+     "type": "N",
+     "desc": "Ganancia o pérdida (Adquisición) [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 704,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión (Mejora o 2ª adquisición) [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 721,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de Mejora o 2ª adquisición (Mejora o 2ª adquisición) [07]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "07"
+    },
+    {
+     "pos": 738,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia (Mejora o 2ª adquisición) [08]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "08"
+    },
+    {
+     "pos": 755,
+     "len": 17,
+     "type": "N",
+     "desc": "Ganancia o pérdida (Mejora o 2ª adquisición) [09]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "09"
+    },
+    {
+     "pos": 772,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia Patrimonial total obtenida [10]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "10"
+    },
+    {
+     "pos": 789,
+     "len": 17,
+     "type": "Num",
+     "desc": "Retención o ingreso a cuenta [11]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "11"
+    },
+    {
+     "pos": 806,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de adquisición [55]",
+     "const": null,
+     "content": "",
+     "box": "55"
+    },
+    {
+     "pos": 814,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de mejora o 2ª adquisición [56]",
+     "const": null,
+     "content": "",
+     "box": "56"
+    },
+    {
+     "pos": 822,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de transmisión [57]",
+     "const": null,
+     "content": "",
+     "box": "57"
+    },
+    {
+     "pos": 830,
+     "len": 5,
+     "type": "Num",
+     "desc": "Cuota de participación [58]",
+     "const": null,
+     "content": "[3 enteros + 2 decimales]",
+     "box": "58"
+    },
+    {
+     "pos": 835,
+     "len": 9,
+     "type": "An",
+     "desc": "Adquiriente. NIF [59]",
+     "const": null,
+     "content": "",
+     "box": "59"
+    },
+    {
+     "pos": 844,
+     "len": 1,
+     "type": "An",
+     "desc": "Adquiriente. F/J [60]",
+     "const": null,
+     "content": "\"F\", \"J\"",
+     "box": "60"
+    },
+    {
+     "pos": 845,
+     "len": 80,
+     "type": "An",
+     "desc": "Adquiriente. Apellidos y nombre o razón social [61]",
+     "const": null,
+     "content": "",
+     "box": "61"
+    },
+    {
+     "pos": 925,
+     "len": 5,
+     "type": "An",
+     "desc": "Tipo de vía [26]",
+     "const": null,
+     "content": "",
+     "box": "26"
+    },
+    {
+     "pos": 930,
+     "len": 50,
+     "type": "An",
+     "desc": "Nombre de la vía pública [27]",
+     "const": null,
+     "content": "",
+     "box": "27"
+    },
+    {
+     "pos": 980,
+     "len": 3,
+     "type": "An",
+     "desc": "Tipo de numeración [28]",
+     "const": null,
+     "content": "",
+     "box": "28"
+    },
+    {
+     "pos": 983,
+     "len": 5,
+     "type": "Num",
+     "desc": "Número de casa [29]",
+     "const": null,
+     "content": "",
+     "box": "29"
+    },
+    {
+     "pos": 988,
+     "len": 3,
+     "type": "An",
+     "desc": "Calificador de número [30]",
+     "const": null,
+     "content": "",
+     "box": "30"
+    },
+    {
+     "pos": 991,
+     "len": 3,
+     "type": "An",
+     "desc": "Bloque [31]",
+     "const": null,
+     "content": "",
+     "box": "31"
+    },
+    {
+     "pos": 994,
+     "len": 3,
+     "type": "An",
+     "desc": "Portal [32]",
+     "const": null,
+     "content": "",
+     "box": "32"
+    },
+    {
+     "pos": 997,
+     "len": 3,
+     "type": "An",
+     "desc": "Escalera [33]",
+     "const": null,
+     "content": "",
+     "box": "33"
+    },
+    {
+     "pos": 1000,
+     "len": 3,
+     "type": "An",
+     "desc": "Planta [34]",
+     "const": null,
+     "content": "",
+     "box": "34"
+    },
+    {
+     "pos": 1003,
+     "len": 3,
+     "type": "An",
+     "desc": "Puerta [35]",
+     "const": null,
+     "content": "",
+     "box": "35"
+    },
+    {
+     "pos": 1006,
+     "len": 40,
+     "type": "An",
+     "desc": "Datos complementarios de domicilio [36]",
+     "const": null,
+     "content": "",
+     "box": "36"
+    },
+    {
+     "pos": 1046,
+     "len": 30,
+     "type": "An",
+     "desc": "Localidad/Población [37]",
+     "const": null,
+     "content": "",
+     "box": "37"
+    },
+    {
+     "pos": 1076,
+     "len": 5,
+     "type": "Num",
+     "desc": "Código postal [38]",
+     "const": null,
+     "content": "",
+     "box": "38"
+    },
+    {
+     "pos": 1081,
+     "len": 2,
+     "type": "Num",
+     "desc": "Provincia [39]",
+     "const": null,
+     "content": "",
+     "box": "39"
+    },
+    {
+     "pos": 1083,
+     "len": 5,
+     "type": "Num",
+     "desc": "Municipio [40]",
+     "const": null,
+     "content": "",
+     "box": "40"
+    },
+    {
+     "pos": 1088,
+     "len": 20,
+     "type": "An",
+     "desc": "Referencia Catastral [53]",
+     "const": null,
+     "content": "",
+     "box": "53"
+    },
+    {
+     "pos": 1108,
+     "len": 1,
+     "type": "Num",
+     "desc": "Documento publico o privado [62] [63]",
+     "const": null,
+     "content": "0,1,2",
+     "box": "63"
+    },
+    {
+     "pos": 1109,
+     "len": 100,
+     "type": "An",
+     "desc": "Notario o fedetario [64]",
+     "const": null,
+     "content": "",
+     "box": "64"
+    },
+    {
+     "pos": 1209,
+     "len": 20,
+     "type": "An",
+     "desc": "Número de protocolo [65]",
+     "const": null,
+     "content": "",
+     "box": "65"
+    },
+    {
+     "pos": 1229,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Ganancia Patrimonial total obtenida [10]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "10"
+    },
+    {
+     "pos": 1246,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Retención o ingreso a cuenta [11]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "11"
+    },
+    {
+     "pos": 1263,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total ganancias patrimoniales [12]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "12"
+    },
+    {
+     "pos": 1280,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total retenciones o ingresos a cuenta [13]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "13"
+    },
+    {
+     "pos": 1297,
+     "len": 92,
+     "type": "An",
+     "desc": "Reservado AEAT",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 1389,
+     "len": 12,
+     "type": "An",
+     "desc": "Indicador de fin de registro",
+     "const": "</T15108000>",
+     "content": "Constante \"</T15108000>\"",
+     "box": null
+    }
+   ]
+  },
+  "M15109000": {
+   "length": 1500,
+   "declared_length": 1500,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Inicio del identificador de modelo y página",
+     "const": "<T",
+     "content": "Constante \"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "N",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "Constante \"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 2,
+     "type": "An",
+     "desc": "Página",
+     "const": "09",
+     "content": "Constante \"09\"",
+     "box": null
+    },
+    {
+     "pos": 8,
+     "len": 4,
+     "type": "An",
+     "desc": "Fin de identificador de modelo",
+     "const": "000>",
+     "content": "Constante \"000>\"",
+     "box": null
+    },
+    {
+     "pos": 12,
+     "len": 1,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 15,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción de la ganancia patrimonial [66]",
+     "const": null,
+     "content": "",
+     "box": "66"
+    },
+    {
+     "pos": 115,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 116,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 133,
+     "len": 17,
+     "type": "Num",
+     "desc": "Retención o ingreso a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 150,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 152,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción de la ganancia patrimonial [66]",
+     "const": null,
+     "content": "",
+     "box": "66"
+    },
+    {
+     "pos": 252,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 253,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 270,
+     "len": 17,
+     "type": "Num",
+     "desc": "Retención o ingreso a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 287,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 289,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción de la ganancia patrimonial [66]",
+     "const": null,
+     "content": "",
+     "box": "66"
+    },
+    {
+     "pos": 389,
+     "len": 1,
+     "type": "An",
+     "desc": "Naturaleza [02]",
+     "const": null,
+     "content": "",
+     "box": "02"
+    },
+    {
+     "pos": 390,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 407,
+     "len": 17,
+     "type": "Num",
+     "desc": "Retención o ingreso a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 424,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Ganancia patrimonial [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 441,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Retención o ingreso a cuenta [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 458,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total ganancias patrimoniales [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 475,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total retencion o ingresos a cuenta [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 492,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 494,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción del elemento patrimonial [67]",
+     "const": null,
+     "content": "",
+     "box": "67"
+    },
+    {
+     "pos": 594,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de transmisión [68]",
+     "const": null,
+     "content": "",
+     "box": "68"
+    },
+    {
+     "pos": 602,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de adquisición [69]",
+     "const": null,
+     "content": "",
+     "box": "69"
+    },
+    {
+     "pos": 610,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 627,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de adquisición [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 644,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 661,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 678,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 680,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción del elemento patrimonial [67]",
+     "const": null,
+     "content": "",
+     "box": "67"
+    },
+    {
+     "pos": 780,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de transmisión [68]",
+     "const": null,
+     "content": "",
+     "box": "68"
+    },
+    {
+     "pos": 788,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de adquisición [69]",
+     "const": null,
+     "content": "",
+     "box": "69"
+    },
+    {
+     "pos": 796,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 813,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de adquisición [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 830,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 847,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 864,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 866,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción del elemento patrimonial [67]",
+     "const": null,
+     "content": "",
+     "box": "67"
+    },
+    {
+     "pos": 966,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de transmisión [68]",
+     "const": null,
+     "content": "",
+     "box": "68"
+    },
+    {
+     "pos": 974,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de adquisición [69]",
+     "const": null,
+     "content": "",
+     "box": "69"
+    },
+    {
+     "pos": 982,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 999,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de adquisición [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 1016,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 1033,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 1050,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 1052,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción del elemento patrimonial [67]",
+     "const": null,
+     "content": "",
+     "box": "67"
+    },
+    {
+     "pos": 1152,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de transmisión [68]",
+     "const": null,
+     "content": "",
+     "box": "68"
+    },
+    {
+     "pos": 1160,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de adquisición [69]",
+     "const": null,
+     "content": "",
+     "box": "69"
+    },
+    {
+     "pos": 1168,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 1185,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de adquisición [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 1202,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 1219,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 1236,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 1238,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción del elemento patrimonial [67]",
+     "const": null,
+     "content": "",
+     "box": "67"
+    },
+    {
+     "pos": 1338,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de transmisión [68]",
+     "const": null,
+     "content": "",
+     "box": "68"
+    },
+    {
+     "pos": 1346,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de adquisición [69]",
+     "const": null,
+     "content": "",
+     "box": "69"
+    },
+    {
+     "pos": 1354,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 1371,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de adquisición [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 1388,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 1405,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 1422,
+     "len": 67,
+     "type": "An",
+     "desc": "Reservado AEAT",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 1489,
+     "len": 12,
+     "type": "An",
+     "desc": "Indicador de fin de registro",
+     "const": "</T15109000>",
+     "content": "Constante \"</T15109000>\"",
+     "box": null
+    }
+   ]
+  },
+  "M15100000": {
+   "length": 1350,
+   "declared_length": 1350,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Inicio del identificador de modelo y página",
+     "const": "<T",
+     "content": "Constante \"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "N",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "Constante \"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 2,
+     "type": "An",
+     "desc": "Página",
+     "const": "10",
+     "content": "Constante \"10\"",
+     "box": null
+    },
+    {
+     "pos": 8,
+     "len": 4,
+     "type": "An",
+     "desc": "Fin de identificador de modelo",
+     "const": "000>",
+     "content": "Constante \"000>\"",
+     "box": null
+    },
+    {
+     "pos": 12,
+     "len": 1,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 15,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción del elemento patrimonial [67]",
+     "const": null,
+     "content": "",
+     "box": "67"
+    },
+    {
+     "pos": 115,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de transmisión [68]",
+     "const": null,
+     "content": "",
+     "box": "68"
+    },
+    {
+     "pos": 123,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de adquisición [69]",
+     "const": null,
+     "content": "",
+     "box": "69"
+    },
+    {
+     "pos": 131,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 148,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de adquisición [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 165,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 182,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 199,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 201,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción del elemento patrimonial [67]",
+     "const": null,
+     "content": "",
+     "box": "67"
+    },
+    {
+     "pos": 301,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de transmisión [68]",
+     "const": null,
+     "content": "",
+     "box": "68"
+    },
+    {
+     "pos": 309,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de adquisición [69]",
+     "const": null,
+     "content": "",
+     "box": "69"
+    },
+    {
+     "pos": 317,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 334,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de adquisición [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 351,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 368,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 385,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 387,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción del elemento patrimonial [67]",
+     "const": null,
+     "content": "",
+     "box": "67"
+    },
+    {
+     "pos": 487,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de transmisión [68]",
+     "const": null,
+     "content": "",
+     "box": "68"
+    },
+    {
+     "pos": 495,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de adquisición [69]",
+     "const": null,
+     "content": "",
+     "box": "69"
+    },
+    {
+     "pos": 503,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 520,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de adquisición [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 537,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 554,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 571,
+     "len": 2,
+     "type": "Num",
+     "desc": "Tipo de Renta [01]",
+     "const": null,
+     "content": "",
+     "box": "01"
+    },
+    {
+     "pos": 573,
+     "len": 100,
+     "type": "An",
+     "desc": "Descripción del elemento patrimonial [67]",
+     "const": null,
+     "content": "",
+     "box": "67"
+    },
+    {
+     "pos": 673,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de transmisión [68]",
+     "const": null,
+     "content": "",
+     "box": "68"
+    },
+    {
+     "pos": 681,
+     "len": 8,
+     "type": "Num",
+     "desc": "Fecha de adquisición [69]",
+     "const": null,
+     "content": "",
+     "box": "69"
+    },
+    {
+     "pos": 689,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de transmisión [02]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "02"
+    },
+    {
+     "pos": 706,
+     "len": 17,
+     "type": "Num",
+     "desc": "Valor de adquisición [03]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "03"
+    },
+    {
+     "pos": 723,
+     "len": 17,
+     "type": "N",
+     "desc": "Diferencia [04]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "04"
+    },
+    {
+     "pos": 740,
+     "len": 17,
+     "type": "Num",
+     "desc": "Ganancia patrimonial [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 757,
+     "len": 17,
+     "type": "Num",
+     "desc": "RESTO. Ganancia patrimonial [05]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "05"
+    },
+    {
+     "pos": 774,
+     "len": 17,
+     "type": "Num",
+     "desc": "Total ganancias patrimoniales [06]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "06"
+    },
+    {
+     "pos": 791,
+     "len": 17,
+     "type": "Num",
+     "desc": "Base liquidable general [17]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "17"
+    },
+    {
+     "pos": 808,
+     "len": 17,
+     "type": "Num",
+     "desc": "Base liquidable del ahorro [18]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "18"
+    },
+    {
+     "pos": 825,
+     "len": 17,
+     "type": "Num",
+     "desc": "Cuota correspondiente a la base liquidable general [19]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "19"
+    },
+    {
+     "pos": 842,
+     "len": 17,
+     "type": "Num",
+     "desc": "Cuota correspondiente a la base liquidable general del ahorro [20]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "20"
+    },
+    {
+     "pos": 859,
+     "len": 17,
+     "type": "Num",
+     "desc": "Cuota íntegra total [21]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "21"
+    },
+    {
+     "pos": 876,
+     "len": 17,
+     "type": "Num",
+     "desc": "Cuota íntegra total. Parte estatal [22]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "22"
+    },
+    {
+     "pos": 893,
+     "len": 17,
+     "type": "Num",
+     "desc": "Cuota íntegra total. Parte autonómica [23]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "23"
+    },
+    {
+     "pos": 910,
+     "len": 17,
+     "type": "Num",
+     "desc": "Deducción por donativos [24]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "24"
+    },
+    {
+     "pos": 927,
+     "len": 17,
+     "type": "Num",
+     "desc": "Deducción por donativos. Parte estatal [25]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "25"
+    },
+    {
+     "pos": 944,
+     "len": 17,
+     "type": "Num",
+     "desc": "Deducción por donativos. Parte autonómica [26]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "26"
+    },
+    {
+     "pos": 961,
+     "len": 17,
+     "type": "Num",
+     "desc": "Deducción por doble imposición internacional por razón de los rendimientos de trabajo obtenidos y gravados en el extranjero [27]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "27"
+    },
+    {
+     "pos": 978,
+     "len": 17,
+     "type": "Num",
+     "desc": "Deducción por doble imposición internacional por razón de los rendimientos de trabajo obtenidos y gravados en el extranjero. Parte estatal [28]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "28"
+    },
+    {
+     "pos": 995,
+     "len": 17,
+     "type": "Num",
+     "desc": "Deducción por doble imposición internacional por razón de los rendimientos de trabajo obtenidos y gravados en el extranjero. Parte autonómica [29]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "29"
+    },
+    {
+     "pos": 1012,
+     "len": 17,
+     "type": "Num",
+     "desc": "Cuota líquida total [30]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "30"
+    },
+    {
+     "pos": 1029,
+     "len": 17,
+     "type": "Num",
+     "desc": "Cuota líquida total. Parte estatal [31]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "31"
+    },
+    {
+     "pos": 1046,
+     "len": 17,
+     "type": "Num",
+     "desc": "Cuota líquida total. Parte autonómica [32]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "32"
+    },
+    {
+     "pos": 1063,
+     "len": 17,
+     "type": "Num",
+     "desc": "Retención e ingresos a cuenta [33]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "33"
+    },
+    {
+     "pos": 1080,
+     "len": 17,
+     "type": "Num",
+     "desc": "Cuotas del impuesto sobre la Renta de no Residentes pagadas respecto de las rentas incluidas en la declaración [34]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "34"
+    },
+    {
+     "pos": 1097,
+     "len": 17,
+     "type": "Num",
+     "desc": "Epígrafe A1 [35]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "35"
+    },
+    {
+     "pos": 1114,
+     "len": 17,
+     "type": "Num",
+     "desc": "Epígrafe A2 [36]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "36"
+    },
+    {
+     "pos": 1131,
+     "len": 17,
+     "type": "Num",
+     "desc": "Epígrafe B [37]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "37"
+    },
+    {
+     "pos": 1148,
+     "len": 17,
+     "type": "Num",
+     "desc": "Epígrafe C [38]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "38"
+    },
+    {
+     "pos": 1165,
+     "len": 17,
+     "type": "Num",
+     "desc": "Epígrafe D [39]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "39"
+    },
+    {
+     "pos": 1182,
+     "len": 17,
+     "type": "Num",
+     "desc": "Epígrafe E1 y E2 [40]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "40"
+    },
+    {
+     "pos": 1199,
+     "len": 17,
+     "type": "Num",
+     "desc": "Resultados a ingresar de las anteriores declaraciones o liquidacion administrativas [41]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "41"
+    },
+    {
+     "pos": 1216,
+     "len": 17,
+     "type": "Num",
+     "desc": "Devoluciones acordadas por la Administración [42]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "42"
+    },
+    {
+     "pos": 1233,
+     "len": 17,
+     "type": "N",
+     "desc": "Resultado de la declaración [43]",
+     "const": null,
+     "content": "[15 enteros + 2 decimales]",
+     "box": "43"
+    },
+    {
+     "pos": 1250,
+     "len": 89,
+     "type": "An",
+     "desc": "Reservado AEAT",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 1339,
+     "len": 12,
+     "type": "An",
+     "desc": "Indicador de fin de registro",
+     "const": "</T15110000>",
+     "content": "Constante \"</T15110000>\"",
+     "box": null
+    }
+   ]
+  },
+  "M151DID00": {
+   "length": 500,
+   "declared_length": 500,
+   "fields": [
+    {
+     "pos": 1,
+     "len": 2,
+     "type": "An",
+     "desc": "Inicio del identificador de modelo y página",
+     "const": "<T",
+     "content": "Constante \"<T\"",
+     "box": null
+    },
+    {
+     "pos": 3,
+     "len": 3,
+     "type": "N",
+     "desc": "Modelo",
+     "const": "151",
+     "content": "Constante \"151\"",
+     "box": null
+    },
+    {
+     "pos": 6,
+     "len": 3,
+     "type": "An",
+     "desc": "Página",
+     "const": "DID",
+     "content": "Constante \"DID\"",
+     "box": null
+    },
+    {
+     "pos": 9,
+     "len": 3,
+     "type": "An",
+     "desc": "Fin de identificador de modelo",
+     "const": "00>",
+     "content": "Constante \"00>\"",
+     "box": null
+    },
+    {
+     "pos": 12,
+     "len": 1,
+     "type": "An",
+     "desc": "Reservado para la Administración",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 13,
+     "len": 1,
+     "type": "An",
+     "desc": "Devolución. Renuncia a la devolución a favor del Tesoro Público",
+     "const": null,
+     "content": "X ó blanco",
+     "box": null
+    },
+    {
+     "pos": 14,
+     "len": 1,
+     "type": "An",
+     "desc": "Devolución. Solicita la devolución por transferencia",
+     "const": null,
+     "content": "X ó blanco",
+     "box": null
+    },
+    {
+     "pos": 15,
+     "len": 34,
+     "type": "An",
+     "desc": "Ingreso/Domiciliación/Devolución - IBAN",
+     "const": null,
+     "content": "",
+     "box": null
+    },
+    {
+     "pos": 49,
+     "len": 11,
+     "type": "An",
+     "desc": "Devolución. SWIFT-BIC",
+     "const": null,
+     "content": "",
+     "box": null
+    },
+    {
+     "pos": 60,
+     "len": 70,
+     "type": "An",
+     "desc": "Devolución - Banco/Bank name",
+     "const": null,
+     "content": "",
+     "box": null
+    },
+    {
+     "pos": 130,
+     "len": 35,
+     "type": "An",
+     "desc": "Devolución - Dirección del Banco/ Bank address",
+     "const": null,
+     "content": "",
+     "box": null
+    },
+    {
+     "pos": 165,
+     "len": 30,
+     "type": "An",
+     "desc": "Devolución - Ciudad/City",
+     "const": null,
+     "content": "",
+     "box": null
+    },
+    {
+     "pos": 195,
+     "len": 2,
+     "type": "An",
+     "desc": "Devolución - Código País/Country code",
+     "const": null,
+     "content": "",
+     "box": null
+    },
+    {
+     "pos": 197,
+     "len": 1,
+     "type": "Num",
+     "desc": "Devolución - Marca SEPA",
+     "const": null,
+     "content": "\"0\", \"1\", \"2\", \"3\" Nota 2",
+     "box": null
+    },
+    {
+     "pos": 198,
+     "len": 1,
+     "type": "An",
+     "desc": "Cuota cero",
+     "const": null,
+     "content": "",
+     "box": null
+    },
+    {
+     "pos": 199,
+     "len": 277,
+     "type": "An",
+     "desc": "Reservado AEAT",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 476,
+     "len": 13,
+     "type": "An",
+     "desc": "Reservado para la Administración. Sello electronico",
+     "const": null,
+     "content": "En blanco",
+     "box": null
+    },
+    {
+     "pos": 489,
+     "len": 12,
+     "type": "An",
+     "desc": "Indicador de fin de registro",
+     "const": "</T151DID00>",
+     "content": "Constante \"</T151DID00>\"",
+     "box": null
+    }
+   ]
+  }
+ }
+}

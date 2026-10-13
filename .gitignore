@@ -1,0 +1,10 @@
+__pycache__/
+.impeccable/build/
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/roll.txt
+# your data: never commit it (run with --data outside the repo)
+*.db
+*.db-*
+receipts/
+sede/
