@@ -18,10 +18,11 @@ python3 -m unittest tests.test_tax -v  # el motor frente a los ejemplos de kb/
 - `gestor/sources/*.json` — fuentes jurídicas: cita original del BOE/AEAT/DGT en español, traducción, qué significa, estado (literal en el texto / interpretación / discutido), práctica. En la interfaz: el signo § en cada importe, una explicación con la norma bajo cada campo, «Perfil» con las conclusiones de gestor sobre su situación y la página «Fuentes». `python3 -m unittest tests.test_sources` comprueba que cada § lleva a una entrada completa.
 - [`docs/es/use-cases.md`](docs/es/use-cases.md) — qué hace el servicio y qué no hace.
 - [`docs/es/onboarding.md`](docs/es/onboarding.md) — el orden canónico de alta en gestor: qué documentos subir, qué preguntar, qué aclarar.
+- [`docs/es/glosario-aeat.md`](docs/es/glosario-aeat.md) — los términos de la AEAT que usa gestor en español, con la página de la AEAT de cada uno.
 - [`docs/es/explainer.html`](docs/es/explainer.html) — cómo funciona gestor, con un perfil ficticio: sus partes, el recorrido de una factura y un trimestre calculado. Ábralo en el navegador después de clonar.
 
 Copia de seguridad: copie la carpeta de datos (`*.db` y `receipts/`). Factura en PDF: «Imprimir / PDF» en el navegador.
-Las cifras son un cálculo con los datos que usted introduce. La presentación la hace usted en la Sede de la AEAT.
+Las cifras son un cálculo con los datos que usted introduce. La presentación la hace usted en la Sede electrónica de la AEAT.
 
 ## Ayuda en la Sede desde Claude Code o Codex
 
@@ -33,4 +34,4 @@ codex mcp add gestor --env PYTHONPATH=$PWD -- python3 -m gestor.mcp --entity mai
 claude --chrome   # Claude in Chrome: el agente trabaja en su Chrome, donde usted ha iniciado sesión en la Sede
 ```
 
-El agente abre el formulario, carga el archivo o escribe las casillas, pulsa «Validar» y compara la pantalla con gestor. No pulsa «Presentar» ni «Firmar y enviar»: esta regla está en `INSTRUCTIONS`. Firma usted.
+El agente abre el formulario, carga el archivo o escribe las casillas, pulsa «Validar declaración» y compara la pantalla con gestor. No pulsa «Presentar declaración» ni «Firmar y enviar»: esta regla está en `INSTRUCTIONS`. Firma usted.

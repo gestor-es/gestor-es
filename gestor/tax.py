@@ -282,18 +282,29 @@ def form_303(con, year: int, q: int, carry_in: int, refund_4t=True) -> tuple[dic
         notes.append(_("Покупки услуг у поставщиков ЕС (autorrepercusión, casillas 10/11 и 36/37) — также в 349, clave I. [[liva-84,riva-79]]"))
     if not any(c[k] for k in c if k not in ("110", "78", "87")) and not carry_in:
         notes.append(_("Нет операций: подаётся «sin actividad». [[riva-71]]"))
-    labels = [("01", "Base 4 %"), ("03", "Cuota 4 %"), ("04", "Base 10 %"), ("06", "Cuota 10 %"),
-              ("07", "Base 21 %"), ("09", "Cuota 21 %"), ("10", "Adq. intracomunitarias: base"), ("11", "Adq. intracomunitarias: cuota"),
-              ("12", _("Otras ISP (поставщики вне ЕС): base")), ("13", "Otras ISP: cuota"),
-              ("14", "Modificación bases (rectificativas)"), ("15", "Modificación cuotas"),
-              ("27", "Total cuota devengada"), ("28", "Deducible interiores corrientes: base"), ("29", "…cuota"),
-              ("30", "Deducible bienes de inversión: base"), ("31", "…cuota"),
-              ("36", "Deducible intracomunitarias corrientes: base"), ("37", "…cuota"),
-              ("38", "Deducible intracomunitarias inversión: base"), ("39", "…cuota"),
-              ("45", "Total a deducir"), ("46", "Resultado régimen general"), ("59", "Entregas/servicios intracomunitarios"),
-              ("120", "No sujetas por reglas de localización"), ("66", "Atribuible al Estado"),
-              ("110", "Cuotas a compensar de periodos previos"), ("78", "Cuotas aplicadas en este periodo"),
-              ("87", "Cuotas pendientes tras este periodo"), ("71", "Resultado")]
+    labels = [("01", "Régimen general 4 %: Base imponible"), ("03", "Régimen general 4 %: Cuota"),
+              ("04", "Régimen general 10 %: Base imponible"), ("06", "Régimen general 10 %: Cuota"),
+              ("07", "Régimen general 21 %: Base imponible"), ("09", "Régimen general 21 %: Cuota"),
+              ("10", "Adquisiciones intracomunitarias de bienes y servicios: Base imponible"),
+              ("11", "Adquisiciones intracomunitarias de bienes y servicios: Cuota"),
+              ("12", _("Otras operaciones con inversión del sujeto pasivo (excepto adq. intracom.): Base imponible (поставщики вне ЕС)")),
+              ("13", "Otras operaciones con inversión del sujeto pasivo (excepto adq. intracom.): Cuota"),
+              ("14", "Modificación bases y cuotas: Base imponible"), ("15", "Modificación bases y cuotas: Cuota"),
+              ("27", "Total cuota devengada"),
+              ("28", "Por cuotas soportadas en operaciones interiores corrientes: Base"),
+              ("29", "Por cuotas soportadas en operaciones interiores corrientes: Cuota"),
+              ("30", "Por cuotas soportadas en operaciones interiores con bienes de inversión: Base"),
+              ("31", "Por cuotas soportadas en operaciones interiores con bienes de inversión: Cuota"),
+              ("36", "En adquisiciones intracomunitarias de bienes y servicios corrientes: Base"),
+              ("37", "En adquisiciones intracomunitarias de bienes y servicios corrientes: Cuota"),
+              ("38", "En adquisiciones intracomunitarias de bienes de inversión: Base"),
+              ("39", "En adquisiciones intracomunitarias de bienes de inversión: Cuota"),
+              ("45", "Total a deducir"), ("46", "Resultado régimen general"), ("59", "Entregas intracomunitarias de bienes y servicios"),
+              ("120", "Operaciones no sujetas por reglas de localización (excepto las incluidas en la casilla 123)"),
+              ("66", "Atribuible a la Administración del Estado"),
+              ("110", "Cuotas a compensar pendientes de periodos anteriores"),
+              ("78", "Cuotas a compensar de periodos anteriores aplicadas en este periodo"),
+              ("87", "Cuotas a compensar de periodos previos pendientes para periodos posteriores"), ("71", "Resultado")]
     boxes = [(k, l, c[k]) for k, l in labels if c[k] or k in ("27", "45", "46", "71")]
     return {"modelo": "303", "title": f"IVA {q}T", "boxes": boxes, "result": c["71"], "notes": notes, "c": c,
             "carry_out": carry_out}, carry_out
@@ -380,19 +391,23 @@ def form_390(con, year, iva_forms):
     neg = max(-last["result"], 0)
     refunded = neg and not last["carry_out"]
     domestic = tot["07"] + tot["04"] + tot["01"] + tot["14"]
-    boxes = [("01–06", "Régimen ordinario: base 21 %", tot["07"]), ("01–06", "…cuota 21 %", tot["09"]),
-             ("29", "Modificación de bases (rectificativas)", tot["14"]), ("30", "Modificación de cuotas", tot["15"]),
-             ("545–552", "Adq. intracomunitarias de servicios: base", tot["10"]), ("545–552", "…cuota", tot["11"]),
-             ("27", _("Otros supuestos ISP (вне ЕС): base"), tot["12"]), ("28", "…cuota", tot["13"]),
-             ("49", "Deducible interiores corrientes: cuota", tot["29"]), ("51", "Deducible bienes de inversión: cuota", tot["31"]),
-             ("", "Deducible adq. intracomunitarias: cuota", tot["37"] + tot["39"]),
-             ("84", "Resultado régimen general", tot["46"]), ("95", _("Total ingresos (сумма положительных 303)"), pos),
-             ("85", "Cuotas a compensar del ejercicio anterior aplicadas", applied_prev),
-             ("97", "Último periodo: a compensar", 0 if refunded else neg), ("98", "Último periodo: a devolver", neg if refunded else 0),
-             ("662", "Cuotas pendientes de compensación al final del ejercicio", last["c"]["87"]),
-             ("99", "Volumen: operaciones en régimen general", domestic),
-             ("103", "Volumen: servicios intracomunitarios", tot["59"]), ("110", "Volumen: no sujetas por localización", tot["120"]),
-             ("108", "Volumen total de operaciones", domestic + tot["59"] + tot["120"])]
+    boxes = [("01–06", "Régimen ordinario 21 %: Base imponible", tot["07"]), ("01–06", "Régimen ordinario 21 %: Cuota devengada", tot["09"]),
+             ("29", "Modificación de bases y cuotas: Base imponible", tot["14"]), ("30", "Modificación de bases y cuotas: Cuota devengada", tot["15"]),
+             ("545–552", "Adquisiciones intracomunitarias de servicios: Base imponible", tot["10"]),
+             ("545–552", "Adquisiciones intracomunitarias de servicios: Cuota devengada", tot["11"]),
+             ("27", _("IVA devengado en otros supuestos de inversión del sujeto pasivo: Base imponible (вне ЕС)"), tot["12"]),
+             ("28", "IVA devengado en otros supuestos de inversión del sujeto pasivo: Cuota devengada", tot["13"]),
+             ("49", "Total bases imponibles y cuotas deducibles en operaciones interiores de bienes y servicios corrientes: Cuota deducible", tot["29"]),
+             ("51", "Total bases imponibles y cuotas deducibles en operaciones interiores de bienes de inversión: Cuota deducible", tot["31"]),
+             ("", "IVA deducible en adquisiciones intracomunitarias de bienes y servicios: Cuota deducible", tot["37"] + tot["39"]),
+             ("84", "Suma de resultados", tot["46"]), ("95", "Total resultados a ingresar en las autoliquidaciones de IVA del ejercicio", pos),
+             ("85", "Compensación de cuotas del ejercicio anterior", applied_prev),
+             ("97", "A compensar", 0 if refunded else neg), ("98", "A devolver", neg if refunded else 0),
+             ("662", "Cuotas pendientes de compensación generadas en el ejercicio y distintas de las incluidas en la casilla 97", last["c"]["87"]),
+             ("99", "Operaciones en régimen general", domestic),
+             ("103", "Entregas intracomunitarias de bienes y servicios", tot["59"]),
+             ("110", "Operaciones no sujetas por reglas de localización (excepto las incluidas en la casilla 126)", tot["120"]),
+             ("108", "Total volumen de operaciones (Art. 121 Ley IVA)", domestic + tot["59"] + tot["120"])]
     return {"modelo": "390", "title": "Resumen anual IVA", "boxes": boxes, "result": tot["46"], "result_label": _("IVA за год"),
             "notes": [_("Номера casillas по ставкам (01–06, 545–552) сверить с формой 390. [[aeat-390-instr]]")]}
 
@@ -455,11 +470,15 @@ def forms_130(con, s, year) -> list:
         if c19 < 0:
             notes.append(_("Отрицательный результат: Q1–Q3 — a deducir в следующих кварталах; Q4 — negativa. Возврат — только через Modelo 100. [[rirpf-110]]"))
         out.append({"modelo": "130", "title": f"Pago fraccionado IRPF {q}T", "result": c19, "notes": notes, "boxes": [
-            ("01", _("Ingresos computables (с 1 января)"), c01), ("02", _("Gastos fiscalmente deducibles (вкл. RETA, amortización, 5 % GDJ)"), c02),
-            ("03", "Rendimiento neto", c03), ("04", "20 % de [03]", c04), ("05", _("Pagos fraccionados предыдущих кварталов"), c05),
-            ("06", _("Retenciones (с 1 января)"), c06), ("07", "Pago fraccionado previo", c07), ("12", "max([07], 0)", c12),
-            ("13", "Minoración art. 110.3.c RIRPF", c13), ("14", "[12] − [13]", c14),
-            ("15", _("Negativos предыдущих кварталов"), c15), ("19", "Resultado", c19)]})
+            ("01", _("Ingresos computables correspondientes al conjunto de las actividades ejercidas (с 1 января)"), c01),
+            ("02", _("Gastos fiscalmente deducibles correspondientes al conjunto de las actividades ejercidas (вкл. RETA, amortización, 5 % GDJ)"), c02),
+            ("03", "Rendimiento neto", c03), ("04", "20 por 100 del importe de la casilla 03", c04),
+            ("05", "A deducir: De los trimestres anteriores", c05),
+            ("06", _("Retenciones e ingresos a cuenta soportados (с 1 января)"), c06), ("07", "Pago fraccionado previo del trimestre", c07),
+            ("12", "Suma de pagos fraccionados previos del trimestre", c12),
+            ("13", "Minoración por aplicación de la deducción a que se refiere el artículo 110.3 c) del Reglamento del Impuesto", c13),
+            ("14", "Diferencia", c14), ("15", "Resultados negativos de trimestres anteriores", c15),
+            ("19", "Resultado de la autoliquidación", c19)]})
     return out
 
 
@@ -500,13 +519,17 @@ def irpf_annual(con, s, year, paid_130: int, projected_130: int = 0) -> dict:
                 "(аренда жилья в Valencia/Asturias и т.п.) — добавить в Renta WEB."),
               _("Подача: Renta WEB (Modelo 100), апрель — 30 июня следующего года.")]
     return {"modelo": "100", "title": _("Renta {year} (оценка)").format(year=year), "result": result, "notes": notes, "boxes": [
-        ("0180", "Ingresos íntegros", n["income"]), ("0186", "Cuotas RETA", n["exp"]["reta"]),
-        ("0208", "Amortización", n["exp"]["amort"]), ("0218", _("Total gastos (вкл. RETA)"), n["exp"]["total"]),
-        ("0222", "Gastos de difícil justificación 5 % (≤ 2 000 €)", n["gdj"]), ("0224", "Rendimiento neto", n["rn"]),
-        ("0234", "Reducción inicio de actividad", inicio), ("0435", "Base imponible general", base),
+        ("0180", "Total ingresos computables", n["income"]), ("0186", "Seguridad Social del titular de la actividad", n["exp"]["reta"]),
+        ("0208", "Dotaciones del ejercicio para amortización de inmovilizado material", n["exp"]["amort"]),
+        ("0218", _("Gastos fiscalmente deducibles: Suma (вкл. RETA)"), n["exp"]["total"]),
+        ("0222", "Conjunto de provisiones deducibles y gastos de difícil justificación: 5 % (≤ 2 000 €)", n["gdj"]),
+        ("0224", "Rendimiento neto", n["rn"]),
+        ("0234", "Reducción por inicio de una actividad económica", inicio), ("0435", "Base imponible general", base),
         ("0545", _("Cuota íntegra estatal (после mínimo personal)"), cuota_st), ("0546", "Cuota íntegra autonómica", cuota_rg),
-        ("0587", "Cuota líquida", total), ("0599", "Retenciones", n["withheld"]), ("0604", "Pagos fraccionados 130", paid_130),
-        ("0610", _("Resultado: + к доплате / − к возврату"), result)]}
+        ("0587", "Cuota líquida incrementada total", total),
+        ("0599", "Retenciones y demás pagos a cuenta: Por rendimientos de actividades económicas", n["withheld"]),
+        ("0604", "Pagos fraccionados ingresados (actividades económicas)", paid_130),
+        ("0610", _("Cuota diferencial: + к доплате / − к возврату"), result)]}
 
 
 # ---------- Beckham (151) ----------
@@ -520,12 +543,13 @@ def beckham_annual(con, s, year) -> dict:
     paid_210 = sum(irnr_paid(s, year))
     result = cuota - withheld - paid_210
     return {"modelo": "151", "title": _("Declaración régimen especial {year} (оценка)").format(year=year), "result": result, "boxes": [
-        ("B.02", _("Ingresos íntegros actividad (все клиенты, в т.ч. иностранные)"), income),
-        ("B.03/B.04", _("Gastos deducibles (только personal, aprovisionamientos, suministros)"), 0),
-        ("B.05 = F.17", "Rendimiento neto = base liquidable general", income),
-        ("G.19", _("Cuota: 24 % до 600 000 €, 47 % сверх"), cuota), ("G.33", "Retenciones", withheld),
-        ("G.34", "Cuotas IRNR pagadas (Modelo 210)", paid_210),
-        ("G.43", "Resultado: + a ingresar / − a devolver", result)], "notes": [
+        ("B.02", _("Ingresos íntegros (все клиенты, в т.ч. иностранные)"), income),
+        ("B.03/B.04", _("Gastos de personal; Gastos de aprovisionamiento de materiales y de suministros (только они)"), 0),
+        ("B.05 = F.17", "Rendimiento neto: positivo = Base liquidable general", income),
+        ("G.19", _("Cuota correspondiente a la base liquidable general: 24 % до 600 000 €, 47 % сверх"), cuota),
+        ("G.33", "Retenciones e ingresos a cuenta", withheld),
+        ("G.34", "Cuotas del Impuesto sobre la Renta de no Residentes pagadas respecto de rentas incluidas en la declaración (Modelo 210)", paid_210),
+        ("G.43", "Resultado de la declaración: + a ingresar / − a devolver", result)], "notes": [
         _("Режим Beckham: расходы (софт, коворкинг, техника, gestoría) и собственная RETA НЕ уменьшают базу. [[trlirnr-24,dgt-v1112-25]]"),
         _("Строгий расчёт: suministros не вычтены. Ваши коммунальные расходы в «доле для работы»: {amount} — "
           "их вычет по art. 24.2 спорный, решать с консультантом. [[trlirnr-24]]").format(amount=fmt(supplies)),
@@ -675,7 +699,7 @@ def forms_202(con, s, year) -> list:
             base, res = 0, 0
             notes = [_("Empresa emergente: в 2 периода после первого прибыльного 202 не платится. [[sl-ley28-2022-8]]")]
         out.append({"modelo": "202", "title": f"Pago fraccionado IS {p}P", "result": res, "applies": base is None or res > 0,
-                    "boxes": [("01", f"Base: cuota IS {ref} − deducciones − retenciones", base or 0), ("03", "18 %", res)],
+                    "boxes": [("01", f"Base del pago fraccionado: cuota IS {ref} − deducciones − retenciones", base or 0), ("03", "A ingresar (18 %)", res)],
                     "notes": notes})
     return out
 
@@ -694,13 +718,16 @@ def forms_withholding(con, s, year) -> tuple[list, list]:
         rent = [e for e in rows if e["withheld_cents"] and e["category"] == "rent"]
         boxes, total = [], 0
         if money or kind:
-            boxes += [("02", "Administrador: retribuciones dinerarias", money), ("03", f"Retenciones {admin_rate} %", pct(money, admin_rate)),
-                      ("05", _("Retribuciones en especie (RETA, оплаченная SL)"), kind), ("06", "Ingresos a cuenta", pct(kind, admin_rate))]
+            boxes += [("02", "Rendimientos del trabajo. Rendimientos dinerarios: Importe de las percepciones", money),
+                      ("03", f"Rendimientos del trabajo. Rendimientos dinerarios: Importe de las retenciones ({admin_rate} %)", pct(money, admin_rate)),
+                      ("05", _("Rendimientos del trabajo. Rendimientos en especie: Valor percepciones en especie (RETA, оплаченная SL)"), kind),
+                      ("06", "Rendimientos del trabajo. Rendimientos en especie: Importe de los ingresos a cuenta", pct(kind, admin_rate))]
             total += pct(money + kind, admin_rate)
         if prof:
             w = sum(e["withheld_cents"] for e in prof)
-            boxes += [("07–09", "Actividades económicas: importe de las percepciones", sum(e["base_cents"] for e in prof)),
-                      ("07–09", "Actividades económicas: retenciones", w)]
+            boxes += [("07–09", "Rendimientos de actividades económicas. Rendimientos dinerarios: Importe de las percepciones",
+                       sum(e["base_cents"] for e in prof)),
+                      ("07–09", "Rendimientos de actividades económicas. Rendimientos dinerarios: Importe de las retenciones", w)]
             total += w
         n_prof = len({e["supplier_tax_id"] or e["supplier"] for e in prof})
         f111.append({"modelo": "111", "title": f"Retenciones {q}T", "result": total, "boxes": boxes,
@@ -709,8 +736,8 @@ def forms_withholding(con, s, year) -> tuple[list, list]:
                                + ("" if prev or not money else _(" Оборот прошлого года неизвестен — взята ставка 35 %.")) + " [[rirpf-80]]"]}
                     if boxes else None)
         f115.append({"modelo": "115", "title": f"Retenciones alquiler {q}T", "result": sum(e["withheld_cents"] for e in rent),
-                     "boxes": [("", "Base de las retenciones (alquiler)", sum(e["base_cents"] for e in rent)),
-                               ("", "Retenciones 19 %", sum(e["withheld_cents"] for e in rent))],
+                     "boxes": [("", "Base retenciones e ingresos a cuenta", sum(e["base_cents"] for e in rent)),
+                               ("", "Retenciones e ingresos a cuenta (19 %)", sum(e["withheld_cents"] for e in rent))],
                      "notes": [_("180 в январе: сводка по арендодателям. [[rirpf-100]]")]} if rent else None)
     return f111, f115
 
@@ -730,7 +757,8 @@ def is_annual(con, s, year, paid_202: int, projected_202: int = 0) -> dict:
                        "15 % действует в этом году и трёх следующих. [[ley28-2022-7]]"))
     return {"modelo": "200", "title": _("Impuesto sobre Sociedades {year} (оценка)").format(year=year), "result": cuota - paid_202, "boxes": [
         ("", "Ingresos", r["income"]), ("", _("Gastos (вкл. amortización, retribución administrador)"), r["exp"]),
-        ("00552", "Base imponible", base), ("00562", "Cuota íntegra", cuota), ("00601–00605", "Pagos fraccionados 202", paid_202),
+        ("00552", "Base imponible", base), ("00562", "Cuota íntegra", cuota),
+        ("00601–00605", "Pagos fraccionados (1er, 2º y 3er pago fraccionado)", paid_202),
         ("00621", "Resultado", cuota - paid_202)], "notes": notes}
 
 

@@ -1,0 +1,45 @@
+# Glosario de términos de la AEAT
+
+Términos que usa la interfaz en español y la documentación de gestor, tal como los escribe la AEAT. Comprobados en las páginas enlazadas el 13.10.2026.
+
+| Término de la AEAT | Qué significa | Fuente |
+|---|---|---|
+| Sede electrónica | Portal de la AEAT donde se presentan las declaraciones. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/presentacion-declaraciones-ayuda-tecnica/modelo-303.html |
+| Cl@ve, certificado electrónico, DNI electrónico | Formas de identificarse en la Sede. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/presentacion-declaraciones-ayuda-tecnica/modelo-130.html |
+| Autoliquidación | Declaración en la que usted calcula el impuesto, por ejemplo el Modelo 303. | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G414.shtml |
+| Pago fraccionado | Pago a cuenta trimestral del IRPF (Modelo 130) o del IS (Modelo 202). | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G601.shtml |
+| Retenciones e ingresos a cuenta | Lo que usted retiene a otros y ingresa en la AEAT (Modelos 111, 115). | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GH01.shtml |
+| Resumen anual | Declaración informativa anual de las retenciones (Modelos 190, 180). | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI10.shtml |
+| Declaración informativa | Declaración con datos, sin importe a ingresar (Modelos 347, 349, 720). | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI28.shtml |
+| Declaración recapitulativa de operaciones intracomunitarias | Nombre del Modelo 349. | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI28.shtml |
+| Declaración Resumen Anual / declaración-resumen anual | Nombre del Modelo 390. | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G412.shtml |
+| Declaración anual de operaciones con terceras personas | Nombre del Modelo 347. | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI27.shtml |
+| Declaración sobre bienes y derechos situados en el extranjero | Nombre del Modelo 720. | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI34.shtml |
+| Régimen especial aplicable a los trabajadores, profesionales, emprendedores e inversores desplazados a territorio español | Nombre del Modelo 151 (régimen Beckham). | https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-personas-fisicas/modelo-151-decla_____los-trabajadores-desplazados-espanol_/instrucciones-cumplimentacion-ejercicio-2023-siguientes.html |
+| Declaración censal de alta, modificación y baja | Modelo 036 del Censo de empresarios, profesionales y retenedores. | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G322.shtml |
+| Certificado tributario de situación censal | Certificado con sus datos en el censo y sus obligaciones. Ruta: Todas las gestiones → Certificados → Censales. | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G313.shtml |
+| Registro de Operadores Intracomunitarios (ROI) | Registro necesario para operaciones con empresarios de la UE. | https://sede.agenciatributaria.gob.es/Sede/censos-nif-domicilio-fiscal/solicitar-obtener-certificado-tributario-sobre-censo.html |
+| Área personal → Mis datos censales → Mis obligaciones | Lista de sus obligaciones periódicas y su estado. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/otros-servicios-ayuda-tecnica/datos-censales.html |
+| Mis expedientes → Consultar declaraciones presentadas | Dónde ver y descargar las declaraciones ya presentadas. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/otros-servicios-ayuda-tecnica/expedientes.html |
+| Ejercicio, periodo | Año y trimestre (1T–4T) o mes de la declaración. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/presentacion-declaraciones-ayuda-tecnica/modelo-303.html |
+| Plazo de presentación | Fechas en las que se presenta cada modelo. | https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/iva/modelo-303-iva-autoliquidacion_/instrucciones-2026.html |
+| Domiciliación bancaria | La AEAT carga el importe en su cuenta; su plazo termina antes que el de presentación. | https://sede.agenciatributaria.gob.es/Sede/ayuda/calendario-contribuyente/calendario-contribuyente-2026/plazos-presentacion-autoliquidaciones-domiciliacion-bancaria.html |
+| Calendario del contribuyente | Calendario oficial de plazos de la AEAT. | https://sede.agenciatributaria.gob.es/Sede/ayuda/calendario-contribuyente/calendario-contribuyente-2026/plazos-presentacion-autoliquidaciones-domiciliacion-bancaria.html |
+| A ingresar / con solicitud de devolución / a compensar / resultado cero / sin actividad | Tipos de declaración del 303 según el resultado. | https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/iva/modelo-303-iva-autoliquidacion_/instrucciones-2026.html |
+| Resultado de la liquidación | Casilla 71 del 303. | https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/iva/modelo-303-iva-autoliquidacion_/instrucciones-2026.html |
+| Cuotas a compensar pendientes de períodos anteriores | Casilla 110 del 303: saldo a su favor de periodos anteriores. | https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/iva/modelo-303-iva-autoliquidacion_/instrucciones-2026.html |
+| Registro de devolución mensual | Inscripción que permite pedir la devolución del IVA cada mes. | https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/iva/modelo-303-iva-autoliquidacion_/instrucciones-2026.html |
+| Autoliquidación rectificativa | Casilla que se marca para corregir una declaración ya presentada. | https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/iva/modelo-303-iva-autoliquidacion_/instrucciones-2026.html |
+| Servicio de ayuda Pre303 | Servicio de la Sede que ofrece casillas del 303 ya cumplimentadas. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/presentacion-declaraciones-ayuda-tecnica/modelo-303.html |
+| «Nueva declaración», «Importar», «Exportar», «Vista previa», «Validar declaración», «Guardar», «Presentar declaración» | Botones del formulario web del 303. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/presentacion-declaraciones-ayuda-tecnica/modelo-303.html |
+| «Formalizar ingreso / devolución» | Botón para presentar en el formulario del 130 y del 151. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/presentacion-declaraciones-ayuda-tecnica/modelo-151.html |
+| «Firmar y enviar», «Conforme» | Último paso de la presentación: marcar «Conforme» y firmar. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/presentacion-declaraciones-ayuda-tecnica/modelo-130.html |
+| Domiciliación del importe a ingresar | Opción de pago: la AEAT carga el importe en la cuenta (IBAN) que usted indica. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/presentacion-declaraciones-ayuda-tecnica/modelo-130.html |
+| «Realizar pago (NRC)» | Botón para pagar con cargo en cuenta, tarjeta o Bizum. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/presentacion-declaraciones-ayuda-tecnica/modelo-303.html |
+| NRC (Número de Referencia Completo) | Código de 22 caracteres que sirve como justificante del pago. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/presentacion-declaraciones-ayuda-tecnica/modelo-130.html |
+| Consultar deudas → Consulta pagos anteriores y Anulación Nrcs | Dónde recuperar el NRC de un pago anterior. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/pago-impuestos-deudas-tasas-ayuda-tecnica/pago-autoliquidaciones.html |
+| Código Seguro de Verificación (CSV), número de justificante | Datos del PDF que recibe al presentar. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/presentacion-declaraciones-ayuda-tecnica/modelo-151.html |
+| Justificante de presentación | PDF que acredita la presentación. Guárdelo. | https://sede.agenciatributaria.gob.es/Sede/ayuda/consultas-informaticas/impuesto-sobre-sociedades-ayuda-tecnica/sociedades-web/modificar-declaracion-presentada-autoliquidacion-rectificativa-devolucion.html |
+| Presentación fuera de plazo, recargos por declaración extemporánea, sin requerimiento previo | Presentar tarde antes de que la AEAT lo requiera: se aplica un recargo. | https://sede.agenciatributaria.gob.es/Sede/procedimientos/GZ71.shtml |
+| Declaraciones sin ingreso | Declaraciones con resultado sin importe a pagar. | https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/folleto-actividades-economicas/4-impuesto-sobre-sociedades/4_8-pagos-fraccionados/4_8_2-modelos-pagos-fraccionados.html |
+| Estar al corriente de obligaciones tributarias | Certificado de que usted cumple sus obligaciones con la AEAT. | https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G304.shtml |

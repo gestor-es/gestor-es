@@ -28,7 +28,7 @@ Fecha de vigencia: 2026-10-08. Ámbito: SL/SLU de servicios con un único socio-
 5. **Reserva de capitalización** (art. 25 LIS, desde el 01.01.2025): reducción de la BI en el 20 % del incremento de fondos propios (23 / 26,5 / 30 % si la plantilla media crece ≥2 %, ≥5 %, >10 % y el aumento se mantiene 3 años). Límite: 20 % de la BI previa positiva (25 % si el INCN < 1 M€). El exceso se traslada a los 2 periodos siguientes. El incremento de FP y la reserva indisponible deben mantenerse 3 años. No forman parte del incremento de FP el resultado del ejercicio, las aportaciones de los socios, la reserva legal/estatutaria ni la reserva de nivelación. https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-sociedades-2025/principales-novedades-impuesto-sobre-sociedades-2025/reserva-capitalizacion.html
 6. **Reserva de nivelación** (art. 105 LIS): solo ERD (incluidas las micro con la escala del art. 29.1 párr. 1; **no** las ENC al 15 %). Reducción de hasta el 10 % de la BI positiva (≤ 1 M€), con dotación obligatoria de una reserva indisponible. El importe se adiciona de nuevo contra las BIN de los 5 años siguientes. El saldo restante se adiciona en el 5º año. También se tiene en cuenta en los pagos fraccionados del 40.3. https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-sociedades-2025/capitulo-10-regimenes-tributarios-especiales-ii/regimen-especial-empresas-reducida-dimension/incentivos-fiscales/reserva-nivelacion.html
 7. **BIN** (art. 26): compensación de hasta el 70 % de la BI previa, pero como mínimo 1 M€ al año. Para nuestra SL, en la práctica, sin límite. Sin plazo de compensación.
-8. **Gastos no deducibles** (art. 15 LIS): retribución de fondos propios (dividendos), el propio IS, multas/sanciones/recargos, donativos y liberalidades (salvo atenciones a clientes ≤ 1 % INCN y promoción), gastos contrarios al ordenamiento, operaciones con «paraísos». La retribución del administrador por funciones de alta dirección o por contrato laboral no es liberalidad según el texto literal del 15.e). TS (STS 13.03.2024 rec. 9078/2022; 30.04.2024 rec. 7481/2022; 13.06.2024 rec. 78/2023): la falta de previsión estatutaria, por sí sola, no convierte en no deducible una retribución real y contabilizada. Práctica prudente: estatutos con «cargo retribuido» + decisión del socio único sobre el importe (art. 217 LSC). https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328 ; resumen de la jurisprudencia del TS: https://www.poderjudicial.es/stfls/TRIBUNAL%20SUPREMO/ACUERDOS%20y%20ESTUDIOS%20DOCTRINALES/FICHERO/20240722%20Cr%C3%B3nicaJurisprudencia%202023-2024%20Sala%203.pdf
+8. **Gastos no deducibles** (art. 15 LIS): retribución de fondos propios (dividendos), el propio IS, multas/sanciones/recargos, donativos y liberalidades (salvo atenciones a clientes ≤ 1 % INCN y promoción), gastos contrarios al ordenamiento, operaciones con «paraísos fiscales». La retribución del administrador por funciones de alta dirección o por contrato laboral no es liberalidad según el texto literal del 15.e). TS (STS 13.03.2024 rec. 9078/2022; 30.04.2024 rec. 7481/2022; 13.06.2024 rec. 78/2023): la falta de previsión estatutaria, por sí sola, no convierte en no deducible una retribución real y contabilizada. Práctica prudente: estatutos con «cargo retribuido» + decisión del socio único sobre el importe (art. 217 LSC). https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328 ; resumen de la jurisprudencia del TS: https://www.poderjudicial.es/stfls/TRIBUNAL%20SUPREMO/ACUERDOS%20y%20ESTUDIOS%20DOCTRINALES/FICHERO/20240722%20Cr%C3%B3nicaJurisprudencia%202023-2024%20Sala%203.pdf
 9. **Amortización** (art. 12, 102, 103 LIS): según la tabla del art. 12.1 (equipos para procesos de información 25 %/8 años, software 33 %/6, mobiliario 10 %/20, equipos electrónicos 20 %/10). ERD: amortización acelerada con coeficiente ×2. Bienes de escaso valor ≤ 300 €/unidad: libremente, hasta 25 000 €/año. Libertad de amortización con incremento de plantilla (120 000 € × Δ plantilla).
 10. **Operaciones vinculadas** (art. 18 LIS): el socio con ≥ 25 % y el administrador son personas vinculadas (salvo la retribución por el propio cargo). Valoración a valor de mercado. Safe harbour para el socio-profesional (18.6): ≥ 75 % de los ingresos de la SL son profesionales; ≥ 75 % del resultado previo a esas retribuciones se destina a los socios; cada socio recibe ≥ 1,5× el salario medio de asalariados análogos o ≥ 5× IPREM. **Modelo 232** (1–30 de noviembre): obligatorio si las operaciones del mismo tipo y método con vinculados superan el 50 % del INCN. Para una SL unipersonal que paga al socio como profesional, esto casi siempre se cumple. https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-sociedades-2025/capitulo-08-operaciones-personas-entidades-vinculadas/obligaciones-informacion/informacion-sobre-operaciones-vinculadas-modelo-232/obligados-presentar-modelo-232.html
 11. **Pagos fraccionados** (art. 40 LIS): modalidad 40.2: 18 % de (cuota íntegra − deducciones − bonificaciones − retenciones − ingresos a cuenta) del último 200 cuyo plazo de presentación haya vencido el 1 de abril/octubre/diciembre. Si el resultado es ≤ 0, no hay que presentarlo (salvo INCN > 6 M€). Modalidad 40.3: opción mediante el 036 en febrero (obligatoria si INCN > 6 M€). La base es la de 3/9/11 meses y el porcentaje = floor(5/7 × tipo). https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-sociedades/modelo-202-is-i_____resencia-territorio-fraccionado_/instrucciones/Instrucciones-para-2025.html
@@ -38,11 +38,11 @@ Fecha de vigencia: 2026-10-08. Ámbito: SL/SLU de servicios con un único socio-
 15. **RETA pagado por la SL**: es retribución en especie del administrador/socio (dineraria, si el dinero se le entregó a él). Forma parte de la base de retención y se declara en el 190. El perceptor lo deduce como cotización a la Seguridad Social. DGT V0067-19, V2121-25: https://bm.consulting/es/consultas-vinculantes/V2121-25/
 16. **Dividendos** (art. 101.4 LIRPF, 25.1.a): retención del 19 %, modelo 123 (1–20 de abril/julio/octubre/enero), 193 (1–31 de enero; el de 2025, hasta el 02.02.2026). https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/folleto-actividades-economicas/7-otras-obligaciones-fiscales-retenciones/7_4-retenciones-capital-mobiliario-modelos-193.html
 17. **Alquiler de oficina** a una persona física o jurídica: retención del 19 %, modelo 115 (trimestral) + 180 (enero). No procede si el alquiler es ≤ 900 €/año por arrendador, si el arrendador está dado de alta en el IAE epígrafe 861 con cuota > 0 (grandes arrendadores) o si se trata de leasing. Art. 75.3.g RIRPF.
-18. **Beckham y administrador** (art. 93.1.b.2º LIRPF, redacción Ley 28/2022): el nombramiento como administrador es causa de desplazamiento con cualquier participación, salvo en una entidad patrimonial (en ese caso, participación < 25 %). La causa 93.1.b.3º (actividad emprendedora) es la única que admite rentas mediante EP/actividad económica. Para el visado de emprendedor (Ley 14/2013 art. 70), el requisito del «informe ENISA» se considera cumplido (art. 113 RIRPF). Los dividendos y el salario de una SL española son renta de fuente española → tributan en el modelo 151. https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c02-irpf-cuestiones-generales/sujecion-irpf-aspectos-personales/regimen-fiscal-especial-aplicable-trabajadores-desplazados/regimen-aplicable-trabajadores-desplazados/ambito-aplicacion.html
+18. **Beckham y administrador** (art. 93.1.b.2º LIRPF, redacción Ley 28/2022): el nombramiento como administrador es causa de desplazamiento con cualquier participación, salvo en una entidad patrimonial (en ese caso, participación < 25 %). La causa 93.1.b.3º (actividad emprendedora) es la única que admite rentas mediante EP/actividad económica. Para el visado de emprendedor (Ley 14/2013 art. 70), el requisito del «informe favorable emitido por la Empresa Nacional de Innovación, SME (ENISA)» se considera cumplido (art. 113 RIRPF). Los dividendos y el salario de una SL española son renta de fuente española → tributan en el modelo 151. https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c02-irpf-cuestiones-generales/sujecion-irpf-aspectos-personales/regimen-fiscal-especial-aplicable-trabajadores-desplazados/regimen-aplicable-trabajadores-desplazados/ambito-aplicacion.html
 19. **Registro Mercantil: libros** (art. 18 Ley 14/2013, Instrucción DGRN 12.02.2015): todos los libros obligatorios (Diario, Inventarios y Cuentas Anuales, Actas, Registro de socios, Registro de contratos socio único–sociedad) se legalizan por vía telemática, en formato electrónico, como máximo 4 meses después del cierre del ejercicio. https://www.boe.es/buscar/doc.php?id=BOE-A-2015-1481
 20. **Cuentas anuales** (LSC art. 253, 164, 279, 282, 283): formulación ≤ 3 meses, aprobación por la junta ≤ 6 meses, depósito ≤ 1 mes tras la aprobación. Modelos PYME/abreviado si se cumplen 2 de 3 umbrales (activo ≤ 4 M€, INCN ≤ 8 M€, ≤ 50 trabajadores). Hoja de titularidad real junto con el depósito (RD 609/2023). Los cambios de titular real se comunican al RM en un plazo de 10 días. Sanción de 1 200–60 000 €. Cierre registral por el art. 378 RRM al cabo de un año sin depósito. https://boe.es/buscar/act.php?id=BOE-A-2010-10544 ; https://www.boe.es/eli/es/rd/2023/07/11/609
 21. **SLU** (LSC art. 12–17): la unipersonalidad se inscribe en el RM y se indica en todos los documentos («SLU»). Las decisiones del socio único constan en acta. Los contratos entre el socio único y la SL se formalizan por escrito, se anotan en el libro-registro de contratos y se mencionan en la memoria. En caso contrario, no son oponibles a la masa en caso de concurso, y el socio responde durante 2 años de las ventajas obtenidas de ellos.
-22. **Capital** (Ley 18/2022 «Crea y Crece»): mínimo 1 €. Con capital < 3 000 €: se destina el 20 % del beneficio a reserva legal hasta que capital + RL ≥ 3 000 €, y los socios responden solidariamente hasta 3 000 € en la liquidación. En otro caso, reserva legal del 10 % del beneficio hasta el 20 % del capital (art. 274 LSC).
+22. **Capital** (Ley 18/2022, de creación y crecimiento de empresas): mínimo 1 €. Con capital < 3 000 €: se destina el 20 % del beneficio a reserva legal hasta que capital + RL ≥ 3 000 €, y los socios responden solidariamente hasta 3 000 € en la liquidación. En otro caso, reserva legal del 10 % del beneficio hasta el 20 % del capital (art. 274 LSC).
 23. **036**: alta/NIF provisional (casillas 110/111) antes de iniciar las operaciones; NIF definitivo (casilla 120) tras la inscripción en el RM. Epígrafe del IAE (casilla 402): la SL figura en la sección 1ª (p. ej. 845 «Explotación electrónica por cuenta de terceros» o 843.9). Exención del IAE los 2 primeros periodos y mientras el INCN < 1 M€. Las obligaciones de retenedor (111/115/123) se activan solo cuando surgen realmente. ROI (349) si se prestan servicios a clientes de la UE. Opción 40.3: casilla 621 (alta) en febrero. https://sede.agenciatributaria.gob.es/Sede/Ayuda/guia-practica-declaracion-censal.html
 24. **IVA/347/349**: las mismas reglas que para el autónomo (véase la página de la base de conocimiento sobre el IVA): 303 trimestral, 390 en enero, 349 por operaciones con la UE, 347 en febrero (contrapartes > 3 005,06 € no incluidas en 349/190/180). Diferencia: los clientes españoles **no** practican retención de IRPF sobre las facturas de servicios de la SL (la retención sobre servicios profesionales solo se aplica a personas físicas).
 25. **Verifactu / factura electrónica**: RD 1007/2023 para los contribuyentes del IS: adaptación hasta el 01.01.2027 (RDL 15/2025). La nota de Hacienda de 05.10.2026 anuncia el aplazamiento a octubre de 2028 (no publicado en el BOE). Factura electrónica B2B (RD 238/2026, Orden HAC/1028/2026): INCN > 8 M€ desde el 06.10.2027, el resto desde el 06.10.2028. Solo para operaciones entre empresarios españoles. https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html ; https://boe.es/diario_boe/txt.php?id=BOE-A-2026-20587
@@ -140,7 +140,7 @@ Fuente: Seg. Social BNR 5/2026: https://www.seg-social.es/wps/wcm/connect/wss/61
 
 ## Fórmulas para el motor
 
-Todos los importes se manejan en céntimos o en Decimal. Los importes finales de las casillas van en euros con 2 decimales y redondeo half-up (instrucciones del 202: «mitad de céntimo → cifra superior»).
+Todos los importes se manejan en céntimos o en Decimal. Los importes finales de las casillas van en euros con 2 decimales y redondeo half-up (instrucciones del 202: «En el caso de que la última cifra de la cantidad obtenida como resultado de aplicar el porcentaje a la base del pago fraccionado sea exactamente la mitad de un céntimo, el redondeo se efectuará a la cifra superior»).
 
 ### 1. Parámetros del periodo
 
@@ -234,8 +234,8 @@ def pago_202_402(mes, year):
     if not m200.full_year:  # periodo < 365 días → sumar las cuotas de los periodos anteriores hasta 365 días
         base = Σ cuotas de los periodos (proporción para el más lejano: días_restantes/duración × cuota)
     else:
-        base = m200.C00562 − deducciones − bonificaciones − m200.C01766   # casilla [01]
-    importe = round_half_up(0.18 * base, 2)                              # casilla [03]
+        base = m200.C00562 − deducciones − bonificaciones − m200.C01766   # clave [01] base del pago fraccionado
+    importe = round_half_up(0.18 * base, 2)                              # clave [03] a ingresar
     return NO_FILING if importe <= 0 else importe
 ```
 
@@ -247,7 +247,7 @@ Primer año de la SL: `filed_200` está vacío → ningún 202. Segundo año: en
 def pago_202_403(mes, year, ledger):
     meses = {4:3, 10:9, 12:11}[mes]
     C04 = resultado contable 1.1–fin de meses (después de IS)
-    C05/C06 = corr. por IS; C07/C08 = otros ajustes
+    C05/C06 = corrección por Impuesto sobre Sociedades; C07/C08 = resto correcciones al resultado contable
     C13 = C04 + C05 + C07 − C06 − C08                     # BI previa
     C44 = remanente RC de años anteriores (la RC del año en curso no se puede aplicar)
     C14 = min(BIN, 0.70*(C13−C44) …) si C13−C44 > 0
@@ -268,12 +268,12 @@ def retencion_admin(pago_bruto, incn_last_closed):
     pct = 0.19 if (incn_last_closed is not None and incn_last_closed < 100_000) else 0.35
     return round(pago_bruto * pct, 2)
 # RETA pagado por la SL: especie = cuota_RETA; base_retención += especie; ingreso a cuenta = especie*pct (si no repercutido)
-# 111: casilla 01 nº perceptores, 02 importe (dinerario), 03 retenciones; especie → 04/05/06
+# 111: casilla 01 n.º perceptores, 02 importe de las percepciones (dinerarias), 03 importe de las retenciones; especie → 04/05/06
 # 190: clave E, subclave E.03 (RETA, INCN<100k) / E.04; percepción íntegra dineraria + en especie por separado
 
 def retencion_profesional(base_sin_iva, inicio_actividad_year, year, comunicado_7):
     pct = 0.07 if comunicado_7 and year <= inicio_actividad_year + 2 else 0.15
-    return round(base_sin_iva * pct, 2)         # 111 (apartado "actividades económicas"), 190 clave G
+    return round(base_sin_iva * pct, 2)         # 111 (apartado "Rendimientos de actividades económicas"), 190 clave G
 ```
 
 Si el socio acogido al régimen Beckham recibe salario de la SL: retención del 24 % (47 % > 600 000 €) según las reglas del IRNR. Se declara en el 111/190 (véase Cuestiones abiertas).
@@ -282,7 +282,7 @@ Si el socio acogido al régimen Beckham recibe salario de la SL: retención del 
 
 ```
 def dividendo(bruto):
-    ret = round(bruto * 0.19, 2)             # 123: casilla 01 perceptores, 02 base, 03 retención; 193 clave A
+    ret = round(bruto * 0.19, 2)             # 123: casilla 01 número de perceptores, 02 base de retenciones e ingresos a cuenta, 03 retenciones e ingresos a cuenta; 193 clave A
     neto = bruto − ret
 # Perceptor residente (modelo 100) o Beckham (modelo 151): cuota_ahorro(bruto) − ret
 def cuota_ahorro(base):
@@ -355,23 +355,23 @@ Regla práctica: con el IRPF ordinario, la SL está en paridad aproximada con 60
 
 | Modelo | Qué | Periodo | Plazo | Cuándo no se presenta |
 |---|---|---|---|---|
-| 036 | Alta / NIF provisional → definitivo / modificaciones | hecho | antes de iniciar las operaciones; NIF definitivo tras la inscripción en el RM; opción 40.3 en febrero | — |
-| 202 | Pago fraccionado IS | 1/P, 2/P, 3/P | 1–20 de abril, octubre y diciembre (domiciliación hasta el 15) | resultado ≤ 0 (INCN ≤ 6 M€); empresa emergente, 2 periodos |
-| 200 | IS anual | año | 1–25 de julio (2026: hasta el 27.07; domiciliación 1–22.07) | nunca (ni con pérdidas ni sin actividad) |
-| 111 | Retenciones trabajo/administradores/profesionales | trimestre | 1–20 de abril, julio, octubre y enero | si en el trimestre no hubo pagos con retención (pero con el «alta» en el 036 la AEAT espera el 111: presentarlo a cero o dar de baja la obligación) |
-| 190 | Resumen del 111 | año | 1–31 de enero | sin 111 en el año |
-| 123 | Retención dividendos | trimestre | 1–20 de abril, julio, octubre y enero | no hubo pagos de rendimientos del capital |
-| 193 | Resumen del 123 | año | 1–31 de enero (el de 2025: hasta el 02.02.2026) | sin 123 |
-| 115 / 180 | Retención alquiler | trimestre / año | como el 111 / enero | alquiler ≤ 900 €/año, arrendador IAE 861 con cuota, leasing, sin alquiler |
-| 303 / 390 | IVA | trimestre / año | 1–20 de abril, julio y octubre; 4T y 390: 1–30 de enero | — (detalles en la página de la base de conocimiento sobre el IVA) |
-| 349 | Operaciones UE | trimestre (mes si >50 k€ de bienes) | 1–20 del mes siguiente; 4T hasta el 30 de enero | sin operaciones UE |
-| 347 | Operaciones > 3 005,06 € | año | 1–28/29 de febrero | todas las contrapartes ya figuran en 349/190/180 |
-| 232 | Operaciones vinculadas | año | 1–30 de noviembre | no se supera ningún umbral |
+| 036 | Declaración censal de alta, modificación y baja (NIF provisional → definitivo / modificaciones) | hecho | antes de iniciar las operaciones; NIF definitivo tras la inscripción en el RM; opción 40.3 en febrero | — |
+| 202 | IS. Pago fraccionado | 1/P, 2/P, 3/P | 1–20 de abril, octubre y diciembre (domiciliación hasta el 15) | resultado ≤ 0 (INCN ≤ 6 M€); empresa emergente, 2 periodos |
+| 200 | Declaración del Impuesto sobre Sociedades | año | 1–25 de julio (2026: hasta el 27.07; domiciliación 1–22.07) | nunca (ni con pérdidas ni sin actividad) |
+| 111 | Retenciones e ingresos a cuenta. Rendimientos del trabajo (administradores) y de actividades económicas (profesionales) | trimestre | 1–20 de abril, julio, octubre y enero | si en el trimestre no hubo pagos con retención (pero con el «alta» en el 036 la AEAT espera el 111: presentarlo a cero o dar de baja la obligación) |
+| 190 | Resumen anual del 111 | año | 1–31 de enero | sin 111 en el año |
+| 123 | Retenciones e ingresos a cuenta. Determinados rendimientos del capital mobiliario (dividendos) | trimestre | 1–20 de abril, julio, octubre y enero | no hubo pagos de rendimientos del capital |
+| 193 | Resumen anual del 123 | año | 1–31 de enero (el de 2025: hasta el 02.02.2026) | sin 123 |
+| 115 / 180 | Retenciones e ingresos a cuenta. Arrendamiento de inmuebles urbanos / Resumen anual | trimestre / año | como el 111 / enero | alquiler ≤ 900 €/año, arrendador IAE 861 con cuota, leasing, sin alquiler |
+| 303 / 390 | IVA. Autoliquidación / Declaración resumen anual | trimestre / año | 1–20 de abril, julio y octubre; 4T y 390: 1–30 de enero | — (detalles en la página de la base de conocimiento sobre el IVA) |
+| 349 | Declaración recapitulativa de operaciones intracomunitarias | trimestre (mes si >50 k€ de bienes) | 1–20 del mes siguiente; 4T hasta el 30 de enero | sin operaciones UE |
+| 347 | Declaración anual de operaciones con terceras personas (> 3 005,06 €) | año | 1–28/29 de febrero | todas las contrapartes ya figuran en 349/190/180 |
+| 232 | Declaración informativa de operaciones vinculadas | año | 1–30 de noviembre | no se supera ningún umbral |
 | Legalización libros | RM | año | ≤ 30 de abril | — |
 | Formulación / Aprobación / Depósito cuentas + titularidad real | RM | año | 31 de marzo / 30 de junio / ≤ 1 mes tras la aprobación | — |
 | Titularidad real (actualización) | RM / RCTIR | hecho | 10 días desde el cambio | sin cambios |
-| 840 | IAE alta | hecho | 1 mes tras perder la exención (INCN ≥ 1 M€) | INCN < 1 M€ |
-| 720 | Bienes en el extranjero | año | 1 de enero – 31 de marzo | la SL con bienes registrados en su contabilidad está exenta |
+| 840 | IAE. Declaración de alta | hecho | 1 mes tras perder la exención (INCN ≥ 1 M€) | INCN < 1 M€ |
+| 720 | Declaración sobre bienes y derechos situados en el extranjero | año | 1 de enero – 31 de marzo | la SL con bienes registrados en su contabilidad está exenta |
 | RETA alta administrador | TGSS | hecho | antes del inicio (alta previa, ≤ 60 días) | — |
 
 Primer año de la SL: 036 (NIF provisional) → escritura → RM → 036 (NIF definitivo, 120) → alta en el RETA → 303/111/123 según vayan surgiendo → 390/190/193/349-4T/347 en enero–febrero → libros hasta el 30 de abril → cuentas → 200 en julio → depósito. En el primer año no hay 202 (salvo la opción 40.3).
@@ -392,7 +392,7 @@ Primer año de la SL: 036 (NIF provisional) → escritura → RM → 036 (NIF de
 12. **Banco extranjero (Wise/Revolut) de la SL**: no se necesita el 720 si la cuenta figura en la contabilidad con su identificación. No es obligatorio indicarla en el 036. Diferencias de cambio: 768/668; tributan en el IS.
 13. **Capital de 1 €**: el 20 % del beneficio va a reserva legal hasta que capital + RL ≥ 3 000 €. En la liquidación con deudas, el socio responde hasta 3 000 €. Con capital de 3 000 €: el 10 % habitual hasta el 20 %.
 14. **Modelo 232**: si los pagos al socio-profesional superan el 50 % del INCN (operaciones del mismo tipo y método), es obligatorio en noviembre aunque los importes sean pequeños. Sanción por no presentarlo: la de las declaraciones informativas (mínimo 300 €, 20 € por dato).
-15. **35 % fijo en el primer año**: no existe INCN del «último periodo cerrado» → la condición < 100 k€ no se cumple formalmente → con cautela: aplicar el 35 % hasta el primer ejercicio cerrado (véase Cuestiones abiertas).
+15. **35 % fijo en el primer año**: no existe INCN del «último período impositivo finalizado con anterioridad al pago de los rendimientos» → la condición < 100 k€ no se cumple formalmente → con cautela: aplicar el 35 % hasta el primer ejercicio cerrado (véase Cuestiones abiertas).
 16. **Empresa emergente**: sin certificado de ENISA inscrito en el RM no se aplica ningún beneficio de la Ley 28/2022. El motor debe exigir la fecha del certificado y la nota de inscripción.
 17. **Salida del régimen Beckham / fin de los 6 años**: los dividendos y el salario de la SL pasan al IRPF ordinario (escala autonómica para el salario). Para la SL no cambia nada, salvo el tipo de retención sobre el salario (24 % → 35 %/19 % o el procedimiento general).
 
@@ -401,7 +401,7 @@ Primer año de la SL: 036 (NIF provisional) → escritura → RM → 036 (NIF de
 1. **Retención del administrador en el primer año de la SL**: no hay periodo cerrado para comprobar INCN < 100 k€. UNVERIFIED (no se ha encontrado consulta de la DGT sobre este caso). Con cautela: 35 % hasta el primer ejercicio cerrado. Al final solo puede corregirse en el IRPF del perceptor (el exceso se devuelve).
 2. **IVA en la factura del socio-profesional a su propia SL**: el art. 27.1 solo resuelve el IRPF. La DGT hace depender el IVA de la «ordenación por cuenta propia» (riesgo, dependencia). Con el 100 % del control, normalmente es sujeto (21 %). Para la SL ese IVA es deducible, por lo que el error en el sentido de «con IVA» es neutro. Con cautela: facturar con IVA.
 3. **Perceptor Beckham de salario/dividendos: qué modelos de retención** — 111/190 y 123/193 (como para los contribuyentes del IRPF) frente a 216/296 (IRNR). La AEAT trata a los impatriados como contribuyentes del IRPF con reglas del IRNR. En la práctica: 111/190 con tipo del 24 %. UNVERIFIED para dividendos. Con cautela: 123/193, 19 %.
-4. **Prorrateo del tramo de 50 000 € en el 202-40.3**: las instrucciones describen «tramos» por tipos, pero no aclaran si los 50 k se prorratean por 3/9/11 meses. Con cautela: aplicar el tramo completo (como hace el formulario de la AEAT con el tipo introducido) y recalcular en el 200. UNVERIFIED.
+4. **Prorrateo del tramo de 50 000 € en el 202-40.3**: las instrucciones describen la «relación de tramos correspondientes a los porcentajes aplicables a cada una de las partes de la base imponible del pago fraccionado», pero no aclaran si los 50 k se prorratean por 3/9/11 meses. Con cautela: aplicar el tramo completo (como hace el formulario de la AEAT con el tipo introducido) y recalcular en el 200. UNVERIFIED.
 5. **Fecha de inicio del primer periodo** (escritura vs inscripción): doctrina de la DGT: IS desde la fecha de la escritura para las sociedades en formación que se inscriben después. Con cautela: period.start = fecha escritura. Revisar si entre la escritura y la inscripción pasan más de 3 meses.
 6. **Deducibilidad de la retribución del administrador sin previsión estatutaria**: el TS suavizó el criterio en 2023–2024, pero la AEAT sigue comprobando el art. 217 LSC. Con cautela: el motor exige el flag `estatutos_cargo_retribuido` + acta del socio único con el importe. En caso contrario, aviso «riesgo de ajuste positivo».
 7. **Tipos 2027–2029**: tomados del texto de la DT 44ª Ley 7/2024. La AEAT de momento publica hasta 2026. Puede haber cambios en futuros PGE o reformas. Hay que guardarlos como tabla por año.

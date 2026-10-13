@@ -28,12 +28,12 @@ Estos documentos responden a la mayor parte del cuestionario y fijan la verdad. 
 
 | Documento | Dónde obtenerlo | Qué toma gestor de él |
 |---|---|---|
-| Certificado de situación censal | Sede AEAT → Certificados → Censales | Nombre, NIE, domicilio fiscal, fecha de alta, epígrafe IAE, régimen de IVA e IRPF, ROI (operaciones con la UE), **lista de obligaciones que espera la AEAT**: se coteja con «Qué presenta» |
-| Declaraciones presentadas del año en curso y del año anterior (303, 130, 349, 390, 347, 100 o 151) | Sede AEAT → Mis expedientes / Consulta de declaraciones presentadas | Marcas de «presentada» con importes, IVA a compensar, rendimiento neto del año anterior (casilla 13 del 130, exención del 70 %) |
+| Certificado de situación censal | Sede AEAT → Todas las gestiones → Certificados → Censales → Situación Censal | Nombre, NIE, domicilio fiscal, fecha de alta, epígrafe IAE, régimen de IVA e IRPF, Registro de Operadores Intracomunitarios (ROI), **lista de obligaciones que espera la AEAT**: se coteja con «Qué presenta» |
+| Declaraciones presentadas del año en curso y del año anterior (303, 130, 349, 390, 347, 100 o 151) | Sede AEAT → Área personal → Mis expedientes → Consultar declaraciones presentadas | Marcas de «presentada» con importes, cuotas de IVA a compensar, rendimiento neto del año anterior (casilla 13 del 130, exención del 70 %) |
 | Modelo 149 y la resolución sobre él | Sede AEAT, la misma sección | Si el régimen Beckham está vigente y desde qué año |
 | Informe de situación / bases de cotización | Import@ss (TGSS) | Fecha de alta en el RETA, base actual, periodo de tarifa plana |
 | Autorización de residencia (TIE) | la tiene el usuario | Tipo de visado o de autorización de residencia, vigencia |
-| Consulta del NRC de los pagos (si en el extracto hay un «Tax payment» sin explicación) | Sede AEAT → Pagos → Consulta de NRC | Qué declaración se pagó con ese pago |
+| Consulta del NRC de los pagos (si en el extracto hay un «Tax payment» sin explicación) | Sede AEAT → Pagar, aplazar y consultar → Consultar deudas → Consulta pagos anteriores y Anulación Nrcs | Qué declaración se pagó con ese pago |
 
 Si falta un documento, en su lugar se hace la pregunta del paso 5. La respuesta se marca como «según el usuario».
 
@@ -79,12 +79,12 @@ Pregunte solo lo que no está en los documentos de los pasos 1–4. Cada pregunt
 ## 6. Cálculo y cotejo
 
 1. gestor rellena el perfil y muestra «Cómo le ha entendido gestor». El usuario lo confirma o lo corrige.
-2. «Qué presenta» se coteja con la lista de obligaciones del certificado censal. Cada diferencia es una pregunta aparte.
+2. «Qué presenta» se coteja con la lista de obligaciones del certificado de situación censal. Cada diferencia es una pregunta aparte.
 3. Las declaraciones recalculadas se comparan con los importes presentados. La diferencia se explica línea por línea: qué factura o qué gasto la ha producido.
 4. Solo después gestor muestra el cálculo del trimestre más próximo para presentar.
 
 ## Qué no hace gestor
 
-- No presenta declaraciones ni paga: el usuario copia él mismo las casillas en la Sede.
+- No presenta declaraciones ni paga: el usuario copia él mismo las casillas en la Sede electrónica de la AEAT.
 - No guarda el extracto completo: de él solo quedan los ingresos y gastos que el usuario ha confirmado.
 - No acepta una suposición basada en el extracto sin la confirmación del usuario.

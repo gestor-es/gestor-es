@@ -8,7 +8,7 @@
 - Corrección importante a las premisas iniciales: la manutención propia en España es de **26,67 €/día sin la pernocta correspondiente y 53,34 €/día con ella**, no 48,08 €. En el extranjero, 48,08/91,35 €. Es un límite del gasto real, no una dieta diaria automática.
 - El art. 32.2 para determinados autónomos no es un beneficio general para cualquier freelance. Además de cliente único/TRADE, se exige que ≥70% de los ingresos estén sujetos a retención y otras condiciones. **6 498 €**, y no 7 302 €, es la reducción adicional para rentas bajas; 7 302 € corresponde a los rendimientos del trabajo del art. 20.
 - Retención del profesional: normalmente **15%**; para un nuevo profesional que cumpla las condiciones, **7% en el año de inicio y en los dos años naturales fiscales siguientes**. Normalmente el cliente B2B español retiene; el cliente extranjero sin obligación española de retener, no.
-- El Modelo 130 es un pago fraccionado, no el impuesto definitivo del 20%: los datos son acumulados desde el 1 de enero. La casilla 05 no es simplemente el dinero ingresado realmente antes; son las casillas 07 positivas anteriores menos las casillas 16 anteriores.
+- El Modelo 130 es un pago fraccionado, no el impuesto definitivo del 20%: los datos son acumulados desde el 1 de enero. La casilla 05 no es simplemente el dinero ingresado realmente antes; el formulario la define así: «De los trimestres anteriores: suma de los importes positivos de la casilla 07 menos la suma de los importes de la casilla 16».
 - La actividad profesional queda exonerada del 130 si en el año anterior ≥70% de sus ingresos fueron objeto de retención; el primer año se comprueba el trimestre correspondiente. Esto no exime del Modelo 100 anual.
 - El mínimo personal reduce la **cuota según la escala**, no la base antes de aplicar el tipo marginal. En el ejemplo, menor de 65 años: estatal 5 550 €, autonómico en las dos regiones consideradas 6 105 €.
 - **Asturias cambió la escala y los mínimos ya para 2025**: no se puede usar el antiguo mínimo de 5 550 € ni el antiguo tipo inicial del 10%. **Valencia cambió la escala para 2026**, y una nueva rebaja para **2027 ya está aprobada**, Ley 5/2026.
@@ -71,15 +71,15 @@ Todos los importes están en euros. Si pone «2025/2026», el valor es el mismo 
 | 720, umbral inicial por bloque / aumento posterior | >50 000 / >20 000 | igual |
 | 721, umbral inicial / aumento posterior | >50 000 / >20 000 | igual |
 
-### Tabla amortización simplificada, 2025 y 2026
+### Tabla de amortización simplificada, 2025 y 2026
 
-| Grupo | Elemento | Máximo lineal anual | Periodo máximo |
+| Grupo | Elementos patrimoniales | Coeficiente lineal máximo | Período máximo |
 |---|---|---:|---:|
 | 1 | Edificios y otras construcciones, sin el suelo | 3% | 68 años |
-| 2 | Instalaciones, mobiliario, enseres, resto material | 10% | 20 años |
+| 2 | Instalaciones, mobiliario, enseres y resto del inmovilizado material | 10% | 20 años |
 | 3 | Maquinaria | 12% | 18 años |
-| 4 | Elementos de transporte con afectación | 16% | 14 años |
-| 5 | Equipos de información, sistemas y programas informáticos | 26% | 10 años |
+| 4 | Elementos de Transporte, con afectación | 16% | 14 años |
+| 5 | Equipos para tratamiento de la información y sistemas y programas informáticos | 26% | 10 años |
 | 6 | Útiles y herramientas | 30% | 8 años |
 | 7 | Ganado vacuno, porcino, ovino y caprino | 16% | 14 años |
 | 8 | Ganado equino y frutales no cítricos | 8% | 25 años |
@@ -187,30 +187,30 @@ Las condiciones generales de la regla 2 se aplican a cada fila. La parte no dedu
 
 | Categoría | Condiciones y tratamiento | Casilla |
 |---|---|---|
-| Compra existencias, consumibles materiales | Relación con la actividad; las existencias se concilian con los saldos; no se deduce dos veces la compra y los consumos | 0181–0183; aumento de existencias como ingreso 0177 |
-| Sueldos, SS a cargo de la empresa | Relación laboral real, nóminas, cotización | 0184, 0185 |
-| RETA, cuotas corrientes | No duplicar entre la actividad y los rendimientos del trabajo del administrador | 0186 |
-| RETA regularización, pago adicional / devolución | En el año de la regularización; la devolución dentro de las cuotas corrientes, como menor gasto; el exceso, en 0178 | 0196 /0197 |
-| Mutualidad alternativa | Solo la alternativa aplicable a la RETA y las contingencias cubiertas; límite de la cuota máxima por contingencias comunes del año; no son aportaciones ordinarias a planes de pensiones | 0195 |
-| Indemnizaciones; dietas de empleados; previsión social del personal; otros gastos de personal | Pagos acreditados y límites legales especiales; no el propio «sueldo» del autónomo | 0187–0190 |
-| Manutención propia | `sum_by_day min(eligible_actual_meals, daily_limit)`; factura, pago electrónico, actividad | 0191 |
-| Alquiler de oficina/coworking, licencias/cánones | Uso real; del alquiler de la vivienda, solo la parte afectada; un activo comprado capitalizable no va aquí | 0192 |
-| Reparación/conservación | Mantenimiento, no ampliación/mejora; la mejora aumenta el valor del activo | 0193 |
-| Agua, luz, gas, telecomunicaciones, internet | Oficina: gasto real; vivienda: `bill × affected_m²/total_m² ×0.30`; móvil exclusivo; tener en cuenta el periodo de afectación | 0194 |
+| Compra de existencias; Variación de existencias (disminución de existencias finales); Otros consumos de explotación | Relación con la actividad; las existencias se concilian con los saldos; no se deduce dos veces la compra y los consumos | 0181–0183; Variación de existencias (incremento de existencias finales) como ingreso 0177 |
+| Sueldos y salarios; Seguridad Social a cargo de la empresa | Relación laboral real, nóminas, cotización | 0184, 0185 |
+| Seguridad Social del titular de la actividad (cuotas corrientes de la RETA) | No duplicar entre la actividad y los rendimientos del trabajo del administrador | 0186 |
+| Regularización cuotas RETA (si resulta una cantidad a ingresar) / (si resulta una cantidad a devolver) | En el año de la regularización; la devolución dentro de las cuotas corrientes, como menor gasto; el exceso, en 0178 | 0196 /0197 |
+| Aportaciones a mutualidades alternativas del titular de la actividad | Solo la alternativa aplicable a la RETA y las contingencias cubiertas; límite de la cuota máxima por contingencias comunes del año; no son aportaciones ordinarias a planes de pensiones | 0195 |
+| Indemnizaciones; Dietas y asignaciones de viajes del personal empleado; Aportaciones a sistemas de previsión social imputadas al personal empleado; Otros gastos de personal | Pagos acreditados y límites legales especiales; no el propio «sueldo» del autónomo | 0187–0190 |
+| Gastos de manutención del contribuyente (artículo 30.2.5ª.c de la Ley del Impuesto) | `sum_by_day min(eligible_actual_meals, daily_limit)`; factura, pago electrónico, actividad | 0191 |
+| Arrendamientos y cánones (oficina/coworking, licencias) | Uso real; del alquiler de la vivienda, solo la parte afectada; un activo comprado capitalizable no va aquí | 0192 |
+| Reparaciones y conservación | Mantenimiento, no ampliación/mejora; la mejora aumenta el valor del activo | 0193 |
+| Suministros (electricidad, agua, gas, telefonía e internet) | Oficina: gasto real; vivienda: `bill × affected_m²/total_m² ×0.30`; móvil exclusivo; tener en cuenta el periodo de afectación | 0194 |
 | Otros suministros | Combustible y similares, solo con una afectación admisible acreditada | 0198 |
-| Gestoría, abogado, subcontratista profesional | Relación con el negocio; factura; la propia obligación de retener al proveedor se trata por separado | 0199 |
-| Seguros del negocio, responsabilidad civil; seguro de salud | Riesgo profesional asegurado; salud con los topes individuales 500/1 500 | 0200 |
-| Software SaaS, hosting, dominios, publicidad, servicios bancarios; formación; viajes/hotel | Por su naturaleza económica, servicios exteriores; la formación debe estar relacionada con la actividad actual, no ser educación general personal. Billetes/hotel con finalidad empresarial; no todas las vacaciones de forma automática | 0202 o la categoría correspondiente más precisa |
-| Atenciones clientes/proveedores | Registro separado, máximo 1% del INCN del año; no confundir con la manutención propia | Normalmente 0202 |
-| Intereses de préstamos/financiación del negocio, comisiones financieras | No el principal del préstamo; vinculación con la actividad y limitaciones aplicables de la LIS | 0203 |
-| IVA no recuperable | Solo el realmente no deducible en el IVA; incluirlo en el valor del gasto/activo correspondiente o en la categoría prevista, nunca dos veces | 0205 /valor de la categoría |
-| IBI, tasas y otros tributos | Parte empresarial/afectada; no el propio IRPF, las multas ni los recargos sancionadores | 0206 |
-| Ordenador, muebles, equipos, inmuebles | Amortización según la base, la fecha de uso y la tabla; el suelo no se amortiza | 0208 |
-| Software amortizable comprado / otros intangibles | Elemento separado y vida útil/coeficiente adecuados; no toda suscripción es un intangible | 0227 |
+| Servicios de profesionales independientes (gestoría, abogado, subcontratista profesional) | Relación con el negocio; factura; la propia obligación de retener al proveedor se trata por separado | 0199 |
+| Primas de seguros (seguros del negocio, responsabilidad civil; seguro de salud) | Riesgo profesional asegurado; salud con los topes individuales 500/1 500 | 0200 |
+| Software SaaS, hosting, dominios, publicidad, servicios bancarios; formación; viajes/hotel | Por su naturaleza económica, servicios exteriores; la formación debe estar relacionada con la actividad actual, no ser educación general personal. Billetes/hotel con finalidad empresarial; no todas las vacaciones de forma automática | 0202 (Otros servicios exteriores) o la categoría correspondiente más precisa |
+| Atenciones clientes/proveedores | Registro separado, máximo 1% del INCN del año; no confundir con la manutención propia | Normalmente 0202 (Otros servicios exteriores) |
+| Gastos financieros (intereses de préstamos/financiación del negocio, comisiones financieras) | No el principal del préstamo; vinculación con la actividad y limitaciones aplicables de la LIS | 0203 |
+| IVA no recuperable | Solo el realmente no deducible en el IVA; incluirlo en el valor del gasto/activo correspondiente o en la categoría prevista, nunca dos veces | 0205 (IVA soportado) /valor de la categoría |
+| Otros tributos fiscalmente deducibles (IBI, tasas) | Parte empresarial/afectada; no el propio IRPF, las multas ni los recargos sancionadores | 0206 |
+| Ordenador, muebles, equipos, inmuebles | Amortización según la base, la fecha de uso y la tabla; el suelo no se amortiza | 0208 (Dotaciones del ejercicio para amortización de inmovilizado material) |
+| Software amortizable comprado / otros intangibles | Elemento separado y vida útil/coeficiente adecuados; no toda suscripción es un intangible | 0227 (Dotaciones del ejercicio para amortización del inmovilizado intangible) |
 | Pérdidas por insolvencias de deudores | Deterioro documentado con las condiciones del art. 13.1 LIS: por ejemplo, 6 meses desde el vencimiento, concurso, reclamación judicial/arbitral; excepciones para deudores vinculados/públicos. No deducir automáticamente cualquier factura vencida | 0214 |
-| Mecenazgo: convenio colaboración / gastos interés general | Solo el régimen especial de la Ley 49/2002, no un donativo personal ordinario | 0215 /0216 |
-| Otros gastos fiscalmente deducibles | Por ejemplo, la colegiación profesional obligatoria y la bibliografía especializada con relación empresarial acreditada; la categoría residual no sirve para eludir los requisitos | 0217 |
-| Provisiones + difícil justificación | Solo el cálculo según la regla 6, no el hecho del pago | 0222 |
+| Incentivos al mecenazgo. Convenios de colaboración en actividades de interés general / Incentivos al mecenazgo. Gastos en actividades de interés general | Solo el régimen especial de la Ley 49/2002, no un donativo personal ordinario | 0215 /0216 |
+| Otros conceptos fiscalmente deducibles (excepto provisiones) | Por ejemplo, la colegiación profesional obligatoria y la bibliografía especializada con relación empresarial acreditada; la categoría residual no sirve para eludir los requisitos | 0217 |
+| Conjunto de provisiones deducibles y gastos de difícil justificación | Solo el cálculo según la regla 6, no el hecho del pago | 0222 |
 
 No incluya compras personales, el propio IRPF/130, multas, sanciones, donativos/liberalidades fuera de la norma especial, el principal de la hipoteca/préstamo, el valor del suelo ni el valor de un activo amortizable de una sola vez sin derecho a libertad de amortización. La deducción del 50% del IVA de un automóvil no hace por sí sola que sus gastos sean admisibles en el IRPF. Fuente del límite de atenciones: [AEAT otros servicios exteriores](https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c07-rendimientos-actividades-economicas-estimacion-directa/fase-1-determinacion-rendimiento-neto/gastos-fiscalmente-deducibles/servicios-exteriores/otros-servicios-exteriores.html).
 
@@ -319,7 +319,7 @@ en otro caso:
   [19] = [17]-[18]
 ```
 
-`previous_effective_130` es la versión válida corregida de cada trimestre anterior, no la suma de la original y de la complementaria que la sustituye. Para la casilla 15, guarde el saldo no utilizado de cada [19] negativa. No traslade la [07] negativa como un crédito independiente y no use dos veces la misma minoración.
+`previous_effective_130` es la versión válida corregida de cada trimestre anterior, no la suma de la original y de la complementaria que la sustituye. Para la casilla 15 («Resultados negativos de trimestres anteriores»), guarde el saldo no utilizado de cada [19] negativa. No traslade la [07] negativa como un crédito independiente y no use dos veces la misma minoración.
 
 | RN del año anterior antes de reducciones | [13] en cada trimestre, 2025/2026 |
 |---:|---:|
@@ -333,7 +333,7 @@ Es una minoración del pago fraccionado, no un gasto anual adicional ni una dedu
 
 Para el raro derecho antiguo de la DT18 por vivienda con financiación, estimación directa ordinaria y una cifra de ingresos anual previsible <33 007,20 €: `[16]=min(max([14]−[15],0), R(0.02*max([03],0)), 660.14)`. Aquí, según el art. 110.3.d.1º, el límite es **por trimestre**. Se necesitan la vivienda/los pagos de origen anteriores a 2013 y la ausencia de las prohibiciones del art. 110.3.d. La última línea de la instrucción HTML actual sobre el límite anual contradice la norma y el formulario impreso; véase el apartado 7.
 
-Una [19] positiva es a ingresar. Una negativa en Q1–Q3 es a deducir en los trimestres siguientes del mismo año. Cero o negativa en Q4 es negativa. No se puede obtener la devolución del impuesto acumulado solo con un 130 negativo: la regularización definitiva se hace en el 100. También hay que presentar el modelo con resultado negativo si no hay exoneración.
+Una [19] positiva va al apartado «Ingreso». Una negativa en Q1–Q3 va al apartado «A deducir» («Autoliquidación con resultado a deducir en los siguientes pagos fraccionados del mismo ejercicio»). Cero, o negativa en Q4, va al apartado «Negativa» («Autoliquidación negativa»). No se puede obtener la devolución del impuesto acumulado solo con un 130 negativo: la regularización definitiva se hace en el 100. También hay que presentar el modelo con resultado negativo si no hay exoneración.
 
 ### Modelo 100: cuota general, ahorro y resultado
 
@@ -414,7 +414,7 @@ Asturias gastos vitales:
   y a la deducción personal sin comprobar la compatibilidad aplicable.
 ```
 
-Los importes autonómicos se trasladan al anexo B del Modelo 100 **de 2025**: Valencia alquiler → **[1095]**; Asturias alquiler → **[0887]**, rural inicio → **[0812]**, traslado laboral → **[0689]**, gastos vitales → **[1630]**; la suma de los beneficios autonómicos correspondientes → **[0564]**. Para el alquiler de ambas comunidades, el importe se refleja primero en **[1130] anexo B.11**. Datos del primer arrendador: **[1122] NIF/NIE**, **[1123] indicador de NIF extranjero**, **[1124] cantidades satisfechas**; del segundo: **[1125]–[1127]**. Fuente: [Orden HAC/277/2026, anexo I, páginas de los formularios B.2–B.3, B.10 y B.11](https://www.boe.es/boe/dias/2026/03/27/pdfs/BOE-A-2026-7041.pdf). Los números de 2026 todavía no están confirmados. Si el traslado da la residencia fiscal en Asturias para todo el año N, no sume media deducción valenciana y media deducción asturiana. Primero determine la región; después compruebe los gastos/periodos según su ley.
+Los importes autonómicos se trasladan al anexo B del Modelo 100 **de 2025**: Valencia alquiler → **[1095]**; Asturias alquiler → **[0887]**, rural inicio → **[0812]**, traslado laboral → **[0689]**, gastos vitales → **[1630]**; la suma de los beneficios autonómicos correspondientes → **[0564]** («Total deducciones autonómicas»). Para el alquiler de ambas comunidades, el importe se refleja primero en **[1130] anexo B.11** («Importe de la deducción autonómica por arrendamiento»). Datos del primer arrendador: **[1122] NIF/NIE del arrendador 1**, **[1123] «Marque una "X" si en la casilla [1122] ha consignado un NIF de otro país»**, **[1124] Cantidades satisfechas**; del segundo: **[1125]–[1127]**. Fuente: [Orden HAC/277/2026, anexo I, páginas de los formularios B.2–B.3, B.10 y B.11](https://www.boe.es/boe/dias/2026/03/27/pdfs/BOE-A-2026-7041.pdf). Los números de 2026 todavía no están confirmados. Si el traslado da la residencia fiscal en Asturias para todo el año N, no sume media deducción valenciana y media deducción asturiana. Primero determine la región; después compruebe los gastos/periodos según su ley.
 
 ### Ejemplo numérico de control: ejercicio 2025
 
@@ -428,41 +428,41 @@ RN = 48400
 
 | Modelo130, concepto | Q1 | Q2 YTD | Q3 YTD | Q4 YTD |
 |---|---:|---:|---:|---:|
-| [01] ingresos | 15 000 | 30 000 | 45 000 | 60 000 |
+| [01] Ingresos computables | 15 000 | 30 000 | 45 000 | 60 000 |
 | Gastos reales + RETA | 2 400 | 4 800 | 7 200 | 9 600 |
 | GDJ YTD | 630 | 1 260 | 1 890 | 2 000 |
-| [02] total gastos | 3 030 | 6 060 | 9 090 | 11 600 |
-| [03] neto | 11 970 | 23 940 | 35 910 | 48 400 |
-| [04] 20% | 2 394 | 4 788 | 7 182 | 9 680 |
-| [05] casillas 07 positivas anteriores | 0 | 2 394 | 4 788 | 7 182 |
-| [06] retenciones | 0 | 0 | 0 | 0 |
-| [07]=[12]=[14]=[17]=[19], a ingresar | **2 394** | **2 394** | **2 394** | **2 498** |
+| [02] Gastos fiscalmente deducibles | 3 030 | 6 060 | 9 090 | 11 600 |
+| [03] Rendimiento neto | 11 970 | 23 940 | 35 910 | 48 400 |
+| [04] 20 por 100 del importe de la casilla 03 | 2 394 | 4 788 | 7 182 | 9 680 |
+| [05] De los trimestres anteriores: suma de los importes positivos de la casilla 07 menos la suma de los importes de la casilla 16 | 0 | 2 394 | 4 788 | 7 182 |
+| [06] Retenciones e ingresos a cuenta soportados […] | 0 | 0 | 0 | 0 |
+| [07]=[12]=[14]=[17]=[19] Resultado de la autoliquidación, a ingresar | **2 394** | **2 394** | **2 394** | **2 498** |
 | [13], [15], [16], [18] | 0 | 0 | 0 | 0 |
 
 Total 130: **9 680 €**. El Q4 es mayor porque se alcanza el tope anual de la GDJ, no por un tipo distinto.
 
 | Modelo100 2025 | Valencia | Asturias |
 |---|---:|---:|
-| [0180] | 60 000 | 60 000 |
-| [0186] RETA | 3 600 | 3 600 |
-| [0218] todos los gastos ordinarios | 9 600 | 9 600 |
-| [0221] antes de GDJ | 50 400 | 50 400 |
-| [0222] GDJ | 2 000 | 2 000 |
-| [0223] | 11 600 | 11 600 |
-| [0224], [0226], [0231], [0235] | 48 400 | 48 400 |
-| [0435], [0500], [0505] | 48 400 | 48 400 |
-| [0511]=[0519]=[0521] mínimo estatal | 5 550 | 5 550 |
-| [0512]=[0520]=[0523] mínimo regional | 6 105 | 6 105 |
-| [0528] cuota estatal antes mínimo | 6 804,75 | 6 804,75 |
-| [0530] efecto mínimo estatal | 527,25 | 527,25 |
-| [0532]=[0545] estatal | **6 277,50** | **6 277,50** |
-| [0529] cuota regional antes mínimo | 6 810,00 | 6 848,78 |
-| [0531] efecto mínimo regional | 549,45 | 549,45 |
-| [0533]=[0546] regional | **6 260,55** | **6 299,33** |
-| [0587]=[0595], IRPF definitivo | **12 538,05** | **12 576,83** |
-| [0599] | 0 | 0 |
-| [0604]=[0609] | 9 680 | 9 680 |
-| [0610]=[0670], a ingresar | **2 858,05** | **2 896,83** |
+| [0180] Total ingresos computables | 60 000 | 60 000 |
+| [0186] Seguridad Social del titular de la actividad (RETA) | 3 600 | 3 600 |
+| [0218] Suma (gastos fiscalmente deducibles) | 9 600 | 9 600 |
+| [0221] Diferencia ([0180] – [0218]) | 50 400 | 50 400 |
+| [0222] Conjunto de provisiones deducibles y gastos de difícil justificación (GDJ) | 2 000 | 2 000 |
+| [0223] Total gastos deducibles ([0218] + [0222]) | 11 600 | 11 600 |
+| [0224] Rendimiento neto, [0226] Rendimiento neto reducido, [0231] Suma de rendimientos netos reducidos […], [0235] Rendimiento neto reducido total […] | 48 400 | 48 400 |
+| [0435] Base imponible general, [0500] Base liquidable general, [0505] Base liquidable general sometida a gravamen | 48 400 | 48 400 |
+| [0511]=[0519]=[0521] Mínimo del contribuyente / Mínimo personal y familiar, parte estatal | 5 550 | 5 550 |
+| [0512]=[0520]=[0523] Mínimo del contribuyente / Mínimo personal y familiar, parte autonómica | 6 105 | 6 105 |
+| [0528] cuota estatal antes del mínimo (aplicación de la escala general a [0505]) | 6 804,75 | 6 804,75 |
+| [0530] efecto del mínimo estatal (aplicación de la escala general a [0521]) | 527,25 | 527,25 |
+| [0532]=[0545] Cuota íntegra estatal | **6 277,50** | **6 277,50** |
+| [0529] cuota autonómica antes del mínimo (aplicación de la escala autonómica a [0505]) | 6 810,00 | 6 848,78 |
+| [0531] efecto del mínimo autonómico (aplicación de la escala autonómica a [0523]) | 549,45 | 549,45 |
+| [0533]=[0546] Cuota íntegra autonómica | **6 260,55** | **6 299,33** |
+| [0587]=[0595] Cuota resultante de la autoliquidación, IRPF definitivo | **12 538,05** | **12 576,83** |
+| [0599] Retenciones e ingresos a cuenta por rendimientos de actividades económicas | 0 | 0 |
+| [0604] Pagos fraccionados ingresados (actividades económicas) = [0609] Total pagos a cuenta | 9 680 | 9 680 |
+| [0610] Cuota diferencial = [0670] Resultado de la declaración, a ingresar | **2 858,05** | **2 896,83** |
 
 Aritmética intermedia: estatal `4362.75+(48400−35200)*0.185−5550*0.095`; Valencia `5530+(48400−42000)*0.20−6105*0.09`; Asturias `R(3893.36+(48400−33007.20)*0.192)−6105*0.09`. La diferencia entre regiones es de **38,78 €**; no es una afirmación general de que una región sea siempre más barata. La RETA ya está deducida en el cálculo del IRPF; 12 538,05/12 576,83 no incluyen los propios 3 600 de seguridad social.
 
@@ -527,12 +527,12 @@ Plazos confirmados: [130 instrucciones](https://sede.agenciatributaria.gob.es/Se
 
 ## Puntos dudosos
 
-- **Dos errores/contradicciones detectados en la instrucción HTML del 130.** El texto de la casilla 19 dice restar la 17 de la 18, pero el formulario impreso aprobado fija expresamente **17−18**. En el mismo lugar, para el apartado I, tras «660,14 por trimestre» se ha insertado «660,14 anuales». El **RIRPF 110.3.d.1º** vigente y el formulario confirman el límite trimestral para la estimación directa; el límite anual corresponde a otra rama. El motor debe usar la ley/el formulario; las fórmulas de arriba ya tienen en cuenta esta discrepancia.
+- **Dos errores/contradicciones detectados en la instrucción HTML del 130.** El texto de la casilla 19 dice «el resultado de restar el importe de la casilla 17 del importe de la casilla 18», pero el formulario impreso aprobado fija expresamente «Resultado de la autoliquidación ( 17 – 18 )». En el mismo lugar, para el apartado I, tras «con el límite máximo de 660,14 euros para cada trimestre» se ha insertado «(el límite máximo de deducción por este concepto será de 660,14 euros anuales)». El **RIRPF 110.3.d.1º** vigente y el formulario («máximo: 660,14 euros por trimestre») confirman el límite trimestral para la estimación directa; el límite anual corresponde a otra rama. El motor debe usar la ley/el formulario; las fórmulas de arriba ya tienen en cuenta esta discrepancia.
 - **Modelo 100 de 2026: números y formato UNVERIFIED.** A la fecha de control no hay un formulario definitivo confirmado del ejercicio 2026/campaña 2027 en las fuentes estudiadas. Los tipos legales de 2026 están confirmados, pero la exportación de 2026 no se puede declarar lista solo con el mapeo de 2025. La instrucción del 130 menciona casillas del año anterior 2021–2026, pero esto no sustituye la publicación del propio Modelo 100 de 2026.
 - **Redondeo de empates: UNVERIFIED como implementación exacta de Renta WEB.** Las fuentes exigen dos decimales, pero no revelan el algoritmo para todas las fracciones de céntimo en el límite. Aquí se fija expresamente un Decimal half-up razonable. Antes de la exportación en producción, compare los casos en el límite del céntimo con el cálculo oficial. El ejemplo numérico no depende de los empates.
 - **Otros activos/intangibles e incentivos de amortización.** La tabla básica y la libertad ≤300 están confirmadas. La amortización acelerada especial ERD, los vehículos nuevos/energía, los activos de años anteriores y los intangibles especiales necesitan un fundamento separado. No sustituya cualquier régimen por el 26% y no prometa que una sola tabla cubre de forma universal una compra específica.
 - **Excepciones del 720/721.** Existen excepciones para activos debidamente individualizados en una contabilidad establecida y para otras categorías de obligados. No considere automáticamente que los libros ordinarios de la EDS son una contabilidad suficiente para la exención. Un broker/fintech/custodio concreto, un seguro de vida sin rescate, un trust/beneficiario y las secuencias de reinversión requieren clasificación según el RGAT/las FAQ. Con datos desconocidos, el estado es `requires_review`, no «no hay que presentar».
 - **Compatibilidad entre la deducción personal autonómica y el gasto del negocio.** No hay una norma universal establecida que permita usar dos veces la misma factura para cada beneficio autonómico. Para gastos vitales/alquiler del despacho, separe la parte personal y la empresarial y compruebe el régimen especial antes de la aplicación automática. Marque la compatibilidad dudosa como **UNVERIFIED**; no la presente como un ahorro garantizado.
-- **Asturias, edad de 30 años en el art. 14 sexdecies.** El texto literal consolidado contiene un solapamiento entre «26–30» y «30–35». Sin embargo, el Manual AEAT 2025 interpreta expresamente el segundo grupo como **31–35**, con el tope mayor si en el año se cae en dos grupos. La especificación usa la aclaración de la AEAT y conserva la referencia para que el resultado sea explicable.
+- **Asturias, edad de 30 años en el art. 14 sexdecies.** El texto literal consolidado contiene un solapamiento: «1.500 euros para los contribuyentes con edades comprendidas entre los 26 y los 30 años» y «1.000 euros para los contribuyentes con edades comprendidas entre los 30 y los 35 años». Sin embargo, el Manual AEAT 2025 interpreta expresamente el segundo grupo como **31–35**, con el tope mayor si en el año se cae en dos grupos. La especificación usa la aclaración de la AEAT y conserva la referencia para que el resultado sea explicable.
 - **Cambios legislativos después del 08.10.2026.** 2026 aún no está cerrado: son posibles cambios nuevos o retroactivos. Por ahora, el cambio confirmado para 2027 en este ámbito es la escala de Valencia; no significa que «se conocen todos los impuestos de 2027». Ni el aumento de 2024 del beneficio para salarios, ni los tipos antiguos de 2024, ni la escala actual de Valencia de 2026 deben sobrescribir el cálculo de 2025.
 - **Límite del ejemplo, no un supuesto oculto.** Sin la edad, los gastos de vivienda/traslado, otras rentas, el inicio de actividad y la distribución de las operaciones por trimestres, no hay una única respuesta numérica. Para el ejemplo requerido, todos los parámetros que faltaban se fijan expresamente. No se ejecutaron builds/tests; el ejemplo se calculó aritméticamente y no se comprobó presentándolo en Renta WEB. Antes de la implementación, el agente principal debe comprobar el ejemplo de control, los límites de los tramos y el negative-carry del 130 con el servicio oficial.
