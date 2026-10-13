@@ -61,6 +61,15 @@ class Catalogs(unittest.TestCase):
         for sid, e in sources.SOURCES.items():
             self.assertFalse(CYR.search(e.get("ref", "")), f"{sid}: ref is shown in every language, keep it Spanish")
 
+    def test_docs_in_every_language(self):
+        root = PKG.parent
+        originals = [*sorted((root / "kb").glob("*.md")), root / "docs/use-cases.md", root / "docs/onboarding.md", root / "docs/explainer.html"]
+        for path in originals:
+            for lang in ("en", "es"):
+                twin = path.parent / lang / path.name
+                self.assertTrue(twin.exists(), f"no {twin.relative_to(root)}")
+                self.assertFalse(CYR.search(twin.read_text()), f"Russian left in {twin.relative_to(root)}")
+
     def test_language_choice(self):
         self.assertEqual(i18n.pick("ru", "es-ES,es;q=0.9"), "ru")            # profile setting wins
         self.assertEqual(i18n.pick("", "de-DE,es;q=0.8,en;q=0.5"), "es")     # first supported browser language
