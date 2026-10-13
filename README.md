@@ -48,6 +48,17 @@ python3 -m unittest tests.test_tax -v  # engine against the examples in kb/
 Backup: stop gestor and any agent that uses its MCP server, then copy the whole data folder (`*.db`, `receipts/`, `sede/`). Restore into a new folder and open it with `--data` to check the copy. Invoice as PDF: "Print / PDF" in the browser.
 The figures are a calculation from the data you enter. You file them yourself in the AEAT Sede.
 
+## Where your data lives
+
+Everything stays on your computer. gestor has no server, no account and no sync.
+
+- The repository clone holds only code. The data is in `~/.gestor` (or the folder given with `--data`): one SQLite file per profile (`main.db`, …), uploaded receipts in `receipts/` and the files for the Sede in `sede/<profile>/`. The web interface and the MCP server use the same folder.
+- The interface answers only on 127.0.0.1. Other devices on the network cannot see it.
+- The only internet request: the ECB exchange rate for an invoice in a foreign currency (only the currency and the date). Without a network, enter the rate by hand.
+- The bank statement and the data your agent reads over MCP go through the model provider (Claude, Codex). gestor does not keep the statement.
+- The files are not encrypted. Turn on disk encryption (FileVault on macOS, BitLocker on Windows).
+- `git pull` updates only the code; the data stays. Make a backup before you update: there are no database schema migrations yet.
+
 ## Help in the Sede from Claude Code or Codex
 
 `gestor/mcp.py` is an MCP server over stdio for every profile in the data folder (`profiles`, `profile_create`, the `profile` argument on each tool). It reads: the questionnaire (`profile`), clients, invoices and expenses (`books`), the year's returns with deadline and status (`declarations`), and one return in Sede format with notes with § and a file for "Importar" in `<data>/sede/<profile>/` (`declaration`). It writes, after your explicit "yes": the questionnaire (`profile_update`), clients (`client_save`), expenses (`expense_save`, `expense_delete`), invoice drafts (`invoice_draft_save`, `invoice_draft_delete`) and filed marks (`filing_mark`, `filing_unmark`). It never issues an invoice: the number is given in the interface. Prompt `start`: the first session or the nearest deadline. While the questionnaire has no name, NIE/NIF or start date, `declarations` gives only upcoming deadlines, without amounts, and the agent guides you through [onboarding](docs/en/onboarding.md). The subscription is yours, in your own program. gestor stores no keys.

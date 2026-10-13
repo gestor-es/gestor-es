@@ -48,6 +48,17 @@ python3 -m unittest tests.test_tax -v  # el motor frente a los ejemplos de kb/
 Copia de seguridad: detenga gestor y cualquier agente que use su servidor MCP; después copie la carpeta de datos completa (`*.db`, `receipts/`, `sede/`). Restaure la copia en una carpeta nueva y ábrala con `--data` para comprobarla. Factura en PDF: «Imprimir / PDF» en el navegador.
 Las cifras son un cálculo con los datos que usted introduce. La presentación la hace usted en la Sede electrónica de la AEAT.
 
+## Dónde se guardan los datos
+
+Todo queda en su ordenador. gestor no tiene servidor, cuenta ni sincronización.
+
+- El clon del repositorio solo contiene código. Los datos están en `~/.gestor` (o en la carpeta de `--data`): un archivo SQLite por perfil (`main.db`, …), los justificantes subidos en `receipts/` y los archivos para la Sede en `sede/<perfil>/`. La interfaz web y el servidor MCP usan la misma carpeta.
+- La interfaz solo responde en 127.0.0.1. Otros equipos de la red no la ven.
+- Única petición a internet: el tipo de cambio del BCE para una factura en moneda extranjera (solo la moneda y la fecha). Sin red, introduzca el tipo a mano.
+- El extracto bancario y los datos que su agente lee por MCP pasan por el proveedor del modelo (Claude, Codex). gestor no guarda el extracto.
+- Los archivos no están cifrados. Active el cifrado del disco (FileVault en macOS, BitLocker en Windows).
+- `git pull` actualiza solo el código; los datos se quedan. Haga una copia de seguridad antes de actualizar: todavía no hay migraciones del esquema de la base de datos.
+
 ## Ayuda en la Sede desde Claude Code o Codex
 
 `gestor/mcp.py` es un servidor MCP por stdio para todos los perfiles de la carpeta de datos (`profiles`, `profile_create`, el argumento `profile` en cada herramienta). Lee: el cuestionario (`profile`), clientes, facturas y gastos (`books`), las declaraciones del año con plazo y estado (`declarations`) y una declaración en formato Sede con notas § y archivo para «Importar» en `<data>/sede/<perfil>/` (`declaration`). Escribe, después de su «sí» explícito: el cuestionario (`profile_update`), clientes (`client_save`), gastos (`expense_save`, `expense_delete`), borradores de facturas (`invoice_draft_save`, `invoice_draft_delete`) y marcas de presentación (`filing_mark`, `filing_unmark`). No emite facturas: el número se asigna en la interfaz. Prompt `start`: la primera sesión o el plazo más cercano. Mientras el cuestionario no tenga nombre, NIE/NIF y fecha de alta, `declarations` da solo los plazos próximos, sin importes, y el agente le guía por el [alta en gestor](docs/es/onboarding.md). La suscripción es suya, en su propio programa. gestor no guarda claves.
