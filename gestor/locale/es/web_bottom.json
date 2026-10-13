@@ -141,6 +141,7 @@
  "строка {line}: нужно {shape}": "línea {line}: el formato debe ser {shape}",
  "неизвестный регион {region}; варианты: {options}": "región desconocida {region}; opciones: {options}",
  "неизвестная форма или статус": "forma jurídica o situación desconocida",
+ "неизвестный вид деятельности": "tipo de actividad desconocido",
  "год — 4 цифры": "el año debe tener 4 cifras",
  "формат номера: буквы, цифры, - / . _ , {YYYY} и один {NNNN}; например FACT-{YYYY}-{NNNNN}": "formato del número: letras, cifras, - / . _ , {YYYY} y un solo {NNNN}; por ejemplo FACT-{YYYY}-{NNNNN}",
  "неизвестный язык": "idioma desconocido",

@@ -564,10 +564,17 @@ def client_values(f) -> tuple:
             f.get("address", ""), f.get("email", ""))
 
 
+def save_client(con, f, cid=None) -> int:
+    if cid:
+        con.execute("UPDATE clients SET name=?, tax_id=?, country=?, is_business=?, address=?, email=? WHERE id=?", client_values(f) + (cid,))
+        return cid
+    return con.execute("INSERT INTO clients(name, tax_id, country, is_business, address, email) VALUES (?,?,?,?,?,?)",
+                       client_values(f)).lastrowid
+
+
 def clients(req):
     if req.method == "POST":
-        req.con.execute("INSERT INTO clients(name, tax_id, country, is_business, address, email) VALUES (?,?,?,?,?,?)",
-                        client_values(req.form))
+        save_client(req.con, req.form)
         nxt = req.form.get("next") or ""
         raise Redirect(nxt if nxt.startswith("/") and not nxt.startswith("//") else "/clients")
     rows = [(f'<a href="/clients/{c["id"]}">{h(c["name"])}</a>', h(c["tax_id"]), h(c["country"]),
@@ -581,8 +588,7 @@ def clients(req):
 def client_edit(req, cid):
     c = req.con.execute("SELECT * FROM clients WHERE id = ?", (cid,)).fetchone() or _404()
     if req.method == "POST":
-        req.con.execute("UPDATE clients SET name=?, tax_id=?, country=?, is_business=?, address=?, email=? WHERE id=?",
-                        client_values(req.form) + (cid,))
+        save_client(req.con, req.form, cid)
         raise Redirect("/clients")
     return page(req, c["name"], f"<h1>{h(c['name'])}</h1><form method=post class=grid>{client_form(c)}<button>{_('Сохранить')}</button></form>")
 
@@ -660,6 +666,11 @@ def invoice_form(req, inv=None, lines=()):
 
 def save_invoice(req, inv_id=None, rectifies=None):
     f = req.form
+    if inv_id:  # every caller: an issued invoice keeps its lines; only a rectificativa changes it
+        old = req.con.execute("SELECT number, rectifies_id FROM invoices WHERE id = ?", (inv_id,)).fetchone() or _404()
+        if old["number"]:
+            raise ValueError(_("выставленный счёт менять нельзя — сделайте factura rectificativa"))
+        rectifies = rectifies or old["rectifies_id"]
     client = req.con.execute("SELECT * FROM clients WHERE id = ?", (int(f["client_id"]),)).fetchone() or _404()
     issue_date = core.iso_date(f["issue_date"])
     op_date = core.iso_date(f["operation_date"]) if f.get("operation_date") else None
@@ -711,7 +722,7 @@ def invoice_edit(req, iid):
     if inv["number"]:
         raise ValueError(_("выставленный счёт менять нельзя — сделайте factura rectificativa"))
     if req.method == "POST":
-        save_invoice(req, iid, inv["rectifies_id"])
+        save_invoice(req, iid)
         raise Redirect(f"/invoices/{iid}")
     return page(req, _("Черновик"), f"<h1>{_('Черновик счёта')}</h1>{invoice_form(req, inv, db.invoice_lines(req.con, iid))}")
 
@@ -895,6 +906,7 @@ def save_expense(req, eid=None):
         (req.data_dir / "receipts" / receipt).write_bytes(data)
         remove_receipt(req, eid)
         req.con.execute("UPDATE expenses SET receipt = ? WHERE id = ?", (receipt, eid))
+    return eid
 
 
 def remove_receipt(req, eid):
@@ -1131,18 +1143,24 @@ def taxes(req):
                 index + [("export", _("Экспорт"), "", [])])
 
 
+def save_filing(con, f):
+    con.execute("INSERT OR REPLACE INTO filings(modelo, year, period, filed_on, amount_cents, reference) VALUES (?,?,?,?,?,?)",
+                (f["modelo"], int(f["year"]), f["period"], core.iso_date(f.get("filed_on") or date.today().isoformat()),
+                 parse_money(f.get("amount", "")), f.get("reference", "")))
+
+
+def delete_filing(con, f):
+    con.execute("DELETE FROM filings WHERE modelo = ? AND year = ? AND period = ?", (f["modelo"], int(f["year"]), f["period"]))
+
+
 def filing_mark(req):
-    f = req.form
-    req.con.execute("INSERT OR REPLACE INTO filings(modelo, year, period, filed_on, amount_cents, reference) VALUES (?,?,?,?,?,?)",
-                    (f["modelo"], int(f["year"]), f["period"], core.iso_date(f.get("filed_on") or date.today().isoformat()),
-                     parse_money(f.get("amount", "")), f.get("reference", "")))
-    raise Redirect(f"/taxes?year={int(f['year'])}")
+    save_filing(req.con, req.form)
+    raise Redirect(f"/taxes?year={int(req.form['year'])}")
 
 
 def filing_unmark(req):
-    f = req.form
-    req.con.execute("DELETE FROM filings WHERE modelo = ? AND year = ? AND period = ?", (f["modelo"], int(f["year"]), f["period"]))
-    raise Redirect(f"/taxes?year={int(f['year'])}")
+    delete_filing(req.con, req.form)
+    raise Redirect(f"/taxes?year={int(req.form['year'])}")
 
 
 def safe_cell(v):
@@ -1199,47 +1217,72 @@ CENSO = {"303": "IVA trimestral (303)", "130": "IRPF pago fraccionado (130)", "1
          "115": "Retenciones de arrendamientos (115)", "roi": "Registro de operadores intracomunitarios (ROI)"}
 
 
+def residence_lines(text: str) -> list:
+    """'2024-01-01 valencia' per line → [{'from', 'region'}] sorted by date; lines of another shape are ignored."""
+    out = []
+    for line in text.splitlines():
+        parts = line.split()
+        if len(parts) == 2:
+            if parts[1] not in rules.REGIONS:
+                raise ValueError(_("неизвестный регион {region}; варианты: {options}").format(region=repr(parts[1]), options=", ".join(rules.REGIONS)))
+            out.append({"from": core.iso_date(parts[0]), "region": parts[1]})
+    return sorted(out, key=lambda r: r["from"])
+
+
+def series_format(text: str) -> str:
+    series = text.strip().upper() or "A"
+    if not (re.fullmatch(r"[A-Z0-9]+", series) or (len(core.NUMBER_TOKEN.findall(series)) == 1 and
+                                                     re.fullmatch(r"[A-Z0-9/._-]*", re.sub(r"\{YYYY\}|\{N+\}", "", series)))):
+        raise ValueError(_("формат номера: буквы, цифры, - / . _ , {YYYY} и один {NNNN}; например FACT-{YYYY}-{NNNNN}"))
+    return series
+
+
+def one_of(options, error):
+    def check(v):
+        if v not in options:
+            raise ValueError(_(error))
+        return v
+    return check
+
+
+def year4(v: str) -> str:
+    if v and not re.fullmatch(r"\d{4}", v):
+        raise ValueError(_("год — 4 цифры"))
+    return v
+
+
+opt_date = lambda v: core.iso_date(v) if v else ""
+flag = lambda v: v == "1"
+
+# Questionnaire field → parser of the form's text value. The web form posts all of them; the MCP server posts only the changed ones.
+SETTINGS_FIELDS = {
+    "name": str, "tax_id": str.upper, "address": str, "email": str, "iban": str,
+    "phone": lambda v: re.sub(r"\D", "", v)[-9:], "lang": one_of(("", *i18n.LANGS), N_("неизвестный язык")),
+    "sex": lambda v: v if v in ("", "H", "M") else "", "iae": lambda v: re.sub(r"[^0-9.]", "", v)[:4],
+    "censo": lambda v: [k for k in CENSO if k in v.split()],  # space-separated keys of CENSO
+    "kind": one_of(("autonomo", "sl"), N_("неизвестная форма или статус")),
+    "visa": one_of(rules.VISAS, N_("неизвестная форма или статус")),
+    "beckham_first_year": year4, "inicio_first_year": year4, "sl_first_profit_year": year4,
+    "activity_start": opt_date, "reta_start": opt_date, "permit_until": opt_date, "censo_date": opt_date, "birth_date": opt_date,
+    "residence": residence_lines, "series": series_format,
+    "activity_kind": lambda v: one_of(("profesional", "empresarial"), N_("неизвестный вид деятельности"))(v or "profesional"),
+    "new_activity_irpf_7": flag, "tarifa_plana": flag, "sl_small_incn": flag, "sl_emergente": flag,
+    "reta_base": parse_money, "iva_carry": year_amounts, "sl_200_cuotas": year_amounts,
+    "irnr_paid": lambda v: year_amounts(v, quarterly=True),
+}
+
+
+def settings_values(f: dict) -> dict:
+    """Form text values → validated settings; only the keys present in f."""
+    return {k: SETTINGS_FIELDS[k](v) for k, v in f.items()}
+
+
 def settings(req):
     s = req.s
     if req.method == "POST":
         f = req.form
-        residence = []
-        for line in f.get("residence", "").splitlines():
-            parts = line.split()
-            if len(parts) == 2:
-                if parts[1] not in rules.REGIONS:
-                    raise ValueError(_("неизвестный регион {region}; варианты: {options}").format(region=repr(parts[1]), options=", ".join(rules.REGIONS)))
-                residence.append({"from": core.iso_date(parts[0]), "region": parts[1]})
-        if f["kind"] not in ("autonomo", "sl") or f["visa"] not in rules.VISAS:
-            raise ValueError(_("неизвестная форма или статус"))
-        for k in ("beckham_first_year", "inicio_first_year", "sl_first_profit_year"):
-            if f.get(k) and not re.fullmatch(r"\d{4}", f[k]):
-                raise ValueError(_("год — 4 цифры"))
-        dates = {k: core.iso_date(f[k]) if f.get(k) else ""
-                 for k in ("activity_start", "reta_start", "permit_until", "censo_date", "birth_date")}
-        series = f["series"].strip().upper() or "A"
-        if not (re.fullmatch(r"[A-Z0-9]+", series) or (len(core.NUMBER_TOKEN.findall(series)) == 1 and
-                                                         re.fullmatch(r"[A-Z0-9/._-]*", re.sub(r"\{YYYY\}|\{N+\}", "", series)))):
-            raise ValueError(_("формат номера: буквы, цифры, - / . _ , {YYYY} и один {NNNN}; например FACT-{YYYY}-{NNNNN}"))
-        if f.get("lang", "") not in ("", *i18n.LANGS):
-            raise ValueError(_("неизвестный язык"))
-        db.save_settings(req.con, dates | {
-            "name": f["name"], "tax_id": f["tax_id"].upper(), "address": f["address"], "email": f["email"], "iban": f["iban"],
-            "phone": re.sub(r"\D", "", f.get("phone", ""))[-9:], "lang": f.get("lang", ""),
-            "sex": f.get("sex", "") if f.get("sex", "") in ("", "H", "M") else "",
-            "iae": re.sub(r"[^0-9.]", "", f.get("iae", ""))[:4],
-            "censo": [k for k in CENSO if f.get(f"censo_{k}") == "1"],
-            "kind": f["kind"], "visa": f["visa"], "beckham_first_year": f.get("beckham_first_year", ""),
-            "inicio_first_year": f.get("inicio_first_year", ""), "sl_first_profit_year": f.get("sl_first_profit_year", ""),
-            "residence": sorted(residence, key=lambda r: r["from"]),
-            "series": series,
-            "activity_kind": f.get("activity_kind", "profesional"),
-            "new_activity_irpf_7": f.get("new_activity_irpf_7") == "1", "tarifa_plana": f.get("tarifa_plana") == "1",
-            "reta_base": parse_money(f.get("reta_base", "")),
-            "iva_carry": year_amounts(f.get("iva_carry", "")), "sl_200_cuotas": year_amounts(f.get("sl_200_cuotas", "")),
-            "irnr_paid": year_amounts(f.get("irnr_paid", ""), quarterly=True),
-            "sl_small_incn": f.get("sl_small_incn") == "1", "sl_emergente": f.get("sl_emergente") == "1",
-        })
+        form = {k: f.get(k, "") for k in SETTINGS_FIELDS} | {"censo": " ".join(k for k in CENSO if f.get(f"censo_{k}") == "1")}
+        db.save_settings(req.con, settings_values(form))
         raise Redirect("/settings?saved=1")
     res = "\n".join(f"{r['from']} {r['region']}" for r in s["residence"])
     chk = lambda name, label: (f'<label class=check><input type=checkbox id=f-{name} name={name} value=1'
@@ -1393,13 +1436,19 @@ def understood(req) -> str:
 {f'<h2 id=doubts>{_("Где gestor может ошибаться в вашем случае")}</h2><p class=sub>{_("Здесь закон не говорит прямо. gestor выбрал осторожный вариант; при сомнении спросите asesor.")}</p><ul class=risky>{risky}</ul>' if risky else ''}"""
 
 
+def create_entity(data_dir: Path, raw: str) -> str:
+    """New profile = new database file; the name keeps only a-z 0-9 - _. Creating an existing one changes nothing."""
+    name = re.sub(r"[^a-z0-9_-]", "", raw.lower())
+    if not name:
+        raise ValueError(_("имя профиля: латиница, цифры, - и _"))
+    data_dir.mkdir(parents=True, exist_ok=True)
+    db.connect(data_dir / f"{name}.db").close()
+    return name
+
+
 def entities(req):
     if req.method == "POST":
-        name = re.sub(r"[^a-z0-9_-]", "", req.form.get("name", "").lower())
-        if not name:
-            raise ValueError(_("имя профиля: латиница, цифры, - и _"))
-        db.connect(req.data_dir / f"{name}.db").close()
-        raise Redirect("/settings", entity=name)
+        raise Redirect("/settings", entity=create_entity(req.data_dir, req.form.get("name", "")))
     body = f"""<h1>{_('Профили')}</h1><p>{_('Каждый профиль — отдельная база: например, личный autónomo и SL.')}</p>
 <ul>{''.join(f'<li>{h(e)}</li>' for e in req.entities)}</ul>
 <form method=post class=grid>{field(_('Новый профиль (латиницей)'), 'name', placeholder='sl')}<button>{_('Создать')}</button></form>"""

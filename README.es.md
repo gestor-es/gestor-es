@@ -6,6 +6,27 @@ Un gestor local para autónomos y SL en España: facturas, gastos, IVA/IRPF/Beck
 
 Todo está en inglés, ruso y español: la interfaz, las fichas de fuentes jurídicas, la base de conocimiento y la documentación. Puede cambiar el idioma de la interfaz en el menú del perfil o en «Cuestionario». El idioma se guarda en cada perfil. El servidor MCP responde en el mismo idioma.
 
+## Empiece con su agente
+
+Pegue esto en Claude Code o Codex. El agente instala gestor y le guía en la primera sesión, una pregunta cada vez.
+
+```text
+Instala gestor desde https://github.com/gestor-es/gestor-es y guíame en la primera sesión. Háblame en español.
+1. Clónalo en ~/gestor-es. gestor necesita Python 3.12+: si python3 es más antiguo, ayúdame a instalar uno nuevo y úsalo abajo.
+2. En ~/gestor-es arranca la interfaz para que siga funcionando cuando salgas:
+   nohup python3 -m gestor > gestor.log 2>&1 &
+   Luego dame el enlace http://127.0.0.1:8765.
+3. Conecta el servidor MCP de gestor para tu programa con el comando de la sección del README
+   «Ayuda en la Sede desde Claude Code o Codex», ejecutado desde ~/gestor-es.
+4. Dime que te reinicie en ~/gestor-es para que se cargue el servidor (`claude --continue` o `codex resume --last`)
+   y que escriba «continúa». Después sigue las instrucciones First session del servidor gestor.
+No presentes, firmes ni pagues nada. No me pidas el PIN de Cl@ve, contraseñas ni la clave del certificado.
+```
+
+Sesiones siguientes: en Claude Code escriba `/mcp__gestor__start`; en Codex escriba «empieza con gestor». El agente indica el plazo más cercano y qué hace falta para él.
+
+## Ejecutarlo usted mismo
+
 ```bash
 python3 -m gestor                      # http://127.0.0.1:8765, datos en ~/.gestor
 python3 -m gestor --data ~/gestor-data --port 8800
@@ -26,7 +47,7 @@ Las cifras son un cálculo con los datos que usted introduce. La presentación l
 
 ## Ayuda en la Sede desde Claude Code o Codex
 
-`gestor/mcp.py` es un servidor MCP por stdio, solo de lectura. Herramientas: `declarations` (declaraciones del año con plazo y estado) y `declaration` (casillas de una declaración en formato Sede, notas con §, enlace a la Sede y archivo para «Importar» en `<data>/sede/<perfil>/`). La suscripción es suya, en su propio programa. gestor no guarda claves.
+`gestor/mcp.py` es un servidor MCP por stdio para todos los perfiles de la carpeta de datos (`profiles`, `profile_create`, el argumento `profile` en cada herramienta). Lee: el cuestionario (`profile`), clientes, facturas y gastos (`books`), las declaraciones del año con plazo y estado (`declarations`) y una declaración en formato Sede con notas § y archivo para «Importar» en `<data>/sede/<perfil>/` (`declaration`). Escribe, después de su «sí» explícito: el cuestionario (`profile_update`), clientes (`client_save`), gastos (`expense_save`, `expense_delete`), borradores de facturas (`invoice_draft_save`, `invoice_draft_delete`) y marcas de presentación (`filing_mark`, `filing_unmark`). No emite facturas: el número se asigna en la interfaz. Prompt `start`: la primera sesión o el plazo más cercano. Mientras el cuestionario no tenga nombre, NIE/NIF y fecha de alta, `declarations` da solo los plazos próximos, sin importes, y el agente le guía por el [alta en gestor](docs/es/onboarding.md). La suscripción es suya, en su propio programa. gestor no guarda claves.
 
 ```bash
 claude mcp add -s user gestor -e PYTHONPATH=$PWD -- python3 -m gestor.mcp --entity main

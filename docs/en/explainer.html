@@ -269,12 +269,12 @@ const INFO = {
     "After filing you enter the CSV code in gestor: \"Mark as filed\"."]],
   agent: ["Agent", "Claude Code or Codex", [
     "It runs on your subscription. gestor stores no keys.",
-    "It sees only what mcp.py returns: the casillas of one return.",
+    "It sees and changes only what mcp.py gives: the questionnaire, the books, the returns.",
     "In Chrome it can fill in the Sede form, but it cannot file it."]],
   mcp: ["MCP server", "gestor/mcp.py", [
-    "The MCP protocol over stdio, read-only.",
-    "2 tools: <code>declarations</code> and <code>declaration</code>.",
-    "It writes only the files for the Sede in <code>~/.gestor/sede/main/</code>.",
+    "The MCP protocol over stdio. 14 tools and the <code>start</code> prompt, every profile.",
+    "It writes the questionnaire, clients, expenses, invoice drafts and filed marks, after your \"yes\".",
+    "It does not issue invoices: you give the number in the interface. Files for the Sede go to <code>~/.gestor/sede/&lt;profile&gt;/</code>.",
     "<code>INSTRUCTIONS</code> forbids clicking \"Presentar\" and \"Firmar y enviar\"."]],
 };
 const FLOWS = {

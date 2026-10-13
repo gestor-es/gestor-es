@@ -269,12 +269,12 @@ const INFO = {
     "Después de presentar, usted introduce en gestor el Código Seguro de Verificación (CSV) del justificante de presentación: «Marcar como presentada»."]],
   agent: ["Agente", "Claude Code o Codex", [
     "Funciona con su suscripción. gestor no guarda claves.",
-    "Solo ve lo que entrega mcp.py: las casillas de una declaración.",
+    "Solo ve y cambia lo que da mcp.py: el cuestionario, los libros, las declaraciones.",
     "En Chrome puede rellenar el formulario de la Sede, pero no presentarlo."]],
   mcp: ["Servidor MCP", "gestor/mcp.py", [
-    "Protocolo MCP por stdio, solo lectura.",
-    "2 herramientas: <code>declarations</code> y <code>declaration</code>.",
-    "Solo escribe ficheros para la Sede en <code>~/.gestor/sede/main/</code>.",
+    "Protocolo MCP por stdio. 14 herramientas y el prompt <code>start</code>, todos los perfiles.",
+    "Escribe el cuestionario, clientes, gastos, borradores de facturas y marcas de presentación, después de su «sí».",
+    "No emite facturas: el número lo asigna usted en la interfaz. Ficheros para la Sede en <code>~/.gestor/sede/&lt;perfil&gt;/</code>.",
     "En <code>INSTRUCTIONS</code> está prohibido pulsar «Presentar declaración» y «Firmar y enviar»."]],
 };
 const FLOWS = {

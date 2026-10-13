@@ -80,7 +80,7 @@ DEFAULT_SETTINGS = {
     "iae": "",                   # epígrafe IAE, e.g. 763 (programadores y analistas); 151 [11]
     "iban": "",
     "kind": "autonomo",          # autonomo | sl
-    "visa": "emprendedor",       # emprendedor | nomada_digital | cuenta_propia | none
+    "visa": "nomada_digital",    # emprendedor | nomada_digital | cuenta_propia | none; default: the most common case
     "beckham_first_year": "",    # autónomo: first tax year under Beckham (regime lasts that year + 5)
     "residence": [],             # [{"from": "2024-01-01", "region": "valencia"}, ...]
     "activity_start": "",        # alta en Hacienda (036/037)

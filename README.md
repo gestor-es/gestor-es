@@ -6,6 +6,27 @@ A local gestor for autónomos and SLs in Spain: invoices, expenses, IVA/IRPF/Bec
 
 Everything is in English, Russian and Spanish: the interface, the legal source cards, the knowledge base and the docs. Switch the interface language in the profile menu or in "Questionnaire". The language is stored per profile. The MCP server answers in the same language.
 
+## Start with your agent
+
+Paste this into Claude Code or Codex. The agent installs gestor and then guides you through the first session, one question at a time.
+
+```text
+Install gestor from https://github.com/gestor-es/gestor-es and guide my first session. Talk to me in my language.
+1. Clone it into ~/gestor-es. gestor needs Python 3.12+: if python3 is older, help me install a newer one and use it below.
+2. In ~/gestor-es start the interface so it keeps running after you exit:
+   nohup python3 -m gestor > gestor.log 2>&1 &
+   Then give me the link http://127.0.0.1:8765.
+3. Connect the gestor MCP server for your program with the command from the README section
+   "Help in the Sede from Claude Code or Codex", run from ~/gestor-es.
+4. Tell me to restart you in ~/gestor-es so the server loads (`claude --continue` or `codex resume --last`)
+   and to write "continue". Then follow the gestor server's First session instructions.
+Never file, sign or pay anything. Never ask for my Cl@ve PIN, passwords or certificate passphrase.
+```
+
+Later sessions: in Claude Code type `/mcp__gestor__start`; in Codex write "start gestor". The agent names the nearest deadline and what it needs.
+
+## Run it yourself
+
 ```bash
 python3 -m gestor                      # http://127.0.0.1:8765, data in ~/.gestor
 python3 -m gestor --data ~/gestor-data --port 8800
@@ -25,7 +46,7 @@ The figures are a calculation from the data you enter. You file them yourself in
 
 ## Help in the Sede from Claude Code or Codex
 
-`gestor/mcp.py` is a read-only MCP server over stdio. Tools: `declarations` (the year's declarations with due date and status) and `declaration` (the casillas of one declaration in Sede format, notes with §, a link to the Sede and a file for "Importar" in `<data>/sede/<profile>/`). The subscription is yours, in your own program. gestor stores no keys.
+`gestor/mcp.py` is an MCP server over stdio for every profile in the data folder (`profiles`, `profile_create`, the `profile` argument on each tool). It reads: the questionnaire (`profile`), clients, invoices and expenses (`books`), the year's returns with deadline and status (`declarations`), and one return in Sede format with notes with § and a file for "Importar" in `<data>/sede/<profile>/` (`declaration`). It writes, after your explicit "yes": the questionnaire (`profile_update`), clients (`client_save`), expenses (`expense_save`, `expense_delete`), invoice drafts (`invoice_draft_save`, `invoice_draft_delete`) and filed marks (`filing_mark`, `filing_unmark`). It never issues an invoice: the number is given in the interface. Prompt `start`: the first session or the nearest deadline. While the questionnaire has no name, NIE/NIF or start date, `declarations` gives only upcoming deadlines, without amounts, and the agent guides you through [onboarding](docs/en/onboarding.md). The subscription is yours, in your own program. gestor stores no keys.
 
 ```bash
 claude mcp add -s user gestor -e PYTHONPATH=$PWD -- python3 -m gestor.mcp --entity main
