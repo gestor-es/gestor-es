@@ -4,6 +4,9 @@ English | [Русский](README.ru.md) | [Español](README.es.md)
 
 A local gestor for autónomos and SLs in Spain: invoices, expenses, IVA/IRPF/Beckham/SL, RETA and a filing calendar. One user, runs locally, no dependencies (Python 3.12+, stdlib). It computes your returns and explains every amount with the law; you file them yourself.
 
+> **Status: alpha.** gestor calculates and explains; it is not tax advice and it files nothing. Check every figure in the Sede before you sign.
+> Covered: autónomo (general IRPF or Beckham) and a one-person SL with service income. Regional IRPF scales: Valencia and Asturias only; other regions use the state scale as an approximation, and the screen says so. The 100, 151 and 200 are estimates. The Sede import files are not yet validated on the real Sede. Not covered: bank import, full SL bookkeeping (journal, annual accounts), Verifactu.
+
 Everything is in English, Russian and Spanish: the interface, the legal source cards, the knowledge base and the docs. Switch the interface language in the profile menu or in "Questionnaire". The language is stored per profile. The MCP server answers in the same language.
 
 ## Start with your agent
@@ -42,7 +45,7 @@ python3 -m unittest tests.test_tax -v  # engine against the examples in kb/
 - [`docs/en/explainer.html`](docs/en/explainer.html) — how gestor works, on a fictional profile: parts, the path of one invoice, a quarter worked through. Open it in a browser after cloning.
 - [`docs/glosario-aeat.md`](docs/glosario-aeat.md) — the AEAT terms gestor uses, each with its AEAT page (Spanish).
 
-Backup: copy the data folder (`*.db` and `receipts/`). Invoice as PDF: "Print / PDF" in the browser.
+Backup: stop gestor and any agent that uses its MCP server, then copy the whole data folder (`*.db`, `receipts/`, `sede/`). Restore into a new folder and open it with `--data` to check the copy. Invoice as PDF: "Print / PDF" in the browser.
 The figures are a calculation from the data you enter. You file them yourself in the AEAT Sede.
 
 ## Help in the Sede from Claude Code or Codex

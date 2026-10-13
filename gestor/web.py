@@ -20,6 +20,10 @@ from .core import fmt, fmt_num, invoice_number, parse_money
 from .i18n import _, N_
 
 STATIC = Path(__file__).parent / "static"
+MAX_BODY = 20 * 2**20  # bytes per request: receipts are photos and PDFs
+LOOPBACK = {"", "127.0.0.1", "localhost", "[::1]"}  # Host header values gestor answers to ("" = no header, e.g. tests)
+INLINE_TYPES = {"application/pdf", "image/png", "image/jpeg", "image/gif", "image/webp"}  # receipts that cannot run scripts
+VAT_RATES = {0, 4, 10, 21}
 
 
 class Redirect(Exception):
@@ -43,6 +47,8 @@ class Request:
         self.form, self.files = {}, {}
         if self.method == "POST":
             size = int(environ.get("CONTENT_LENGTH") or 0)
+            if size > MAX_BODY:
+                raise ValueError(_("запрос больше {mb} МБ: загрузите файл поменьше").format(mb=MAX_BODY // 2**20))
             body = environ["wsgi.input"].read(size)
             ctype = environ.get("CONTENT_TYPE", "")
             if ctype.startswith("multipart/form-data"):
@@ -678,6 +684,10 @@ def save_invoice(req, inv_id=None, rectifies=None):
     vat = float(core.num(f["vat_rate"])) if f.get("vat_rate") else rules.TREATMENTS[treatment]["vat"]
     irpf = (float(core.num(f["irpf_rate"])) if f.get("irpf_rate") else
             rules.suggest_irpf_rate(treatment, req.s, tax.regime(req.s, int(issue_date[:4])), int(issue_date[:4])))
+    if vat not in VAT_RATES:  # tax.form_303 has buckets only for these; any other rate would vanish from the 303
+        raise ValueError(_("ставка IVA — 0, 4, 10 или 21 %"))
+    if not 0 <= irpf <= 47:
+        raise ValueError(_("retención IRPF — от 0 до 47 %"))
     currency = f.get("currency") or "EUR"
     if currency not in rules.CURRENCIES:
         raise ValueError(_("валюта — из списка: по ней ЕЦБ публикует курс"))
@@ -830,7 +840,7 @@ def invoice_view(req, iid):
     else:
         actions = f"""<a class=btn href="/invoices/{iid}/edit">{_('Изменить')}</a>
 <form method=post action="/invoices/{iid}/issue" class=inline><button class=primary>{_('Выставить (присвоить номер)')}</button></form>
-<form method=post action="/invoices/{iid}/delete" class=inline><button>{_('Удалить')}</button></form>"""
+<form method=post action="/invoices/{iid}/delete" class=inline onsubmit="return confirm({h(json.dumps(_('Удалить безвозвратно?')))})"><button>{_('Удалить')}</button></form>"""
     return page(req, invoice_number(inv), f"<div class='actions noprint'>{actions}</div>{doc}")
 
 
@@ -891,6 +901,8 @@ def save_expense(req, eid=None):
     vat = parse_money(f["vat"]) if f.get("vat") else (core.pct(base, rate) if vat_kind != "none" else 0)
     ded = float(core.num(f["deductible_pct"])) if f.get("deductible_pct") else cat["irpf"]
     vded = float(core.num(f["vat_deductible_pct"])) if f.get("vat_deductible_pct") else cat["vat"]
+    if not all(0 <= x <= 100 for x in (rate, ded, vded)):
+        raise ValueError(_("ставка IVA и доли вычета — от 0 до 100 %"))
     vals = (day, f["supplier"], f.get("supplier_tax_id", ""), f.get("invoice_ref", ""), f.get("description", ""),
             f["category"], vat_kind, base, rate, vat, ded, vded, parse_money(f.get("withheld", "")))
     cols = ("date, supplier, supplier_tax_id, invoice_ref, description, category, vat_kind, base_cents, vat_rate, vat_cents, "
@@ -904,15 +916,19 @@ def save_expense(req, eid=None):
         receipt = f"{day}-{secrets.token_hex(3)}-{re.sub(r'[^A-Za-z0-9._-]', '_', name)[-60:]}"
         (req.data_dir / "receipts").mkdir(exist_ok=True)
         (req.data_dir / "receipts" / receipt).write_bytes(data)
-        remove_receipt(req, eid)
+        old = req.con.execute("SELECT receipt FROM expenses WHERE id = ?", (eid,)).fetchone()["receipt"]
         req.con.execute("UPDATE expenses SET receipt = ? WHERE id = ?", (receipt, eid))
+        if old:  # the old file goes only once the row points at the new one
+            (req.data_dir / "receipts" / old).unlink(missing_ok=True)
     return eid
 
 
-def remove_receipt(req, eid):
-    old = req.con.execute("SELECT receipt FROM expenses WHERE id = ?", (eid,)).fetchone()
+def delete_expense(con, data_dir: Path, eid: int) -> None:
+    """Row first, then its receipt file: a failed delete never leaves a row pointing at a missing file."""
+    old = con.execute("SELECT receipt FROM expenses WHERE id = ?", (eid,)).fetchone()
+    con.execute("DELETE FROM expenses WHERE id = ?", (eid,))
     if old and old["receipt"]:
-        (req.data_dir / "receipts" / old["receipt"]).unlink(missing_ok=True)
+        (data_dir / "receipts" / old["receipt"]).unlink(missing_ok=True)
 
 
 def expenses(req):
@@ -947,12 +963,11 @@ def expense_edit(req, eid):
         save_expense(req, eid)
         raise Redirect("/expenses?year=" + req.form["date"][:4])
     return page(req, _("Расход"), f"""<h1>{_('Расход')}</h1>{expense_form(req, e)}
-<form method=post action="/expenses/{eid}/delete"><button>{_('Удалить')}</button></form>""")
+<form method=post action="/expenses/{eid}/delete" onsubmit="return confirm({h(json.dumps(_('Удалить безвозвратно?')))})"><button>{_('Удалить')}</button></form>""")
 
 
 def expense_delete(req, eid):
-    remove_receipt(req, eid)
-    req.con.execute("DELETE FROM expenses WHERE id = ?", (eid,))
+    delete_expense(req.con, req.data_dir, eid)
     raise Redirect("/expenses")
 
 
@@ -1581,17 +1596,23 @@ def make_app(data_dir: Path):
 
     def app(environ, start):
         path = environ.get("PATH_INFO") or "/"
+        host = re.sub(r":\d+$", "", environ.get("HTTP_HOST", ""))
+        if host not in LOOPBACK:  # DNS rebinding: a foreign name resolving to 127.0.0.1 must not read the books
+            start("403 Forbidden", [("Content-Type", "text/plain; charset=utf-8")])
+            return [b"gestor answers only on 127.0.0.1 / localhost"]
         if path.startswith("/static/"):
             p = STATIC / path.removeprefix("/static/")
             if p.resolve().parent == STATIC.resolve() and p.is_file():
-                start("200 OK", [("Content-Type", "text/css; charset=utf-8")])
+                start("200 OK", [("Content-Type", mimetypes.guess_type(p.name)[0] or "application/octet-stream"),
+                                 ("X-Content-Type-Options", "nosniff")])
                 return [p.read_bytes()]
-        req, token = None, None
+        req, token, ok = None, None, False
         try:
             origin = environ.get("HTTP_ORIGIN")
             if environ["REQUEST_METHOD"] == "POST" and origin is not None and origin != f"http://{environ.get('HTTP_HOST')}":
                 raise NotFound()  # cross-site form post
             req = Request(environ, data_dir)
+            req.con.execute("BEGIN")  # one transaction per request: a failure halfway leaves the books as they were
             token = i18n.current.set(req.lang)
             for pattern, fn in ROUTES:
                 m = re.fullmatch(pattern, req.path)
@@ -1603,9 +1624,13 @@ def make_app(data_dir: Path):
                     break
             else:
                 raise NotFound()
-            if isinstance(out, Path):
-                start("200 OK", [("Content-Type", mimetypes.guess_type(out.name)[0] or "application/octet-stream"),
-                                 ("Content-Disposition", f'inline; filename="{out.name}"')])
+            ok = True
+            if isinstance(out, Path):  # receipts: only inert types open in the browser; anything else is downloaded
+                ctype = mimetypes.guess_type(out.name)[0] or "application/octet-stream"
+                inline = ctype in INLINE_TYPES
+                start("200 OK", [("Content-Type", ctype if inline else "application/octet-stream"),
+                                 ("Content-Disposition", f'{"inline" if inline else "attachment"}; filename="{out.name}"'),
+                                 ("X-Content-Type-Options", "nosniff")])
                 return [out.read_bytes()]
             if isinstance(out, tuple):
                 ctype, text, fname = out
@@ -1614,6 +1639,7 @@ def make_app(data_dir: Path):
             start("200 OK", [("Content-Type", "text/html; charset=utf-8")])
             return [out.encode()]
         except Redirect as r:
+            ok = True
             headers = [("Location", r.to)]
             if r.entity:
                 headers.append(("Set-Cookie", f"entity={r.entity}; Path=/; SameSite=Lax"))
@@ -1629,6 +1655,8 @@ def make_app(data_dir: Path):
             return [(page(req, _("Ошибка"), msg) if req else msg).encode()]
         finally:
             if req:
+                if req.con.in_transaction:
+                    req.con.execute("COMMIT" if ok else "ROLLBACK")
                 req.con.close()
             if token:
                 i18n.current.reset(token)

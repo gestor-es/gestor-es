@@ -47,9 +47,6 @@ def for_year(ids, year: int) -> list:
     return [i for i in ids if ok(SOURCES.get(i))]
 
 
-SOURCES = load()
-
-
 def auto_tr(url: str) -> str:
     """Google's translate proxy for the same page (es → interface language), keeping the article anchor; none for Spanish."""
     lang = i18n.current.get()

@@ -141,5 +141,10 @@
  "у клиента нужны адрес и NIF / VAT ID (art. 6 RD 1619/2012)": "the client needs an address and a NIF / VAT ID (art. 6 RD 1619/2012)",
  "дата счёта раньше последнего выставленного в серии {series} ({d}) — нумерация должна идти по датам": "the invoice date is earlier than the last issued invoice in series {series} ({d}) — numbers must follow the dates",
  "черновик можно просто исправить": "a draft can simply be edited",
- "укажите причину исправления (art. 15 RD 1619/2012)": "give the reason for the correction (art. 15 RD 1619/2012)"
+ "укажите причину исправления (art. 15 RD 1619/2012)": "give the reason for the correction (art. 15 RD 1619/2012)",
+ "запрос больше {mb} МБ: загрузите файл поменьше": "the request is larger than {mb} MB: upload a smaller file",
+ "ставка IVA — 0, 4, 10 или 21 %": "the IVA rate is 0, 4, 10 or 21 %",
+ "retención IRPF — от 0 до 47 %": "the retención IRPF is from 0 to 47 %",
+ "Удалить безвозвратно?": "Delete permanently?",
+ "ставка IVA и доли вычета — от 0 до 100 %": "the IVA rate and the deductible shares are from 0 to 100 %"
 }

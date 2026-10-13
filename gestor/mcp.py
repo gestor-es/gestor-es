@@ -26,8 +26,8 @@ Profiles: one database per profile, for example a personal autónomo and an SL. 
 the default profile unless you pass `profile`. A new person with no profile: `profile_create`, then fill it.
 
 First session (no profile, or `profile_incomplete` in `declarations`):
-1. Follow the onboarding order in {DOCS / "en" / "onboarding.md"} (Spanish: {DOCS / "es" / "onboarding.md"}, Russian
-   original: {DOCS / "onboarding.md"}). Nearest deadline first: with less than 15 days left, work only on that quarter.
+1. Follow the onboarding order in {DOCS / "en" / "onboarding.md"} (Spanish original: {DOCS / "onboarding.md"}, Russian:
+   {DOCS / "ru" / "onboarding.md"}). Nearest deadline first: with less than 15 days left, work only on that quarter.
    Then official documents, invoices, bank statement, expenses, open questions.
 2. Ask one thing at a time. An official document outweighs an answer; an answer outweighs a guess from the bank statement.
 3. Fill the questionnaire with `profile_update`. The person can also type in gestor's web interface, http://127.0.0.1:8765
@@ -169,8 +169,12 @@ class Gestor:
         try:
             s = db.get_settings(con)
             i18n.current.set(i18n.pick(s.get("lang", "")))
+            con.execute("BEGIN")  # one transaction per tool call, as the web app does per request
             yield con, s
+            con.execute("COMMIT")
         finally:
+            if con.in_transaction:
+                con.execute("ROLLBACK")
             con.close()
 
     def _forms(self, con, s, year):
@@ -245,8 +249,7 @@ class Gestor:
         with self._profile(profile) as (con, s):
             if not con.execute("SELECT 1 FROM expenses WHERE id = ?", (id,)).fetchone():
                 raise ValueError(f"no expense {id}")
-            web.remove_receipt(SimpleNamespace(con=con, data_dir=self.data), id)
-            con.execute("DELETE FROM expenses WHERE id = ?", (id,))
+            web.delete_expense(con, self.data, id)
             return {"deleted": id}
 
     def invoice_draft_save(self, lines, id=None, profile=None, **fields):

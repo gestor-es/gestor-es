@@ -4,6 +4,9 @@
 
 Un gestor local para autónomos y SL en España: facturas, gastos, IVA/IRPF/Beckham/SL, RETA y calendario de presentaciones. Un solo usuario, en local, sin dependencias (Python 3.12+, stdlib). Calcula sus declaraciones y explica cada importe con la norma; la presentación la hace usted.
 
+> **Estado: alfa.** gestor calcula y explica; no es asesoramiento fiscal y no presenta nada. Compruebe cada cifra en la Sede antes de firmar.
+> Cubre: autónomo (IRPF general o régimen Beckham) y una SL de un solo socio con ingresos por servicios. Escalas autonómicas del IRPF: solo Comunitat Valenciana y Asturias; las demás comunidades usan la escala estatal como aproximación, y la pantalla lo indica. Los modelos 100, 151 y 200 son estimaciones. Los ficheros para «Importar» aún no se han validado en la Sede real. No cubre: importación bancaria, contabilidad completa de la SL (libro diario, cuentas anuales), Verifactu.
+
 Todo está en inglés, ruso y español: la interfaz, las fichas de fuentes jurídicas, la base de conocimiento y la documentación. Puede cambiar el idioma de la interfaz en el menú del perfil o en «Cuestionario». El idioma se guarda en cada perfil. El servidor MCP responde en el mismo idioma.
 
 ## Empiece con su agente
@@ -42,7 +45,7 @@ python3 -m unittest tests.test_tax -v  # el motor frente a los ejemplos de kb/
 - [`docs/glosario-aeat.md`](docs/glosario-aeat.md) — los términos de la AEAT que usa gestor, con la página de la AEAT de cada uno.
 - [`docs/explainer.html`](docs/explainer.html) — cómo funciona gestor, con un perfil ficticio: sus partes, el recorrido de una factura y un trimestre calculado. Ábralo en el navegador después de clonar.
 
-Copia de seguridad: copie la carpeta de datos (`*.db` y `receipts/`). Factura en PDF: «Imprimir / PDF» en el navegador.
+Copia de seguridad: detenga gestor y cualquier agente que use su servidor MCP; después copie la carpeta de datos completa (`*.db`, `receipts/`, `sede/`). Restaure la copia en una carpeta nueva y ábrala con `--data` para comprobarla. Factura en PDF: «Imprimir / PDF» en el navegador.
 Las cifras son un cálculo con los datos que usted introduce. La presentación la hace usted en la Sede electrónica de la AEAT.
 
 ## Ayuda en la Sede desde Claude Code o Codex
