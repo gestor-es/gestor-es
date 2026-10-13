@@ -8,6 +8,7 @@ import re
 import sys
 from contextlib import contextmanager
 from datetime import date
+from decimal import Decimal
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -121,9 +122,10 @@ def tool(name, description, props=None, required=(), read=False, profile=True):
 TOOLS = [
     tool("profiles", "Every profile: name, kind, regime, interface language, which questionnaire fields are still empty.",
          read=True, profile=False),
-    tool("profile_create", "Create a new empty profile (a new database). Name: a-z 0-9 - _, e.g. «main» or «sl».",
-         {"name": S}, ["name"], profile=False),
-    tool("profile", "The questionnaire of a profile: every field with its current value, and the empty required fields.", read=True),
+    tool("profile_create", "Create a new empty profile (a new database). Name: a-z 0-9 - _, e.g. «main» or «sl». `created` false: "
+         "that profile already existed and may be another person's; ask before writing into it.", {"name": S}, ["name"], profile=False),
+    tool("profile", "The questionnaire of a profile: every field with its current value, in the same format `profile_update` "
+         "takes, and the empty required fields.", read=True),
     tool("profile_update", "Change questionnaire fields. " + FIELDS_DOC,
          {"fields": {"type": "object", "description": "field → value"}}, ["fields"]),
     tool("books", "Clients (all), and the invoices and expenses of a year, with ids for the save and delete tools. Invoice amounts "
@@ -133,8 +135,8 @@ TOOLS = [
           "country": {"type": "string", "description": "ISO 2 letters, e.g. ES, DE, US"},
           "is_business": {"type": "boolean", "description": "company or self-employed (true), private person (false)"},
           "address": S, "email": S}),
-    tool("expense_save", "Create an expense, or replace expense `id` with these values (omitted optional ones fall back to their "
-         "defaults). The receipt file is attached in the web interface.",
+    tool("expense_save", "Create an expense, or change the given fields of expense `id` (IVA is recomputed when base, rate or kind "
+         "change and no IVA amount is given). The receipt file is attached in the web interface.",
          {"id": ID, "date": {"type": "string", "description": "YYYY-MM-DD of the factura"}, "supplier": S, "supplier_tax_id": S,
           "invoice_ref": {"type": "string", "description": "the supplier's factura number"}, "description": S,
           "category": {"type": "string", "description": "|".join(rules.EXPENSE_CATEGORIES)},
@@ -191,9 +193,29 @@ def es(cents: int) -> str:
     return f"{'-' if cents < 0 else ''}{abs(cents) // 100},{abs(cents) % 100:02d}"
 
 
-def text(v) -> str:
-    """A JSON argument as the web form would post it."""
-    return "" if v is None else ("1" if v else "0") if isinstance(v, bool) else " ".join(map(str, v)) if isinstance(v, list) else str(v)
+def text(v, money=False) -> str:
+    """A JSON argument as the web form would post it. A JSON number of euros becomes exact cents, «34.01»: the form's own
+    parser would read «34.008» as thirty-four thousand."""
+    if isinstance(v, dict) or (money and isinstance(v, (bool, list))):
+        raise ValueError(f"not a value: {v!r}")
+    if money and isinstance(v, (int, float)):
+        return core.fmt_num(core.cents(Decimal(repr(v)) * 100))
+    return "" if v is None else ("1" if v else "0") if isinstance(v, bool) else "\n".join(map(str, v)) if isinstance(v, list) else str(v)
+
+
+MONEY = {"base", "vat", "withheld", "price", "amount", "reta_base"}  # euros
+JSON = {"integer": int, "number": (int, float), "string": str, "boolean": bool, "array": list, "object": dict}
+
+
+def form(fields: dict) -> dict:
+    return {k: text(v, k in MONEY) for k, v in fields.items()}
+
+
+def as_form(s: dict) -> dict:
+    """The questionnaire in the shapes `profile_update` takes, so what `profile` returns can be written back unchanged."""
+    return s | {"residence": "\n".join(f"{r['from']} {r['region']}" for r in s["residence"]),
+                "reta_base": core.fmt_num(s["reta_base"]) if s.get("reta_base") else ""} | {
+        k: web.year_amounts_text(s[k]) for k in ("iva_carry", "sl_200_cuotas", "irnr_paid")}
 
 
 class Gestor:
@@ -230,25 +252,30 @@ class Gestor:
 
     def profiles(self):
         out = []
-        for p in sorted(self.data.glob("*.db")):
+        for p in sorted(p for p in self.data.glob("*.db") if re.fullmatch(r"[a-z0-9_-]+", p.stem)):  # other .db files are not profiles
             with self._profile(p.stem) as (_con, s):
                 out.append({"profile": p.stem, "default": p.stem == self.entity, "name": s["name"], "kind": s["kind"],
                             "regime": tax.regime_label(s, date.today().year), "lang": s["lang"], "incomplete": web.missing_fields(s)})
         return {"profiles": out}
 
     def profile_create(self, name):
+        before = {p.stem for p in self.data.glob("*.db")}
         name = web.create_entity(self.data, name)
-        return {"profile": name}
+        return {"profile": name, "created": name not in before}
 
     def profile(self, profile=None):
         with self._profile(profile) as (_con, s):
-            return {"profile": profile or self.entity, "fields": s, "incomplete": web.missing_fields(s)}
+            return {"profile": profile or self.entity, "fields": as_form(s), "incomplete": web.missing_fields(s)}
 
     def profile_update(self, fields, profile=None):
         if unknown := sorted(set(fields) - set(web.SETTINGS_FIELDS)):
             raise ValueError(f"unknown fields {unknown}; known: {sorted(web.SETTINGS_FIELDS)}")
+        for k, v in fields.items():
+            if web.SETTINGS_FIELDS[k] is web.flag and v not in (True, False, "1", "0", "true", "false"):
+                raise ValueError(f"{k}: true or false, not {v!r}")
+        fields = {k: v in (True, "1", "true") if web.SETTINGS_FIELDS[k] is web.flag else v for k, v in fields.items()}
         with self._profile(profile) as (con, _s):
-            values = web.settings_values({k: text(v) for k, v in fields.items()})
+            values = web.settings_values(form(fields))
             db.save_settings(con, values)
             return {"saved": values, "incomplete": web.missing_fields(db.get_settings(con))}
 
@@ -272,18 +299,26 @@ class Gestor:
 
     def client_save(self, id=None, profile=None, **fields):
         with self._profile(profile) as (con, _s):
-            if id:
+            if id is not None:
                 old = con.execute("SELECT * FROM clients WHERE id = ?", (id,)).fetchone()
                 if not old:
                     raise ValueError(f"no client {id}")
                 fields = dict(old) | fields
-            return {"id": web.save_client(con, {k: text(v) for k, v in fields.items()}, id)}
+            return {"id": web.save_client(con, form(fields), id)}
 
     def expense_save(self, id=None, profile=None, **fields):
         with self._profile(profile) as (con, s):
-            if id and not con.execute("SELECT 1 FROM expenses WHERE id = ?", (id,)).fetchone():
-                raise ValueError(f"no expense {id}")
-            req = SimpleNamespace(con=con, s=s, files={}, data_dir=self.data, form={k: text(v) for k, v in fields.items()})
+            if id is not None:  # change only what is given, like client_save and profile_update
+                old = con.execute("SELECT * FROM expenses WHERE id = ?", (id,)).fetchone()
+                if not old:
+                    raise ValueError(f"no expense {id}")
+                keep = {k: old[k] for k in ("date", "supplier", "supplier_tax_id", "invoice_ref", "description", "category", "vat_kind",
+                                            "vat_rate", "deductible_pct", "vat_deductible_pct")}
+                keep |= {"base": core.fmt_num(old["base_cents"]), "withheld": core.fmt_num(old["withheld_cents"])}
+                if not fields.keys() & {"base", "vat_rate", "vat_kind"}:
+                    keep["vat"] = core.fmt_num(old["vat_cents"])
+                fields = keep | fields
+            req = SimpleNamespace(con=con, s=s, files={}, data_dir=self.data, form=form(fields))
             return {"id": web.save_expense(req, id)}
 
     def expense_delete(self, id, profile=None):
@@ -296,11 +331,13 @@ class Gestor:
     def invoice_draft_save(self, lines, id=None, profile=None, **fields):
         if not 1 <= len(lines) <= 5:
             raise ValueError("an invoice draft has 1 to 5 lines")
-        form = {k: text(v) for k, v in fields.items()}
+        form_ = form(fields)
         for i, l in enumerate(lines):
-            form |= {f"desc{i}": text(l.get("description")), f"qty{i}": text(l.get("quantity", 1)), f"price{i}": text(l.get("price"))}
+            form_ |= {f"desc{i}": text(l.get("description")), f"qty{i}": text(l.get("quantity", 1)), f"price{i}": text(l.get("price"), True)}
         with self._profile(profile) as (con, s):
-            inv_id = web.save_invoice(SimpleNamespace(con=con, s=s, form=form), id)
+            if id is not None and not con.execute("SELECT 1 FROM invoices WHERE id = ? AND number IS NULL", (id,)).fetchone():
+                raise ValueError(f"no invoice draft {id}: issued invoices are corrected with a factura rectificativa in the web interface")
+            inv_id = web.save_invoice(SimpleNamespace(con=con, s=s, form=form_), id)
             return self._invoice(con, con.execute("SELECT * FROM invoices WHERE id = ?", (inv_id,)).fetchone())
 
     def invoice_draft_delete(self, id, profile=None):
@@ -351,7 +388,7 @@ class Gestor:
     def filing_mark(self, modelo, year, period, amount, filed_on="", reference="", profile=None):
         with self._profile(profile) as (con, s):
             self._one(con, s, modelo, year, period)
-            web.save_filing(con, {"modelo": modelo, "year": year, "period": period, "filed_on": filed_on, "amount": text(amount),
+            web.save_filing(con, {"modelo": modelo, "year": year, "period": period, "filed_on": filed_on, "amount": text(amount, True),
                                   "reference": reference})
             return {"filed": {"modelo": modelo, "year": year, "period": period}}
 
@@ -398,7 +435,7 @@ class Gestor:
 
 def handle(g: Gestor, msg: dict):
     """One JSON-RPC request → result dict; raises LookupError for unknown methods."""
-    method, p = msg.get("method"), msg.get("params") or {}
+    method, p = msg.get("method"), msg.get("params") if isinstance(msg.get("params"), dict) else {}
     if method == "initialize":
         asked = p.get("protocolVersion")
         return {"protocolVersion": asked if asked in VERSIONS else VERSIONS[0], "capabilities": {"tools": {}, "prompts": {}},
@@ -412,7 +449,7 @@ def handle(g: Gestor, msg: dict):
     if method == "prompts/get":
         if (name := p.get("name")) not in TEXTS:
             raise ValueError(f"unknown prompt {name}")
-        file = (p.get("arguments") or {}).get("file") or "ask me for the file first (CSV or Excel export from the bank)"
+        file = (p.get("arguments") if isinstance(p.get("arguments"), dict) else {}).get("file") or "ask me for the file first (CSV or Excel export from the bank)"
         prompt = next(x for x in PROMPTS if x["name"] == name)
         return {"description": prompt["description"],
                 "messages": [{"role": "user", "content": {"type": "text", "text": TEXTS[name].format(file=file)}}]}
@@ -426,6 +463,11 @@ def handle(g: Gestor, msg: dict):
                 raise ValueError(f"unknown arguments {bad}")
             if lack := [k for k in schema["required"] if k not in args]:
                 raise ValueError(f"missing arguments {lack}")
+            for k, v in args.items():
+                want = schema["properties"][k].get("type")
+                want = want if isinstance(want, list) else [want] if want else []
+                if want and not any(isinstance(v, JSON[t]) and (t == "boolean" or not isinstance(v, bool)) for t in want):
+                    raise ValueError(f"{k}: expected {' or '.join(want)}, got {v!r}")
             # each call sets the profile's language; it must not leak into the next
             data = contextvars.copy_context().run(getattr(g, name), **args)
         except web.NotFound:
@@ -445,14 +487,19 @@ def serve(g: Gestor, rx=sys.stdin, tx=sys.stdout):
         except json.JSONDecodeError:
             reply = {"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": "parse error"}}
         else:
-            if "id" not in msg:
+            if not isinstance(msg, dict):
+                reply = {"jsonrpc": "2.0", "id": None, "error": {"code": -32600, "message": "invalid request"}}
+            elif "id" not in msg:
                 continue  # notification: notifications/initialized, cancelled
-            try:
-                reply = {"jsonrpc": "2.0", "id": msg["id"], "result": handle(g, msg)}
-            except LookupError:
-                reply = {"jsonrpc": "2.0", "id": msg["id"], "error": {"code": -32601, "message": f"method not found: {msg.get('method')}"}}
-            except ValueError as e:
-                reply = {"jsonrpc": "2.0", "id": msg["id"], "error": {"code": -32602, "message": str(e)}}
+            else:
+                try:
+                    reply = {"jsonrpc": "2.0", "id": msg["id"], "result": handle(g, msg)}
+                except LookupError:
+                    reply = {"jsonrpc": "2.0", "id": msg["id"], "error": {"code": -32601, "message": f"method not found: {msg.get('method')}"}}
+                except ValueError as e:
+                    reply = {"jsonrpc": "2.0", "id": msg["id"], "error": {"code": -32602, "message": str(e)}}
+                except Exception as e:  # one bad request must not end the session
+                    reply = {"jsonrpc": "2.0", "id": msg["id"], "error": {"code": -32603, "message": f"{type(e).__name__}: {e}"}}
         tx.write(json.dumps(reply, ensure_ascii=False) + "\n")
         tx.flush()
 

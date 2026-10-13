@@ -90,7 +90,8 @@ class McpTest(unittest.TestCase):
         self.assertIn("no books", statuses)
 
     def test_second_profile_is_created_filled_and_kept_apart(self):
-        self.assertEqual(call(self.g, "profile_create", name="SL")[0], {"profile": "sl"})
+        self.assertEqual(call(self.g, "profile_create", name="SL")[0], {"profile": "sl", "created": True})
+        self.assertFalse(call(self.g, "profile_create", name="sl")[0]["created"])  # someone else's profile may already have the name
         _, err = call(self.g, "profile_update", profile="sl", fields={"kind": "sl", "name": "Acme SL", "activity_start": "2026-13-01"})
         self.assertIn("2026-13-01", err)
         self.assertEqual(call(self.g, "profile", profile="sl")[0]["fields"]["name"], "")  # a rejected update writes nothing
@@ -128,6 +129,28 @@ class McpTest(unittest.TestCase):
         self.assertEqual(call(self.g, "invoice_paid", id=iid, paid_date="2026-09-20")[0]["paid_date"], "2026-09-20")
         self.assertIn("2026-09-3", call(self.g, "invoice_paid", id=iid, paid_date="2026-09-31")[1])  # a bad date changes nothing
         self.assertEqual(self.con.execute("SELECT paid_date FROM invoices WHERE id = ?", (iid,)).fetchone()[0], "2026-09-20")
+
+    def test_money_as_json_number_is_euros_not_a_thousands_group(self):
+        exp = lambda **kw: self.con.execute("SELECT base_cents, vat_cents FROM expenses WHERE id = ?",
+                                            (call(self.g, "expense_save", date="2026-03-01", supplier="S", category="software", **kw)[0]["id"],)).fetchone()
+        self.assertEqual(tuple(exp(base=34.008, vat_rate=21)), (3401, 714))  # the form parser alone would read «34.008» as 34 008 €
+        self.assertEqual(tuple(exp(base="34,01", vat_rate=21)), (3401, 714))
+        self.assertIn("expected", call(self.g, "expense_save", date="2026-03-01", supplier="S", category="software", base=True)[1])
+
+    def test_changing_one_field_keeps_the_rest(self):
+        eid = call(self.g, "expense_save", date="2026-03-02", supplier="Iberdrola", supplier_tax_id="A95758389", invoice_ref="F-7",
+                   category="home", base="100", vat_rate=21, deductible_pct=7, vat_deductible_pct=7, withheld=5)[0]["id"]
+        cols = "supplier_tax_id, invoice_ref, vat_cents, deductible_pct, vat_deductible_pct, withheld_cents"
+        before = tuple(self.con.execute(f"SELECT {cols} FROM expenses WHERE id = ?", (eid,)).fetchone())
+        call(self.g, "expense_save", id=eid, date="2026-03-05", supplier="Iberdrola", category="home", base="100")
+        self.assertEqual(tuple(self.con.execute(f"SELECT {cols} FROM expenses WHERE id = ?", (eid,)).fetchone()), before)
+        # what `profile` returns can be written back unchanged
+        call(self.g, "profile_update", fields={"residence": ["2024-01-01 valencia", "2026-07-01 madrid"], "reta_base": 1200, "tarifa_plana": "true"})
+        s = db.get_settings(self.con)
+        self.assertEqual((len(s["residence"]), s["reta_base"], s["tarifa_plana"]), (2, 120000, True))
+        f = call(self.g, "profile")[0]["fields"]
+        call(self.g, "profile_update", fields={k: f[k] for k in ("residence", "reta_base", "tarifa_plana", "iva_carry")})
+        self.assertEqual(db.get_settings(self.con), s)
 
 
 if __name__ == "__main__":
